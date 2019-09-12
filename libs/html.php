@@ -845,10 +845,10 @@ class HTML  {
 	echo "<select  id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"   >"."\n";
 	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
 	mysql_query("SET NAMES 'UTF8' ");
-	$result = mysql_query("SELECT * FROM $tb_name order by palier" );
+	$result = mysql_query("SELECT * FROM $tb_name order by id " );
 	while($data =  mysql_fetch_array($result))
 	{
-	echo '<option value="'.$data[1].'">'.$data[2].'</option>';
+	echo '<option value="'.$data[0].'">'.$data[1].'</option>';
 	}
 	echo '</select>'."\n"; 
 	}

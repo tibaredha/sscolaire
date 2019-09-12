@@ -1,5 +1,5 @@
-<div class="sheader1l"><p id="evaluation"><?php echo "Gérer les certificats de décès";?></p></div><div class="sheader1r"><p id="evaluation"><?php html::NAV();?></p></div>
-<div class="sheader2l"><?php echo $this->msg; echo " Mortalité hospitalière : ";echo HTML::nbrtostring('structure','id',Session::get('structure'),'structure') ;?></div>
+<div class="sheader1l"><p id="evaluation"><?php echo "Gérer les élèves scolarisés";?></p></div><div class="sheader1r"><p id="evaluation"><?php html::NAV();?></p></div>
+<div class="sheader2l"><?php echo $this->msg; echo " du programme national UDS  : ";echo HTML::nbrtostring('uds','id',Session::get('uds'),'uds') ;?></div>
 <div class="sheader2r">
 <?php
 $ctrl='dashboard';
@@ -18,7 +18,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 
             echo "<hr>";
 	
-	echo '<form ALIGN="center" action="'.URL.'fpdf/deces/FDECES.php" method="POST">';
+	echo '<form ALIGN="center" action="'.URL.'fpdf/sscolaire/sbd.php" method="POST">';
 			echo "<p>";html::txts(100,240,'Datedebut',0,date('d-m-Y'),'dateus');html::txts(100,240,'Datefin',0,date('d-m-Y'),'dateus1');echo "</p>";
 			echo "<p>";;echo "</p>";
 				echo "<hr>";
