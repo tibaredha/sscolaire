@@ -57,7 +57,7 @@ if (isset($_COOKIE['tibaredha'])) {
             </form>
         </div>
     </div>	
--->
+
 
 <marquee behavior="slide" direction="up" scrollamount="2">
 <p class="a">* Les informations rapportées par les certificats de décès permettent l'élaboration </p>
@@ -68,7 +68,7 @@ if (isset($_COOKIE['tibaredha'])) {
 <p class="a">* Compte tenu des évolutions technologiques, le passage à un mode de certification </p>
 <p class="a">* Electronique des décès est imperatif</p>
 <p class="a">* Deverait permettre d'ameliorer considerablement le circuit du certificat de décès </p>	
-</marquee>
+</marquee>-->
 </div>	
 <div class="content"><img id="image" src="<?php echo URL;?>public/images/accueil.jpg"></div>
 <div class="contentr"><img id="image" src="<?php echo URL;?>public/images/<?php echo logod;?>">

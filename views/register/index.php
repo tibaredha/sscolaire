@@ -28,7 +28,7 @@
 	<form class="tabaut"action="<?php echo URL;?>register/Registerrun" method="post">	
 		<div id="inner-grid">
 			<div id="a">Wilaya : <?php HTML::WILAYA('wilaya','wilayarg','wilaya','wil','17000','DJELFA') ;?></div>
-			<div id="b">Structure : <?php HTML::structure('structure','structurerg','structure','01','EPH_MOHAD_ABDELKADER') ?></div>
+			<div id="b">Structure : <?php HTML::structure('structure','structurerg','structure','01','') ?></div>
 			<div id="c">E-mail :             <input id="ee" type="text"     name="Email"    value="tibaredha@yahoo.fr"  required=""   /></div>
 			<div id="d">Nom d'utilisateur :  <input id="ff" type="text"     name="login"    value="tibaredha"           required="" /></div>
 			<div id="e">Mot de passe :       <input id="gg" type="password" name="password" value="030570"              required="" /></div>

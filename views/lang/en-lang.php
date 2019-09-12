@@ -1,5 +1,5 @@
 <?php
-    define('TXT_TITRE_INDEX', 'Electronic *** Registration System');
+    define('TXT_TITRE_INDEX', 'Electronic registration system for school pupils');
 	define('TXT_ACCUEIL', 'Accueil');
 	define('TXT_SETTINGS', 'Settings');
 	define('TXT_HELP', 'Help');

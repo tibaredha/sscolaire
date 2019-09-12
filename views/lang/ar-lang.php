@@ -1,5 +1,5 @@
 <?php
-    define('TXT_TITRE_INDEX', 'نظام الكتروني لتسجيل ');
+    define('TXT_TITRE_INDEX', 'نظام الكتروني لتسجيل للاطفال المتمدريسين');
 	define('TXT_ACCUEIL', 'ترحيب');
 	define('TXT_SETTINGS', 'إعدادات');
 	define('TXT_HELP', 'مساعدة');
