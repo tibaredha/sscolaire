@@ -757,11 +757,11 @@ class HTML  {
     echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier','0','');
 	
 	
-	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"    placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>               <input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>            <input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>        <input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"   placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label>            <input id="ADAR"       type="txt" name="ADAR"        value="'.$data['ADAR'].'"     placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>               <input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'"  placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>            <input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'"  placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>        <input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label>           <input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
 	
 	echo '<input type="hidden" name="WILAYA"     value="'.Session::get('wilaya').'"/>';
 	echo '<input type="hidden" name="STRUCTURE"  value="'.Session::get('structure').'"/>';

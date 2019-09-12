@@ -148,13 +148,15 @@ class Dashboard extends Controller {
 		$data['WILAYA']        = $_POST['WILAYA'];
 		$data['STRUCTURE']     = $_POST['STRUCTURE'];
 		$data['UDS']           = $_POST['UDS'];
-        $data['ECOLE']       = $_POST['ECOLE'];
-        $data['PALIER']      = $_POST['PALIER'];
+        $data['ECOLE']         = $_POST['ECOLE'];
+        $data['PALIER']        = $_POST['PALIER'];
 		$data['LOGIN']         = $_POST['LOGIN'];
 		$data['NOMAR']         = $_POST['NOMAR'];
 		$data['PRENOMAR']      = $_POST['PRENOMAR'];
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
 		$data['ETDEAR']        = $_POST['ETDEAR'];
+		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
+		
 		echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createeleve($data);
 		// header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);
