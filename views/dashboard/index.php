@@ -118,7 +118,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		else 
 		{
 		echo '<div class="contentl">';
-		$this->clgraphe->multigraphe(30,340,'Décès par année et sexe  arreté au : ','deceshosp','DINS','SEX','M','F','='.Session::get('structure')) ;
+		//$this->clgraphe->multigraphe(30,340,'Décès par année et sexe  arreté au : ','deceshosp','DINS','SEX','M','F','='.Session::get('structure')) ;
 		echo "</div>";
 		echo'<div class="content"><img id="image" src="'.URL.'public/images/dashbord.jpg" ></div>';
 		echo'<div class="contentr" id="suggesstion-box"  ><img id="image" src="'.URL.'public/images/'.logo.'"></div>';

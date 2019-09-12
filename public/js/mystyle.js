@@ -31,7 +31,7 @@ document.getElementById('image').style.height = Math.max(parseInt(document.getEl
 }
 
 
-var ROOT ="framework";
+var ROOT ="sscolaire";
 
 //*****SCORE D apgar///
 var apgar1 = 0; 
@@ -301,6 +301,14 @@ $(document).ready(function()
 			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxws.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".structure").html(html);}});
 		});
+		
+		$(".structure").change(function()
+		{
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxsu.PHP";
+			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".uds").html(html);}});
+		});
+		
+		
 });
 
 

@@ -23,7 +23,7 @@
 	define('TXT_CONFIGURATION', "Cfgs");
 	define('TXT_AGENDA', "Agenda");
 	
-	define('TXT_SMENUE1', "Gérer les certificats de décès");
+	define('TXT_SMENUE1', "Gérer les élèves scolarisés");
 	
 	
 	

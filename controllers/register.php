@@ -18,11 +18,13 @@ class Register extends Controller {
 		$data = array();
 		$data['wilaya']    = $_POST['wilaya'];
 		$data['structure'] = $_POST['structure'];
+		$data['uds']       = $_POST['uds'];
 		$data['Email']     = $_POST['Email'];  //manque verification email 
 		$data['login']     = $_POST['login'];
 		$data['password']  = $_POST['password'];
 		$data['captcha']   = $_POST['captcha'];
 		$data['captchax']  = $_POST['captchax'];
+		$this->affichage($data);
 		if (captcha::captchaVerif($_POST['captchax'],$_POST['captcha'])) {  
 		$this->model->runRegister($data);
 		} else {

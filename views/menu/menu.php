@@ -8,14 +8,13 @@ echo '<ul id="menu">';
 	else
 	{
 		if (Session::get('demgraphie') == 1){include('menu_deces.php');}	
-		if (Session::get('demgraphie') == 2){include('menu_naissance.php');}
-		if (Session::get('demgraphie') == 3){include('menu_demographie.php');}		
+			
 		echo '<li class="parent"><a href="'.URL.'aide">'.TXT_HELP.' <img src="'.URL.'public/images/help.jpg" width="16" height="16" border="0" alt=""/></li>';	
 		echo '<li class="parent">';echo '<a onclick="playSound()"  href="'.URL.'Login/logout/'.Session::get('id').'"  >'.TXT_LOGOUT.' <img src="'.URL.'public/images/s_loggoff.png" width="16" height="16" border="0" alt=""/></a></li>';
 		echo '<p id="wdj1" >';
-		if (Session::get('lang')=='ar') {echo HTML::nbrtostring('structure','id',Session::get('structure'),'structurear');}
-		if (Session::get('lang')=='fr') {echo HTML::nbrtostring('structure','id',Session::get('structure'),'structure');}
-		if (Session::get('lang')=='en') {echo HTML::nbrtostring('structure','id',Session::get('structure'),'structure');}
+		if (Session::get('lang')=='ar') {echo HTML::nbrtostring('uds','id',Session::get('uds'),'udsar');}
+		if (Session::get('lang')=='fr') {echo HTML::nbrtostring('uds','id',Session::get('uds'),'uds');}
+		if (Session::get('lang')=='en') {echo HTML::nbrtostring('uds','id',Session::get('uds'),'uds');}
 		echo '</p>';
 	}
 echo '</ul>';

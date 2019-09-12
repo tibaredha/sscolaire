@@ -10,9 +10,9 @@ define('DB_PASS', '030570'); //''
 //define('msp', 'Ministère de la santé et de la population et de la réforme hospitalière');
 define('msp', "Système électronique d'enregistrement des élèves scolarisés ");
 define('version', 'v2.0.1-beta1');
-define('logod', 'demographie.jpg?t='.time());
-define('logo', 'funerail.jpg?t='.time());
-define('logon', 'naissance.png?t='.time());
+define('logod', 'ecole.jpg?t='.time());
+define('logo', 'ecole.jpg?t='.time());
+define('logon', 'ecole.jpg?t='.time());
 define('URL', 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
 //define('URL', 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
 define('logolab', 'd:\\sscolaire/public/images/logolab/logolab');

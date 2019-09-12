@@ -23,7 +23,7 @@
 	define('TXT_CONFIGURATION', "الاعدادت");
 	define('TXT_AGENDA', "مفكرة");
 	
-	define('TXT_SMENUE1', "ادارة شهادات االوفيات");
+	define('TXT_SMENUE1', "ادارة الاطفال المتمدرسين");
 	
 	
 	

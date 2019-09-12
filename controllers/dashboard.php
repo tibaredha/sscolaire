@@ -132,6 +132,8 @@ class Dashboard extends Controller {
 	public function create() 
 	{
 		$data = array();
+		$data['DINS']          = $_POST['DINS'];
+		$data['HINS']          = $_POST['HINS'];
 		$data['NOM']           = $_POST['NOM'];
 		$data['PRENOM']        = $_POST['PRENOM'];
 		$data['FILSDE']        = $_POST['FILSDE'];
@@ -143,55 +145,19 @@ class Dashboard extends Controller {
 		$data['WILAYAR']       = $_POST['WILAYAR'];
 		$data['COMMUNER']      = $_POST['COMMUNER'];
 		$data['ADRESSE']       = $_POST['ADRESSE'];
-		$data['WILAYAD']       = $_POST['WILAYAD'];
-		$data['COMMUNED']      = $_POST['COMMUNED'];
-		$data['STRUCTURED']    = $_POST['STRUCTURED'];
-		$data['DINS']          = $_POST['DINS'];
-		$data['HINS']          = $_POST['HINS'];
-		$data['DATEHOSPI']     = $_POST['DATEHOSPI'];
-		$data['HEURESHOSPI']   = $_POST['HEURESHOSPI'];
-		$data['SERVICEHOSPIT'] = $_POST['SERVICEHOSPIT'];
-		$data['MEDECINHOSPIT'] = $_POST['MEDECINHOSPIT'];
-		$data['LD']            = $_POST['LD'];
-		$data['AUTRES']        = $_POST['AUTRES'];
-		if (isset($_POST['OMLI'])){$data['OMLI']='1';}else{$data['OMLI']='';}
-		if (isset($_POST['MIEC'])){$data['MIEC']='1';}else{$data['MIEC']='';}
-		if (isset($_POST['EPFP'])){$data['EPFP']='1';}else{$data['EPFP']='';}
-		$data['CIM1']          = $_POST['CIM1'];
-		$data['CIM2']          = $_POST['CIM2'];
-		$data['CIM3']          = $_POST['CIM3'];
-		$data['CIM4']          = $_POST['CIM4'];
-		$data['CIM5']          = $_POST['CIM5'];
-		$data['CD']            = $_POST['CD'];
-		$data['CODECIM0']      = $_POST['CODECIM0'];
-		$data['CODECIM']       = $_POST['CODECIM'];
-		$data['NDLM']          = $_POST['NDLM'];
-        $data['NDLMAAP']       = $_POST['NDLMAAP'];
-		if (isset($_POST['GM'])){$data['GM']='1';}else{$data['GM']='';}
-		if (isset($_POST['MN'])){$data['MN']='1';}else{$data['MN']='';}
-		$data['AGEGEST']       = $_POST['AGEGEST'];
-		$data['POIDNSC']       = $_POST['POIDNSC'];
-		$data['AGEMERE']       = $_POST['AGEMERE'];
-		if (isset($_POST['DPNAT'])){$data['DPNAT']='1'; }else{$data['DPNAT']='';}
-		$data['EMDPNAT']       = $_POST['EMDPNAT'];
-		if (isset($_POST['DECEMAT'])){$data['DECEMAT']='1'; }else{$data['DECEMAT']='';}
-		$data['GRS']           = $_POST['GRS'];
-		if (isset($_POST['POSTOPP'])){$data['POSTOPP']='1';}else{$data['POSTOPP']='';}
 		$data['WILAYA']        = $_POST['WILAYA'];
 		$data['STRUCTURE']     = $_POST['STRUCTURE'];
-		$data['login']         = $_POST['login'];
+		$data['UDS']           = $_POST['UDS'];
+        $data['ECOLE']       = $_POST['ECOLE'];
+        $data['PALIER']      = $_POST['PALIER'];
+		$data['LOGIN']         = $_POST['LOGIN'];
 		$data['NOMAR']         = $_POST['NOMAR'];
 		$data['PRENOMAR']      = $_POST['PRENOMAR'];
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
 		$data['ETDEAR']        = $_POST['ETDEAR'];
-		$data['ETDEAR']        = $_POST['ETDEAR'];
-		$data['NOMPRENOMAR']   = $_POST['NOMPRENOMAR'];
-		$data['PROAR']         = $_POST['PROAR'];
-		$data['ADAR']          = $_POST['ADAR'];
-		$data['Profession']    = $_POST['Profession'];
-		// echo '<pre>';print_r ($data);echo '<pre>';  
-		$last_id=$this->model->createdeces($data);
-		header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);
+		echo '<pre>';print_r ($data);echo '<pre>';  
+		$last_id=$this->model->createeleve($data);
+		// header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);
 	}
 	
 	public function view($id) 

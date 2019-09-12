@@ -737,9 +737,9 @@ class HTML  {
 	function tabs($data) 
 	{
 	echo '<div id="content_1" class="contenttabs1">  ';
-	echo '<label class="deces" id="lWILAYAD">Wilaya Décès :</label>';         HTML::WILAYA('WILAYAD','WILAYAD','WILAYAD','wil',$data['WILAYAD1'],$data['WILAYAD2']) ;
-	echo '<label class="deces" id="lCOMMUNED">Commune Décès :</label>';       HTML::COMMUNE('COMMUNED','COMMUNED','COMMUNED',$data['COMMUNED1'],$data['COMMUNED2']);
-	echo '<label class="deces" id="lDINS">Date Décès:</label>';               echo '<input id="DINS"   type="txt"  name="DINS"   value="'.$data['DINS'].'" placeholder="00-00-0000" onblur="genererCodeP()"/>';
+	// echo '<label class="deces" id="lWILAYAD">Wilaya Décès :</label>';         HTML::WILAYA('WILAYAD','WILAYAD','WILAYAD','wil',$data['WILAYAD1'],$data['WILAYAD2']) ;
+	// echo '<label class="deces" id="lCOMMUNED">Commune Décès :</label>';       HTML::COMMUNE('COMMUNED','COMMUNED','COMMUNED',$data['COMMUNED1'],$data['COMMUNED2']);
+	echo '<label class="deces" id="lDINS"> Inscription : </label>';           echo '<input id="DINS"   type="txt"  name="DINS"   value="'.$data['DINS'].'" placeholder="00-00-0000" onblur="genererCodeP()"/>';
 													                          echo '<input id="HINS"   type="txt"  name="HINS"   value="'.$data['HINS'].'" placeholder="00:00"/>';
 	echo '<label class="deces" id="lNOM">Nom:</label>';                       echo '<input id="NOM"    type="txt"  name="NOM"    value="'.$data['NOM'].'" required placeholder="xxxxxxx" autofocus onkeyup="javascript:this.value=this.value.toUpperCase();" />';
 	echo '<label class="deces" id="lPRENOM">Prénom:</label> ';                echo '<input id="PRENOM" type="txt"  name="PRENOM" value="'.$data['PRENOM'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
@@ -752,90 +752,28 @@ class HTML  {
 	echo '<label class="deces" id="lWILAYAR">Wilaya Res :</label>';           HTML::WILAYA('WILAYAR','WILAYAR','WILAYAR','wil',$data['WILAYAR1'],$data['WILAYAR2']) ;
 	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';        HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
 	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';          echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	echo '<label class="deces" id="lLD7">Signalement médico-légal : informations funeraires</label>';
-	echo '<label class="deces" id="lLD8">Obstacle médico-légal à l\'inhumation </label> ';                                  echo '<input id="LD8"  type="checkbox"  name="OMLI" value="" '.$data['OMLI'].' />';
-	echo '<label class="deces" id="lLD9">Mise immédiate en cercueil hermétique en raison du risque de contagion </label>'; echo '<input id="LD9"  type="checkbox"  name="MIEC" value="" '.$data['MIEC'].' />';
-	echo '<label class="deces" id="lLD10">Existence d\'une prothèse fonctionnant au moyen d\'une pile</label> ';           echo '<input id="LD10" type="checkbox"  name="EPFP" value="" '.$data['EPFP'].' />';
-	echo '<label class="deces" id="lLD0">Lieu du Décès :</label>';
-	echo '<label class="deces" id="lLD1">Domicile :</label>';                  echo '<input id="LD1" type="radio"  name="LD" value="DOM"  '.$data['DOM'].'/>';
-	echo '<label class="deces" id="lLD2">Voie publique :</label>';             echo '<input id="LD2" type="radio"  name="LD" value="VP"   '.$data['VP'].'/>';
 	
-	echo '<label class="deces" id="lLD3">Autres (à préciser) :</label>';       echo '<input id="LD3" type="radio"  name="LD" value="AAP"  '.$data['AAPLD'].'/><input id="LD6" type="txt" name="AUTRES" value="'.$data['AUTRES'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();" /> ';
-	echo '<label class="deces" id="lLD4">Structure publique :</label>';        echo '<input id="LD4" type="radio"  name="LD" value="SSP"  '.$data['SSP'].'/>';
-	echo '<label class="deces" id="lLD5">Structure privée :</label>';          echo '<input id="LD5" type="radio"  name="LD" value="SSPV" '.$data['SSPV'].'/>';
-	echo '<label class="deces" id="lProfession">';         
-	      echo '<a title="Ajouter Profession si manque dans la liste "  href="'.URL.'prf/createprf/'.Session::get('structure').'"> Profession : </a>';
-		  echo'<img src="'.URL.'public/images/add.PNG" width="12" height="12" border="0" alt=""   />';
-	echo '</label>';HTML::Profession(44,44,'Profession','Profession','Profession',Session::get('structure'),$data['PROFESSION1'],$data['PROFESSION2']) ;
-	echo '<label class="deces" id="lDATEHOSPI">Date d\'hospitalisation : </label> ';         echo '<input id="DATEHOSPI" type="txt" name="DATEHOSPI" value="'.$data['DATEHOSPI'].'" placeholder=" 00-00-0000"/>';echo '<input id="HEURESHOSPI" type="txt"  name="HEURESHOSPI" value="'.$data['HEURESHOSPI'].'" placeholder=" 00:00"/>';
-	echo '<label class="deces" id="lSERVICEHOSPIT"  >';  
-	echo '<a title="Ajouter Service si manque dans la liste : "  href="'.URL.'ser/nouveau/'.Session::get('structure').'"> Service de déces : </a>';
-		  echo'<img src="'.URL.'public/images/add.PNG" width="12" height="12" border="0" alt=""   />';
-	echo '</label>';HTML::SER(44,44,'SERVICEHOSPIT','servicedeces',$data['SERVICEHOSPIT1'],$data['SERVICEHOSPIT2']) ;
-	echo '<label class="deces" id="lMEDECINHOSPIT"  >';
-		  echo '<a title="Ajouter Médecin si manque dans la liste "  href="'.URL.'med/createmedecin/'.Session::get('structure').'"> Médecin déclarant : </a>';
-		  echo'<img src="'.URL.'public/images/add.PNG" width="12" height="12" border="0" alt=""   />';
-	echo '</label>';HTML::MED(44,44,'MEDECINHOSPIT','medecindeces',Session::get('structure'),$data['MEDECINHOSPIT1'],$data['MEDECINHOSPIT2']) ;
-	echo '</div>';
-	echo '<div id="content_2" class="contenttabs2">';
-	echo '<label class="deces" id="lCIM0">Partie I : Maladie(s) ou affection(s) morbide (s) ayant directement provoqué le décés :</label>';
-	echo '<label class="deces" id="lCIM1">&nbsp;Cause directe immediate :&nbsp;( a )</label>            <input title="La définition n\'inclut pas les symptômes ni les modes de décès (arrét cardiorespiratoire) "id="CIM1" type="txt" name="CIM1" value="'.$data['CIM1'].'" placeholder="x" onkeyup="javascript:this.value=this.value.toUpperCase();"/><input title="Intervalle entre le début du processus morbide et le décès (heure, jours, mois ou ans)."id="CIM11" type="txt" name="CIM11" value="00"/>';    $this->combov('DUREE1','DUREE1',$data['DUREE']);
-	echo '<label class="deces" id="lCIM2">&nbsp;Due à ou consécutive à : &nbsp;&nbsp;&nbsp;( b )</label><input title="La définition n\'inclut pas les symptômes ni les modes de décès (arrét cardiorespiratoire)  "   id="CIM2" type="txt" name="CIM2" value="'.$data['CIM2'].'" placeholder="x" onkeyup="javascript:this.value=this.value.toUpperCase();"/><input title="Intervalle entre le début du processus morbide et le décès (heure, jours, mois ou ans)."id="CIM22" type="txt" name="CIM22" value="00"/>';$this->combov('DUREE2','DUREE2',$data['DUREE']);
-	echo '<label class="deces" id="lCIM3">&nbsp;Due à ou consécutive à : &nbsp;&nbsp;&nbsp;( c )</label><input title="La définition n\'inclut pas les symptômes ni les modes de décès (arrét cardiorespiratoire)  "   id="CIM3" type="txt" name="CIM3" value="'.$data['CIM3'].'" placeholder="x" onkeyup="javascript:this.value=this.value.toUpperCase();"/><input title="Intervalle entre le début du processus morbide et le décès (heure, jours, mois ou ans)."id="CIM33" type="txt" name="CIM33" value="00"/>';$this->combov('DUREE3','DUREE3',$data['DUREE']);
-	echo '<label class="deces" id="lCIM4">&nbsp;Due à ou consécutive à : &nbsp;&nbsp;&nbsp;( d )</label><input title="La définition n\'inclut pas les symptômes ni les modes de décès (arrét cardiorespiratoire)  "   id="CIM4" type="txt" name="CIM4" value="'.$data['CIM4'].'" placeholder="x" onkeyup="javascript:this.value=this.value.toUpperCase();"/><input title="Intervalle entre le début du processus morbide et le décès (heure, jours, mois ou ans)."id="CIM44" type="txt" name="CIM44" value="00"/>';$this->combov('DUREE4','DUREE4',$data['DUREE']);
-	//echo '<label class="deces" id="lCIM7">  * la dernière cause doit correspondre à la cause initiale => CIM10 </label>';
-	HTML::cim1('CODECIM0','chapitre',$data['CODECIM01'],$data['CODECIM02']);   HTML::cim2('CODECIM',$data['CODECIM1'],$data['CODECIM2']) ;
-    echo '<label class="deces" id="lCIM00">Partie II : Autres états morbides ayant pu contribuer au décés, non mentionnés en partie I :</label>';
-	echo '<label class="deces" id="lCIM5"> Autres états :</label>              <input id="CIM5" type="txt" name="CIM5" value="'.$data['CIM5'].'" placeholder="x" onkeyup="javascript:this.value=this.value.toUpperCase();" /><input title="Intervalle entre le début du processus morbide et le décès (heure, jours, mois ou ans)."id="CIM55" type="txt" name="CIM55" value="00"/>';$this->combov('DUREE5','DUREE5',$data['DUREE']);
-	echo '<label class="deces" id="lCIM01">Cause de décés :</label>';
-	echo '<label class="deces" id="lCIM02">Cause naturelle :</label><input title="Cause endogene(maladie,senescence)"id="CIM02" type="radio"  name="CD" value="CN" '.$data['CN'].'/>';
-	echo '<label class="deces" id="lCIM03">Cause viollente :</label><input  title="Cause exogene(accident,scuicide,homicide)"id="CIM03" type="radio"  name="CD" value="CV" '.$data['CV'].'/>';
-	echo '<label class="deces" id="lCIM04">Cause indéterminée :</label><input title="Indeterminée(homicide,scuicide,accident)"id="CIM04" type="radio"  name="CD" value="CI" '.$data['CI'].'/>';
-	echo '<label class="deces" id="lNDM1">Nature de la mort :</label>';
-	echo '<label class="deces" id="lNDM2">Naturelle :</label>          <input id="NDM2" type="radio"  name="NDLM" value="NAT" '.$data['NAT'].' />';
-	echo '<label class="deces" id="lNDM3">Accident :</label>           <input id="NDM3" type="radio"  name="NDLM" value="ACC" '.$data['ACC'].'/>';
-	echo '<label class="deces" id="lNDM4">Auto induite :</label>       <input id="NDM4" type="radio"  name="NDLM" value="AID" '.$data['AID'].'/>';
-	echo '<label class="deces" id="lNDM5">Agression :</label>          <input id="NDM5" type="radio"  name="NDLM" value="AGR" '.$data['AGR'].'/>';
-	echo '<label class="deces" id="lNDM6">Indéterminée :</label>       <input id="NDM6" type="radio"  name="NDLM" value="IND" '.$data['IND'].'/>';
-	echo '<label class="deces" id="lNDM7">Autres (à préciser) :</label><input id="NDM7" type="radio"  name="NDLM" value="AAP" '.$data['AAP'].'/><input id="NDLMAAP" type="txt" name="NDLMAAP" value="'.$data['NDLMAAP'].'"  onblur="myFunction1()" onkeyup="javascript:this.value=this.value.toUpperCase();" />';
-	echo '</div>';
-	echo '<div id="content_3" class="contenttabs3">';
-	echo '<label class="deces" id="lDECEMAT0">Décés maternel :</label>';
-	echo '<label class="deces" id="lDECEMAT">Décés maternel :</label>                        <input id="DECEMAT"    type="checkbox"  name="DECEMAT" value="" '.$data['DECEMAT'].'     /> ';
-	echo '<label class="deces" id="lDGRO">Durant la grossesse :</label>                      <input id="DGRO"       type="radio"     name="GRS"     value="DGRO"        '.$data['DGRO'].'/>';
-	echo '<label class="deces" id="lDACC">Durant l\'accouchement :</label>                   <input id="DACC"       type="radio"     name="GRS"     value="DACC"        '.$data['DACC'].'/>';
-	echo '<label class="deces" id="lDAVO">Durant l\'avortement :</label>                     <input id="DAVO"       type="radio"     name="GRS"     value="DAVO"        '.$data['DAVO'].'/>';
-	echo '<label class="deces" id="lAGESTATION">Aprés la gestation "post partum" :</label>   <input id="AGESTATION" type="radio"     name="GRS"     value="AGESTATION"  '.$data['AGESTATION'].'/>';
-	echo '<label class="deces" id="lIDETER">Indéterminé :</label>                            <input id="IDETER"     type="radio"     name="GRS"     value="IDETER"      '.$data['IDETER'].'/>';
+	echo '<label class="deces" id="lLD7">Établissement : </label>';           HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole','1','',Session::get('uds'));                    
+    echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier','0','');
 	
-	echo '<label class="deces" id="MNP0">Mortinatalité, périnatalité :</label> ';
-	echo '<label class="deces" id="MNP1">Grossesse multiple :</label>                        <input id="GM"         type="checkbox"  name="GM"        value=""  '.$data['GM'].'    /> ';
-	echo '<label class="deces" id="MNP2">Mort-né :</label>                                   <input id="MN"         type="checkbox"  name="MN"        value=""  '.$data['MN'].'    /> ';
-	echo '<label class="deces" id="MNP3">Age gestationnel (en semaines) :</label>            <input id="AGEGEST"    type="txt"       name="AGEGEST"   value="'.$data['AGEGEST'].'" />';
-	echo '<label class="deces" id="MNP4">Poids à la naissance (en grammes) :</label>         <input id="POIDNSC"    type="txt"       name="POIDNSC"   value="'.$data['POIDNSC'].'" />';
-	echo '<label class="deces" id="MNP5">Age de la mére (en années) :</label>                <input id="AGEMERE"    type="txt"       name="AGEMERE"   value="'.$data['AGEMERE'].'" />';
-	echo '<label class="deces" id="MNP6">Si décés périnatal préciser :</label>               <input id="DPNAT"      type="checkbox"  name="DPNAT"     value=""   '.$data['DPNAT'].'     /> ';
-	                                                                                    echo '<input class="deces" id="EMDPNAT" type="txt"  name="EMDPNAT" value="'.$data['EMDPNAT'].'" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="xxxxxxx"  />';
-	echo '<label class="deces" id="LPART3"> </label>';
-	echo '<label class="deces" id="POSTOPP0">Intervention chirurgicale :</label> ';
-	echo '<label class="deces" id="POSTOPP1">4 semaines avant le décés :</label><input id="POSTOPP2"  type="checkbox"  name="POSTOPP"    value="" '.$data['POSTOPP'].' /> ';
 	
-	echo '</div>';
-	echo '<div id="content_4" class="contenttabs4"> ';
-	echo '<label class="deces" id="lDECEMATA">: إعلان بوفاة </label>';
-	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'" placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"    placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>               <input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'" placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>            <input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>        <input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lNOMPRENOMAR">: إسم و لقب الزوج</label> <input id="NOMPRENOMAR" type="txt" name="NOMPRENOMAR" value="'.$data['NOMPRENOMAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lPROAR">: المهنة </label>               <input id="PROAR"       type="txt" name="PROAR"       value="'.$data['PROAR'].'" placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label>           <input id="ADAR"        type="txt" name="ADAR"        value="'.$data['ADAR'].'" placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>        <input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"   placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label>            <input id="ADAR"       type="txt" name="ADAR"        value="'.$data['ADAR'].'"     placeholder="xxxxxxx"/>';
+	
 	echo '<input type="hidden" name="WILAYA"     value="'.Session::get('wilaya').'"/>';
 	echo '<input type="hidden" name="STRUCTURE"  value="'.Session::get('structure').'"/>';
-	echo '<input type="hidden" name="STRUCTURED" value="'.Session::get('structure').'"/>';
-	echo '<input type="hidden" name="login"      value="'.Session::get('login').'"/>';
-	echo '<input id="submitnew" type="submit" />	'; 
+	echo '<input type="hidden" name="UDS"        value="'.Session::get('uds').'"/>';
+	echo '<input type="hidden" name="LOGIN"      value="'.Session::get('login').'"/>';
+	
+	echo '<input id="submitnew" type="submit" />';  
 	echo '</div>';
+	
+	echo '<div id="content_2" class="contenttabs2">';echo '</div>';
+	echo '<div id="content_3" class="contenttabs3">';echo '</div>';
+	echo '<div id="content_4" class="contenttabs4"> ';echo '</div>';
 	}
 	
     function ROLE($id) 
@@ -878,6 +816,46 @@ class HTML  {
 	echo"<option value=\"".$value."\" selected=\"selected\">".$selected."</option>"."\n";
 	echo '</select>'."\n";
 	}
+	
+	function uds($name,$id,$class,$value,$selected) 
+	{	 
+	echo "<select id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\">"."\n";
+	echo"<option value=\"".$value."\" selected=\"selected\">".$selected."</option>"."\n";
+	echo '</select>'."\n";
+	}
+	
+	
+	function ECOLE($name,$id,$class,$tb_name,$value,$selected,$iduds) 
+	{
+	$this->mysqlconnect();
+	echo "<select  id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"   >"."\n";
+	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
+	mysql_query("SET NAMES 'UTF8' ");
+	$result = mysql_query("SELECT * FROM $tb_name where iduds=$iduds order by ecole" );
+	while($data =  mysql_fetch_array($result))
+	{
+	echo '<option value="'.$data[0].'">'.$data[4].'</option>';
+	}
+	echo '</select>'."\n"; 
+	}
+	
+	function PALIER($name,$id,$class,$tb_name,$value,$selected) 
+	{
+	$this->mysqlconnect();
+	echo "<select  id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"   >"."\n";
+	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
+	mysql_query("SET NAMES 'UTF8' ");
+	$result = mysql_query("SELECT * FROM $tb_name order by palier" );
+	while($data =  mysql_fetch_array($result))
+	{
+	echo '<option value="'.$data[1].'">'.$data[2].'</option>';
+	}
+	echo '</select>'."\n"; 
+	}
+	
+	
+	
+	
     function Profession($x,$y,$name,$idprofession,$tb_name,$structure,$value,$selected) 
 	{
 	$this->mysqlconnect();

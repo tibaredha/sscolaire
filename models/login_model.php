@@ -27,6 +27,7 @@ class Login_Model extends Model
 			// Session::init();
 			Session::set('wilaya',$data['wilaya']);
 			Session::set('structure',$data['structure']);
+			Session::set('uds',$data['uds']);
 			Session::set('login',$data['login']);
 			Session::set('role', $data['role']);
 			Session::set('id', $data['id']);

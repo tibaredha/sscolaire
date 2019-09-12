@@ -119,7 +119,7 @@ hr{height: 5px;width: 50%;background-color: red;}
 
 
 .deces{position:absolute;background-color: var(--label1);border: 3px solid #73AD21;border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;display: inline;}
-.WILAYAD,.COMMUNED,#DINS,#HINS,#NOM,#PRENOM,#FILSDE,#ETDE,#SEXE,#DUREE1,#DUREE2,#DUREE3,#DUREE4,#DUREE5,#DATENS,.WILAYAN,.COMMUNEN,.WILAYAR,.COMMUNER,#ADRESSE{position:absolute; border: 3px solid #73AD21;background-color: var(--edit1);border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;display: inline;}
+.WILAYAD,.COMMUNED,#DINS,#HINS,#NOM,#PRENOM,#FILSDE,#ETDE,#SEXE,#DUREE1,#DUREE2,#DUREE3,#DUREE4,#DUREE5,#DATENS,.ECOLE,.PALIER,.WILAYAN,.COMMUNEN,.WILAYAR,.COMMUNER,#ADRESSE{position:absolute; border: 3px solid #73AD21;background-color: var(--edit1);border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;display: inline;}
 
 #lWILAYAD{top:315px;left:50px;  background-color: var(--label0);width: 170px;}.WILAYAD{top:315px;left:180px;width: 180px;}
 #lCOMMUNED{top:315px;left:380px; background-color: var(--label0);width: 170px;}.COMMUNED{top:315px;left:500px;width: 180px;}
@@ -138,7 +138,12 @@ hr{height: 5px;width: 50%;background-color: red;}
 #lCOMMUNER{top:435px;left:380px;width: 170px;}.COMMUNER{top:435px;left:500px;width: 180px;}
 #lADRESSE{top:435px;left:710px;width: 190px;}#ADRESSE{top:435px;left:835px;width: 180px;}
 /**/
-#lLD7{top:475px;left:50px;background-color: var(--label2);width: 965px;}
+#lLD7{top:475px;left:50px;background-color: var(--label2);width: 170px;}.ECOLE{top:475px;left:175px;width: 180px;}
+#lLD7a{top:475px;left:380px;background-color: var(--label2);width: 170px;}.PALIER{top:475px;left:500px;width: 180px;}
+
+
+
+
 #lLD8{top:515px;left:50px;background-color: var(--label2);width: 925px;}#LD8{ position:absolute; top:515px;left:910px; border: 3px solid #73AD21;background-color: var(--edit2);border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
 #lLD9{top:555px;left:50px;background-color: var(--label2);width: 925px;}#LD9{ position:absolute; top:555px;left:910px; border: 3px solid #73AD21;background-color: var(--edit2);border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
 #lLD10{top:595px;left:50px;background-color:var(--label2);width: 925px;}#LD10{ position:absolute; top:595px;left:910px; border: 3px solid #73AD21;background-color: var(--edit2);border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
@@ -205,7 +210,7 @@ hr{height: 5px;width: 50%;background-color: red;}
 #lETDEAR{top:435px;left:1265px;background-color: #E0FFFF;text-align: right;width: 170px;}#ETDEAR{ position:absolute; top:435px;left:1150px; border: 3px solid #73AD21;background-color: yellow;border-radius: 15px;margin-top: 0px;text-align: right;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
 #lNOMPRENOMAR{top:475px;left:1265px;background-color: #E0FFFF;text-align: right;width: 170px;}#NOMPRENOMAR{ position:absolute; top:475px;left:1150px; border: 3px solid #73AD21;background-color: yellow;border-radius: 15px;margin-top: 0px;text-align: right;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
 #lPROAR{top:515px;left:1265px;background-color: #E0FFFF;text-align: right;width: 170px;}#PROAR{ position:absolute; top:515px;left:1150px; border: 3px solid #73AD21;background-color: yellow;border-radius: 15px;margin-top: 0px;text-align: right;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
-#lADAR{top:515px;left:1265px;background-color: #E0FFFF;text-align: right;width: 170px;}#ADAR{ position:absolute; top:515px;left:1150px; border: 3px solid #73AD21;background-color: yellow;border-radius: 15px;margin-top: 0px;text-align: right;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
+#lADAR{top:475px;left:1265px;background-color: #E0FFFF;text-align: right;width: 170px;}#ADAR{ position:absolute; top:475px;left:1150px; border: 3px solid #73AD21;background-color: yellow;border-radius: 15px;margin-top: 0px;text-align: right;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;width: 170px;display: inline;}
 /*******/
 
 
