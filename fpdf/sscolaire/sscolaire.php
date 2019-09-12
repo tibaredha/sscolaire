@@ -3,7 +3,14 @@ require('../fpdi.php');
 
 class sscolaire extends FPDI
 { 
-     
+     function INSCRITS($NIVEAUS,$datejour1,$datejour2,$colonex,$valeurx,$UDS){
+	 $this->mysqlconnect();
+	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
+	 
 	 function DEPISTAGE($NIVEAUS,$datejour1,$datejour2,$colonex,$valeurx,$UDS){
 	 $this->mysqlconnect();
 	 $sql = " select * from examensbd where (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx and UDS=$UDS )  and (NIVEAUS = $NIVEAUS) ";
@@ -21,7 +28,7 @@ class sscolaire extends FPDI
 	 }
 	 
 	function lDEPISTAGE($NIVEAUS,$datejour1,$datejour2,$UDS){
-	$INSCRITS=556;
+	$INSCRITS=$this->INSCRITS($NIVEAUS,$datejour1,$datejour2,'','',$UDS);
 	if($INSCRITS>0){$INSCRITS1=$INSCRITS;}else{$INSCRITS1=0.001;}
 	$EXAMINES=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'id',NULL,'1');$PEXAMINES=round(($EXAMINES/$INSCRITS1)*100,2);
 	if($EXAMINES>0){$EXAMINES1=$EXAMINES;}else{$EXAMINES1=0.001;}
@@ -174,7 +181,7 @@ class sscolaire extends FPDI
 	
 	 public $nomprenom ="tibaredha";
 	 public $db_host="localhost";
-	 public $db_name="framework"; 
+	 public $db_name="sscolaire"; 
      public $db_user="root";
      public $db_pass="";
 	 public $utf8 = "" ;

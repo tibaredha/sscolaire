@@ -72,7 +72,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">EMG</th>';
-			echo'<th class="crtl"><a target="_blank" title="Certificat de décès normal verso "  href="'.URL.'fpdf/deces/deceshospv.php?com='.$commune2.'&wil='.$wilayad2.'" >CD</a></th>';
+			echo'<th class="crtl">VACCIN</th>';
 			echo'<th class="crtl">DD</th>';
 			echo'<th class="crtl">CDM</th>';
 			echo'<th class="crtl">ADM</th>';
@@ -98,7 +98,8 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			// echo '<td align="center"  >'.$value['PALIER'].'</td>';
 			
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen buco-dentaire"  href="'.URL.$ctrl.'/ebd/'.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/ebd/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
 			//echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Signalement graphique médecine légale"  href="'.URL.'tcpdf/deces/sgml.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/mlegaleicon.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
@@ -126,7 +127,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		else 
 		{
 		echo '<div class="contentl">';
-		//$this->clgraphe->multigraphe(30,340,'Décès par année et sexe  arreté au : ','deceshosp','DINS','SEX','M','F','='.Session::get('structure')) ;
+		$this->clgraphe->multigraphe(30,340,'les élèves scolarisés par année et sexe  arreté au : ','eleve','DINS','SEX','M','F','='.Session::get('uds')) ;
 		echo "</div>";
 		echo'<div class="content"><img id="image" src="'.URL.'public/images/dashbord.jpg" ></div>';
 		echo'<div class="contentr" id="suggesstion-box"><img id="image" src="'.URL.'public/images/'.logo.'"></div>';

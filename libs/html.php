@@ -737,8 +737,7 @@ class HTML  {
 	function tabs($data) 
 	{
 	echo '<div id="content_1" class="contenttabs1">  ';
-	// echo '<label class="deces" id="lWILAYAD">Wilaya Décès :</label>';         HTML::WILAYA('WILAYAD','WILAYAD','WILAYAD','wil',$data['WILAYAD1'],$data['WILAYAD2']) ;
-	// echo '<label class="deces" id="lCOMMUNED">Commune Décès :</label>';       HTML::COMMUNE('COMMUNED','COMMUNED','COMMUNED',$data['COMMUNED1'],$data['COMMUNED2']);
+	
 	echo '<label class="deces" id="lDINS"> Inscription : </label>';           echo '<input id="DINS"   type="txt"  name="DINS"   value="'.$data['DINS'].'" placeholder="00-00-0000" onblur="genererCodeP()"/>';
 													                          echo '<input id="HINS"   type="txt"  name="HINS"   value="'.$data['HINS'].'" placeholder="00:00"/>';
 	echo '<label class="deces" id="lNOM">Nom:</label>';                       echo '<input id="NOM"    type="txt"  name="NOM"    value="'.$data['NOM'].'" required placeholder="xxxxxxx" autofocus onkeyup="javascript:this.value=this.value.toUpperCase();" />';
@@ -752,9 +751,10 @@ class HTML  {
 	echo '<label class="deces" id="lWILAYAR">Wilaya Res :</label>';           HTML::WILAYA('WILAYAR','WILAYAR','WILAYAR','wil',$data['WILAYAR1'],$data['WILAYAR2']) ;
 	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';        HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
 	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';          echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	echo '<label class="deces" id="lNEC">N°Etat civile :</label>';                     echo '<input id="NEC" type="text" name="NEC" value="'.$data['NEC'].'"  />';
 	
-	echo '<label class="deces" id="lLD7">Établissement : </label>';           HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole','1','',Session::get('uds'));                    
-    echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier','0','');
+	echo '<label class="deces" id="lLD7">Établissement : </label>';           HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
+    echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
 	
 	
 	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';

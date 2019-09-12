@@ -33,6 +33,13 @@
 			"COMMUNER1"      => $commune1,
 			"COMMUNER2"      => $commune2,
 			"ADRESSE"        => '', 
+			
+			"ECOLE1"         => '1', 
+			"ECOLE2"         => 'ECOLE', 
+			"PALIER1"        => '1', 
+			"PALIER2"        => 'PALIER', 
+			"NEC"            => '', 
+			
 			"NOMAR"          => '',
 			"PRENOMAR"       => '',
 			"FILSDEAR"       => '',

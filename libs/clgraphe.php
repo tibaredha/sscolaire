@@ -25,7 +25,7 @@ class clgraphe  {
 	function valeurmultigraphe($TBL,$COLONE1,$DATEJOUR1,$DATEJOUR2,$COLONE2,$VALEUR2,$structure) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select $COLONE1,$COLONE2 from $TBL where STRUCTURED $structure	and	$COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2'  AND $COLONE2='$VALEUR2' ";
+	$sql = " select $COLONE1,$COLONE2 from $TBL where STRUCTURE $structure	and	$COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2'  AND $COLONE2='$VALEUR2' ";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -81,7 +81,7 @@ class clgraphe  {
 	function valeur($SRS,$TBL,$COLONE1,$COLONE2,$DATEJOUR1,$DATEJOUR2,$VALEUR2,$STR) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and  STRUCTURED $STR and DECEMAT $SRS ";
+	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and  STRUCTURE $STR  ";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -117,7 +117,7 @@ class clgraphe  {
 	function SEXEDECES($TBL,$COLONE1,$DATEJOUR1,$DATEJOUR2,$VALEUR,$STR) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and SEX='$VALEUR' and  STRUCTURED $STR  ";
+	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and SEX='$VALEUR' and  STRUCTURE $STR  ";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -146,7 +146,7 @@ class clgraphe  {
 	function AGEDECES($colone2,$colone3,$datejour1,$datejour2,$structure)
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from deceshosp where Years >=$colone2 and Years <=$colone3  and DINS >='$datejour1'and DINS <='$datejour2'  and STRUCTURED $structure";
+	$sql = " select * from eleve where Years >=$colone2 and Years <=$colone3  and DINS >='$datejour1'and DINS <='$datejour2'  and STRUCTURE $structure";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$resultat=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -159,15 +159,30 @@ class clgraphe  {
 	$chart = new VerticalBarChart();
 	$fichier = './CHART/demo/generated/demo1.png';
 	$dataSet = new XYDataSet();
-	$dataSet->addPoint(new Point("00-17", $this->AGEDECES(0,18,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("18-19", $this->AGEDECES(18,19,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("20-29", $this->AGEDECES(20,29,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("30-39", $this->AGEDECES(30,39,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("40-49", $this->AGEDECES(40,49,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("50-59", $this->AGEDECES(50,59,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("60-69", $this->AGEDECES(60,69,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("70-79", $this->AGEDECES(70,79,$datejour1.'-01-01',$datejour2,$structure)));
-	$dataSet->addPoint(new Point("80-99", $this->AGEDECES(80,100,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("4", $this->AGEDECES(4,4,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("5", $this->AGEDECES(5,5,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("6", $this->AGEDECES(6,6,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("7", $this->AGEDECES(7,7,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("8", $this->AGEDECES(8,8,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("9", $this->AGEDECES(99,9,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("10", $this->AGEDECES(10,10,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("11", $this->AGEDECES(11,11,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("12", $this->AGEDECES(12,12,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("13", $this->AGEDECES(13,13,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("14", $this->AGEDECES(14,14,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("15", $this->AGEDECES(15,15,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("16", $this->AGEDECES(16,16,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("17", $this->AGEDECES(17,17,$datejour1.'-01-01',$datejour2,$structure)));
+	$dataSet->addPoint(new Point("18", $this->AGEDECES(18,18,$datejour1.'-01-01',$datejour2,$structure)));
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	$chart->setDataSet($dataSet);
 	$DATE=date("d-m-Y");
 	$chart->setTitle($TITRE.$DATE);
@@ -178,7 +193,7 @@ class clgraphe  {
 	function CDECES($colone1,$colone2,$datejour1,$datejour2,$structure)
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from deceshosp where $colone1 ='$colone2' and DINS >='$datejour1'and DINS <='$datejour2'  and STRUCTURED $structure";
+	$sql = " select * from deceshosp where $colone1 ='$colone2' and DINS >='$datejour1'and DINS <='$datejour2'  and STRUCTURE $structure";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$resultat=mysql_num_rows($requete);
 	mysql_free_result($requete);

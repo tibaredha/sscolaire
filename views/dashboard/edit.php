@@ -1,6 +1,6 @@
-<div class="sheader1l"><p id="lnouveau"><?php echo "Gérer les certificats de décès";?></p></div><div class="sheader1r"><p id="lnouveau"><?php html::NAV();?></p></div>
+<div class="sheader1l"><p id="lnouveau"><?php echo "Gérer les élèves scolarisés";?></p></div><div class="sheader1r"><p id="lnouveau"><?php html::NAV();?></p></div>
 <div class="sheader2l">
-<P><?php echo "Modifier le certificat de décès de : ".$this->user[0]['NOM'];?> <?php echo $this->user[0]['PRENOM'];?><?php //echo $this->user[0]['id'];?></P>
+<P><?php echo "Modifier un élève scolarisé : ".$this->user[0]['NOM'];?> <?php echo $this->user[0]['PRENOM'];?><?php //echo $this->user[0]['id'];?></P>
 </div>
 <div class="sheader2r">
 <?php
@@ -50,6 +50,11 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			"COMMUNER1"      => $this->user[0]['COMMUNER'],                                                        //ok 
 			"COMMUNER2"      => HTML::nbrtostring('com','IDCOM',$this->user[0]['COMMUNER'],'COMMUNE'),             //ok 
 			"ADRESSE"        => $this->user[0]['ADRESSE'],                                                         //ok  
+			"ECOLE1"         => $this->user[0]['ECOLE'], 
+			"ECOLE2"         => HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole'), 
+			"PALIER1"        => $this->user[0]['PALIER'], 
+			"PALIER2"        => HTML::nbrtostring('palier','id',$this->user[0]['PALIER'],'nompalier'), 
+			"NEC"            => $this->user[0]['NEC'],
 			"NOMAR"          => $this->user[0]['NOMAR'],                                                           //ok
 			"PRENOMAR"       => $this->user[0]['PRENOMAR'],                                                        //ok
 			"FILSDEAR"       => $this->user[0]['FILSDEAR'],                                                        //ok

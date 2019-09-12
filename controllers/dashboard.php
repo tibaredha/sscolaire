@@ -102,6 +102,7 @@ class Dashboard extends Controller {
         $data['ECOLE']         = $_POST['ECOLE'];
         $data['PALIER']        = $_POST['PALIER'];
 		$data['LOGIN']         = $_POST['LOGIN'];
+		$data['NEC']           = $_POST['NEC'];
 		$data['NOMAR']         = $_POST['NOMAR'];
 		$data['PRENOMAR']      = $_POST['PRENOMAR'];
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
@@ -144,6 +145,7 @@ class Dashboard extends Controller {
 		$data['WILAYAR']       = $_POST['WILAYAR'];
 		$data['COMMUNER']      = $_POST['COMMUNER'];
 		$data['ADRESSE']       = $_POST['ADRESSE'];
+		$data['NEC']           = $_POST['NEC'];
 		$data['WILAYA']        = $_POST['WILAYA'];
 		$data['STRUCTURE']     = $_POST['STRUCTURE'];
 		$data['UDS']           = $_POST['UDS'];
@@ -224,7 +226,30 @@ class Dashboard extends Controller {
 	}
 	
 	// **********************************************************************************************************************************//
-
+	function emg($id) {
+	    $this->view->title = 'ebd';
+		$this->view->msg = 'ebd';
+		$this->view->user = $this->model->userSingleList($id);
+		$this->view->render($this->controleur.'/emg');
+	}
+	
+	public function createemg() 
+	{
+	$data['DATESBD']          = $_POST['DATESBD'];
+	for ($i = 0; $i <= 24; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
+	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
+	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
+    $data['IDELEVE']          = $_POST['IDELEVE'];
+    $data['STRUCTURE']        = $_POST['STRUCTURE'];
+	$data['UDS']              = $_POST['UDS'];
+	$data['ETABLIS']          = $_POST['ETABLIS'];
+	$data['NIVEAUS']          = $_POST['NIVEAUS'];
+	echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->createemg($data);
+    header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		 
+	}
+	
+	// **********************************************************************************************************************************//
 	function Evaluation() {
 	    $this->view->title = 'Evaluation';
 		$this->view->msg = 'Evaluation';

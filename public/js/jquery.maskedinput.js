@@ -230,7 +230,7 @@ jQuery(function($){
 
         $("#DATESBD").mask("99-99-9999",{placeholder:"00/00/0000"});
         $("#DATECSBD").mask("99-99-9999");
-
+        $("#NEC").mask("99999");
 		
 	});
 

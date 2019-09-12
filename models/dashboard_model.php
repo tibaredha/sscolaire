@@ -4,7 +4,7 @@ class Dashboard_Model extends Model {
 
     public $tbl="eleve";
     public $tblesbc="examensbd";
-	
+	public $tbleemg="examenemg";
 	public function __construct() {
 		parent::__construct();
 		// Session::init();
@@ -50,6 +50,7 @@ class Dashboard_Model extends Model {
             'WILAYAR'  => $data['WILAYAR'],
             'COMMUNER' => $data['COMMUNER'],
             'ADRESSE'  => $data['ADRESSE'],
+			'NEC'      => $data['NEC'],
 			'WILAYA'   => $data['WILAYA'],
 			'STRUCTURE'=> $data['STRUCTURE'],
             'UDS'      => $data['UDS'],
@@ -92,6 +93,7 @@ class Dashboard_Model extends Model {
             'WILAYAR'  => $data['WILAYAR'],
             'COMMUNER' => $data['COMMUNER'],
             'ADRESSE'  => $data['ADRESSE'],
+			'NEC'      => $data['NEC'],
 			'WILAYA'   => $data['WILAYA'],
 			'STRUCTURE'=> $data['STRUCTURE'],
             'UDS'      => $data['UDS'],
@@ -141,9 +143,8 @@ class Dashboard_Model extends Model {
 				'PA'        => $data['PA'],
 				'PO'        => $data['PO'],
 				'PCAO'      => $data['PCAO'],
-				
 				'OKRDV'     => $data['OKRDV'],
-				'DATECSBD'  =>$this->dateFR2US($data['DATECSBD']),
+				'DATECSBD'  =>$this->dateFR2US($data['DATECSBD'])
 				
 		
         ));
@@ -152,5 +153,65 @@ class Dashboard_Model extends Model {
 		 
 		return $last_id = $this->db->lastInsertId();
 	}
+	
+	//*****************************************************************************************************************//
+	public function createemg($data) {
+	
+	$this->db->insert($this->tbleemg, array(
+	            
+				'DATESBD'=> $this->dateFR2US($data['DATESBD']),
+				'm0'     => $data['m0'],
+				'm1'     => $data['m1'],
+				'm2'     => $data['m2'],
+				'm3'     => $data['m3'],
+				'm4'     => $data['m4'],
+				'm5'     => $data['m5'],
+				'm6'     => $data['m6'],
+				'm7'     => $data['m7'],
+				'm8'     => $data['m8'],
+				'm9'     => $data['m9'],
+				'm10'    => $data['m10'],
+				'm11'    => $data['m11'],
+				'm12'    => $data['m12'],
+				'm13'    => $data['m13'],
+				'm14'    => $data['m14'],
+				'm15'    => $data['m15'],
+				'm16'    => $data['m16'],
+				'm17'    => $data['m17'],
+				'm18'    => $data['m18'],
+				'm19'    => $data['m19'],
+				'm20'    => $data['m20'],
+				'm21'    => $data['m21'],
+				'm22'    => $data['m22'],
+				'm23'    => $data['m23'],
+				'm24'    => $data['m24'],
+				'OKRDV'     => $data['OKRDV'],
+				'DATECSBD'  =>$this->dateFR2US($data['DATECSBD']),
+				'IDELEVE'   => $data['IDELEVE'],
+				'STRUCTURE' => $data['STRUCTURE'],
+				'UDS'       => $data['UDS'],
+				'ETABLIS'   => $data['ETABLIS'],
+				'NIVEAUS'   => $data['NIVEAUS']
+        ));
+        
+		echo '<pre>';print_r ($data);echo '<pre>';
+		 
+		return $last_id = $this->db->lastInsertId();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 }

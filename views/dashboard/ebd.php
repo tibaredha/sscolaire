@@ -40,9 +40,9 @@
 		<div id="inner-grid">
 		
 			<div id="x">Date examen : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
-			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Hygiene NA</a> </div>			
-			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL ;?>">Gingivite</a> </div>
-			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL ;?>">Anomalie ODF</a> </div>
+			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD Non Acceptable</a> </div>			
+			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL ;?>"title="Gingivite ">Gingivite</a> </div>
+			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL ;?>"title="Anomalie ODF ">Anomalie ODF</a> </div>
 			
 			<div id="x2">Dents permanentes </div><div id="y2">Dents temporaires </div>
 			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i);} ?></div>
