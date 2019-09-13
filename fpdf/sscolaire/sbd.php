@@ -3,6 +3,13 @@ require('sscolaire.php');
 $pdf = new sscolaire('L', 'mm', 'A4');$pdf->AliasNbPages();
 $datejour1=$pdf->dateFR2US($_POST['Datedebut']);
 $datejour2=$pdf->dateFR2US($_POST['Datefin']);
+if ($datejour1>$datejour2 or  $datejour1==$datejour2 )
+{
+header("Location: ../scolaire/Evaluation/") ;
+}
+
+
+
 $UDS=$_POST['uds'];
 $structure=$_POST['structure'];
 $login=$_POST['login'];
