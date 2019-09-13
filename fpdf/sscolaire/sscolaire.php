@@ -3,7 +3,7 @@ require('../fpdi.php');
 
 class sscolaire extends FPDI
 { 
-     function INSCRITS($NIVEAUS,$datejour1,$datejour2,$colonex,$valeurx,$UDS){
+     function INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS){
 	 $this->mysqlconnect();
 	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
 	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
@@ -19,41 +19,61 @@ class sscolaire extends FPDI
 	 return $collecte;
 	 }
 	 
-	 function TDEPISTAGE($datejour1,$datejour2,$colonex,$valeurx,$UDS){
-	 $this->mysqlconnect();
-	 $sql = " select * from examensbd where (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx and UDS=$UDS )";
-	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
-	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
-	 return $collecte;
-	 }
-	 
 	function lDEPISTAGE($NIVEAUS,$datejour1,$datejour2,$UDS){
-	$INSCRITS=$this->INSCRITS($NIVEAUS,$datejour1,$datejour2,'','',$UDS);
+	//INSCRITS
+	$INSCRITS=$this->INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS);
 	if($INSCRITS>0){$INSCRITS1=$INSCRITS;}else{$INSCRITS1=0.001;}
+	//EXAMINES
 	$EXAMINES=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'id',NULL,'1');$PEXAMINES=round(($EXAMINES/$INSCRITS1)*100,2);
 	if($EXAMINES>0){$EXAMINES1=$EXAMINES;}else{$EXAMINES1=0.001;}
+	//HYGIENE
 	$HYGIENE=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'HYGIENE','=1',$UDS);$PHYGIENE=round(($HYGIENE/$EXAMINES1)*100,2);
-	//au moins une carie dentaire grand c +petit c 
+    //CARIE
     $CARIEG=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'C','>=1',$UDS);
-	$CARIEP=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'c','>=1',$UDS);
+	$CARIEP=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'PC','>=1',$UDS);
 	$CARIE=$CARIEG+$CARIEP;
 	$PCARIE=round(($CARIE/$EXAMINES1)*100,2);
-	
+	//GINGIVITE
 	$GINGIVITE=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'GINGIVITE','=1',$UDS);$PGINGIVITE=round(($GINGIVITE/$EXAMINES1)*100,2);
+	//AODF
 	$AODF=$this->DEPISTAGE($NIVEAUS,$datejour1,$datejour2,'AODF','=1',$UDS);$PAODF=round(($AODF/$EXAMINES1)*100,2);
-	if($NIVEAUS>0){$NIVEAUS1=$NIVEAUS." °AP";}else{$NIVEAUS1='Préscolaire ';}
-	$this->SetXY(5,$this->GetY()+10);  $this->cell(24,10,$NIVEAUS1,1,0,'L',0,0);$this->cell(16,10,$INSCRITS,1,0,'C',0,0);$this->cell(16,10,$EXAMINES,1,0,'C',0,0);   $this->cell(16,10,$PEXAMINES,1,0,'C',0,0);$this->cell(16,10,$HYGIENE,1,0,'C',0,0);$this->cell(16,10,$PHYGIENE,1,0,'C',0,0);$this->cell(16,10,$CARIE,1,0,'C',0,0);$this->cell(16,10,$PCARIE,1,0,'C',0,0);    $this->cell(16,10,$GINGIVITE,1,0,'C',0,0);$this->cell(16,10,$PGINGIVITE,1,0,'C',0,0);$this->cell(16,10,$AODF,1,0,'C',0,0);$this->cell(16,10,$PAODF,1,0,'C',0,0);
+	//LIGNE
+	$this->SetXY(5,$this->GetY()+10);  $this->cell(24,10,$this->nbrtostring('palier','id',$NIVEAUS,'nompalier'),1,0,'L',0,0);$this->cell(16,10,$INSCRITS,1,0,'C',0,0);$this->cell(16,10,$EXAMINES,1,0,'C',0,0);   $this->cell(16,10,$PEXAMINES,1,0,'C',0,0);$this->cell(16,10,$HYGIENE,1,0,'C',0,0);$this->cell(16,10,$PHYGIENE,1,0,'C',0,0);$this->cell(16,10,$CARIE,1,0,'C',0,0);$this->cell(16,10,$PCARIE,1,0,'C',0,0);    $this->cell(16,10,$GINGIVITE,1,0,'C',0,0);$this->cell(16,10,$PGINGIVITE,1,0,'C',0,0);$this->cell(16,10,$AODF,1,0,'C',0,0);$this->cell(16,10,$PAODF,1,0,'C',0,0);
 	}
 	
 	function lTDEPISTAGE($datejour1,$datejour2,$UDS){
-	$TINSCRITS=666;//pas tous eleve a revoire ????? 0+1+5
+	//INSCRITS
+	$TINSCRITS1=$this->INSCRITS('1',$datejour1,$datejour2,$UDS);;
+	$TINSCRITS2=$this->INSCRITS('2',$datejour1,$datejour2,$UDS);;
+	$TINSCRITS6=$this->INSCRITS('6',$datejour1,$datejour2,$UDS);;
+	$TINSCRITS=$TINSCRITS1+$TINSCRITS2+$TINSCRITS6;
 	if($TINSCRITS>0){$TINSCRITS1=$TINSCRITS;}else{$TINSCRITS1=0.001;}
-	$TEXAMINES=$this->TDEPISTAGE($datejour1,$datejour2,'id',NULL,'1');$PTEXAMINES=round(($TEXAMINES/$TINSCRITS1)*100,2);//TOTAL DEPISTE pas tous eleve a revoire ????? 0+1+5
-	if($TEXAMINES>0){$TEXAMINES1=$TEXAMINES;}else{$TEXAMINES1=0.001;}
-	$THYGIENE=$this->TDEPISTAGE($datejour1,$datejour2,'HYGIENE','=1',$UDS);$PTHYGIENE=round(($THYGIENE/$TEXAMINES1)*100,2);
-	$TCARIE=$this->TDEPISTAGE($datejour1,$datejour2,'C','>=1',$UDS);$PTCARIE=round(($TCARIE/$TEXAMINES1)*100,2);
-	$TGINGIVITE=$this->TDEPISTAGE($datejour1,$datejour2,'GINGIVITE','=1',$UDS);$PTGINGIVITE=round(($TGINGIVITE/$TEXAMINES1)*100,2);
-	$TAODF=$this->TDEPISTAGE($datejour1,$datejour2,'AODF','=1',$UDS);$PTAODF=round(($TAODF/$TEXAMINES1)*100,2);
+	//EXAMINES
+	$TEXAMINES1=$this->DEPISTAGE('1',$datejour1,$datejour2,'id',NULL,$UDS);
+	$TEXAMINES2=$this->DEPISTAGE('2',$datejour1,$datejour2,'id',NULL,$UDS);
+	$TEXAMINES6=$this->DEPISTAGE('6',$datejour1,$datejour2,'id',NULL,$UDS);
+	$TEXAMINES=$TEXAMINES1+$TEXAMINES2+$TEXAMINES6;$PTEXAMINES=round(($TEXAMINES/$TINSCRITS1)*100,2);
+	if($TEXAMINES>0){$TEXAMINESX=$TEXAMINES;}else{$TEXAMINESX=0.001;}
+	//THYGIENE
+	$THYGIENE1=$this->DEPISTAGE('1',$datejour1,$datejour2,'HYGIENE','=1',$UDS);
+	$THYGIENE2=$this->DEPISTAGE('2',$datejour1,$datejour2,'HYGIENE','=1',$UDS);
+	$THYGIENE6=$this->DEPISTAGE('6',$datejour1,$datejour2,'HYGIENE','=1',$UDS);
+	$THYGIENE=$THYGIENE1+$THYGIENE2+$THYGIENE6;$PTHYGIENE=round(($THYGIENE/$TEXAMINESX)*100,2);
+	//CARIE
+	$TCARIEG=$this->DEPISTAGE('1',$datejour1,$datejour2,'C','>=1',$UDS)+$this->DEPISTAGE('2',$datejour1,$datejour2,'C','>=1',$UDS)+$this->DEPISTAGE('6',$datejour1,$datejour2,'C','>=1',$UDS);
+	$TCARIEP=$this->DEPISTAGE('1',$datejour1,$datejour2,'PC','>=1',$UDS)+$this->DEPISTAGE('2',$datejour1,$datejour2,'PC','>=1',$UDS)+$this->DEPISTAGE('6',$datejour1,$datejour2,'PC','>=1',$UDS);
+	$TCARIE=$TCARIEG+$TCARIEP;$PTCARIE=round(($TCARIE/$TEXAMINESX)*100,2);
+	//GINGIVITE
+	$TGINGIVITE1=$this->DEPISTAGE('1',$datejour1,$datejour2,'GINGIVITE','=1',$UDS);
+	$TGINGIVITE2=$this->DEPISTAGE('2',$datejour1,$datejour2,'GINGIVITE','=1',$UDS);
+	$TGINGIVITE6=$this->DEPISTAGE('6',$datejour1,$datejour2,'GINGIVITE','=1',$UDS);
+	$TGINGIVITE=$TGINGIVITE1+$TGINGIVITE2+$TGINGIVITE6;$PTGINGIVITE=round(($TGINGIVITE/$TEXAMINESX)*100,2);
+	//AODF
+	$TAODF1=$this->DEPISTAGE('1',$datejour1,$datejour2,'AODF','=1',$UDS);
+	$TAODF2=$this->DEPISTAGE('2',$datejour1,$datejour2,'AODF','=1',$UDS);
+	$TAODF6=$this->DEPISTAGE('6',$datejour1,$datejour2,'AODF','=1',$UDS);
+	$TAODF=$TAODF1+$TAODF2+$TAODF6;$PTAODF=round(($TAODF/$TEXAMINESX)*100,2);
+	//LIGNE
 	$this->SetXY(5,$this->GetY()+10);  $this->cell(24,10,"Total",1,0,'L',1,0);  $this->cell(16,10,$TINSCRITS,1,0,'C',1,0); $this->cell(16,10,$TEXAMINES,1,0,'C',1,0);  $this->cell(16,10,$PTEXAMINES,1,0,'C',1,0);$this->cell(16,10,$THYGIENE,1,0,'C',1,0); $this->cell(16,10,$PTHYGIENE,1,0,'C',1,0);      $this->cell(16,10,$TCARIE,1,0,'C',1,0);   $this->cell(16,10,$PTCARIE,1,0,'C',1,0);    $this->cell(16,10,$TGINGIVITE,1,0,'C',1,0);   $this->cell(16,10,$PTGINGIVITE,1,0,'C',1,0);       $this->cell(16,10,$TAODF,1,0,'C',1,0);  $this->cell(16,10,$PTAODF,1,0,'C',1,0);
 	} 
 	 
@@ -74,27 +94,15 @@ class sscolaire extends FPDI
 	$VALEURPA=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'PA',$UDS);
 	$VALEURPO=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'PO',$UDS);
 	$VALEURPCAO=$this->DEPISTAGECAO($NIVEAUS,$datejour1,'2020-01-01','PCAO',$UDS);
-    $VALEURIPCAO=round(($VALEURPCAO/$b1)*100,2);
+    $VALEURIPCAO=round(($VALEURPCAO/$b1),2);
 	
 	$VALEURC=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'C',$UDS);
 	$VALEURA=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'A',$UDS);
 	$VALEURO=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'O',$UDS);
 	$VALEURCAO=$this->DEPISTAGECAO($NIVEAUS,$datejour1,$datejour2,'CAO',$UDS);
-	$VALEURICAO=round(($VALEURCAO/$b1)*100,2);
-	if($NIVEAUS>0){$NIVEAUS1=$NIVEAUS." °AP";}else{$NIVEAUS1='Préscolaire ';}
-	
+	$VALEURICAO=round(($VALEURCAO/$b1),2);
 	$this->SetXY(5,$this->GetY()+10);  
-	$this->cell(24,10,$NIVEAUS1,1,0,'L',0,0);      
-	$this->cell(17.5,10,$VALEURPC,1,0,'C',0,0);       
-	$this->cell(17.5,10,$VALEURPA,1,0,'C',0,0);   
-	$this->cell(17.5,10,$VALEURPO,1,0,'C',0,0);    
-	$this->cell(17.5,10,$VALEURPCAO,1,0,'C',0,0);     
-	$this->cell(17.5,10,$VALEURIPCAO,1,0,'C',0,0);      
-	$this->cell(17.5,10,$VALEURC,1,0,'C',0,0);   
-	$this->cell(17.5,10,$VALEURA,1,0,'C',0,0);    
-	$this->cell(17.5,10,$VALEURO,1,0,'C',0,0);   
-	$this->cell(17.5,10,$VALEURCAO,1,0,'C',0,0);       
-	$this->cell(17.5,10,$VALEURICAO,1,0,'C',0,0); 
+	$this->cell(24,10,$this->nbrtostring('palier','id',$NIVEAUS,'nompalier'),1,0,'L',0,0);$this->cell(17.5,10,$VALEURPC,1,0,'C',0,0);$this->cell(17.5,10,$VALEURPA,1,0,'C',0,0);$this->cell(17.5,10,$VALEURPO,1,0,'C',0,0);$this->cell(17.5,10,$VALEURPCAO,1,0,'C',0,0);$this->cell(17.5,10,$VALEURIPCAO,1,0,'C',0,0);$this->cell(17.5,10,$VALEURC,1,0,'C',0,0);$this->cell(17.5,10,$VALEURA,1,0,'C',0,0);$this->cell(17.5,10,$VALEURO,1,0,'C',0,0);$this->cell(17.5,10,$VALEURCAO,1,0,'C',0,0);$this->cell(17.5,10,$VALEURICAO,1,0,'C',0,0); 
     }
 	
 	
@@ -109,19 +117,22 @@ class sscolaire extends FPDI
 	
 	function LTDEPISTAGECAO($datejour1,$datejour2,$UDS)
 	{ 
-	$b=$this->TDEPISTAGE($datejour1,$datejour2,'id',NULL,$UDS);
+	$bx1=$this->DEPISTAGE('1',$datejour1,$datejour2,'id',NULL,$UDS);
+	$bx2=$this->DEPISTAGE('2',$datejour1,$datejour2,'id',NULL,$UDS);
+	$bx6=$this->DEPISTAGE('6',$datejour1,$datejour2,'id',NULL,$UDS);
+	$b=$bx1+$bx2+$bx6;
 	if($b>0){$b1=$b;}else{$b1=0.001;}
-	$VALEURTPC=$this->DEPISTAGETCAO($datejour1,$datejour2,'PC',$UDS);
-	$VALEURTPA=$this->DEPISTAGETCAO($datejour1,$datejour2,'PA',$UDS);
-	$VALEURTPO=$this->DEPISTAGETCAO($datejour1,$datejour2,'PO',$UDS);
-	$VALEURTPCAO=$this->DEPISTAGETCAO($datejour1,$datejour2,'PCAO',$UDS);
-	$VALEURITPCAO=round(($VALEURTPCAO/$b1)*100,2);
+	$VALEURTPC=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'PC',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'PC',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'PC',$UDS);
+	$VALEURTPA=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'PA',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'PA',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'PA',$UDS);
+	$VALEURTPO=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'PO',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'PO',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'PO',$UDS);
+	$VALEURTPCAO=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'PCAO',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'PCAO',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'PCAO',$UDS);
+	$VALEURITPCAO=round(($VALEURTPCAO/$b1),2);
 	
-	$VALEURTC=$this->DEPISTAGETCAO($datejour1,$datejour2,'C',$UDS);
-	$VALEURTA=$this->DEPISTAGETCAO($datejour1,$datejour2,'A',$UDS);
-	$VALEURTO=$this->DEPISTAGETCAO($datejour1,$datejour2,'O',$UDS);
-	$VALEURTCAO=$this->DEPISTAGETCAO($datejour1,$datejour2,'CAO',$UDS);
-	$VALEURITCAO=round(($VALEURTCAO/$b1)*100,2);
+	$VALEURTC=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'C',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'C',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'C',$UDS);
+	$VALEURTA=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'A',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'A',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'A',$UDS);
+	$VALEURTO=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'O',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'O',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'O',$UDS);
+	$VALEURTCAO=$this->DEPISTAGECAO('1',$datejour1,$datejour2,'CAO',$UDS)+$this->DEPISTAGECAO('2',$datejour1,$datejour2,'CAO',$UDS)+$this->DEPISTAGECAO('6',$datejour1,$datejour2,'CAO',$UDS);
+	$VALEURITCAO=round(($VALEURTCAO/$b1),2);
 	
 	$this->SetXY(5,$this->GetY()+10);  
 	$this->cell(24,10,"Total",1,0,'L',1,0);            
@@ -160,21 +171,21 @@ class sscolaire extends FPDI
 	}
 	
 	
-	function entete()
+	function entete($UDS,$structure,$Datedebut,$Datefin)
 	{  
 	$this->SetXY(5,$this->GetY()+15);$this->cell(160,5,"PROGRAMME NATIONAL DE SANTE BUCCODENTAIRE EN MILIEU SCOLAIRE",1,0,'C',0,0); $this->cell(40,10,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
 	$this->SetXY(5,$this->GetY()+5); $this->cell(160,5," PROGRAMME « STOP A LA CARIE » ",1,0,'C',0,0);
 
 	$this->SetXY(5,$this->GetY()+10);$this->cell(40,5,"DSP",1,0,'C',0,0);    $this->cell(40,5,"EPSP",1,0,'C',0,0);$this->cell(40,5,"UDS",1,0,'C',0,0);$this->cell(40,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(40,5,"TRIMESTRE",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+5); $this->cell(40,5,"DJELFA",1,0,'C',0,0); $this->cell(40,5,"",1,0,'C',0,0);    $this->cell(40,5,"",1,0,'C',0,0);   $this->cell(40,5,"",1,0,'C',0,0);              $this->cell(40,5,"",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(40,5,"DJELFA",1,0,'C',0,0); $this->cell(40,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',0,0);    $this->cell(40,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',0,0);   $this->cell(40,5,"20__- 20__",1,0,'C',0,0);              $this->cell(40,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',0,0);
     }
 	
 	
-	function foot()
+	function foot($login)
 	{  
 	$this->SetXY(5,$this->GetY()+15); $this->cell(67,10,"Coordinateur de la SBD à l'UDS",1,0,'C',0,0); $this->cell(66,10,"Coordinateur de la SBD à l'EPSP",1,0,'C',0,0);  $this->cell(66,10,"Coordinateur de la SBD à la DSP",1,0,'C',0,0);
 	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);     $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);       $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+10); $this->cell(67,15,"",1,0,'C',0,0);                               $this->cell(66,15,"",1,0,'C',0,0);                                 $this->cell(66,15,"",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(67,15,$login,1,0,'C',0,0);                               $this->cell(66,15,"",1,0,'C',0,0);                                 $this->cell(66,15,"",1,0,'C',0,0);
 	}
 	 
 	 

@@ -46,6 +46,11 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			   echo "<hr>";
 			echo '<input type="hidden" name="login"     value="'.Session::get('login').'"/>';   
 			echo '<input type="hidden" name="structure" value="'.Session::get('structure').'"/> ';     
+			echo '<input type="hidden" name="uds" value="'.Session::get('uds').'"/> ';     
+	
+			
+			
+			
 			echo "<p><input  id=\"submitr\" type=\"submit\" value=\"Calculer\" /></p>";
 	echo "</form>";
 	          echo "<hr>";

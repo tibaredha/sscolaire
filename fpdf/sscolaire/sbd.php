@@ -1,37 +1,38 @@
 <?php
 require('sscolaire.php');
 $pdf = new sscolaire('L', 'mm', 'A4');$pdf->AliasNbPages();
-$datejour1='2000-01-01';
-$datejour2='2020-01-01';
-$UDS='1';
-//1//
+$datejour1=$pdf->dateFR2US($_POST['Datedebut']);
+$datejour2=$pdf->dateFR2US($_POST['Datefin']);
+$UDS=$_POST['uds'];
+$structure=$_POST['structure'];
+$login=$_POST['login'];
+
+//1-DEPSTAGE//
 $pdf->AddPage('P','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->SetXY(5,10);             $pdf->cell(200,5,$pdf->mspfr,1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(200,5,$pdf->dspfr,1,0,'C',0,0);
-$pdf->entete();
+$pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"1",1,0,'C',1,0);                  $pdf->cell(176,5,"BILAN D'EVALUATION - DEPISTAGE",1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"1A",1,0,'C',1,0);                $pdf->cell(48,10,"Nombre d'élèves",1,0,'C',0,0);$pdf->cell(128,10,"Nombre d'élèves ayant",1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+10);  $pdf->cell(24,10,"Niveau scolaire",1,0,'C',0,0);  $pdf->cell(16,10,"Inscrits",1,0,'C',0,0);$pdf->cell(32,10,"Examinés",1,0,'C',0,0);                                  $pdf->cell(32,10,"Hygiène BD-NA",1,0,'C',0,0);                                 $pdf->cell(32,10,"Au moins une carie",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une gingivite",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une Anomalie ODF",1,0,'C',0,0);    
 $pdf->SetXY(5,$pdf->GetY()+10);  $pdf->cell(24,20,"",1,0,'C',0,0);                 $pdf->cell(16,10,"Nbre",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);  $pdf->cell(16,10,"%",1,0,'C',0,0);      $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0); $pdf->cell(16,10,"%",1,0,'C',0,0);       $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);
 $pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(16,10,"(A)",1,0,'C',0,0);     $pdf->cell(16,10,"(B)",1,0,'C',0,0); $pdf->cell(16,10,"(B/A)",1,0,'C',0,0);$pdf->cell(16,10,"(C)",1,0,'C',0,0);   $pdf->cell(16,10,"(C/B)",1,0,'C',0,0);  $pdf->cell(16,10,"X",1,0,'C',0,0);   $pdf->cell(16,10,"(X/B)",1,0,'C',0,0);$pdf->cell(16,10,"(D)",1,0,'C',0,0);  $pdf->cell(16,10,"(D/B)",1,0,'C',0,0);   $pdf->cell(16,10,"(E)",1,0,'C',0,0); $pdf->cell(16,10,"(E/B)",1,0,'C',0,0);
-$pdf->lDEPISTAGE('0',$datejour1,$datejour2,$UDS);
 $pdf->lDEPISTAGE('1',$datejour1,$datejour2,$UDS);
-$pdf->lDEPISTAGE('5',$datejour1,$datejour2,$UDS);
+$pdf->lDEPISTAGE('2',$datejour1,$datejour2,$UDS);
+$pdf->lDEPISTAGE('6',$datejour1,$datejour2,$UDS);
 $pdf->lTDEPISTAGE($datejour1,$datejour2,$UDS);
-//probleme palier non resolue soolution entre niveau =integer ou varchar ???????
 $pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(24,10,"1B",1,0,'C',1,0);                $pdf->cell(87.5,10,"Dents temporaires cao (petit)",1,0,'C',0,0);$pdf->cell(87.5,10,"Dents permanentes CAO (grand)",1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Niveau scolaire",1,0,'C',0,0);   $pdf->cell(17.5,10,"c",1,0,'C',0,0);       $pdf->cell(17.5,10,"a",1,0,'C',0,0);   $pdf->cell(17.5,10,"o",1,0,'C',0,0);    $pdf->cell(17.5,10,"cao",1,0,'C',0,0);   $pdf->cell(17.5,10,"Icao",1,0,'C',0,0);    $pdf->cell(17.5,10,"C",1,0,'C',0,0);   $pdf->cell(17.5,10,"A",1,0,'C',0,0);    $pdf->cell(17.5,10,"O",1,0,'C',0,0);   $pdf->cell(17.5,10,"CAO",1,0,'C',0,0);     $pdf->cell(17.5,10,"ICAO",1,0,'C',0,0); 
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,20,"",1,0,'C',0,0);                  $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);  $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); 
 $pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(17.5,10,"(F)",1,0,'C',0,0);     $pdf->cell(17.5,10,"(G)",1,0,'C',0,0); $pdf->cell(17.5,10,"(H)",1,0,'C',0,0);  $pdf->cell(17.5,10,"(I)",1,0,'C',0,0);   $pdf->cell(17.5,10,"(I/B)",1,0,'C',0,0);   $pdf->cell(17.5,10,"(J)",1,0,'C',0,0); $pdf->cell(17.5,10,"(K)",1,0,'C',0,0);  $pdf->cell(17.5,10,"(L)",1,0,'C',0,0); $pdf->cell(17.5,10,"(M)",1,0,'C',0,0);     $pdf->cell(17.5,10,"(M/B)",1,0,'C',0,0); 
-$pdf->LDEPISTAGECAO('0',$datejour1,$datejour2,$UDS);
 $pdf->LDEPISTAGECAO('1',$datejour1,$datejour2,$UDS);
-$pdf->LDEPISTAGECAO('5',$datejour1,$datejour2,$UDS);
+$pdf->LDEPISTAGECAO('2',$datejour1,$datejour2,$UDS);
+$pdf->LDEPISTAGECAO('6',$datejour1,$datejour2,$UDS);
 $pdf->LTDEPISTAGECAO($datejour1,$datejour2,$UDS);
+$pdf->foot($login);
 
-$pdf->foot();
-
-//2//
-$pdf->entete();
+//2-PRISE EN CHARGE//
+$pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"2",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - PRISE EN CHARGE",1,0,'C',0,0);
 $pdf->SetFont('Times','B',9);
 $pdf->SetXY(29,$pdf->GetY()+5); $pdf->cell(176,5,"NB : il est impératif d'assurer la prise en charge et le suivi des élèves d'année en année scolaire pour une cavité buccale saine",1,0,'C',0,0);
@@ -264,27 +265,27 @@ $pdf->cell(22,5,"",1,0,'C',0,0);
 $pdf->cell(22,5,"",1,0,'C',0,0);	  
 $pdf->cell(22,5,"",1,0,'C',0,0);	  
 $pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->foot();
+$pdf->foot($login);
 
 //3//
 $pdf->AddPage('P','A4');
-$pdf->entete();
+$pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"3",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - SUIVI SYSTEMATIQUE DE LA PRISE EN CHARGE",1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(24,10,"3A",1,0,'C',1,0);               $pdf->cell(176,10,"Traitement des dents cariées ",1,0,'C',0,0);
-$pdf->foot();
+$pdf->foot($login);
 
 
 //4//
 $pdf->AddPage('P','A4');
-$pdf->entete();
+$pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"4",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - EDUCATION POUR LA SANTE BUCCO-DENTAIRE",1,0,'C',0,0);
-$pdf->foot();
+$pdf->foot($login);
 
 
 //5//
 $pdf->AddPage('P','A4');
-$pdf->entete();
+$pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"5",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - CAMPAGNES D'EDUCATION SANITAIRE ET DE COMMUNICATION SOCIALE",1,0,'C',0,0);
-$pdf->foot();
+$pdf->foot($login);
 $pdf->Output("UDS".'----'.".PDF",'I');
 ?>
