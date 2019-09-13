@@ -76,12 +76,17 @@ class ecole extends Controller {
 	{
 		$data = array();
 		$data['wilaya']       = $_POST['wilaya'];
+		$data['COMMUNEECOLE'] = $_POST['COMMUNEECOLE'];
 		$data['structure']    = $_POST['structure'];
 		$data['uds']          = $_POST['uds'];
 		$data['ecole']        = $_POST['ecole'];
 		$data['ecolear']      = $_POST['ecolear'];
 	    $data['lat']          = $_POST['lat'];
 		$data['lg']           = $_POST['lg'];
+		$data['class']        = $_POST['class'];
+		$data['canti']        = $_POST['canti'];
+		$data['pdh2o']        = $_POST['pdh2o'];
+		$data['sanit']        = $_POST['sanit'];
 		//echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createecole($data);
 		header('location: '.URL.$this->controleur.'/searchecole/0/10?o=id&q='.$last_id);
@@ -98,6 +103,7 @@ class ecole extends Controller {
 	{
 		$data = array();
 		$data['wilaya']       = $_POST['wilaya'];
+		$data['COMMUNEECOLE'] = $_POST['COMMUNEECOLE'];
 		$data['structure']    = $_POST['structure'];
 		$data['uds']          = $_POST['uds'];
 		$data['ecole']        = $_POST['ecole'];
@@ -105,6 +111,11 @@ class ecole extends Controller {
 	    $data['lat']          = $_POST['lat'];
 		$data['lg']           = $_POST['lg'];
 		$data['id']           = $id;
+		$data['class']        = $_POST['class'];
+		$data['canti']        = $_POST['canti'];
+		$data['pdh2o']        = $_POST['pdh2o'];
+		$data['sanit']        = $_POST['sanit'];
+		
 		// echo '<pre>';print_r ($data);echo '<pre>';  
 		$this->model->editSave($data);
 		header('location: '.URL.$this->controleur.'/searchecole/0/10?o=id&q='.$id);

@@ -1,40 +1,4 @@
-<style>
-#inner-grid {
-  display: grid;padding: 8px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 45px 45px 45px 45px 45px 45px 45px;
-  grid-gap: 5px;
-}
-
-#wilayarg,#structurerg,#uds,#dd,#ee,#ff,#gg {background: yellow; text-align: center ; border-radius: 5px;width: 70%;height: 100%;}
-
-#udsfr {background: yellow; text-align: left;border-radius: 5px;width: 70%;height: 100%;}
-#udsar {background: yellow; text-align: right;border-radius: 5px;width: 70%;height: 100%;}
-#lat,#lg {background: yellow; text-align: center;border-radius: 5px;width: 70%;height: 100%;}
-
-
-#dd {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
-#dd:hover {background: red;color: #fff;}
-
-#ddx {background: #00cc00; text-align: center;border-radius: 5px;width: 50%;height: 100%; color: white;}
-#ddx:hover {background: red;color: #fff;}
-
-.per{background: #00cc00; text-align: right;border-radius: 5px;width: 10%;height: 60%; color: white;}
-
-
-#a {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 1 / 2;}
-#b {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 2 / 3;}
-#c {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 3 / 4;}
-#d {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 4 / 5;}
-#d1 {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 5 / 6;}
-
-
-#ax {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 6 / 7;}
-#bx {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 7 / 8;}
-
-#g {background: salmon;text-align: center;border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 9 / 10;}
-</style>
-
+<style></style>
 <div class="sheader1l"><p id="lregister"><?php echo "";echo $this->msg; echo "";?></p></div><div class="sheader1r"><p id="lregister"><?php html::NAV();?></p></div>
 <div class="sheader2l">Modifier une ecole
 <?php 
@@ -64,16 +28,16 @@ echo '<div class="contentl">';?>
   
 	<form method="post" action="<?php echo URL."ecole/create/";?>">
 	<div id="inner-grid">     
-	      
-		    <div id="a">Wilaya :    <?php HTML::WILAYA('wilaya','wilayarg','wilaya','wil','17000','DJELFA') ;?></div>
+	
+	
+	
+		    <div id="a">Wilaya :    <?php HTML::WILAYA('wilaya','wilayarg','wilaya','wil','17000','DJELFA') ;?></div><div id="abiz">commune :<?php echo HTML::COMMUNE('COMMUNEECOLE','IDCOMMUNEN','COMMUNENCLS','916','Djelfa');?></div>
 			<div id="b">Structure : <?php HTML::structure('structure','structurerg','structure','1','EPSP_DJALFA') ?></div>
 		    <div id="c">UDS :       <?php HTML::uds('uds','uds','uds','1','cem regab kouider') ?></div>
-		  
-			<div id="d">Ecole fr :  <input  type="text" id ="udsfr" name="ecole"  value="x"/>  </div>
-			<div id="d1">Ecole ar :  <input  type="text" id ="udsar" name="ecolear" value="x"/></div>
-			
-		    <div id="ax">lat :  <input  type="text" id ="lat" name="lat" value="0"/></div>
-			<div id="bx">lg :   <input  type="text" id ="lg" name="lg"  value="0"/></div>
+			<div id="d">Ecole fr :  <input  type="text" id ="udsfr" name="ecole"  value="x"/>  </div><div id="dz">Clases :       <input  type="text" id ="class" name="class"  value="0"/>  </div>
+			<div id="d1">Ecole ar : <input  type="text" id ="udsar" name="ecolear" value="x"/> </div><div id="d1z">Cantine :     <input  type="text" id ="canti" name="canti"  value="0"/></div>
+		    <div id="ax">lat :      <input  type="text" id ="lat" name="lat" value="0"/></div>       <div id="axz">Points H2O :  <input  type="text" id ="pdh2o" name="pdh2o"  value="0"/></div>
+			<div id="bx">lg :       <input  type="text" id ="lg" name="lg"  value="0"/></div>        <div id="bxz">Sanitaire :   <input  type="text" id ="sanit" name="sanit"  value="0"/></div>
 
 		    <div id="g"><input id="dd" onclick="playSound()"  type="submit"  name="submitx"    value="Ajouter ecole"/> </div>
 	</form>

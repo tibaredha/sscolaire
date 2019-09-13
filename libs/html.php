@@ -157,6 +157,17 @@ class HTML  {
 	mysql_free_result($requete);
 	return $OP;
 	}
+	function eleveinscrit($COMMUNER,$UDS) 
+	{
+	$this->mysqlconnect();
+	$sql = " select * from eleve where COMMUNER=$COMMUNER  and  UDS=$UDS  ";
+	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	$OP=mysql_num_rows($requete);
+	mysql_free_result($requete);
+	return $OP;
+	}
+	
+	
 	function commdeces($COMMUNER) 
 	{
 	$structure= Session::get("structure");
@@ -751,7 +762,11 @@ class HTML  {
 	echo '<label class="deces" id="lWILAYAR">Wilaya Res :</label>';           HTML::WILAYA('WILAYAR','WILAYAR','WILAYAR','wil',$data['WILAYAR1'],$data['WILAYAR2']) ;
 	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';        HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
 	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';          echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	
+	
 	echo '<label class="deces" id="lNEC">N°Etat civile :</label>';                     echo '<input id="NEC" type="text" name="NEC" value="'.$data['NEC'].'"  />';
+	echo '<label class="deces" id="lGABO">ABORH:</label>';                     $this->combov('GABO','GABO',$data['GABO']);
+	
 	
 	echo '<label class="deces" id="lLD7">Établissement : </label>';           HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
     echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);

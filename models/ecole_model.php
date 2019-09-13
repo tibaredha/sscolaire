@@ -23,10 +23,15 @@ class ecole_Model extends Model {
 		 $postData = array(
 			
 			'idwil'   => $data['wilaya'],
+			'idcom'   => $data['COMMUNEECOLE'],
 			'ids'     => $data['structure'],
 			'iduds'   => $data['uds'],
             'ecole'   => $data['ecole'],
 			'ecolear' => $data['ecolear'],
+			'class'   => $data['class'],
+			'canti'   => $data['canti'],
+			'pdh2o'   => $data['pdh2o'],
+			'sanit'   => $data['sanit'],
 			'lat'     => $data['lat'],
 			'lg'      => $data['lg']
         );
@@ -38,10 +43,15 @@ class ecole_Model extends Model {
 	
 		$this->db->insert('ecole', array(
 			'idwil'   => $data['wilaya'],
+			'idcom'   => $data['COMMUNEECOLE'],
 			'ids'     => $data['structure'],
 			'iduds'   => $data['uds'],
             'ecole'   => $data['ecole'],
 			'ecolear' => $data['ecolear'],
+			'class'   => $data['class'],
+			'canti'   => $data['canti'],
+			'pdh2o'   => $data['pdh2o'],
+			'sanit'   => $data['sanit'],
 			'lat'     => $data['lat'],
 			'lg'      => $data['lg']
         ));

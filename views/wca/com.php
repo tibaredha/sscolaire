@@ -51,9 +51,9 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 	echo'<th>RGPRH </th>';
 	echo'<th>2018 </th>';
 	echo'<th>Wilaya</th>';
-	echo'<th style="width:50px">Mort</th>';
+	echo'<th style="width:50px">INSC</th>';//ELEVE INSCRIT
 	echo'<th style="width:50px">pdf</th>';
-	echo'<th style="width:50px">Nata</th>';
+	echo'<th style="width:50px">EXAM</th>';//ELEVE EXAMINE
 	echo'<th style="width:50px">Update</th>';
 	echo'<th style="width:50px">Delete</th>';
 	echo'</tr>';	
@@ -67,9 +67,10 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 			echo '<td align="center" >'.$value['POPULATION'].'</td>'; 
 			echo '<td align="center" >'.$value['p2018'].'</td>'; 
 			echo '<td align="left" >'.View::nbrtostring('wil','IDWIL',$value['IDWIL'],'WILAYAS').'</td>'; 
-			echo '<td align="center" >'.html::commdeces($value['IDCOM']).'</td>'; 
+			echo '<td align="center" >'.html::eleveinscrit($value['IDCOM'],Session::get('uds')).'</td>'; 
 			echo '<td align="center" style="width:10px;" bgcolor="#32CD32" ><a target="_blank" title="pdf"  href="'.URL.'fpdf/deces/comdeces.php?uc='.$value['IDCOM'].'&str='.Session::get('structure').'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" >'.html::commnaissance($value['IDCOM']).'</td>'; 
+			echo '<td align="center" ></td>';
+			// echo '<td align="center" >'.html::commnaissance($value['IDCOM']).'</td>'; 
 			echo '<td align="center"  ><a target="_blank" title="editer"    href="'.URL.$ctrl.'/editcom/'.$value['IDCOM'].'" ><img src="'.URL.'public/images/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  ><a class="delete" title="supprimer"  href="'.URL.$ctrl.'/deletecom/'.$value['IDCOM'].'" ><img src="'.URL.'public/images/delete.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo'</tr>';	

@@ -2,7 +2,17 @@
 require('../fpdi.php');
 
 class sscolaire extends FPDI
-{ 
+{
+
+
+     function Rotatedcell($x1,$y1,$x,$y,$txt,$angle)
+	{
+		//Text rotated around its origin
+		$this->Rotate($angle,$x1,$y1);
+		$this->SetXY($x1,$y1);
+		$this->Cell($x,$y,$txt,1,1,1,'L');
+		$this->Rotate(0);
+	}
      function INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS){
 	 $this->mysqlconnect();
 	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
@@ -10,6 +20,16 @@ class sscolaire extends FPDI
 	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
 	 return $collecte;
 	 }
+	 function INSCRITSPE($NIVEAUS,$ECOLE,$datejour1,$datejour2,$UDS){
+	 $this->mysqlconnect();
+	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and ECOLE =$ECOLE and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
+	 
+	 
+	 
 	 
 	 function DEPISTAGE($NIVEAUS,$datejour1,$datejour2,$colonex,$valeurx,$UDS){
 	 $this->mysqlconnect();
@@ -173,7 +193,7 @@ class sscolaire extends FPDI
 	
 	function entete($UDS,$structure,$Datedebut,$Datefin)
 	{  
-	$this->SetXY(5,$this->GetY()+15);$this->cell(160,5,"PROGRAMME NATIONAL DE SANTE BUCCODENTAIRE EN MILIEU SCOLAIRE",1,0,'C',0,0); $this->cell(40,10,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+15);$this->cell(160,5,"PROGRAMME NATIONAL DE SANTE BUCCO-DENTAIRE EN MILIEU SCOLAIRE",1,0,'C',0,0); $this->cell(40,10,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
 	$this->SetXY(5,$this->GetY()+5); $this->cell(160,5," PROGRAMME « STOP A LA CARIE » ",1,0,'C',0,0);
 
 	$this->SetXY(5,$this->GetY()+10);$this->cell(40,5,"DSP",1,0,'C',0,0);    $this->cell(40,5,"EPSP",1,0,'C',0,0);$this->cell(40,5,"UDS",1,0,'C',0,0);$this->cell(40,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(40,5,"TRIMESTRE",1,0,'C',0,0);

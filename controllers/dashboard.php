@@ -96,6 +96,7 @@ class Dashboard extends Controller {
 		$data['WILAYAR']       = $_POST['WILAYAR'];
 		$data['COMMUNER']      = $_POST['COMMUNER'];
 		$data['ADRESSE']       = $_POST['ADRESSE'];
+		$data['GABO']          = $_POST['GABO'];
 		$data['WILAYA']        = $_POST['WILAYA'];
 		$data['STRUCTURE']     = $_POST['STRUCTURE'];
 		$data['UDS']           = $_POST['UDS'];
@@ -145,6 +146,7 @@ class Dashboard extends Controller {
 		$data['WILAYAR']       = $_POST['WILAYAR'];
 		$data['COMMUNER']      = $_POST['COMMUNER'];
 		$data['ADRESSE']       = $_POST['ADRESSE'];
+		$data['GABO']          = $_POST['GABO'];
 		$data['NEC']           = $_POST['NEC'];
 		$data['WILAYA']        = $_POST['WILAYA'];
 		$data['STRUCTURE']     = $_POST['STRUCTURE'];

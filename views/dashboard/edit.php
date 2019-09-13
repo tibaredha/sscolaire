@@ -50,6 +50,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			"COMMUNER1"      => $this->user[0]['COMMUNER'],                                                        //ok 
 			"COMMUNER2"      => HTML::nbrtostring('com','IDCOM',$this->user[0]['COMMUNER'],'COMMUNE'),             //ok 
 			"ADRESSE"        => $this->user[0]['ADRESSE'],                                                         //ok  
+			"GABO"           => array($this->user[0]['GABO']=>$this->user[0]['GABO'],"AP"=>"AP","AN"=>"AN","BP"=>"BP","BN"=>"BN","ABP"=>"ABP","ABN"=>"ABN","OP"=>"OP","ON"=>"ON"),
 			"ECOLE1"         => $this->user[0]['ECOLE'], 
 			"ECOLE2"         => HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole'), 
 			"PALIER1"        => $this->user[0]['PALIER'], 
