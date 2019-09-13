@@ -12,12 +12,12 @@
 	echo '<div id="content_1" class="contenttabs1">';
 		echo '<Ol>';
 			
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/Décret exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf">D_exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf</a>';echo '&nbsp;';echo '</li>';
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/cim10.pdf">CIM10.pdf</a>';echo '&nbsp;';echo '</li>';
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/Instruction_declaration_obligatoire _deces_maternel.pdf">Arrete N° 89 du 04/07/2013 déclaration_obligatoire _décès_maternel.</a>';echo '&nbsp;';echo '</li>';
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/dm.pdf">Instruction N° 12 du 01/06/2014  L\'AUDIT Décès maternels.</a>';echo '&nbsp;';echo '</li>';	
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/decesfrx.pdf">D_E n° 16-80 du 24/02/2016 fixant le modèle du certificat de décés -p(12).</a>';echo '&nbsp;';echo '</li>';
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/decesar.pdf">decesar</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Décret exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf">D_exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/cim10.pdf">CIM10.pdf</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/bilansantescolaire2003.pdf">bilansantescolaire2003.</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Bucco_dentaire.pdf">Bucco_dentaire.</a>';echo '&nbsp;';echo '</li>';	
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Etat de Santé Bucco.pdf">Etat de Santé Bucco.</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Organisation&fonctionnement-de-la_sante_universitaire.pdf">Organisation&fonctionnement-de-la_sante_universitaire</a>';echo '&nbsp;';echo '</li>';
 			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/inhumation.pdf">D_E n° 16-77 du 24/02/2016 relatif à l\'Inhumation.-p(4)</a>';echo '&nbsp;';echo '</li>';
 		    // echo '<li>';echo '<a href="'.URL.'fpdf/doc/491.PDF">Circulaire inter-ministerielle du 15/04/2017 relatif à la mise en application </a>';echo '&nbsp;';echo '</li>';
 		
