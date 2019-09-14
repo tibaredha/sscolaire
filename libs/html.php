@@ -35,7 +35,8 @@ class HTML  {
 	
 	function caol($lcao,$name)
 	{
-	echo '<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo '<label class ="'.$lcao.'" ><img src="'.URL.'public/images/ss/incisor.png" width="10" height="30" border="0" alt=""/></label>&nbsp;';//<a href="'.URL.'d/'.$name.'" title="'.$name.'">'.$name.'</a>
+	
 	}
 	
 	
