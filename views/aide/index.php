@@ -14,12 +14,12 @@
 			
 			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Décret exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf">D_exécutif N°07-140 du 19-05-2007 portant création des EPH et des EPSP.pdf</a>';echo '&nbsp;';echo '</li>';
 			echo '<li>';echo '<a href="'.URL.'fpdf/doc/cim10.pdf">CIM10.pdf</a>';echo '&nbsp;';echo '</li>';
-			echo '<li>';echo '<a href="'.URL.'fpdf/doc/bilansantescolaire2003.pdf">bilansantescolaire2003.</a>';echo '&nbsp;';echo '</li>';
-			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Bucco_dentaire.pdf">Bucco_dentaire.</a>';echo '&nbsp;';echo '</li>';	
-			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Etat de Santé Bucco.pdf">Etat de Santé Bucco.</a>';echo '&nbsp;';echo '</li>';
-			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Organisation&fonctionnement-de-la_sante_universitaire.pdf">Organisation&fonctionnement-de-la_sante_universitaire</a>';echo '&nbsp;';echo '</li>';
-			// echo '<li>';echo '<a href="'.URL.'fpdf/doc/inhumation.pdf">D_E n° 16-77 du 24/02/2016 relatif à l\'Inhumation.-p(4)</a>';echo '&nbsp;';echo '</li>';
-		    // echo '<li>';echo '<a href="'.URL.'fpdf/doc/491.PDF">Circulaire inter-ministerielle du 15/04/2017 relatif à la mise en application </a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/bilansantescolaire2003.pdf">Bilan santes colaire 2003.</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Bucco_dentaire.pdf">Evaluation sante Bucco_dentaire modele  .</a>';echo '&nbsp;';echo '</li>';	
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Etat de Santé Bucco.pdf">Etat de Santé Bucco-dentaire de l\'enfant 6-12-15 ans.</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Program_2016.pdf">Program_sante scolaire 2016.pdf</a>';echo '&nbsp;';echo '</li>';
+		    echo '<li>';echo '<a href="'.URL.'fpdf/doc/Organisation&fonctionnement-de-la_sante_universitaire.pdf">Organisation&fonctionnement-de-la_sante_universitaire</a>';echo '&nbsp;';echo '</li>';
+			echo '<li>';echo '<a href="'.URL.'fpdf/doc/plan_fr_mnt.pdf">plan_fr_mnt.pdf </a>';echo '&nbsp;';echo '</li>';
 		
 		
 		echo '</Ol>';

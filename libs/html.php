@@ -748,41 +748,33 @@ class HTML  {
 	function tabs($data) 
 	{
 	echo '<div id="content_1" class="contenttabs1">  ';
-	
-	echo '<label class="deces" id="lDINS"> Inscription : </label>';           echo '<input id="DINS"   type="txt"  name="DINS"   value="'.$data['DINS'].'" placeholder="00-00-0000" onblur="genererCodeP()"/>';
-													                          echo '<input id="HINS"   type="txt"  name="HINS"   value="'.$data['HINS'].'" placeholder="00:00"/>';
-	echo '<label class="deces" id="lNOM">Nom:</label>';                       echo '<input id="NOM"    type="txt"  name="NOM"    value="'.$data['NOM'].'" required placeholder="xxxxxxx" autofocus onkeyup="javascript:this.value=this.value.toUpperCase();" />';
-	echo '<label class="deces" id="lPRENOM">Prénom:</label> ';                echo '<input id="PRENOM" type="txt"  name="PRENOM" value="'.$data['PRENOM'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	echo '<label class="deces" id="lFILSDE">Père:</label>';                   echo '<input id="FILSDE" type="txt"  name="FILSDE" value="'.$data['FILSDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	echo '<label class="deces" id="lETDE">Mère:</label>';                     echo '<input id="ETDE"   type="txt"  name="ETDE"   value="'.$data['ETDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	echo '<label class="deces" id="lSEXE">Sexe:</label>';                     $this->combov('SEXE','SEXE',$data['SEXE']);
-	echo '<label class="deces" id="lDATENS">Né(e)le : </label>';              echo '<input id="DATENS" type="txt"  name="DATENS" value="'.$data['DATENS'].'" placeholder="00-00-0000" onblur="genererCodeP()" />';
-	echo '<label class="deces" id="lWILAYAN">Wilaya Nais :</label>';          HTML::WILAYA('WILAYAN','WILAYAN','WILAYAN','wil',$data['WILAYAN1'],$data['WILAYAN2']) ;
-	echo '<label class="deces" id="lCOMMUNEN">Commune Nais :</label>';        HTML::COMMUNE('COMMUNEN','COMMUNEN','COMMUNEN',$data['COMMUNEN1'],$data['COMMUNEN2']);
-	echo '<label class="deces" id="lWILAYAR">Wilaya Res :</label>';           HTML::WILAYA('WILAYAR','WILAYAR','WILAYAR','wil',$data['WILAYAR1'],$data['WILAYAR2']) ;
-	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';        HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
-	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';          echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	
-	
-	echo '<label class="deces" id="lNEC">N°Etat civile :</label>';                     echo '<input id="NEC" type="text" name="NEC" value="'.$data['NEC'].'"  />';
-	echo '<label class="deces" id="lGABO">ABORH:</label>';                     $this->combov('GABO','GABO',$data['GABO']);
-	
-	
-	echo '<label class="deces" id="lLD7">Établissement : </label>';           HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
-    echo '<label class="deces" id="lLD7a">Palier : </label>';                 HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
-	
-	
-	echo '<label class="deces" id="lNOMAR">: اللقب </label>                <input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>               <input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'"  placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>            <input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'"  placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>        <input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
-	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label>           <input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
-	
+	echo '<label class="deces" id="lNEC">N°Etat civile :</label>';             echo '<input id="NEC" type="text" name="NEC" value="'.$data['NEC'].'"  required autofocus />';
+	echo '<label class="deces" id="lGABO">ABORH :</label>';                    $this->combov('GABO','GABO',$data['GABO']);
+	echo '<label class="deces" id="lDINS"> Inscription : </label>';            echo '<input id="DINS"   type="txt"  name="DINS"   value="'.$data['DINS'].'"   required placeholder="00-00-0000" onblur="genererCodeP()"/>';
+													                           echo '<input id="HINS"   type="txt"  name="HINS"   value="'.$data['HINS'].'"   required placeholder="00:00"/>';
+	echo '<label class="deces" id="lNOM">Nom :</label>';                       echo '<input id="NOM"    type="txt"  name="NOM"    value="'.$data['NOM'].'"    required placeholder="xxxxxxx"  onkeyup="javascript:this.value=this.value.toUpperCase();" />';
+	echo '<label class="deces" id="lPRENOM">Prénom :</label> ';                echo '<input id="PRENOM" type="txt"  name="PRENOM" value="'.$data['PRENOM'].'" required placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	echo '<label class="deces" id="lFILSDE">Père :</label>';                   echo '<input id="FILSDE" type="txt"  name="FILSDE" value="'.$data['FILSDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	echo '<label class="deces" id="lETDE">Mère :</label>';                     echo '<input id="ETDE"   type="txt"  name="ETDE"   value="'.$data['ETDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	echo '<label class="deces" id="lSEXE">Sexe :</label>';                     $this->combov('SEXE','SEXE',$data['SEXE']);
+	echo '<label class="deces" id="lDATENS">Né(e)le : </label>';               echo '<input id="DATENS" type="txt"  name="DATENS" value="'.$data['DATENS'].'" placeholder="00-00-0000" onblur="genererCodeP()" />';
+	echo '<label class="deces" id="lWILAYAN">Wilaya Nais :</label>';           HTML::WILAYA('WILAYAN','WILAYAN','WILAYAN','wil',$data['WILAYAN1'],$data['WILAYAN2']) ;
+	echo '<label class="deces" id="lCOMMUNEN">Commune Nais :</label>';         HTML::COMMUNE('COMMUNEN','COMMUNEN','COMMUNEN',$data['COMMUNEN1'],$data['COMMUNEN2']);
+	echo '<label class="deces" id="lWILAYAR">Wilaya Res :</label>';            HTML::WILAYA('WILAYAR','WILAYAR','WILAYAR','wil',$data['WILAYAR1'],$data['WILAYAR2']) ;
+	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';         HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
+	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';           echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
+	echo '<label class="deces" id="lLD7">Établissement : </label>';            HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
+    echo '<label class="deces" id="lLD7a">Palier : </label>';                  HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
+	echo '<label class="deces" id="show_codeP">Code_élève :</label>';          echo'<input id="code_patient"  type="text" name="code_patient" value="'.$data['code_patient'].'" readonly  >';
+	echo '<label class="deces" id="lNOMAR">: اللقب </label>';                  echo'<input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>';                 echo'<input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'"  placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>';              echo'<input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'"  placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>';          echo'<input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
+	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label> ';            echo'<input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
 	echo '<input type="hidden" name="WILAYA"     value="'.Session::get('wilaya').'"/>';
 	echo '<input type="hidden" name="STRUCTURE"  value="'.Session::get('structure').'"/>';
 	echo '<input type="hidden" name="UDS"        value="'.Session::get('uds').'"/>';
 	echo '<input type="hidden" name="LOGIN"      value="'.Session::get('login').'"/>';
-	
 	echo '<input id="submitnew" type="submit" />';  
 	echo '</div>';
 	
@@ -849,7 +841,7 @@ class HTML  {
 	$result = mysql_query("SELECT * FROM $tb_name where iduds=$iduds order by ecole" );
 	while($data =  mysql_fetch_array($result))
 	{
-	echo '<option value="'.$data[0].'">'.$data[4].'</option>';
+	echo '<option value="'.$data[0].'">'.$data[5].'</option>';
 	}
 	echo '</select>'."\n"; 
 	}

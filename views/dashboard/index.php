@@ -73,10 +73,10 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">EMG</th>';
 			echo'<th class="crtl">VACCIN</th>';
-			echo'<th class="crtl">DD</th>';
-			echo'<th class="crtl">CDM</th>';
-			echo'<th class="crtl">ADM</th>';
-			echo'<th class="crtl">CDP</th>';
+			echo'<th class="crtl">DMS</th>';
+			// echo'<th class="crtl">CDM</th>';
+			// echo'<th class="crtl">ADM</th>';
+			// echo'<th class="crtl">CDP</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'</tr>';
@@ -99,11 +99,11 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen buco-dentaire"  href="'.URL.$ctrl.'/ebd/'.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
-			//echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Signalement graphique médecine légale"  href="'.URL.'tcpdf/deces/sgml.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/mlegaleicon.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			// echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Signalement graphique médecine légale"  href="'.URL.'tcpdf/deces/sgml.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/mlegaleicon.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
-            //echo '<td align="center" style="width:10px;" bgcolor="#32CD32" ><a target="_blank" title="Certificat de décès normal recto"  href="'.URL.'fpdf/deces/deceshosp.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+            echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/deces/dms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
             //echo '<td align="center" style="width:10px;" bgcolor="#32CD32" ><a target="_blank" title="Déclaration de décès arabe" href="'.URL.'tcpdf/deces/declaration.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			//if ($value['DECEMAT']=='1'  and  $value['Years'] >= '20') {echo '<td align="center" style="width:10px;" bgcolor="#32CD32" ><a target="_blank" title="Certificat de décès maternel"  href="'.URL.'fpdf/deces/certdecesmat.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';echo '<td align="center" style="width:10px;" bgcolor="#32CD32" ><a target="_blank" title="Audit de décès maternel"  href="'.URL.$ctrl.'/decesmaternel/'.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';} else {echo '<td align="center" style="width:10px;" bgcolor="#FF0000"><a  title="Selection invalide "   ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';echo '<td align="center" style="width:10px;" bgcolor="#FF0000"><a  title="Selection invalide "   ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';} 

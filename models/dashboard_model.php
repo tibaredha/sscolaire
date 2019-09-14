@@ -63,6 +63,7 @@ class Dashboard_Model extends Model {
 			'FILSDEAR' => $data['FILSDEAR'],
 			'ETDEAR'   => $data['ETDEAR'],
 			'ADRESSEAR'=> $data['ADRESSEAR'],
+			'code_patient'=> $data['code_patient'],
 			'aprouve'  => "0"	
         ));
         echo '<pre>';print_r ($data);echo '<pre>';
@@ -107,6 +108,7 @@ class Dashboard_Model extends Model {
 			'FILSDEAR' => $data['FILSDEAR'],
 			'ETDEAR'   => $data['ETDEAR'],
 			'ADRESSEAR'=> $data['ADRESSEAR'],
+			'code_patient'=> $data['code_patient'],
 			'aprouve'  => "0"	
         );
        //echo '<pre>';print_r ($postData);echo '<pre>'; 

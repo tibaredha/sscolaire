@@ -109,7 +109,7 @@ class Dashboard extends Controller {
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
 		$data['ETDEAR']        = $_POST['ETDEAR'];
 		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
-		
+		$data['code_patient']     = $_POST['code_patient'];
 		// echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createeleve($data);
 		header('location: '.URL.$this->controleur.'/nouveau/');
@@ -159,7 +159,7 @@ class Dashboard extends Controller {
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
 		$data['ETDEAR']        = $_POST['ETDEAR'];
 		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
-		
+		$data['code_patient']     = $_POST['code_patient'];
 		$data['id']            = $id;
 		//echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->editSave($data);

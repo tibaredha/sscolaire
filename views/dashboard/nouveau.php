@@ -1,6 +1,6 @@
 <div class="sheader1l"><p id="lnouveau"><?php echo "Gérer les élèves scolarisés";?></p></div><div class="sheader1r"><p id="lnouveau"><?php html::NAV();?></p></div>
 <div class="sheader2l">Créer un nouveau élève scolarisé </div>
-<div class="sheader2r">ID élève : <label style="display: none;" id="show_codeP"><input type="text" name="code_patient" id="code_patient"  style="border: none; background-color: green; color: white; border-radius: 15px; font-family:courier; text-align:center;  "   size="15" readonly=""></label></div>
+<div class="sheader2r">ID élève : </div>
 <div class="listl">
 	<form  action="<?php echo URL."dashboard/create/";?>"  method="POST"> 
 		<div class="tabbed_area">  
@@ -39,7 +39,7 @@
 			"PALIER1"        => '1', 
 			"PALIER2"        => 'PALIER', 
 			"NEC"            => '', 
-			
+			"code_patient"   => '',
 			"NOMAR"          => '',
 			"PRENOMAR"       => '',
 			"FILSDEAR"       => '',

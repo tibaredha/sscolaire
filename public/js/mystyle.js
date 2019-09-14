@@ -375,25 +375,10 @@ function toggleFullScreen() {
 //generation de code 
  function genererCodeP()
    {
-	//var dt_dec= Date('Y');
-	var DINS= document.getElementById("DINS").value;
 	var DATENS= document.getElementById("DATENS").value;
-	var cod_wil= document.getElementById("WILAYAN").value;
+	var val2 = DATENS.substring(8, 10);
+	var NEC= document.getElementById("NEC").value;
 	var cod_com= document.getElementById("COMMUNEN").value;
-	//var n_acte= document.getElementById("acte").value;
-	//var res1 = dt_nais.substring(8, 10);
-	//var res2 = dt_dec.substring(13, 15);
-	//var codePati= res1+cod_wil+cod_com3+n_acte+res2;
-	// if(dt_dec != '' && dt_nais != '' && cod_wil != '' && cod_com3 != '' && n_acte != ''){
-	// document.getElementById("show_codeP").style.display="";
-	//  document.getElementById("code_patient").value= codePati;           
-	//} 
-	var val1 = DINS.substring(6, 10);
-	var val2 = DATENS.substring(6, 10);
-	var val3 = cod_wil.substring(-1);
-	var val4 = cod_com.substring(-1);
-
-	var codePati= val2+":"+val3;
-	document.getElementById("show_codeP").style.display="";
+	var codePati= val2+"_"+NEC+"_"+cod_com;
 	document.getElementById("code_patient").value= codePati; 
 	}
