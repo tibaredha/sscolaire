@@ -35,45 +35,44 @@ class HTML  {
 	
 	function caol($lcao,$name)
 	{
-	// echo '<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'">'; 
 	
 	switch ($name) 
 	{
-    case 18 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 17 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 16 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 15 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 14 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 13 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 12 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 11 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
+    case 18 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 17 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 16 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 15 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate"  /></a></label>&nbsp;'; break;
+    case 14 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate"  /></a></label>&nbsp;'; break;
+    case 13 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 12 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 11 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate" /></a></label>&nbsp;'; break;
     
-	case 28 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 27 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 26 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 25 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 24 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 23 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 22 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
-    case 21 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt=""  /></a></label>&nbsp;'; break;
+	case 28 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 27 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate"  /></a></label>&nbsp;'; break;
+    case 26 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 25 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 24 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate"/></a></label>&nbsp;'; break;
+    case 23 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" class="rotate" /></a></label>&nbsp;'; break;
+    case 22 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate"  /></a></label>&nbsp;'; break;
+    case 21 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate"  /></a></label>&nbsp;'; break;
    
-	case 38 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 37 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 36 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 35 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 34 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 33 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 32 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 31 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
+	case 38 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 37 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 36 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 35 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png"class="rotate90" /></a></label>&nbsp;'; break;
+    case 34 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png"class="rotate90" /></a></label>&nbsp;'; break;
+    case 33 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png"  class="rotate90" /></a></label>&nbsp;'; break;
+    case 32 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 31 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate90" /></a></label>&nbsp;'; break;
    
-	case 48 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 47 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 46 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 45 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 44 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 43 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 42 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
-    case 41 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" width="20" height="30" border="0" alt="" class="rotate90" /></a></label>&nbsp;'; break;
+	case 48 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 47 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 46 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 45 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 44 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/premolar.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 43 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/canine.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 42 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate90" /></a></label>&nbsp;'; break;
+    case 41 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/incisor.png" class="rotate90" /></a></label>&nbsp;'; break;
 	}
 	
 	}

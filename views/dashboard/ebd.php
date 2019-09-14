@@ -41,18 +41,20 @@
 
 
 
-.dl18,.dl48,.dl28,.dl38 {background: #F0FFFF;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl17,.dl47,.dl27,.dl37 {background: #B0C4DE;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl16,.dl46,.dl26,.dl36 {background: #B0C4DE;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl15,.dl45,.dl25,.dl35 {background: #87E990;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl14,.dl44,.dl24,.dl34 {background: #87E990;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl13,.dl43,.dl23,.dl33 {background: turquoise;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl12,.dl42,.dl22,.dl32 {background: yellow;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-.dl11,.dl41,.dl21,.dl31 {background: yellow;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl18,.dl48,.dl28,.dl38 {background: #F0FFFF;  text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl17,.dl47,.dl27,.dl37 {background: #B0C4DE;  text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl16,.dl46,.dl26,.dl36 {background: #B0C4DE;  text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl15,.dl45,.dl25,.dl35 {background: #87E990;  text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl14,.dl44,.dl24,.dl34 {background: #87E990;  text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl13,.dl43,.dl23,.dl33 {background: turquoise;text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl12,.dl42,.dl22,.dl32 {background: yellow;   text-align: center; border-radius: 8px;width:11%;height: 120%;}
+.dl11,.dl41,.dl21,.dl31 {background: yellow;   text-align: center; border-radius: 8px;width:11%;height: 120%;}
 
 #xz {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 10;  grid-row: 7 / 8;}
 
 .rotate90 {
+
+    width:30px;height: 30px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -o-transform: rotate(180deg);
@@ -60,7 +62,7 @@
     transform: rotate(180deg);
 }
 
-
+.rotate {width:30px;height: 30px;}
 
 
 </style>
@@ -87,8 +89,8 @@
 			<div id="g"><?php for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="h"><?php for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i,"d".$i);}?></div>
 			
 			<div id="a1"><?php for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="b1"><?php for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i,"d".$i);} ?></div>
-			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1("".$i,$i);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1("".$i,$i);} ?></div>
-			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1("".$i,$i);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1("".$i,$i);} ?></div>
+			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i);} ?></div>
+			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i);} ?></div>
 			<div id="g1"><?php for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="h1"><?php for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i,"d".$i);}?></div>
 			
 			<div id="xz">Etablissement scolaire : <?php echo HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole');?></div>
