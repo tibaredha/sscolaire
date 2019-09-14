@@ -14,10 +14,10 @@
 #x2 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 10;  grid-row: 2 / 3;}#y2 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 10 / 16; grid-row: 2 / 3;}
 #x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 10 / 13;  grid-row: 7 / 8;}#y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 7 / 8;}
 .ax {background: yellow; text-align: center; border-radius: 5px;width:11%;height: 100%;}.bx {background: white;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-#a {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 3 / 4;}#b {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 3 / 4;}
-#c {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 4 / 5;}#d {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 4 / 5;}
-#e {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 5 / 6;}#f {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 5 / 6;}
-#g {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 6 / 7;}#h {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 6 / 7;}
+#a {background: #FF69B4;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 3 / 4;}#b {background: #FF69B4;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 3 / 4;}
+#c {background: #FFE4E1;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 4 / 5;}#d {background: #FFE4E1;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 4 / 5;}
+#e {background: #FFE4E1;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 5 / 6;}#f {background: #FFE4E1;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 5 / 6;}
+#g {background: #FF69B4;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 6 / 7;}#h {background: #FF69B4;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 6 / 7;}
 .ax1 {background: yellow; text-align: center; border-radius: 5px;width:17%;height: 100%;}.bx1 {background: white;  text-align: center; border-radius: 5px;width:17%;height: 100%;}
 #a1 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 10  / 13;  grid-row: 3 / 4;}#b1 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 13  / 16;  grid-row: 3 / 4;}
 #c1 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 10  / 13;  grid-row: 4 / 5;}#d1 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 13  / 16;  grid-row: 4 / 5;}
@@ -27,6 +27,31 @@
 #l {background: salmon;text-align: center;border-radius: 5px;padding: 8px;grid-column: 2  / 16;  grid-row: 8 / 9;}
 #l1 {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
 #l1:hover {background: red;color: #fff;}
+
+
+#d18,#d48,#d28,#d38  {background: #F0FFFF;}
+#d17,#d47,#d27,#d37  {background: #B0C4DE;}
+#d16,#d46,#d26,#d36  {background: #B0C4DE;}
+#d15,#d45,#d25,#d35  {background: #87E990;}
+#d14,#d44,#d24,#d34  {background: #87E990;}
+#d13,#d43,#d23,#d33  {background: turquoise;}
+#d12,#d42,#d22,#d32  {background: yellow;}
+#d11,#d41,#d21,#d31  {background: yellow;}
+
+
+
+
+.dl18,.dl48,.dl28,.dl38 {background: #F0FFFF;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl17,.dl47,.dl27,.dl37 {background: #B0C4DE;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl16,.dl46,.dl26,.dl36 {background: #B0C4DE;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl15,.dl45,.dl25,.dl35 {background: #87E990;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl14,.dl44,.dl24,.dl34 {background: #87E990;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl13,.dl43,.dl23,.dl33 {background: turquoise;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl12,.dl42,.dl22,.dl32 {background: yellow;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+.dl11,.dl41,.dl21,.dl31 {background: yellow;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
+
+#xz {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 10;  grid-row: 7 / 8;}
+
 </style>
 
 
@@ -40,24 +65,23 @@
 		<div id="inner-grid">
 		
 			<div id="x">Date examen : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
-			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD Non Acceptable</a> </div>			
-			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL ;?>"title="Gingivite ">Gingivite</a> </div>
-			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL ;?>"title="Anomalie ODF ">Anomalie ODF</a> </div>
+			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>			
+			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL ;?>"title="Gingivite ">Gingivite (Oui/Non)</a> </div>
+			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL ;?>"title="Anomalie ODF ">AODF (Oui/Non)</a> </div>
 			
-			<div id="x2">Dents permanentes </div><div id="y2">Dents temporaires </div>
-			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i);} ?></div>
-			<div id="c"><?php for ($i = 18; $i >= 11; $i-= 1){html::caol($i);} ?></div>    <div id="d"><?php for ($i = 21; $i <= 28; $i+= 1){html::caol($i);} ?></div>
-			<div id="e"><?php for ($i = 48; $i >= 41; $i-= 1){html::caol($i);} ?></div>    <div id="f"><?php for ($i = 31; $i <= 38; $i+= 1){html::caol($i);} ?></div>
-			<div id="g"><?php for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i);} ?></div> <div id="h"><?php for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i);}?></div>
+			<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>
+			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i);} ?></div>
+			<div id="c"><?php for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i);} ?></div>    <div id="d"><?php for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i);} ?></div>
+			<div id="e"><?php for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i);} ?></div>    <div id="f"><?php for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i);} ?></div>
+			<div id="g"><?php for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="h"><?php for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i,"d".$i);}?></div>
 			
-			<div id="a1"><?php for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i);} ?></div> <div id="b1"><?php for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i);} ?></div>
-			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1($i);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1($i);} ?></div>
-			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1($i);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1($i);} ?></div>
-			<div id="g1"><?php for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i);} ?></div> <div id="h1"><?php for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i);}?></div>
+			<div id="a1"><?php for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="b1"><?php for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i,"d".$i);} ?></div>
+			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1("".$i,$i);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1("".$i,$i);} ?></div>
+			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1("".$i,$i);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1("".$i,$i);} ?></div>
+			<div id="g1"><?php for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="h1"><?php for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i,"d".$i);}?></div>
 			
-			
-			
-			<div id="x3">     <input type="checkbox" title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1"  />&nbsp;Convocation  </div>
+			<div id="xz">Etablissement scolaire : <?php echo HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole');?></div>
+			<div id="x3">     <input type="checkbox" title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1"  />&nbsp;Convocation (Oui/Non)  </div>
 			<div id="y3">Le : <input type="txt"      title="Date rdv RDV"               id="DATECSBD"                   name="DATECSBD"   value=""  /> </div>
 			
 

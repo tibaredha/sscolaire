@@ -5,14 +5,9 @@ class sscolaire extends FPDI
 {
 
 
-     function Rotatedcell($x1,$y1,$x,$y,$txt,$angle)
-	{
-		//Text rotated around its origin
-		$this->Rotate($angle,$x1,$y1);
-		$this->SetXY($x1,$y1);
-		$this->Cell($x,$y,$txt,1,1,1,'L');
-		$this->Rotate(0);
-	}
+    
+	
+	//*******************************************examen medicale************************************************************************//
      function INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS){
 	 $this->mysqlconnect();
 	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
@@ -208,7 +203,29 @@ class sscolaire extends FPDI
 	$this->SetXY(5,$this->GetY()+10); $this->cell(67,15,$login,1,0,'C',0,0);                               $this->cell(66,15,"",1,0,'C',0,0);                                 $this->cell(66,15,"",1,0,'C',0,0);
 	}
 	 
+	 //*******************************************examen medicale************************************************************************//
+	 function sumafection($id){
+	 $this->mysqlconnect();
+	 $sql = " SELECT UDS,sum(m0+m1+m2+m3+m4+m5+m6+m7+m8+m9+m10+m11+m12+m13+m14+m15+m16+m17+m18+m19+m20+m21+m22+m23+m24) as nbr FROM examenemg where id = $id"; //  UDS=$UDS 
+	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
+	 $row = mysql_fetch_array($requete); 
+	 return $row['nbr'];
+	 }
+	 function totafection($aff){
+	 $this->mysqlconnect();
+	 $sql = " select $aff from examenemg where $aff='1' ";   
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	 
+	 
+	 
+	 
+	 //*******************************************************************************************************************//
+	
+	
+	
 	
 	 public $nomprenom ="tibaredha";
 	 public $db_host="localhost";
@@ -229,6 +246,7 @@ class sscolaire extends FPDI
 	function RoundedRect($x, $y, $w, $h, $r, $style = ''){$k = $this->k;$hp = $this->h;if($style=='F')$op='f'; elseif($style=='FD' || $style=='DF') $op='B'; else $op='S';$MyArc = 4/3 * (sqrt(2) - 1);$this->_out(sprintf('%.2F %.2F m',($x+$r)*$k,($hp-$y)*$k ));$xc = $x+$w-$r ;$yc = $y+$r;$this->_out(sprintf('%.2F %.2F l', $xc*$k,($hp-$y)*$k ));$this->_Arc($xc + $r*$MyArc, $yc - $r, $xc + $r, $yc - $r*$MyArc, $xc + $r, $yc);$xc = $x+$w-$r ;$yc = $y+$h-$r;$this->_out(sprintf('%.2F %.2F l',($x+$w)*$k,($hp-$yc)*$k));$this->_Arc($xc + $r, $yc + $r*$MyArc, $xc + $r*$MyArc, $yc + $r, $xc, $yc + $r);$xc = $x+$r ;$yc = $y+$h-$r;$this->_out(sprintf('%.2F %.2F l',$xc*$k,($hp-($y+$h))*$k));$this->_Arc($xc - $r*$MyArc, $yc + $r, $xc - $r, $yc + $r*$MyArc, $xc - $r, $yc);$xc = $x+$r ;$yc = $y+$r;$this->_out(sprintf('%.2F %.2F l',($x)*$k,($hp-$yc)*$k ));$this->_Arc($xc - $r, $yc - $r*$MyArc, $xc - $r*$MyArc, $yc - $r, $xc, $yc - $r);$this->_out($op);}
 	function Sector($xc, $yc, $r, $a, $b, $style='FD', $cw=true, $o=90){$d0 = $a - $b;if($cw){$d = $b;$b = $o - $a;$a = $o - $d;}else{$b += $o;$a += $o;}while($a<0)$a += 360;while($a>360)$a -= 360;while($b<0)$b += 360;while($b>360)$b -= 360;if ($a > $b)$b += 360;$b = $b/360*2*M_PI;$a = $a/360*2*M_PI;$d = $b - $a;if ($d == 0 && $d0 != 0) $d = 2*M_PI; $k = $this->k;$hp = $this->h;if (sin($d/2))$MyArc = 4/3*(1-cos($d/2))/sin($d/2)*$r; else $MyArc = 0;$this->_out(sprintf('%.2F %.2F m',($xc)*$k,($hp-$yc)*$k));$this->_out(sprintf('%.2F %.2F l',($xc+$r*cos($a))*$k,(($hp-($yc-$r*sin($a)))*$k)));if ($d < M_PI/2){$this->_Arc($xc+$r*cos($a)+$MyArc*cos(M_PI/2+$a),$yc-$r*sin($a)-$MyArc*sin(M_PI/2+$a),$xc+$r*cos($b)+$MyArc*cos($b-M_PI/2),$yc-$r*sin($b)-$MyArc*sin($b-M_PI/2),$xc+$r*cos($b),$yc-$r*sin($b));}else{$b = $a + $d/4;$MyArc = 4/3*(1-cos($d/8))/sin($d/8)*$r;$this->_Arc($xc+$r*cos($a)+$MyArc*cos(M_PI/2+$a),$yc-$r*sin($a)-$MyArc*sin(M_PI/2+$a),$xc+$r*cos($b)+$MyArc*cos($b-M_PI/2),$yc-$r*sin($b)-$MyArc*sin($b-M_PI/2),$xc+$r*cos($b),$yc-$r*sin($b));$a = $b;$b = $a + $d/4;$this->_Arc($xc+$r*cos($a)+$MyArc*cos(M_PI/2+$a),$yc-$r*sin($a)-$MyArc*sin(M_PI/2+$a),$xc+$r*cos($b)+$MyArc*cos($b-M_PI/2),$yc-$r*sin($b)-$MyArc*sin($b-M_PI/2),$xc+$r*cos($b),$yc-$r*sin($b));$a = $b;$b = $a + $d/4;$this->_Arc($xc+$r*cos($a)+$MyArc*cos(M_PI/2+$a),$yc-$r*sin($a)-$MyArc*sin(M_PI/2+$a),$xc+$r*cos($b)+$MyArc*cos($b-M_PI/2),$yc-$r*sin($b)-$MyArc*sin($b-M_PI/2),$xc+$r*cos($b),$yc-$r*sin($b));$a = $b;$b = $a + $d/4;$this->_Arc($xc+$r*cos($a)+$MyArc*cos(M_PI/2+$a),$yc-$r*sin($a)-$MyArc*sin(M_PI/2+$a),$xc+$r*cos($b)+$MyArc*cos($b-M_PI/2),$yc-$r*sin($b)-$MyArc*sin($b-M_PI/2),$xc+$r*cos($b),$yc-$r*sin($b));}if($style=='F')$op='f';elseif($style=='FD' || $style=='DF')$op='b';else$op='s';$this->_out($op);}
 	var $angle=0;
+	function Rotatedcell($x1,$y1,$x,$y,$txt,$angle){$this->Rotate($angle,$x1,$y1);$this->SetXY($x1,$y1);$this->Cell($x,$y,$txt,1,1,1,'L');$this->Rotate(0);}
 	function Rotate($angle,$x=-1,$y=-1){if($x==-1)$x=$this->x;if($y==-1)$y=$this->y;if($this->angle!=0)$this->_out('Q');$this->angle=$angle;if($angle!=0){$angle*=M_PI/180;$c=cos($angle);$s=sin($angle);$cx=$x*$this->k;$cy=($this->h-$y)*$this->k;$this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm 1 0 0 1 %.2F %.2F cm',$c,$s,-$s,$c,$cx,$cy,-$cx,-$cy));}}
 	function RotatedText($x,$y,$txt,$angle){$this->Rotate($angle,$x,$y);$this->Text($x,$y,$txt);$this->Rotate(0);}
 	function Polygon($points, $style='D'){if($style=='F')$op = 'f';elseif($style=='FD' || $style=='DF')$op = 'b';else $op = 's';$h = $this->h;$k = $this->k;$points_string = '';for($i=0; $i<count($points); $i+=2){$points_string .= sprintf('%.2F %.2F', $points[$i]*$k, ($h-$points[$i+1])*$k);if($i==0)$points_string .= ' m ';else $points_string .= ' l ';}$this->_out($points_string . $op);}

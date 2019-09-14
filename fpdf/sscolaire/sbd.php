@@ -9,7 +9,7 @@ if ($datejour1>$datejour2 or  $datejour1==$datejour2 ){header("Location: /sscola
 $UDS=$_POST['uds'];
 $structure=$_POST['structure'];
 $login=$_POST['login'];
-if ($_POST['SS']=='0') //EFF
+if ($_POST['SS']=='0') //EFF ok verifed
 {
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
@@ -22,22 +22,20 @@ $pdf->SetXY(35,$pdf->GetY()+5); $pdf->cell($w,10,"Pre-Scol",1,0,1,'L',0);$pdf->c
 $pdf->SetXY(50,$pdf->GetY()+5);$pdf->cell($w,5,"1AP",1,0,1,'L',0);$pdf->cell($w,5,"2AP",1,0,1,'L',0);$pdf->cell($w,5,"3AP",1,0,1,'L',0);$pdf->cell($w,5,"4AP",1,0,1,'L',0);$pdf->cell($w,5,"5AP",1,0,1,'L',0);$pdf->cell($w,5,"TAP",1,0,1,'L',0);$pdf->cell($w,5,"1AM",1,0,1,'L',0);$pdf->cell($w,5,"2AM",1,0,1,'L',0);$pdf->cell($w,5,"3AM",1,0,1,'L',0);$pdf->cell($w,5,"4AM",1,0,1,'L',0);$pdf->cell($w,5,"TAM",1,0,1,'L',0);$pdf->cell($w,5,"1AS",1,0,1,'L',0);$pdf->cell($w,5,"2AS",1,0,1,'L',0);$pdf->cell($w,5,"3AS",1,0,1,'L',0);$pdf->cell($w,5,"TAS",1,0,1,'L',0);$pdf->cell($w,5,"TOTAL",1,0,1,'L',0);
 
 $pdf->mysqlconnect();
-$query = "SELECT *from ecole where iduds = $UDS";
+$query = "SELECT * from ecole where iduds = $UDS";
 $resultat=mysql_query($query);
 $totalmbr1=mysql_num_rows($resultat);
 while($row=mysql_fetch_object($resultat))
 {
-$pdf->SetXY(5,$pdf->GetY()+5);
-$pdf->cell(30,5,$row->ecole,1,0,'C',1,0);
-
-for($i=0; $i< 6; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-$pdf->cell($w,5,"",1,0,'C',1,0);
-for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-$pdf->cell($w,5,"",1,0,'C',1,0);
-for($i=12; $i< 15; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-
+	$pdf->SetXY(5,$pdf->GetY()+5);
+	$pdf->cell(30,5,$row->ecole,1,0,'C',1,0);
+	for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+	$pdf->cell($w,5,"tp",1,0,'C',1,0);
+	for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+	$pdf->cell($w,5,"tam",1,0,'C',1,0);
+	for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+	$pdf->cell($w,5,"ts",1,0,'C',1,0);
+	$pdf->cell($w,5,"tt",1,0,'C',1,0);
 }
 $pdf->SetXY(5,$pdf->GetY()+5);
 $pdf->cell(45,5,"total",1,0,'C',1,0);
@@ -58,7 +56,7 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 }
-if ($_POST['SS']=='2') //AFFECTION DEPISTE PAR UDS
+if ($_POST['SS']=='2') //AFFECTION DEPISTE PAR eleve ok verifed
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
@@ -102,11 +100,11 @@ if ($_POST['SS']=='2') //AFFECTION DEPISTE PAR UDS
 	{
 		$pdf->cell(45,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0);  
 		for($i=0; $i< 25; $i+=1){$maladie='m'.$i;if($row->$maladie==1) {$pdf->cell(9,5,'x',1,0,'C',0,0);} else {$pdf->cell(9,5,'-',1,0,'C',0,0);}}
-		$pdf->cell(9,5,'',1,0,'C',1,0);
+		$pdf->cell(9,5,$pdf->sumafection($row->id),1,0,'C',1,0);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
 	$pdf->cell(45,5,"Total UDS ",1,0,'C',1,0);
-	for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,'',1,0,'C',1,0);}$pdf->cell(9,5,'',1,0,'C',1,0);
+	for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,$pdf->totafection('m'.$i),1,0,'C',1,0);}$pdf->cell(9,5,'',1,0,'C',1,0);
 }
 
 if ($_POST['SS']=='3') //AFFECTION DEPISTE PAR ECOLE

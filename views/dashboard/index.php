@@ -73,8 +73,8 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">EMG</th>';
 			echo'<th class="crtl">VACCIN</th>';
+			echo'<th class="crtl">BIO</th>';
 			echo'<th class="crtl">DMS</th>';
-			// echo'<th class="crtl">CDM</th>';
 			// echo'<th class="crtl">ADM</th>';
 			// echo'<th class="crtl">CDP</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
@@ -100,6 +100,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen buco-dentaire"  href="'.URL.$ctrl.'/ebd/'.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/rectangle.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
 			// echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Signalement graphique médecine légale"  href="'.URL.'tcpdf/deces/sgml.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/mlegaleicon.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			

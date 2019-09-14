@@ -11,34 +11,34 @@
 
 
 
-#m  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 2 / 3;}
-#m1  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 3 / 4;}
-#m2  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 4 / 5;}
-#m3  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 5 / 6;}
-#m4  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 6 / 7;}
-#m5  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 7 / 8;}
+#m0  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 2 / 3;}
+#m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 3 / 4;}
+#m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 4 / 5;}
+#m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 5 / 6;}
+#m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 6 / 7;}
+#m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 2 / 6; grid-row: 7 / 8;}
 
-#m6  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 1 / 2;}
-#m7  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 2 / 3;}
-#m8  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 3 / 4;}
-#m9  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 4 / 5;}
-#m10  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 5 / 6;}
-#m11  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 6 / 7;}
-#m12  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 7 / 8;}
+#m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 1 / 2;}
+#m7  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 2 / 3;}
+#m8  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 3 / 4;}
+#m9  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 4 / 5;}
+#m10  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 5 / 6;}
+#m11  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 6 / 7;}
+#m12  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 6 / 10; grid-row: 7 / 8;}
 
-#m13  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 1 / 2;}
-#m14  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 2 / 3;}
-#m15  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 3 / 4;}
-#m16  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 4 / 5;}
-#m17  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 5 / 6;}
-#m18  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 6 / 7;}
+#m13  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 1 / 2;}
+#m14  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 2 / 3;}
+#m15  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 3 / 4;}
+#m16  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 4 / 5;}
+#m17  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 5 / 6;}
+#m18  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 14; grid-row: 6 / 7;}
 
-#m19  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 1 / 2;}
-#m20  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 2 / 3;}
-#m21  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 3 / 4;}
-#m22  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 4 / 5;}
-#m23  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 5 / 6;}
-#m24  {background: yellow;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 6 / 7;}
+#m19  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 1 / 2;}
+#m20  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 2 / 3;}
+#m21  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 3 / 4;}
+#m22  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 4 / 5;}
+#m23  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 5 / 6;}
+#m24  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 6 / 7;}
 
 #x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 10 / 14;  grid-row: 7 / 8;}#y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 14 / 18; grid-row: 7 / 8;}
 
@@ -70,36 +70,36 @@
 		<div id="inner-grid">
 		
 			<div id="x">Date examen : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
-			<div id="m"><input type="checkbox"  class="remember"  name="m"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Vaccination incomplète</a> </div>			
-			<div id="m1"><input type="checkbox"  class="remember"  name="m1"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Absence cicatrice BCG</a> </div>			
-			<div id="m2"><input type="checkbox"  class="remember"  name="m2"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Pédiculose</a> </div>			
-			<div id="m3"><input type="checkbox"  class="remember"  name="m3"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Gale</a> </div>			
-			<div id="m4"><input type="checkbox"  class="remember"  name="m4"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Oxyurose</a> </div>			
-			<div id="m5"><input type="checkbox"  class="remember"  name="m5"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Déformation des Mbres</a> </div>			
+			<div id="m0"><input type="checkbox"  class="remember"  name="m0"   value="1" />&nbsp;<a href="<?php echo URL ;?>">1-Vaccination incomplète</a> </div>			
+			<div id="m1"><input type="checkbox"  class="remember"  name="m1"   value="1" />&nbsp;<a href="<?php echo URL ;?>">2-Absence cicatrice BCG</a> </div>			
+			<div id="m2"><input type="checkbox"  class="remember"  name="m2"   value="1" />&nbsp;<a href="<?php echo URL ;?>">3-Pédiculose</a> </div>			
+			<div id="m3"><input type="checkbox"  class="remember"  name="m3"   value="1" />&nbsp;<a href="<?php echo URL ;?>">4-Gale</a> </div>			
+			<div id="m4"><input type="checkbox"  class="remember"  name="m4"   value="1" />&nbsp;<a href="<?php echo URL ;?>">5-Déformation des Mbres</a> </div>			
+			<div id="m5"><input type="checkbox"  class="remember"  name="m5"   value="1" />&nbsp;<a href="<?php echo URL ;?>">6-Baisse acuité visuelle</a> </div>			
 			
-			<div id="m6"><input type="checkbox"  class="remember"  name="m6"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Troubles urinaires</a> </div>			
-			<div id="m7"><input type="checkbox"  class="remember"  name="m7"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Ptosis Nystagmus</a> </div>			
-			<div id="m8"><input type="checkbox"  class="remember"  name="m8"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Paleur conjonctivale</a> </div>			
-			<div id="m9"><input type="checkbox"  class="remember"  name="m9"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Strabisme</a> </div>			
-			<div id="m10"><input type="checkbox"  class="remember"  name="m10"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Baisse acuité visuelle</a> </div>			
-			<div id="m11"><input type="checkbox"  class="remember"  name="m11"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Trachome</a> </div>			
-			<div id="m12"><input type="checkbox"  class="remember"  name="m12"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Déformations du rachis</a> </div>			
+			<div id="m6"><input type="checkbox"  class="remember"  name="m6"   value="1" />&nbsp;<a href="<?php echo URL ;?>">7-Strabisme</a> </div>			
+			<div id="m7"><input type="checkbox"  class="remember"  name="m7"   value="1" />&nbsp;<a href="<?php echo URL ;?>">8-Antécédents de RAA</a> </div>		
+			<div id="m8"><input type="checkbox"  class="remember"  name="m8"   value="1" />&nbsp;<a href="<?php echo URL ;?>">9-Diabète</a> </div>			
+			<div id="m9"><input type="checkbox"  class="remember"  name="m9"   value="1" />&nbsp;<a href="<?php echo URL ;?>">10Asthme</a> </div>			
+			<div id="m10"><input type="checkbox"  class="remember"  name="m10"   value="1" />&nbsp;<a href="<?php echo URL ;?>">11-Epilepsie</a> </div>			
+			<div id="m11"><input type="checkbox"  class="remember"  name="m11"   value="1" />&nbsp;<a href="<?php echo URL ;?>">12-Difficultés scolaires</a> </div>			
+			<div id="m12"><input type="checkbox"  class="remember"  name="m12"   value="1" />&nbsp;<a href="<?php echo URL ;?>">13-Troubles comportement</a> </div>			
 			
 			
 			
-			<div id="m13"><input type="checkbox"  class="remember"  name="m13"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Ectopie testiculaire</a> </div>	
-			<div id="m14"><input type="checkbox"  class="remember"  name="m14"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Difficultés scolaires</a> </div>			
-			<div id="m15"><input type="checkbox"  class="remember"  name="m15"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Troubles comportement</a> </div>			
-			<div id="m16"><input type="checkbox"  class="remember"  name="m16"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Troubles langage</a> </div>			
-			<div id="m17"><input type="checkbox"  class="remember"  name="m17"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Epilepsie</a> </div>			
-			<div id="m18"><input type="checkbox"  class="remember"  name="m18"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Surdité Hypoacousie</a> </div>			
+			<div id="m13"><input type="checkbox"  class="remember"  name="m13"   value="1" />&nbsp;<a href="<?php echo URL ;?>">14-Troubles langage</a> </div>	
+			<div id="m14"><input type="checkbox"  class="remember"  name="m14"   value="1" />&nbsp;<a href="<?php echo URL ;?>">15-Surdité Hypoacousie</a> </div>			
+			<div id="m15"><input type="checkbox"  class="remember"  name="m15"   value="1" />&nbsp;<a href="<?php echo URL ;?>">16-Trachome</a> </div>			
+			<div id="m16"><input type="checkbox"  class="remember"  name="m16"   value="1" />&nbsp;<a href="<?php echo URL ;?>">17-Oxyurose</a> </div>			
+			<div id="m17"><input type="checkbox"  class="remember"  name="m17"   value="1" />&nbsp;<a href="<?php echo URL ;?>">18-Enurésie</a> </div>			
+			<div id="m18"><input type="checkbox"  class="remember"  name="m18"   value="1" />&nbsp;<a href="<?php echo URL ;?>">19-Troubles urinaires</a> </div>			
 			
-			<div id="m19"><input type="checkbox"  class="remember"  name="m19"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Enurésie</a> </div>	
-			<div id="m20"><input type="checkbox"  class="remember"  name="m20"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Diabète</a> </div>			
-			<div id="m21"><input type="checkbox"  class="remember"  name="m21"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Goitre</a> </div>			
-			<div id="m22"><input type="checkbox"  class="remember"  name="m22"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Asthme</a> </div>			
-			<div id="m23"><input type="checkbox"  class="remember"  name="m23"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Souffle cardiaque</a> </div>			
-			<div id="m24"><input type="checkbox"  class="remember"  name="m24"   value="1" />&nbsp;<a href="<?php echo URL ;?>">Antécédents de RAA</a> </div>			
+			<div id="m19"><input type="checkbox"  class="remember"  name="m19"   value="1" />&nbsp;<a href="<?php echo URL ;?>">20-Ptosis Nystagmus	</a> </div>	
+			<div id="m20"><input type="checkbox"  class="remember"  name="m20"   value="1" />&nbsp;<a href="<?php echo URL ;?>">21-Paleur conjonctivale</a> </div>			
+			<div id="m21"><input type="checkbox"  class="remember"  name="m21"   value="1" />&nbsp;<a href="<?php echo URL ;?>">22-Goitre</a> </div>			
+			<div id="m22"><input type="checkbox"  class="remember"  name="m22"   value="1" />&nbsp;<a href="<?php echo URL ;?>">23-Souffle cardiaque</a> </div>			
+			<div id="m23"><input type="checkbox"  class="remember"  name="m23"   value="1" />&nbsp;<a href="<?php echo URL ;?>">24-Déformations du rachis</a> </div>			
+			<div id="m24"><input type="checkbox"  class="remember"  name="m24"   value="1" />&nbsp;<a href="<?php echo URL ;?>">25-Ectopie testiculaire</a> </div>			
 			
 			
 			

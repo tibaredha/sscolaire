@@ -246,7 +246,7 @@ class Dashboard extends Controller {
 	$data['UDS']              = $_POST['UDS'];
 	$data['ETABLIS']          = $_POST['ETABLIS'];
 	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	echo '<pre>';print_r ($data);echo '<pre>'; 
+	//echo '<pre>';print_r ($data);echo '<pre>'; 
     $last_id=$this->model->createemg($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		 
 	}

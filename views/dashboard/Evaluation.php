@@ -26,7 +26,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			echo "<select id=\"type1\" name=\"SS\">";
 			echo '<option value="0">Effectifs</option>';
 			echo '<option value="1"></option>';
-			echo '<option value="2">Affections dépistées/UDS</option>';
+			echo '<option value="2">Affections dépistées/Eleve</option>';
 			echo '<option value="3">Affections dépistées/Ecole</option>';
 			echo '<option value="4"></option>';
 			echo '<option value="5"></option>';

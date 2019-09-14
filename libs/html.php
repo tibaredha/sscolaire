@@ -18,9 +18,9 @@ class HTML  {
 	echo " <input type=\"text\" name=\"".$name."\" size=\"".$size."\" value=\"".$value."\"  id=\"".$param."\"   required />";
 	}
 
-	function cao($name)
+	function cao($idcao,$name)
 	{
-	echo '<select class="ax" name="'.$name.'">';
+	echo '<select id ="'.$idcao.'" class="ax" name="'.$name.'">';
 	echo '<option value="s">s</option>';
 	echo '<option value="c">c</option>';
 	//echo '<option value="f">f</option>';
@@ -33,15 +33,15 @@ class HTML  {
 	echo "</select>&nbsp;";
 	}
 	
-	function caol($name)
+	function caol($lcao,$name)
 	{
-	echo '<label class="bx" ><a href="'.URL.'d/'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo '<label class ="'.$lcao.'" ><a href="'.URL.'d/'.$name.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
 	}
 	
 	
-	function cao1($name)
+	function cao1($idcaol,$name)
 	{
-	echo '<select class="ax1" name="'.$name.'">';
+	echo '<select id ="'.$idcaol.'"  class="ax1" name="'.$name.'">';
 	echo '<option value="s">s</option>';
 	echo '<option value="c">c</option>';
 	//echo '<option value="f">f</option>';
@@ -54,9 +54,9 @@ class HTML  {
 	echo "</select>&nbsp;";
 	}
 	
-	function caol1($name)
+	function caol1($lcaol1,$name)
 	{
-	echo '<label class="bx1" ><a href="'.URL.'d/'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'d/'.$name.'">'.$name.'</a></label>&nbsp;';
 	}
 	
 	
