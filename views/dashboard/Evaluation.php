@@ -21,17 +21,18 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 	echo '<form ALIGN="center" action="'.URL.'fpdf/sscolaire/sbd.php" method="POST">';
 			echo "<p>";html::txts(100,240,'Datedebut',0,date('d-m-Y'),'dateus');html::txts(100,240,'Datefin',0,date('d-m-Y'),'dateus1');echo "</p>";
 			echo "<p>";;echo "</p>";
-				echo "<hr>";
+			echo "<hr>";
 			echo "<p>";
 			echo "<select id=\"type1\" name=\"SS\">";
-			echo '<option value="0">Effectifs</option>';
-			echo '<option value="1"></option>';
-			echo '<option value="2">Affections dépistées/Eleve</option>';
-			echo '<option value="3">Affections dépistées/Ecole</option>';
-			echo '<option value="4"></option>';
-			echo '<option value="5"></option>';
-			echo '<option value="6">BUCCO-DENTAIRE</option>';
-			echo '';
+			echo '<option value="0">liste nominative Médecin </option>';
+			echo '<option value="1">liste nominative Dentiste </option>';
+			echo '<option value="2">liste nominative Paramédicale </option>';
+			echo '<option value="4">Effectifs par établissement</option>';
+			echo '<option value="5">Affections dépistées/Eleve</option>';
+			echo '<option value="6">Affections dépistées/Ecole</option>';
+			echo '<option value="7"></option>';
+			echo '<option value="8"></option>';
+			echo '<option value="9">BUCCO-DENTAIRE</option>';
 			echo "</select>";
 			echo "</p> ";
 				
@@ -40,17 +41,12 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			echo"<option value=\"1\">PDF</option>"."\n";
 			echo"<option value=\"2\">XLS</option>"."\n";
 			echo"<option value=\"3\">SQL</option>"."\n";
-			
 			echo "</select>";
 			echo "</p>";
-			   echo "<hr>";
+			echo "<hr>";
 			echo '<input type="hidden" name="login"     value="'.Session::get('login').'"/>';   
 			echo '<input type="hidden" name="structure" value="'.Session::get('structure').'"/> ';     
 			echo '<input type="hidden" name="uds" value="'.Session::get('uds').'"/> ';     
-	
-			
-			
-			
 			echo "<p><input  id=\"submitr\" type=\"submit\" value=\"Calculer\" /></p>";
 	echo "</form>";
 	          echo "<hr>";
