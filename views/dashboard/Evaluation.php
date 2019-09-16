@@ -23,10 +23,15 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			echo "<p>";;echo "</p>";
 			echo "<hr>";
 			echo "<p>";
+			HTML::ECOLE('ECOLE','type3','class','ecole','0','Établissement scolaire',Session::get('uds')); 
+			HTML::PALIER('PALIER','type4','class','palier','0','Palier');
+			echo "</p> ";
+			
+			echo "<p>";
 			echo "<select id=\"type1\" name=\"SS\">";
-			echo '<option value="0">liste nominative Médecin </option>';
-			echo '<option value="1">liste nominative Dentiste </option>';
-			echo '<option value="2">liste nominative Paramédicale </option>';
+			echo '<option value="0">Liste nominative Médecin </option>';
+			echo '<option value="1">Liste nominative Dentiste </option>';
+			echo '<option value="2">Liste nominative Paramédicale </option>';
 			echo '<option value="4">Effectifs par établissement</option>';
 			echo '<option value="5">Affections dépistées/Eleve</option>';
 			echo '<option value="6">Affections dépistées/Ecole</option>';

@@ -10,14 +10,22 @@ $UDS=$_POST['uds'];
 $structure=$_POST['structure'];
 $login=$_POST['login'];
 
+if ($_POST['ECOLE']==0){$ecole=null;} else {$ecole='='.$_POST['ECOLE'];} 
+if ($_POST['PALIER']==0){$palier=null;} else {$palier='='.$_POST['PALIER'];} 
+
+
+
+
+
 if ($_POST['SS']=='0') //liste nominative par medecin uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
-	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
+	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
 	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
+	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Médecin)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
 	$w=9;$h=42;$y=75;
-	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Eleve",1,0,1,'L',0);
+	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"NOM_prénom (fils de) ",1,0,1,'L',0);
 	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
 	$pdf->Rotatedcell(50+(1*$w),$y,$h,$w,'Absence cicatrice BCG',90);
 	$pdf->Rotatedcell(50+(2*$w),$y,$h,$w,'Pediculose',90);
@@ -47,17 +55,19 @@ if ($_POST['SS']=='0') //liste nominative par medecin uds
 	// $pdf->Rotatedcell(50+(26*$w),$y,$h,$w,'Total eleves examines',90);
 	$pdf->SetXY(05,$y);
 	$pdf->mysqlconnect();
-	$query = "SELECT * FROM eleve where UDS=$UDS order by NOM";
+	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
 	$resultat=mysql_query($query);
 	$totalmbr1=mysql_num_rows($resultat);
 	while($row=mysql_fetch_object($resultat))
 	{	
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.$row->PRENOM.'('.$row->FILSDE.')',1,0,'L',1,0);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
 		for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,'',1,0,'C',0,0);}$pdf->cell(9+9,5,'',1,0,'C',0,0);
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
+	
+	$pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 
 }
 
@@ -65,11 +75,11 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 {
 
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
-	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
-
-	$pdf->SetXY(05,$pdf->GetY()+15);
-	$pdf->cell(45,5,'Éleves',1,0,'L',1,0);
+	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
+    $pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Dentiste)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+10);
+	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
 	$pdf->cell(15,5,'HYNA',1,0,'C',1,0);
 	$pdf->cell(15,5,'GING',1,0,'C',1,0);
 	$pdf->cell(15,5,'AODF',1,0,'C',1,0);
@@ -83,13 +93,13 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 	$pdf->cell(21,5,'Date RDV',1,0,'C',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+5);
 	$pdf->mysqlconnect();
-	$query = "SELECT * FROM eleve where UDS=$UDS order by NOM";
+	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
 	$resultat=mysql_query($query);
 	$totalmbr1=mysql_num_rows($resultat);
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.$row->PRENOM.'('.$row->FILSDE.')',1,0,'L',1,0);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
 		$pdf->cell(15,5,'',1,0,'C',0,0);
 		$pdf->cell(15,5,'',1,0,'C',0,0);
 		$pdf->cell(15,5,'',1,0,'C',0,0);
@@ -104,33 +114,35 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
-
+$pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
 
 if ($_POST['SS']=='2') //liste nominative paramedicale par uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
-	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
-	$pdf->SetXY(05,$pdf->GetY()+15);
-	$pdf->cell(45,5,'Éleves',1,0,'L',1,0);
-	$pdf->cell(30,5,'POIDS',1,0,'C',1,0);
-	$pdf->cell(30,5,'TAILLE',1,0,'C',1,0);
-	$pdf->cell(30,5,'AV',1,0,'C',1,0);
-	$pdf->cell(30,5,'BCG',1,0,'C',1,0);
-	$pdf->cell(30,5,'DTE/DTA',1,0,'C',1,0);
-	$pdf->cell(30,5,'POLIO',1,0,'C',1,0);
-	$pdf->cell(30,5,'ROR',1,0,'C',1,0);
-	$pdf->cell(33,5,'Date EXA',1,0,'C',1,0);
+	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
+	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
+	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Para-médicale)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+10);
+	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
+	$pdf->cell(30,5,'Poids(kg)',1,0,'C',1,0);
+	$pdf->cell(30,5,'Taille(cm)',1,0,'C',1,0);
+	$pdf->cell(30,5,'L\'acuité visuelle',1,0,'C',1,0);
+	$pdf->cell(30,5,'BCG (fait=x)',1,0,'C',1,0);
+	$pdf->cell(30,5,'DTE/DTA (fait=x)',1,0,'C',1,0);
+	$pdf->cell(30,5,'POLIO (fait=x)',1,0,'C',1,0);
+	$pdf->cell(30,5,'ROR (fait=x)',1,0,'C',1,0);
+	$pdf->cell(33,5,'Date de l\'éxamen',1,0,'C',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+5);
 	$pdf->mysqlconnect();
-	$query = "SELECT * FROM eleve where UDS=$UDS order by NOM";
+	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
 	$resultat=mysql_query($query);
 	$totalmbr1=mysql_num_rows($resultat);
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.$row->PRENOM.'('.$row->FILSDE.')',1,0,'L',1,0);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
 		$pdf->cell(30,5,'',1,0,'C',0,0);
 		$pdf->cell(30,5,'',1,0,'C',0,0);
 		$pdf->cell(30,5,'',1,0,'C',0,0);
@@ -142,7 +154,7 @@ if ($_POST['SS']=='2') //liste nominative paramedicale par uds
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
-
+$pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
 
 

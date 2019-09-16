@@ -236,7 +236,7 @@ class sscolaire extends FPDI
 	 
 	 public $repfr="République algérienne démocratique et populaire";
 	 public $mspfr="Ministère de la santé de la population et de la réforme hospitalière";
-	 public $dspfr="Direction de la santé et de la population de la wilaya de ";
+	 public $dspfr="Direction de la santé et de la population de la wilaya de djelfa";
 	
 	function headerdc($datejour1,$datejour2,$STRUCTURED){$this->AddPage('P','A4');$this->SetDisplayMode('fullpage','single');$this->SetTitle('Mortalité hospitalière '."Du ".$datejour1." Au ".$datejour2);$this->SetFont('Times', 'B', 11);$this->SetTextColor(0,0,0);$this->SetFillColor(230);$this->SetXY(5,10);$this->cell(200,5,$this->repfr,0,0,'C',1,0);$this->SetXY(5,20);$this->cell(200,5,$this->mspfr,0,0,'C',1,0);$this->SetXY(5,30);$this->cell(200,5,$this->dspfr.': '.$this->nbrtostring("wil","IDWIL",$this->nbrtostring("structure","id",$STRUCTURED,"idwil"),"WILAYAS"),0,0,'C',1,0);}
 	function Footerdc(){$this->SetXY(20,285);$this->SetFont('Arial','I',8);$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');}

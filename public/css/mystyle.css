@@ -75,7 +75,7 @@ hr{height: 5px;width: 50%;background-color: red;}
 
 /*evaluation*/
 #dateus,#dateus1{background: yellow;border-radius: 15px;text-align: center;}
-#type1,#type2{border: 3px solid #73AD21;border-radius: 15px;text-align: center; font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 35px;width: 210px;display: inline;}
+#type1,#type2,#type3,#type4{border: 3px solid #73AD21;border-radius: 15px;text-align: center; font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 35px;width: 210px;display: inline;}
 #typea{border: 3px solid #73AD21;border-radius: 15px;text-align: center; font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 35px;width: 210px;display: inline;}
 
 .DECES,#MSORT,#SERVI,#NLIT,#MODEE{position:absolute;border: 3px solid #73AD21;border-radius: 15px;margin-top: 0px;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 20px;height: 32px;display: inline;}
