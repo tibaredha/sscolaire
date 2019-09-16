@@ -227,6 +227,18 @@ class Dashboard extends Controller {
 		header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		
 	}
 	
+	function soins() {
+	    $this->view->title = 'soins';
+		$this->view->msg = 'soins';
+		$this->view->render($this->controleur.'/soins');
+	}
+	
+	function soinsx() {
+	 // header('location: '.URL.$this->controleur.'/ebd/');	   
+	}
+	
+	
+	
 	// **********************************************************************************************************************************//
 	function emg($id) {
 	    $this->view->title = 'ebd';
