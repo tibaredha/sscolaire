@@ -197,7 +197,7 @@ class sscolaire extends FPDI
 	
 	function entetel($UDS,$structure,$Datedebut,$Datefin)
 	{  
-	$this->SetXY(5,$this->GetY()+15);$this->cell(245,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',0,0); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10);$this->cell(245,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',0,0); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
 	
 
 	$this->SetXY(5,$this->GetY()+10);$this->cell(58,5,"DSP",1,0,'C',0,0);    $this->cell(58,5,"EPSP",1,0,'C',0,0);$this->cell(58,5,"UDS",1,0,'C',0,0);$this->cell(55,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(56,5,"TRIMESTRE",1,0,'C',0,0);

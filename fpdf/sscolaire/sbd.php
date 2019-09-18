@@ -166,6 +166,7 @@ $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2);
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(30,5,"1",1,0,'C',1,0);                 $pdf->cell(255,5,"EFFECTIFS DES ELEVES INSCRITS",1,0,'C',0,0);
 
 $w=15;
 $pdf->SetXY(05,$pdf->GetY()+10); $pdf->cell(30,15,"Etablissements",1,0,1,'L',0);$pdf->cell($w*17,5,"Effectifs ",1,0,1,'L',0);
@@ -173,13 +174,13 @@ $pdf->SetXY(35,$pdf->GetY()+5); $pdf->cell($w,10,"Pré-Scol",1,0,1,'L',0);$pdf->
 $pdf->SetXY(50,$pdf->GetY()+5);$pdf->cell($w,5,"1°AP",1,0,'C',1,0);$pdf->cell($w,5,"2°AP",1,0,'C',1,0);$pdf->cell($w,5,"3°AP",1,0,'C',1,0);$pdf->cell($w,5,"4°AP",1,0,'C',1,0);$pdf->cell($w,5,"5°AP",1,0,'C',1,0);$pdf->cell($w,5,"TAP",1,0,'C',1,0);$pdf->cell($w,5,"1°AM",1,0,'C',1,0);$pdf->cell($w,5,"2°AM",1,0,'C',1,0);$pdf->cell($w,5,"3°AM",1,0,'C',1,0);$pdf->cell($w,5,"4AM",1,0,'C',1,0);$pdf->cell($w,5,"TAM",1,0,'C',1,0);$pdf->cell($w,5,"1°AS",1,0,'C',1,0);$pdf->cell($w,5,"2°AS",1,0,'C',1,0);$pdf->cell($w,5,"3°AS",1,0,'C',1,0);$pdf->cell($w,5,"TAS",1,0,'C',1,0);$pdf->cell($w,5,"TOTAL",1,0,'C',1,0);
 
 $pdf->mysqlconnect();
-$query = "SELECT * from ecole where iduds = $UDS";
+$query = "SELECT * from ecole where iduds = $UDS  order by ecole";
 $resultat=mysql_query($query);
 $totalmbr1=mysql_num_rows($resultat);
 while($row=mysql_fetch_object($resultat))
 {
-	$pdf->SetXY(5,$pdf->GetY()+5);
-	$pdf->cell(30,5,$row->ecole,1,0,'C',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+5);$pdf->SetFont('Times','',8);
+	$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
 	for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
 	$pdf->cell($w,5,"tp",1,0,'C',1,0);
 	for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
@@ -213,7 +214,9 @@ if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
 	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
-	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
+	$pdf->entetel($UDS,$structure,$datejour1,$datejour2);
+    $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(30,5,"3",1,0,'C',1,0);                 $pdf->cell(255,5,"AFFECTIONS DEPISTEES",1,0,'C',0,0);
+
 	$w=9;$h=42;$y=100;
 	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Élèves",1,0,1,'L',0);
 	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
@@ -250,7 +253,8 @@ if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed
 	$totalmbr1=mysql_num_rows($resultat);
 	while($row=mysql_fetch_object($resultat))
 	{
-		$pdf->cell(45,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0);  
+		$pdf->SetFont('Times','',8);
+		$pdf->cell(45,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0); $pdf->SetFont('Times','B',10); 
 		for($i=0; $i< 25; $i+=1){$maladie='m'.$i;if($row->$maladie==1) {$pdf->cell(9,5,'x',1,0,'C',0,0);} else {$pdf->cell(9,5,'-',1,0,'C',0,0);}}
 		$pdf->cell(9,5,$pdf->sumafection($row->id),1,0,'C',1,0);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
@@ -264,9 +268,11 @@ if ($_POST['SS']=='6') //AFFECTION DEPISTE PAR ECOLE
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
 	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
-	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
+	$pdf->entetel($UDS,$structure,$datejour1,$datejour2);
+    $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(30,5,"3",1,0,'C',1,0);                 $pdf->cell(255,5,"AFFECTIONS DEPISTEES",1,0,'C',0,0);
+
 	$w=9;$h=42;$y=100;
-	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Eleve",1,0,1,'L',0);
+	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Etablissement",1,0,1,'L',0);
 	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
 	$pdf->Rotatedcell(50+(1*$w),$y,$h,$w,'Absence cicatrice BCG',90);
 	$pdf->Rotatedcell(50+(2*$w),$y,$h,$w,'Pediculose',90);
@@ -296,18 +302,23 @@ if ($_POST['SS']=='6') //AFFECTION DEPISTE PAR ECOLE
 	// $pdf->Rotatedcell(50+(26*$w),$y,$h,$w,'Total eleves examines',90);
 	$pdf->SetXY(05,$y);
 	$pdf->mysqlconnect();
-	// $query = "SELECT * FROM examenemg where UDS=$UDS";
-	// $resultat=mysql_query($query);
-	// $totalmbr1=mysql_num_rows($resultat);
-	// while($row=mysql_fetch_object($resultat))
-	// {
-		// $pdf->cell(45,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0);  
-		// for($i=0; $i< 25; $i+=1){$maladie='m'.$i;if($row->$maladie==1) {$pdf->cell(9,5,'x',1,0,'C',0,0);} else {$pdf->cell(9,5,'-',1,0,'C',0,0);}}
-		// $pdf->cell(9,5,'',1,0,'C',1,0);
-		// $pdf->SetXY(5,$pdf->GetY()+5); 
-	// }
-	// $pdf->cell(45,5,"Total UDS ",1,0,'C',1,0);
-	// for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,'',1,0,'C',1,0);}$pdf->cell(9,5,'',1,0,'C',1,0);
+	$query = "SELECT * from ecole where iduds = $UDS  order by ecole";
+	$resultat=mysql_query($query);
+	$totalmbr1=mysql_num_rows($resultat);
+	$pdf->SetXY(5,$pdf->GetY());
+	while($row=mysql_fetch_object($resultat))
+	{
+		$pdf->SetFont('Times','',8);
+		$pdf->cell(45,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+		// for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		// $pdf->cell($w,5,"tp",1,0,'C',1,0);
+		// for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		// $pdf->cell($w,5,"tam",1,0,'C',1,0);
+		// for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		// $pdf->cell($w,5,"ts",1,0,'C',1,0);
+		// $pdf->cell($w,5,"tt",1,0,'C',1,0);
+		$pdf->SetXY(5,$pdf->GetY()+5);
+	}
 }
 
 
