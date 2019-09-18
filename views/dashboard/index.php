@@ -91,7 +91,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			if ($value['Years'] > 0 ){echo "<td style=\"width:50px;\" align=\"center\" >".$value['Years']." A </td>" ;} else {if ($value['Days'] <= 30 ) {echo "<td style=\"width:50px;\" align=\"center\" >".$value['Days']." J </td>" ;} else{echo "<td style=\"width:50px;\" align=\"center\" >".$value['Months']." M </td>" ;} }
 			echo '<td align="center"style="width:100px;" >'.HTML::dateUS2FR($value['DINS']).'</td>';
 			echo '<td align="center"  >'.$value['HINS'].'</td>';
-			echo '<td align="center"  >'.HTML::nbrtostring('ECOLE','id',$value['ECOLE'],'ecole').'</td>';
+			echo '<td align="left"  >'.HTML::nbrtostring('ECOLE','id',$value['ECOLE'],'ecole').'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring('PALIER','id',$value['PALIER'],'nompalier').'</td>';
 			
 			

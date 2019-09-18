@@ -169,45 +169,79 @@ $pdf->entetel($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(30,5,"1",1,0,'C',1,0);                 $pdf->cell(255,5,"EFFECTIFS DES ELEVES INSCRITS",1,0,'C',0,0);
 
 $w=15;
-$pdf->SetXY(05,$pdf->GetY()+10); $pdf->cell(30,15,"Etablissements",1,0,1,'L',0);$pdf->cell($w*17,5,"Effectifs ",1,0,1,'L',0);
+$pdf->SetXY(05,$pdf->GetY()+10); $pdf->cell(30,15,"Etablissements",1,0,1,'L',0);$pdf->cell($w*17,5,"Effectifs des eleves inscrits ",1,0,1,'L',0);
 $pdf->SetXY(35,$pdf->GetY()+5); $pdf->cell($w,10,"Pré-Scol",1,0,1,'L',0);$pdf->cell($w*6,5,"Cycle Primaire",1,0,1,'L',0);$pdf->cell($w*5,5,"Cycle Moyen",1,0,1,'L',0);$pdf->cell($w*4,5,"Cycle Secondaire",1,0,1,'L',0);$pdf->cell($w,5,"total",1,0,1,'L',0);
 $pdf->SetXY(50,$pdf->GetY()+5);$pdf->cell($w,5,"1°AP",1,0,'C',1,0);$pdf->cell($w,5,"2°AP",1,0,'C',1,0);$pdf->cell($w,5,"3°AP",1,0,'C',1,0);$pdf->cell($w,5,"4°AP",1,0,'C',1,0);$pdf->cell($w,5,"5°AP",1,0,'C',1,0);$pdf->cell($w,5,"TAP",1,0,'C',1,0);$pdf->cell($w,5,"1°AM",1,0,'C',1,0);$pdf->cell($w,5,"2°AM",1,0,'C',1,0);$pdf->cell($w,5,"3°AM",1,0,'C',1,0);$pdf->cell($w,5,"4AM",1,0,'C',1,0);$pdf->cell($w,5,"TAM",1,0,'C',1,0);$pdf->cell($w,5,"1°AS",1,0,'C',1,0);$pdf->cell($w,5,"2°AS",1,0,'C',1,0);$pdf->cell($w,5,"3°AS",1,0,'C',1,0);$pdf->cell($w,5,"TAS",1,0,'C',1,0);$pdf->cell($w,5,"TOTAL",1,0,'C',1,0);
 
 $pdf->mysqlconnect();
-$query = "SELECT * from ecole where iduds = $UDS  order by ecole";
+$query = "SELECT * from ecole where iduds = $UDS  order by typeecole,ecole";
 $resultat=mysql_query($query);
 $totalmbr1=mysql_num_rows($resultat);
 while($row=mysql_fetch_object($resultat))
 {
-	$pdf->SetXY(5,$pdf->GetY()+5);$pdf->SetFont('Times','',8);
-	$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+	$pdf->SetXY(5,$pdf->GetY()+5);$pdf->SetFont('Times','B',7);
+	
+	
+	if($row->typeecole==1)
+	{
+	$pdf->SetFillColor(250);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
 	for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,"tp",1,0,'C',1,0);
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	for($i=1; $i< 10; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	$pdf->SetFillColor(230);
+	}
+	
+	if($row->typeecole==2)
+	{
+	
+	$pdf->SetFillColor(230);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+	for($i=1; $i< 8; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+	$pdf->SetXY(140,$pdf->GetY());
 	for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,"tam",1,0,'C',1,0);
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	for($i=1; $i< 5; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	$pdf->SetFillColor(230);
+	}
+	
+	
+	if($row->typeecole==3)
+	{
+	$pdf->SetFillColor(200);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+	for($i=1; $i< 13; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+	$pdf->SetXY(140+75,$pdf->GetY());
 	for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,"ts",1,0,'C',1,0);
-	$pdf->cell($w,5,"tt",1,0,'C',1,0);
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+	$pdf->SetFillColor(230);
+	}
+ 
+	// $pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
 }
 $pdf->SetXY(5,$pdf->GetY()+5);
-$pdf->cell(30,5,"total",1,0,'C',1,0);
+$pdf->cell(30,5,"Total",1,0,'C',1,0);
+
+$pdf->cell($w,5,$pdf->TNINSCRITSPE('1',$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+for($i=2; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->TNINSCRITSPE($i,$datejour1,$datejour2,$UDS),1,0,'C',1,0);}
+$pdf->cell($w,5,"",1,0,'C',1,0);
+for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->TNINSCRITSPE($i,$datejour1,$datejour2,$UDS),1,0,'C',1,0);}
+$pdf->cell($w,5,"",1,0,'C',1,0);
+for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->TNINSCRITSPE($i,$datejour1,$datejour2,$UDS),1,0,'C',1,0);}
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
-$pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
+// $pdf->cell($w,5,"",1,0,'C',1,0);
 }
 if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed
 {

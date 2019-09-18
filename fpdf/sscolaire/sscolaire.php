@@ -23,9 +23,21 @@ class sscolaire extends FPDI
 	 return $collecte;
 	 }
 	 
+	 function TINSCRITSPE($ECOLE,$datejour1,$datejour2,$UDS){
+	 $this->mysqlconnect();
+	 $sql = " select PALIER,UDS from eleve where ECOLE =$ECOLE and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	 
-	 
-	 
+	  function TNINSCRITSPE($NIVEAUS,$datejour1,$datejour2,$UDS){
+	 $this->mysqlconnect();
+	 $sql = " select PALIER,UDS from eleve where PALIER=$NIVEAUS and UDS=$UDS";   // (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx  )  and (NIVEAUS = $NIVEAUS) 
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	 function DEPISTAGE($NIVEAUS,$datejour1,$datejour2,$colonex,$valeurx,$UDS){
 	 $this->mysqlconnect();
 	 $sql = " select * from examensbd where (DATESBD BETWEEN '$datejour1' AND '$datejour2') and ($colonex $valeurx and UDS=$UDS )  and (NIVEAUS = $NIVEAUS) ";
