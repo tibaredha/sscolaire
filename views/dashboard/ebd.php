@@ -84,13 +84,13 @@
 			
 			<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>
 			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i);} ?></div>
-			<div id="c"><?php for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i);} ?></div>    <div id="d"><?php for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i);} ?></div>
-			<div id="e"><?php for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i);} ?></div>    <div id="f"><?php for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i);} ?></div>
+			<div id="c"><?php for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);} ?></div>    <div id="d"><?php for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);} ?></div>
+			<div id="e"><?php for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);} ?></div>    <div id="f"><?php for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);} ?></div>
 			<div id="g"><?php for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="h"><?php for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i,"d".$i);}?></div>
 			
 			<div id="a1"><?php for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="b1"><?php for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i,"d".$i);} ?></div>
-			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i);} ?></div>
-			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i);} ?></div>
+			<div id="c1"><?php for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);} ?></div>    <div id="d1"><?php for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);} ?></div>
+			<div id="e1"><?php for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);} ?></div>    <div id="f1"><?php for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);} ?></div>
 			<div id="g1"><?php for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i,"d".$i);} ?></div> <div id="h1"><?php for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i,"d".$i);}?></div>
 			
 			<div id="xz">Etablissement scolaire : <?php echo HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole');?></div>

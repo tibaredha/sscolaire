@@ -195,7 +195,14 @@ class sscolaire extends FPDI
 	$this->SetXY(5,$this->GetY()+5); $this->cell(40,5,"DJELFA",1,0,'C',0,0); $this->cell(40,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',0,0);    $this->cell(40,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',0,0);   $this->cell(40,5,"20__- 20__",1,0,'C',0,0);              $this->cell(40,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',0,0);
     }
 	
+	function entetel($UDS,$structure,$Datedebut,$Datefin)
+	{  
+	$this->SetXY(5,$this->GetY()+15);$this->cell(245,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',0,0); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
 	
+
+	$this->SetXY(5,$this->GetY()+10);$this->cell(58,5,"DSP",1,0,'C',0,0);    $this->cell(58,5,"EPSP",1,0,'C',0,0);$this->cell(58,5,"UDS",1,0,'C',0,0);$this->cell(55,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(56,5,"TRIMESTRE",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(58,5,"DJELFA",1,0,'C',0,0); $this->cell(58,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',0,0);    $this->cell(58,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',0,0);   $this->cell(55,5,"20__- 20__",1,0,'C',0,0);              $this->cell(56,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',0,0);
+    }
 	function foot($login)
 	{  
 	$this->SetXY(5,$this->GetY()+15); $this->cell(67,10,"Coordinateur de la SBD à l'UDS",1,0,'C',0,0); $this->cell(66,10,"Coordinateur de la SBD à l'EPSP",1,0,'C',0,0);  $this->cell(66,10,"Coordinateur de la SBD à la DSP",1,0,'C',0,0);

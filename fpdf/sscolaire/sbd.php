@@ -165,12 +165,12 @@ if ($_POST['SS']=='4') //EFF ok verifed
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->SetXY(5,10);             $pdf->cell(285,5,$pdf->mspfr,1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(285,5,$pdf->dspfr,1,0,'C',0,0);
-// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
+$pdf->entetel($UDS,$structure,$datejour1,$datejour2);
 
 $w=15;
 $pdf->SetXY(05,$pdf->GetY()+10); $pdf->cell(30,15,"Etablissements",1,0,1,'L',0);$pdf->cell($w*17,5,"Effectifs ",1,0,1,'L',0);
-$pdf->SetXY(35,$pdf->GetY()+5); $pdf->cell($w,10,"Pré-Scol",1,0,1,'L',0);$pdf->cell($w*6,5,"Primaire",1,0,1,'L',0);$pdf->cell($w*5,5,"Moyen",1,0,1,'L',0);$pdf->cell($w*4,5,"Secondaire",1,0,1,'L',0);$pdf->cell($w,5,"total",1,0,1,'L',0);
-$pdf->SetXY(50,$pdf->GetY()+5);$pdf->cell($w,5,"1AP",1,0,1,'L',0);$pdf->cell($w,5,"2AP",1,0,1,'L',0);$pdf->cell($w,5,"3AP",1,0,1,'L',0);$pdf->cell($w,5,"4AP",1,0,1,'L',0);$pdf->cell($w,5,"5AP",1,0,1,'L',0);$pdf->cell($w,5,"TAP",1,0,1,'L',0);$pdf->cell($w,5,"1AM",1,0,1,'L',0);$pdf->cell($w,5,"2AM",1,0,1,'L',0);$pdf->cell($w,5,"3AM",1,0,1,'L',0);$pdf->cell($w,5,"4AM",1,0,1,'L',0);$pdf->cell($w,5,"TAM",1,0,1,'L',0);$pdf->cell($w,5,"1AS",1,0,1,'L',0);$pdf->cell($w,5,"2AS",1,0,1,'L',0);$pdf->cell($w,5,"3AS",1,0,1,'L',0);$pdf->cell($w,5,"TAS",1,0,1,'L',0);$pdf->cell($w,5,"TOTAL",1,0,1,'L',0);
+$pdf->SetXY(35,$pdf->GetY()+5); $pdf->cell($w,10,"Pré-Scol",1,0,1,'L',0);$pdf->cell($w*6,5,"Cycle Primaire",1,0,1,'L',0);$pdf->cell($w*5,5,"Cycle Moyen",1,0,1,'L',0);$pdf->cell($w*4,5,"Cycle Secondaire",1,0,1,'L',0);$pdf->cell($w,5,"total",1,0,1,'L',0);
+$pdf->SetXY(50,$pdf->GetY()+5);$pdf->cell($w,5,"1°AP",1,0,'C',1,0);$pdf->cell($w,5,"2°AP",1,0,'C',1,0);$pdf->cell($w,5,"3°AP",1,0,'C',1,0);$pdf->cell($w,5,"4°AP",1,0,'C',1,0);$pdf->cell($w,5,"5°AP",1,0,'C',1,0);$pdf->cell($w,5,"TAP",1,0,'C',1,0);$pdf->cell($w,5,"1°AM",1,0,'C',1,0);$pdf->cell($w,5,"2°AM",1,0,'C',1,0);$pdf->cell($w,5,"3°AM",1,0,'C',1,0);$pdf->cell($w,5,"4AM",1,0,'C',1,0);$pdf->cell($w,5,"TAM",1,0,'C',1,0);$pdf->cell($w,5,"1°AS",1,0,'C',1,0);$pdf->cell($w,5,"2°AS",1,0,'C',1,0);$pdf->cell($w,5,"3°AS",1,0,'C',1,0);$pdf->cell($w,5,"TAS",1,0,'C',1,0);$pdf->cell($w,5,"TOTAL",1,0,'C',1,0);
 
 $pdf->mysqlconnect();
 $query = "SELECT * from ecole where iduds = $UDS";

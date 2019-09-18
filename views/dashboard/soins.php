@@ -5,7 +5,7 @@
   grid-template-rows: 20px 45px 45px 45px 45px 45px ;
   grid-gap: 5px;
 }
-#aa,#bb,#cc {background: yellow; text-align: center;border-radius: 5px;width: 50%;height: 100%;}
+#aa,#DATECSBD,#cc {background: yellow; text-align: center;border-radius: 5px;width: 50%;height: 100%;}
 #dd {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
 #dd:hover {background: red;color: #fff;}
 #remember{background: #00cc00; text-align: center;border-radius: 5px;width: 10%;height: 70%; color: white;}
@@ -28,27 +28,31 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">Traitement <?php //echo EDRSFR;?></div>
+<div class="sheader2l">CAT santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')'.' N°['.$this->soins.']';?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'dashboard/soinsx';?>" method="post">			
 		<div id="inner-grid">
-			<div id="a">Traitement : <?php echo '<select id="aa" name="typetrt">';
+			<div id="a">CAT : 
+			<?php echo '<select id="aa" name="typetrt">';
 			echo '<option value="1">Soins</option>';
 			echo '<option value="1">Prothese</option>';
 			echo '<option value="1">ODF</option>';
 			echo '<option value="1">Implant</option>';
 			echo '<option value="1">Patho</option>';
 			echo '<option value="1">Détartrage</option>';
+			echo '<option value="1">Extraction</option>';
+			echo "</select>";?> 
+			</div>
+			<div id="b">Date CAT :   <input id="DATECSBD"  type="text"  name="datetrt"  value="<?php echo date('d-m-Y');?>"   required=""   /></div>
 			
 			
 			
-			echo "</select>";?> </div>
-			<div id="b">Date Traitement :   <input id="bb"  type="text"     name="login"    value=""      required=""   /></div>
-			<div id="c">**** :       <input id="cc"  type="text"     name="password" value=""     required=""   /></div>
-			<div id="d"><a class="x" href="<?php echo URL;?>register">*****</a>&nbsp;&nbsp;&nbsp;<a class="x" href="<?php echo URL;?>register/forget">******</a> </div>
+			<div id="c"></div>
+			<div id="d"><a class="x" href="<?php echo URL;?>register"></a>&nbsp;&nbsp;&nbsp;<a class="x" href="<?php echo URL;?>register/forget"></a> </div>
 			
-			<div id="e"><input type="checkbox" id="remember" name="remember" value="1"> *****</div>
+			<div id="e"><input type="checkbox" id="remember" name="remember" value="1"> </div>
+			<div ><input type="hidden" name="IDELEVE"  value="<?php echo $this->user[0]['id'];?>"/> </div>
 			<div id="f"><input id="dd" onclick="playSound()"  type="submit" value="Envoyer"/> </div>
 		</div>
 	</form>

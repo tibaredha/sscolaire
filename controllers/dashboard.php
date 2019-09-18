@@ -227,14 +227,28 @@ class Dashboard extends Controller {
 		header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		
 	}
 	
-	function soins() {
-	    $this->view->title = 'soins';
+	function soins($id) {
+	    $url1 = explode('/',$_GET['url']);	
+		$this->view->title = 'soins';
 		$this->view->msg = 'soins';
+		$this->view->user = $this->model->userSingleList($id);
+		$this->view->soins = $url1[3];
+		// echo '<pre>';print_r ($url1);echo '<pre>';  
+		
+		
 		$this->view->render($this->controleur.'/soins');
 	}
 	
 	function soinsx() {
-	 // header('location: '.URL.$this->controleur.'/ebd/');	   
+	$data = array();
+	$data['IDELEVE']          = $_POST['IDELEVE'];
+	$data['typetrt']          = $_POST['typetrt'];
+	$data['datetrt']          = $_POST['datetrt'];
+	// $data['']          = $_POST[''];
+	// $data['']          = $_POST[''];
+
+	// echo '<pre>';print_r ($data);echo '<pre>';  
+	header('location: '.URL.$this->controleur.'/ebd/'.$_POST['IDELEVE']);	   
 	}
 	
 	
