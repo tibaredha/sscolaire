@@ -87,6 +87,8 @@ class ecole extends Controller {
 		$data['canti']        = $_POST['canti'];
 		$data['pdh2o']        = $_POST['pdh2o'];
 		$data['sanit']        = $_POST['sanit'];
+		$data['typeecole']    = $_POST['typeecole'];
+		
 		//echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createecole($data);
 		header('location: '.URL.$this->controleur.'/searchecole/0/10?o=id&q='.$last_id);
@@ -115,7 +117,7 @@ class ecole extends Controller {
 		$data['canti']        = $_POST['canti'];
 		$data['pdh2o']        = $_POST['pdh2o'];
 		$data['sanit']        = $_POST['sanit'];
-		
+		$data['typeecole']    = $_POST['typeecole'];
 		// echo '<pre>';print_r ($data);echo '<pre>';  
 		$this->model->editSave($data);
 		header('location: '.URL.$this->controleur.'/searchecole/0/10?o=id&q='.$id);

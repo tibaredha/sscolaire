@@ -4,7 +4,7 @@
   grid-template-rows: 45px 45px 45px 45px 45px 45px 45px;
   grid-gap: 5px;
 }
-#wilayarg,#structurerg,#IDCOMMUNEN,#uds,#dd,#ee,#ff,#gg {background: yellow; text-align: center ; border-radius: 5px;width: 60%;height: 100%;}
+#wilayarg,#structurerg,#IDCOMMUNEN,#uds,#dd,#ee,#ff,#gg,#typeecole{background: yellow; text-align: center ; border-radius: 5px;width: 60%;height: 100%;}
 #udsfr {background: yellow; text-align: left;border-radius: 5px;width: 60%;height: 100%;}
 #udsar {background: yellow; text-align: right;border-radius: 5px;width: 60%;height: 100%;}
 #lat,#lg,#class,#canti,#pdh2o,#sanit {background: yellow; text-align: center;border-radius: 5px;width: 60%;height: 100%;}
@@ -14,7 +14,7 @@
 #ddx:hover {background: red;color: #fff;}
 .per{background: #00cc00; text-align: right;border-radius: 5px;width: 10%;height: 60%; color: white;}
 #a {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 1 / 2;}#abiz {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 7  / 12;  grid-row: 1 / 2;}
-#b {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 2 / 3;}
+#b {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 2 / 3;}#bz {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 7  / 12;  grid-row: 3 / 4;}
 #c {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 3 / 4;}
 #d {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 4 / 5;}#dz {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 7  / 12;  grid-row: 4 / 5;}
 #d1 {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 5 / 6;}#d1z {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 7  / 12;  grid-row: 5 / 6;}

@@ -8,11 +8,11 @@ class ecole_Model extends Model {
 	//*********************************************************************************************************************//
 	public function userSearchstr($o, $q, $p, $l) {
 	// $structure = Session::get("structure");
-    return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by idwil,ids limit $p,$l ");// 
+    return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by ecole limit $p,$l ");// 
     }
     public function userSearchstr1($o, $q) {
         // $structure = Session::get("structure");
-		return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by idwil,ids");//  
+		return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by ecole");//  
     }
 	
 	public function userSingleList($id) {
@@ -33,7 +33,8 @@ class ecole_Model extends Model {
 			'pdh2o'   => $data['pdh2o'],
 			'sanit'   => $data['sanit'],
 			'lat'     => $data['lat'],
-			'lg'      => $data['lg']
+			'lg'      => $data['lg'],
+			'typeecole' => $data['typeecole']
         );
        //echo '<pre>';print_r ($postData);echo '<pre>'; 
        $this->db->update('ecole', $postData, "id =" . $data['id'] . "");
@@ -53,7 +54,8 @@ class ecole_Model extends Model {
 			'pdh2o'   => $data['pdh2o'],
 			'sanit'   => $data['sanit'],
 			'lat'     => $data['lat'],
-			'lg'      => $data['lg']
+			'lg'      => $data['lg'],
+			'typeecole' => $data['typeecole']
         ));
         // echo '<pre>';print_r ($data);echo '<pre>';
 		return $last_id = $this->db->lastInsertId();

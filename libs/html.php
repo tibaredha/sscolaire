@@ -21,15 +21,15 @@ class HTML  {
 	function cao($idcao,$name)
 	{
 	echo '<select id ="'.$idcao.'" class="ax" name="'.$name.'">';
-	echo '<option value="s">s</option>';
-	echo '<option value="c">c</option>';
+	echo '<option value="s">S</option>';
+	echo '<option value="c">C</option>';
 	//echo '<option value="f">f</option>';
-	echo '<option value="o">o</option>';
+	echo '<option value="o">O</option>';
 	//echo '<option value="p">p</option>';
 	//echo '<option value="i">i</option>';
 	//echo '<option value="e">e</option>';
 	//echo '<option value="i">i</option>';
-	echo '<option value="a">a</option>';
+	echo '<option value="a">A</option>';
 	echo "</select>&nbsp;";
 	}
 	
@@ -81,15 +81,15 @@ class HTML  {
 	function cao1($idcaol,$name)
 	{
 	echo '<select id ="'.$idcaol.'"  class="ax1" name="'.$name.'">';
-	echo '<option value="s">s</option>';
-	echo '<option value="c">c</option>';
+	echo '<option value="s">S</option>';
+	echo '<option value="c">C</option>';
 	//echo '<option value="f">f</option>';
-	echo '<option value="o">o</option>';
+	echo '<option value="o">O</option>';
 	//echo '<option value="p">p</option>';
 	//echo '<option value="i">i</option>';
 	//echo '<option value="e">e</option>';
 	//echo '<option value="i">i</option>';
-	echo '<option value="a">a</option>';
+	echo '<option value="a">A</option>';
 	echo "</select>&nbsp;";
 	}
 	
@@ -97,12 +97,6 @@ class HTML  {
 	{
 	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'dashboard/soins/'.$id.'/'.$name.'">'.$name.'</a></label>&nbsp;';
 	}
-	
-	
-	
-	
-	
-	
 	
 	function photosdb($station,$css) 
 	{
