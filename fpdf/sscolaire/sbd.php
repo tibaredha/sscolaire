@@ -13,17 +13,13 @@ $login=$_POST['login'];
 if ($_POST['ECOLE']==0){$ecole=null;} else {$ecole='='.$_POST['ECOLE'];} 
 if ($_POST['PALIER']==0){$palier=null;} else {$palier='='.$_POST['PALIER'];} 
 
-
-
-
-
 if ($_POST['SS']=='0') //liste nominative par medecin uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
 	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
 	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
-	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Médecin)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Médecin)',1,0,'C',1,0);$pdf->cell(66,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);$pdf->cell(30,5,'Palier : '.$pdf->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
 	$w=9;$h=42;$y=75;
 	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"NOM_prénom (fils de) ",1,0,1,'L',0);
 	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
@@ -77,7 +73,7 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
 	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
-    $pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Dentiste)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
+    $pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Dentiste)',1,0,'C',1,0);$pdf->cell(66,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);$pdf->cell(30,5,'Palier : '.$pdf->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+10);
 	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
 	$pdf->cell(15,5,'HYNA',1,0,'C',1,0);
@@ -123,7 +119,7 @@ if ($_POST['SS']=='2') //liste nominative paramedicale par uds
 	$pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
 	$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
 	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
-	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Para-médicale)',1,0,'C',1,0);$pdf->cell(96,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
+	$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Para-médicale)',1,0,'C',1,0);$pdf->cell(66,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);$pdf->cell(30,5,'Palier : '.$pdf->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+10);
 	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
 	$pdf->cell(30,5,'Poids(kg)',1,0,'C',1,0);
@@ -361,21 +357,20 @@ if ($_POST['SS']=='9') //SBD
 {
 //1-DEPSTAGE//
 $pdf->AddPage('P','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-$pdf->SetXY(5,10);             $pdf->cell(200,5,$pdf->mspfr,1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(200,5,$pdf->dspfr,1,0,'C',0,0);
+$pdf->SetAutoPageBreak($auto=true, $margin=0);
 $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"1",1,0,'C',1,0);                  $pdf->cell(176,5,"BILAN D'EVALUATION - DEPISTAGE",1,0,'C',0,0);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"1A",1,0,'C',1,0);                $pdf->cell(48,10,"Nombre d'élèves",1,0,'C',0,0);$pdf->cell(128,10,"Nombre d'élèves ayant",1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+10);  $pdf->cell(24,10,"Niveau scolaire",1,0,'C',0,0);  $pdf->cell(16,10,"Inscrits",1,0,'C',0,0);$pdf->cell(32,10,"Examinés",1,0,'C',0,0);                                  $pdf->cell(32,10,"Hygiène BD-NA",1,0,'C',0,0);                                 $pdf->cell(32,10,"Au moins une carie",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une gingivite",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une Anomalie ODF",1,0,'C',0,0);    
-$pdf->SetXY(5,$pdf->GetY()+10);  $pdf->cell(24,20,"",1,0,'C',0,0);                 $pdf->cell(16,10,"Nbre",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);  $pdf->cell(16,10,"%",1,0,'C',0,0);      $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0); $pdf->cell(16,10,"%",1,0,'C',0,0);       $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,30,"Niveau scolaire",1,0,'C',0,0);  $pdf->cell(16,10,"Inscrits",1,0,'C',0,0);$pdf->cell(32,10,"Examinés",1,0,'C',0,0);                                  $pdf->cell(32,10,"Hygiène BD-NA",1,0,'C',0,0);                                 $pdf->cell(32,10,"Au moins une carie",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une gingivite",1,0,'C',0,0);                                     $pdf->cell(32,10,"Une Anomalie ODF",1,0,'C',0,0);    
+$pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(16,10,"Nbre",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0);  $pdf->cell(16,10,"%",1,0,'C',0,0);      $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);    $pdf->cell(16,10,"Nbre",1,0,'C',0,0); $pdf->cell(16,10,"%",1,0,'C',0,0);       $pdf->cell(16,10,"Nbre",1,0,'C',0,0);$pdf->cell(16,10,"%",1,0,'C',0,0);
 $pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(16,10,"(A)",1,0,'C',0,0);     $pdf->cell(16,10,"(B)",1,0,'C',0,0); $pdf->cell(16,10,"(B/A)",1,0,'C',0,0);$pdf->cell(16,10,"(C)",1,0,'C',0,0);   $pdf->cell(16,10,"(C/B)",1,0,'C',0,0);  $pdf->cell(16,10,"X",1,0,'C',0,0);   $pdf->cell(16,10,"(X/B)",1,0,'C',0,0);$pdf->cell(16,10,"(D)",1,0,'C',0,0);  $pdf->cell(16,10,"(D/B)",1,0,'C',0,0);   $pdf->cell(16,10,"(E)",1,0,'C',0,0); $pdf->cell(16,10,"(E/B)",1,0,'C',0,0);
 $pdf->lDEPISTAGE('1',$datejour1,$datejour2,$UDS);
 $pdf->lDEPISTAGE('2',$datejour1,$datejour2,$UDS);
 $pdf->lDEPISTAGE('6',$datejour1,$datejour2,$UDS);
 $pdf->lTDEPISTAGE($datejour1,$datejour2,$UDS);
 $pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(24,10,"1B",1,0,'C',1,0);                $pdf->cell(87.5,10,"Dents temporaires cao (petit)",1,0,'C',0,0);$pdf->cell(87.5,10,"Dents permanentes CAO (grand)",1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Niveau scolaire",1,0,'C',0,0);   $pdf->cell(17.5,10,"c",1,0,'C',0,0);       $pdf->cell(17.5,10,"a",1,0,'C',0,0);   $pdf->cell(17.5,10,"o",1,0,'C',0,0);    $pdf->cell(17.5,10,"cao",1,0,'C',0,0);   $pdf->cell(17.5,10,"Icao",1,0,'C',0,0);    $pdf->cell(17.5,10,"C",1,0,'C',0,0);   $pdf->cell(17.5,10,"A",1,0,'C',0,0);    $pdf->cell(17.5,10,"O",1,0,'C',0,0);   $pdf->cell(17.5,10,"CAO",1,0,'C',0,0);     $pdf->cell(17.5,10,"ICAO",1,0,'C',0,0); 
-$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,20,"",1,0,'C',0,0);                  $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);  $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); 
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,30,"Niveau scolaire",1,0,'C',0,0);   $pdf->cell(17.5,10,"c",1,0,'C',0,0);       $pdf->cell(17.5,10,"a",1,0,'C',0,0);   $pdf->cell(17.5,10,"o",1,0,'C',0,0);    $pdf->cell(17.5,10,"cao",1,0,'C',0,0);   $pdf->cell(17.5,10,"Icao",1,0,'C',0,0);    $pdf->cell(17.5,10,"C",1,0,'C',0,0);   $pdf->cell(17.5,10,"A",1,0,'C',0,0);    $pdf->cell(17.5,10,"O",1,0,'C',0,0);   $pdf->cell(17.5,10,"CAO",1,0,'C',0,0);     $pdf->cell(17.5,10,"ICAO",1,0,'C',0,0); 
+$pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);  $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);$pdf->cell(17.5,10,"Nbre",1,0,'C',0,0);    $pdf->cell(17.5,10,"Nbre",1,0,'C',0,0); 
 $pdf->SetXY(29,$pdf->GetY()+10);                                                   $pdf->cell(17.5,10,"(F)",1,0,'C',0,0);     $pdf->cell(17.5,10,"(G)",1,0,'C',0,0); $pdf->cell(17.5,10,"(H)",1,0,'C',0,0);  $pdf->cell(17.5,10,"(I)",1,0,'C',0,0);   $pdf->cell(17.5,10,"(I/B)",1,0,'C',0,0);   $pdf->cell(17.5,10,"(J)",1,0,'C',0,0); $pdf->cell(17.5,10,"(K)",1,0,'C',0,0);  $pdf->cell(17.5,10,"(L)",1,0,'C',0,0); $pdf->cell(17.5,10,"(M)",1,0,'C',0,0);     $pdf->cell(17.5,10,"(M/B)",1,0,'C',0,0); 
 $pdf->LDEPISTAGECAO('1',$datejour1,$datejour2,$UDS);
 $pdf->LDEPISTAGECAO('2',$datejour1,$datejour2,$UDS);
@@ -383,6 +378,7 @@ $pdf->LDEPISTAGECAO('6',$datejour1,$datejour2,$UDS);
 $pdf->LTDEPISTAGECAO($datejour1,$datejour2,$UDS);
 $pdf->foot($login);
 //2-PRISE EN CHARGE//
+$pdf->AddPage('P','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"2",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - PRISE EN CHARGE",1,0,'C',0,0);
 $pdf->SetFont('Times','B',9);
@@ -390,8 +386,8 @@ $pdf->SetXY(29,$pdf->GetY()+5); $pdf->cell(176,5,"NB : il est impératif d'assur
 $pdf->SetFont('Times','B',10);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"2A",1,0,'C',1,0);               $pdf->cell(176,10,"Traitement des dents cariées ",1,0,'C',0,0);
 //*****//
-$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Niveau scolaire",1,0,'C',0,0); $pdf->cell(43.98,10,"Nombre d'élèves ayant ",1,0,'C',0,0);$pdf->cell(102.62,10,"Nombre de dents",1,0,'C',0,0);$pdf->cell(29.32,10,"Nombre d'élèves",1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,30,"",1,0,'C',0,0); $pdf->cell(14.66,10,"=> carie",1,0,'C',0,0);$pdf->cell(29.32,10,"reçus au cabinet",1,0,'C',0,0);                             $pdf->cell(14.66,10,"cariées",1,0,'C',0,0);$pdf->cell(29.32,10,"trt définitivement",1,0,'C',0,0);                          $pdf->cell(29.32,10,"trt provisoirement",1,0,'C',0,0);                          $pdf->cell(29.32,10,"Cariées non trt ",1,0,'C',0,0);$pdf->cell(29.32,10,"trt définitivement",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,40,"Niveau scolaire",1,0,'C',0,0); $pdf->cell(43.98,10,"Nombre d'élèves ayant ",1,0,'C',0,0);$pdf->cell(102.62,10,"Nombre de dents",1,0,'C',0,0);$pdf->cell(29.32,10,"Nombre d'élèves",1,0,'C',0,0);
+$pdf->SetXY(29,$pdf->GetY()+10);                                  $pdf->cell(14.66,10,"=> carie",1,0,'C',0,0);$pdf->cell(29.32,10,"reçus au cabinet",1,0,'C',0,0);                             $pdf->cell(14.66,10,"cariées",1,0,'C',0,0);$pdf->cell(29.32,10,"trt définitivement",1,0,'C',0,0);                          $pdf->cell(29.32,10,"trt provisoirement",1,0,'C',0,0);                          $pdf->cell(29.32,10,"Cariées non trt ",1,0,'C',0,0);$pdf->cell(29.32,10,"trt définitivement",1,0,'C',0,0);
 $pdf->SetXY(29,$pdf->GetY()+10);                                  $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0); $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);$pdf->cell(14.66,10,"%",1,0,'C',0,0);    $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);   $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);$pdf->cell(14.66,10,"%",1,0,'C',0,0);   $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);$pdf->cell(14.66,10,"%",1,0,'C',0,0);   $pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);$pdf->cell(14.66,10,"%",1,0,'C',0,0);$pdf->cell(14.66,10,"Nbre",1,0,'C',0,0);$pdf->cell(14.66,10,"%",1,0,'C',0,0);
 $pdf->SetXY(29,$pdf->GetY()+10);                                  $pdf->cell(14.66,10,"(X)",1,0,'C',0,0);  $pdf->cell(14.66,10,"(A)",1,0,'C',0,0); $pdf->cell(14.66,10,"(A/X)",1,0,'C',0,0);$pdf->cell(14.66,10,"(B)",1,0,'C',0,0);    $pdf->cell(14.66,10,"(C)",1,0,'C',0,0);$pdf->cell(14.66,10,"(C/B)",1,0,'C',0,0);$pdf->cell(14.66,10,"(D)",1,0,'C',0,0);$pdf->cell(14.66,10,"(D/B)",1,0,'C',0,0);$pdf->cell(14.66,10,"(E)",1,0,'C',0,0);$pdf->cell(14.66,10,"(E/B)",1,0,'C',0,0);$pdf->cell(14.66,10,"(F)",1,0,'C',0,0);$pdf->cell(14.66,10,"(F/A)",1,0,'C',0,0);
 
@@ -432,56 +428,14 @@ $pdf->cell(14.66,5,"",1,0,'C',0,0);
 
 
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"Moyen",1,0,'L',0,0); 
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
+$pdf->cell(24,5,"Moyen",1,0,'L',0,0); $pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"Secondaire",1,0,'L',0,0); 
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-$pdf->cell(14.66,5,"",1,0,'C',0,0);
-
-
+$pdf->cell(24,5,"Secondaire",1,0,'L',0,0); $pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);$pdf->cell(14.66,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"Total",1,0,'L',1,0); 
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
-$pdf->cell(14.66,5,"",1,0,'C',1,0);
+$pdf->cell(24,5,"Total",1,0,'L',1,0); $pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);$pdf->cell(14.66,5,"",1,0,'C',1,0);
       
-
-
-
-// 25.14
 $pdf->SetXY(5,$pdf->GetY()+10);  
 $pdf->cell(24,10,"2B",1,0,'C',1,0); 
 $pdf->cell(75.42,10,"Gingivites",1,0,'C',0,0);
@@ -489,15 +443,15 @@ $pdf->cell(25.14,10,"Extractions ",1,0,'C',0,0);
 $pdf->cell(75.42,10,"Anomalies ODF",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+10);  
-$pdf->cell(24,5,"",1,0,'L',0,0); 
+$pdf->cell(24,10,"Niveau scolaire ",1,0,'L',0,0); 
 $pdf->cell(25.14,5,"ayant gingivite",1,0,'C',0,0);
 $pdf->cell(50.28,5,"traités pour gingivite",1,0,'C',0,0);
 $pdf->cell(25.14,5,"Nbre de dents ",1,0,'C',0,0);
 $pdf->cell(25.14,5,"anomalie ODF",1,0,'C',0,0);
 $pdf->cell(50.28,5,"anomalie ODF",1,0,'C',0,0);
 
-$pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"",1,0,'L',0,0);
+$pdf->SetXY(29,$pdf->GetY()+5);  
+
 $pdf->cell(25.14,5,"(G)",1,0,'C',0,0);
 $pdf->cell(25.14,5,"(H)",1,0,'C',0,0);
 $pdf->cell(25.14,5,"(H/G)",1,0,'C',0,0);
@@ -559,80 +513,190 @@ $pdf->cell(25.14,5,"",1,0,'C',0,0);
  
 	  
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"Secondaire",1,0,'L',0,0); 
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);
-$pdf->cell(25.14,5,"",1,0,'C',0,0);	 	  	  
+$pdf->cell(24,5,"Secondaire",1,0,'L',0,0); $pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);$pdf->cell(25.14,5,"",1,0,'C',0,0);	 	  	  
 	  
 	  
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"Total",1,0,'L',1,0); 
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);
-$pdf->cell(25.14,5,"",1,0,'C',1,0);		  
+$pdf->cell(24,5,"Total",1,0,'L',1,0); $pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);$pdf->cell(25.14,5,"",1,0,'C',1,0);		  
 	  
 	  
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"2C",1,0,'C',1,0);               $pdf->cell(176,10,"Scellement des sillons des dents (SSD) de 6 ans",1,0,'C',0,0);	  
 	  
 	  
 $pdf->SetXY(5,$pdf->GetY()+10);  
-$pdf->cell(24,5,"",1,0,'L',0,0); 
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-	  
+$pdf->cell(24,10,"Niveau scolaire ",1,0,'L',0,0); 
+$pdf->cell(36,5,"élèves reçu pour SSD6",1,0,'C',0,0);	  
+$pdf->cell(48+40,5,"Nombre de dents de 6 ans avec sillons scellés",1,0,'C',0,0);	  
+$pdf->cell(52,5,"élèves pris en charge pour SSD6",1,0,'C',0,0);	  
+	  	  
+$pdf->SetXY(29,$pdf->GetY()+5);  
+$pdf->cell(36,5,"(L)",1,0,'C',0,0);	 
+$pdf->cell(12,5,"16",1,0,'C',0,0);	  
+$pdf->cell(12,5,"26",1,0,'C',0,0);	  
+$pdf->cell(12,5,"36",1,0,'C',0,0);	  
+$pdf->cell(12,5,"46",1,0,'C',0,0);	  
+$pdf->cell(20,5,"Total (M)",1,0,'C',0,0);	  
+$pdf->cell(20,5,"%M/(Lx4)",1,0,'C',0,0);	  
+$pdf->cell(26,5,"Nbre(N)",1,0,'C',0,0);	  
+$pdf->cell(26,5,"%(N/L)",1,0,'C',0,0);	  
+	  	  
 $pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"",1,0,'L',0,0); 
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-	  
-	  
-$pdf->SetXY(5,$pdf->GetY()+5);  
-$pdf->cell(24,5,"1°AP",1,0,'L',0,0); 
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
-$pdf->cell(22,5,"",1,0,'C',0,0);	  
+$pdf->cell(24,5,"1AP",1,0,'L',0,0);
+$pdf->cell(36,5,"",1,0,'C',0,0);	 
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(20,5,"",1,0,'C',0,0);	  
+$pdf->cell(20,5,"",1,0,'C',0,0);	  
+$pdf->cell(26,5,"",1,0,'C',0,0);	  
+$pdf->cell(26,5,"",1,0,'C',0,0);	  
 $pdf->foot($login);
 //3//
 $pdf->AddPage('P','A4');
 $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"3",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - SUIVI SYSTEMATIQUE DE LA PRISE EN CHARGE",1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(24,10,"3A",1,0,'C',1,0);               $pdf->cell(176,10,"Traitement des dents cariées ",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"3A",1,0,'C',1,0);               $pdf->cell(72,10,"NBR D'ELEVES ",1,0,'C',0,0); $pdf->cell(72,10,"NBR DE DENTS CARIEES  ",1,0,'C',0,0);$pdf->cell(32,10,"NBR D'ELEVES",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);  
+$pdf->cell(24,10,"Niveau scolaire",1,0,'L',0,0);
+$pdf->cell(18,5,"Inscrits",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Reçus P-S",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Reçus P-1",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Total",1,0,'C',0,0);	  
+$pdf->cell(18,5,"TRT P",1,0,'C',0,0);	  
+$pdf->cell(18,5,"N TRT",1,0,'C',0,0);	  
+$pdf->cell(36,5,"TRT D",1,0,'C',0,0);	  
+$pdf->cell(32,5,"C TRT D",1,0,'C',0,0);	  
+$pdf->SetXY(29,$pdf->GetY()+5);
+$pdf->cell(18,5,"Nbre(A)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Nbre(B)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Nbre(C)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"(D)=B+C",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Nbre(E)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Nbre(F)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"Nbre(G)",1,0,'C',0,0);	  
+$pdf->cell(18,5,"%G/(E+F)",1,0,'C',0,0);	  
+$pdf->cell(16,5,"NbreH",1,0,'C',0,0);	  
+$pdf->cell(16,5,"%(H/D)",1,0,'C',0,0);	
+
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(24,10,"2AP (:".(date('y')+0).'-'.(date('y')+1).')',1,0,'L',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"3AP (:".(date('y')+1).'-'.(date('y')+2).')',1,0,'L',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"4AP (:".(date('y')+2).'-'.(date('y')+3).')',1,0,'L',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"5AP (:".(date('y')+3).'-'.(date('y')+4).')',1,0,'L',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Sub total",1,0,'L',0,0);                                 $pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Moyen",1,0,'L',0,0);                                     $pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Secondaire",1,0,'L',0,0);                                $pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Total Global",1,0,'L',0,0);                              $pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(18,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);$pdf->cell(16,10,"",1,0,'C',0,0);
+
+
+$pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(24,10,"3B",1,0,'C',1,0);               $pdf->cell(176,10,"Scellement des sillons des dents (SSD) de 6 ans",1,0,'C',0,0);	  
+$pdf->SetXY(5,$pdf->GetY()+10);  
+$pdf->cell(24,10,"Niveau scolaire ",1,0,'L',0,0); 
+$pdf->cell(36,5,"élèves reçu pour SSD6",1,0,'C',0,0);	  
+$pdf->cell(48+40,5,"Nombre de dents de 6 ans avec sillons scellés",1,0,'C',0,0);	  
+$pdf->cell(52,5,"élèves pris en charge pour SSD6",1,0,'C',0,0);	  
+	  	  
+$pdf->SetXY(29,$pdf->GetY()+5);  
+
+$pdf->cell(36,5,"(L)",1,0,'C',0,0);	 
+$pdf->cell(12,5,"16",1,0,'C',0,0);	  
+$pdf->cell(12,5,"26",1,0,'C',0,0);	  
+$pdf->cell(12,5,"36",1,0,'C',0,0);	  
+$pdf->cell(12,5,"46",1,0,'C',0,0);	  
+$pdf->cell(20,5,"Total (M)",1,0,'C',0,0);	  
+$pdf->cell(20,5,"%M/(Lx4)",1,0,'C',0,0);	  
+$pdf->cell(26,5,"Nbre(N)",1,0,'C',0,0);	  
+$pdf->cell(26,5,"%(N/L)",1,0,'C',0,0);	  
+	  	  
+$pdf->SetXY(5,$pdf->GetY()+5);  
+$pdf->cell(24,5,"2AP",1,0,'L',0,0);
+$pdf->cell(36,5,"",1,0,'C',0,0);	 
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(12,5,"",1,0,'C',0,0);	  
+$pdf->cell(20,5,"",1,0,'C',0,0);	  
+$pdf->cell(20,5,"",1,0,'C',0,0);	  
+$pdf->cell(26,5,"",1,0,'C',0,0);	  
+$pdf->cell(26,5,"",1,0,'C',0,0);
+
 $pdf->foot($login);
 //4//
 $pdf->AddPage('P','A4');
 $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"4",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - EDUCATION POUR LA SANTE BUCCO-DENTAIRE",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"4A",1,0,'C',1,0);               $pdf->cell(72,10,"NBR D'ELEVES ",1,0,'C',0,0); $pdf->cell(72,10,"NBR DE DENTS CARIEES  ",1,0,'C',0,0);$pdf->cell(32,10,"NBR D'ELEVES",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,30,"Niveau scolaire",1,0,'L',0,0);   $pdf->cell(22,10,"Nbr Total de",1,0,'C',0,0);$pdf->cell(22,10,"Total d'élèves ",1,0,'C',0,0);$pdf->cell(132,10,"Nombre d'élèves ayant bénéficié des séances d'éducation pour la santé bucco-dentaire ",1,0,'C',0,0);	  
+$pdf->SetXY(29,$pdf->GetY()+10); $pdf->cell(22,10,"Classes",1,0,'C',0,0);         $pdf->cell(22,10,"inscrits ",1,0,'C',0,0);$pdf->cell(44,10,"Généralités sur la SBD",1,0,'C',0,0);$pdf->cell(44,10,"Brossage des dents Se-Th",1,0,'C',0,0);$pdf->cell(44,10,"Brossage des dents Se-Pr",1,0,'C',0,0);	  
+$pdf->SetXY(29,$pdf->GetY()+10); $pdf->cell(22,10,"Nbre(A)",1,0,'C',0,0);         $pdf->cell(22,10,"Nbre(B)",1,0,'C',0,0);$pdf->cell(22,10,"Nbre(C)",1,0,'C',0,0);$pdf->cell(22,10,"%(B/C)",1,0,'C',0,0);$pdf->cell(22,10,"Nbre(D)",1,0,'C',0,0);$pdf->cell(22,10,"%(D/B)",1,0,'C',0,0);$pdf->cell(22,10,"Nbre(E)",1,0,'C',0,0);$pdf->cell(22,10,"%(E/B)",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Préscolaire",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"1AP",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	          $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Sub total",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	      $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"3AP",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	          $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"4AP",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	          $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"5AP",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	          $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Sub total",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	      $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Moyen",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	          $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Secondaire",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"Sub total",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	      $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
+$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"TotalGlobal",1,0,'L',0,0);$pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	  $pdf->cell(22,10,"",1,0,'C',0,0);	
 $pdf->foot($login);
 //5//
 $pdf->AddPage('P','A4');
 $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 $pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,5,"5",1,0,'C',1,0);                 $pdf->cell(176,5,"BILAN D'EVALUATION - CAMPAGNES D'EDUCATION SANITAIRE ET DE COMMUNICATION SOCIALE",1,0,'C',0,0);
-$pdf->SetXY(5,$pdf->GetY()+10); $pdf->cell(24,10,"5A",1,0,'C',1,0);               $pdf->cell(176,10,"Traitement des dents cariées ",1,0,'C',0,0);
+
+// $pdf->SetXY(5,$pdf->GetY()+10); 
+// $pdf->cell(24,10,"THEMES",1,0,'C',1,0);               
+// $pdf->cell(16,10,"",1,0,'C',0,0);
+// $pdf->cell(16,10,"",1,0,'C',0,0);
+// $pdf->cell(16,10,"",1,0,'C',0,0);
+// $pdf->cell(16,10,"Nombre d’intervenants",1,0,'C',0,0);
+// $pdf->cell(102,10,"Equipe de l’UDS ",1,0,'C',0,0);
+
+$pdf->SetXY(5,$pdf->GetY()+10);
+$pdf->cell(24,10,"5A",1,0,'C',1,0); 
+$pdf->cell(18,10,"Date",1,0,'C',0,0);
+$pdf->cell(18,10,"Population",1,0,'C',0,0);
+$pdf->cell(18,10,"Lieu",1,0,'C',0,0);
+$pdf->cell(17,10,"Supports",1,0,'C',0,0);
+$pdf->cell(105,10,"Nombre d'intervenants",1,0,'C',0,0);
+
+$pdf->SetXY(5,$pdf->GetY()+10); 
+$pdf->cell(24,20,"THEMES",1,0,'C',0,0);               
+$pdf->cell(18,10,"évènements",1,0,'C',0,0);
+$pdf->cell(18,10,"cible",1,0,'C',0,0);
+$pdf->cell(18,10,"évènements",1,0,'C',0,0);
+$pdf->cell(17,10,"moyens",1,0,'C',0,0);
+$pdf->cell(60,10,"Equipe de l'UDS ",1,0,'C',0,0);
+$pdf->cell(45,10,"Autres ",1,0,'C',0,0);
+
+
+$pdf->SetXY(29,$pdf->GetY()+10);
+$pdf->cell(18,10," ",1,0,'C',0,0);
+$pdf->cell(18,10," ",1,0,'C',0,0);
+$pdf->cell(18,10," ",1,0,'C',0,0);
+$pdf->cell(17,10,"utilisés",1,0,'C',0,0);
+$pdf->cell(15,10,"MED-D ",1,0,'C',0,0);
+$pdf->cell(15,10,"MED-G ",1,0,'C',0,0);
+$pdf->cell(15,10,"PSY-C ",1,0,'C',0,0);
+$pdf->cell(15,10,"PARA-M ",1,0,'C',0,0);
+$pdf->cell(15,10,"ENSEG ",1,0,'C',0,0);
+$pdf->cell(15,10,"CLUB-S ",1,0,'C',0,0);
+$pdf->cell(15,10,"ASSOC ",1,0,'C',0,0);
+
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th1 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th2 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th3 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th4 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th5 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th6 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th7 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th8 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th9 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th10 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Th11 :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(24,10,"Nbr themes :",1,0,'L',0,0); $pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(18,10," ",1,0,'C',0,0);$pdf->cell(17,10," ",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);$pdf->cell(15,10,"",1,0,'C',0,0);
 
 
 

@@ -365,7 +365,7 @@ function Header()
 
 function Footer()
 {
-	// To be implemented in your own inherited class
+	// $this->SetXY(5,$this->bMargin-5); $this->cell(24,5,"1",1,0,'C',1,0); 
 }
 
 function PageNo()

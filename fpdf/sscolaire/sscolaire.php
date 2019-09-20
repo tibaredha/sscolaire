@@ -199,13 +199,16 @@ class sscolaire extends FPDI
 	
 	
 	function entete($UDS,$structure,$Datedebut,$Datefin)
-	{  
-	$this->SetXY(5,$this->GetY()+15);$this->cell(160,5,"PROGRAMME NATIONAL DE SANTE BUCCO-DENTAIRE EN MILIEU SCOLAIRE",1,0,'C',0,0); $this->cell(40,10,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+5); $this->cell(160,5," PROGRAMME « STOP A LA CARIE » ",1,0,'C',0,0);
-
-	$this->SetXY(5,$this->GetY()+10);$this->cell(40,5,"DSP",1,0,'C',0,0);    $this->cell(40,5,"EPSP",1,0,'C',0,0);$this->cell(40,5,"UDS",1,0,'C',0,0);$this->cell(40,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(40,5,"TRIMESTRE",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+5); $this->cell(40,5,"DJELFA",1,0,'C',0,0); $this->cell(40,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',0,0);    $this->cell(40,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',0,0);   $this->cell(40,5,"20__- 20__",1,0,'C',0,0);              $this->cell(40,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',0,0);
-    }
+	{ 
+	$this->SetFillColor(245);
+	$this->SetXY(5,10);             $this->cell(200,5,$this->mspfr,1,0,'C',1,0);
+    $this->SetXY(5,$this->GetY()+5);$this->cell(200,5,$this->dspfr,1,0,'C',1,0);
+	$this->SetXY(5,$this->GetY()+10);$this->cell(160,5,"PROGRAMME NATIONAL DE SANTE BUCCO-DENTAIRE EN MILIEU SCOLAIRE",1,0,'C',1,0); $this->cell(40,10,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',1,0);
+	$this->SetXY(5,$this->GetY()+5);$this->cell(160,5," PROGRAMME « STOP A LA CARIE » ",1,0,'C',1,0);
+	$this->SetXY(5,$this->GetY()+10);$this->cell(40,5,"DSP",1,0,'C',1,0);    $this->cell(40,5,"EPSP",1,0,'C',1,0);                                                         $this->cell(40,5,"UDS",1,0,'C',1,0);                                       $this->cell(40,5,"ANNEE SCOLAIRE",1,0,'C',1,0);          $this->cell(40,5,"TRIMESTRE",1,0,'C',1,0);
+	$this->SetXY(5,$this->GetY()+5);$this->cell(40,5,"DJELFA",1,0,'C',1,0); $this->cell(40,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',1,0);    $this->cell(40,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',1,0);   $this->cell(40,5,"____- ____",1,0,'C',1,0);              $this->cell(40,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',1,0);
+    $this->SetFillColor(230);
+	}
 	
 	function entetel($UDS,$structure,$Datedebut,$Datefin)
 	{  
@@ -217,9 +220,9 @@ class sscolaire extends FPDI
     }
 	function foot($login)
 	{  
-	$this->SetXY(5,$this->GetY()+15); $this->cell(67,10,"Coordinateur de la SBD à l'UDS",1,0,'C',0,0); $this->cell(66,10,"Coordinateur de la SBD à l'EPSP",1,0,'C',0,0);  $this->cell(66,10,"Coordinateur de la SBD à la DSP",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);     $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);       $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+10); $this->cell(67,15,$login,1,0,'C',0,0);                               $this->cell(66,15,"",1,0,'C',0,0);                                 $this->cell(66,15,"",1,0,'C',0,0);
+	$this->SetXY(5,$this->bMargin-40);$this->cell(67,10,"Coordinateur de la SBD à l'UDS",1,0,'C',0,0); $this->cell(67,10,"Coordinateur de la SBD à l'EPSP",1,0,'C',0,0);  $this->cell(66,10,"Coordinateur de la SBD à la DSP",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);     $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);       $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,$login,1,0,'C',0,0);                           $this->cell(67,10,"",1,0,'C',0,0);                                 $this->cell(66,10,"",1,0,'C',0,0);
 	}
 	 
 	 //*******************************************examen medicale************************************************************************//
