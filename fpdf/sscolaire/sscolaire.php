@@ -210,13 +210,14 @@ class sscolaire extends FPDI
     $this->SetFillColor(230);
 	}
 	
-	function entetel($UDS,$structure,$Datedebut,$Datefin)
+	function entetel($UDS,$structure,$Datedebut,$Datefin,$titre,$palier)
 	{  
-	$this->SetXY(5,$this->GetY()+10);$this->cell(245,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',0,0); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',0,0);
-	
-
-	$this->SetXY(5,$this->GetY()+10);$this->cell(58,5,"DSP",1,0,'C',0,0);    $this->cell(58,5,"EPSP",1,0,'C',0,0);$this->cell(58,5,"UDS",1,0,'C',0,0);$this->cell(55,5,"ANNEE SCOLAIRE",1,0,'C',0,0);$this->cell(56,5,"TRIMESTRE",1,0,'C',0,0);
-	$this->SetXY(5,$this->GetY()+5); $this->cell(58,5,"DJELFA",1,0,'C',0,0); $this->cell(58,5,$this->nbrtostring('structure','id',$structure,'structure'),1,0,'C',0,0);    $this->cell(58,5,$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'C',0,0);   $this->cell(55,5,"20__- 20__",1,0,'C',0,0);              $this->cell(56,5,$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'C',0,0);
+	$this->SetFillColor(245);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->repfr,1,0,'C',1,0);$this->cell(85,5,"EPSP : ".$this->nbrtostring('structure','id',$structure,'structure'),1,0,'L',1,0);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->mspfr,1,0,'C',1,0);$this->cell(85,5,"UDS : ".$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);
+    $this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->dspfr,1,0,'C',1,0);$this->cell(85,5,"ANNEE SCOLAIRE : ____-____",1,0,'L',1,0);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',1,0);$this->cell(85,5,"TRIMESTRE : ".$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'L',1,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',1,0);$this->cell(215,5,$titre,1,0,'C',0,0);$this->cell(30,5,'Palier : '.$this->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
     }
 	function foot($login)
 	{  

@@ -33,6 +33,11 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			echo '<option value="1">Liste nominative Dentiste </option>';
 			echo '<option value="2">Liste nominative Paramédicale </option>';
 			echo '<option value="4">Effectifs par établissement</option>';
+			
+			
+			
+			
+			
 			echo '<option value="5">Affections dépistées/Eleve</option>';
 			echo '<option value="6">Affections dépistées/Ecole</option>';
 			echo '<option value="7"></option>';
