@@ -28,20 +28,17 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">CAT santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')'.' N°['.$this->soins.']';?></div>
+<div class="sheader2l">CAT santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')'.$this->soins;?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'dashboard/soinsx';?>" method="post">			
 		<div id="inner-grid">
 			<div id="a">CAT : 
 			<?php echo '<select id="aa" name="typetrt">';
-			echo '<option value="1">Soins</option>';
-			echo '<option value="1">Prothese</option>';
-			echo '<option value="1">ODF</option>';
-			echo '<option value="1">Implant</option>';
-			echo '<option value="1">Patho</option>';
-			echo '<option value="1">Détartrage</option>';
-			echo '<option value="1">Extraction</option>';
+			echo '<option value="1">TRT médicale</option>';
+			echo '<option value="2">Soins</option>';
+			echo '<option value="3">Détartrage</option>';
+			echo '<option value="4">Extraction</option>';
 			echo "</select>";?> 
 			</div>
 			<div id="b">Date CAT :   <input id="DATECSBD"  type="text"  name="datetrt"  value="<?php echo date('d-m-Y');?>"   required=""   /></div>

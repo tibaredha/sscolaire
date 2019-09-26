@@ -1,10 +1,7 @@
 <?php
 require('sscolaire.php');
 $pdf = new sscolaire();$pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->setSourceFile('ss.pdf');
-$tplIdx = $pdf->importPage(1);
-$pdf->useTemplate($tplIdx, 5, 5, 200);
+$pdf->AddPage();$pdf->setSourceFile('ss.pdf');$tplIdx = $pdf->importPage(1);$pdf->useTemplate($tplIdx, 5, 5, 200);
 $ID = $_GET["uc"];
 // $pdf->EAN13(15,50,$ID,$h=6,$w=.35);$pdf->EAN13(150,50,time(),$h=6,$w=.35);
 // $pdf->EAN13(15,144,$ID,$h=6,$w=.35);$pdf->EAN13(150,144,time(),$h=6,$w=.35);
@@ -29,6 +26,11 @@ while($row=mysql_fetch_object($resultat))
 	$pdf->SetXY(80,146);$pdf->Write(0,$row->NOM.'_'.$row->PRENOM.'('.$row->FILSDE.')');
 	$pdf->SetXY(50,156);$pdf->Write(0,$pdf->dateUS2FR($row->DATENS));
 	$pdf->SetXY(85,160);$pdf->Write(0,$pdf->nbrtostring('com','IDCOM',$row->COMMUNER,'COMMUNE'));
+	
+	$pdf->AddPage();$pdf->setSourceFile('ss.pdf');$tplIdx = $pdf->importPage(2);$pdf->useTemplate($tplIdx, 5, 5, 200);
+	
+	
+	
 	// $pdf->SetXY(35,82+3);$pdf->Write(0,$pdf->dateUS2FR($row->DINS));
 	
 	// if ($row->Days >= 365) 
@@ -319,8 +321,8 @@ while($row=mysql_fetch_object($resultat))
 // if ($row->Days <= 30)  {$pdf->SetXY(35,53);$pdf->Write(0,$row->Days." J");}
 // if ($row->Days > 30  and  $row->Days < 365 ) {$pdf->SetXY(35,53);$pdf->Write(0,$row->Months." M");}
 // }
-$pdf->Output();
-//$pdf->Output($row->NOM.'_'.$row->PRENOM.".pdf","I");
+// $pdf->Output();
+$pdf->Output($row->NOM.'_'.$row->PRENOM.".pdf","I");
 // }
 }
 ?>

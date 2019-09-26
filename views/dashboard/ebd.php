@@ -78,9 +78,9 @@
 		<div id="inner-grid">
 		
 			<div id="x">Date examen : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
-			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>			
-			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL ;?>"title="Gingivite ">Gingivite (Oui/Non)</a> </div>
-			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL ;?>"title="Anomalie ODF ">AODF (Oui/Non)</a> </div>
+			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/1' ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>			
+			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/2' ;?>"title="Gingivite ">Gingivite (Oui/Non)</a> </div>
+			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/3' ;?>"title="Anomalie ODF ">AODF (Oui/Non)</a> </div>
 			
 			<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>
 			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i);} ?></div>

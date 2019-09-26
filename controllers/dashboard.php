@@ -232,10 +232,12 @@ class Dashboard extends Controller {
 		$this->view->title = 'soins';
 		$this->view->msg = 'soins';
 		$this->view->user = $this->model->userSingleList($id);
-		$this->view->soins = $url1[3];
-		// echo '<pre>';print_r ($url1);echo '<pre>';  
 		
-		
+		if($url1[3]==1){$this->view->soins = ' : [Hygiene BD NA]';} 
+		else if ($url1[3]==2){$this->view->soins = ' : [Gingivite]';}
+		else if ($url1[3]==3){$this->view->soins = ' : [ODF]';}
+		else{$this->view->soins = ' : N°['.$url1[3].']';}
+		//echo '<pre>';print_r ($url1);echo '<pre>';  
 		$this->view->render($this->controleur.'/soins');
 	}
 	
