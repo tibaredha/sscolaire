@@ -2,31 +2,33 @@
 require('sscolaire.php');
 $pdf = new sscolaire();$pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->setSourceFile('decesfrx.pdf');
-$tplIdx = $pdf->importPage(13);
+$pdf->setSourceFile('ss.pdf');
+$tplIdx = $pdf->importPage(1);
 $pdf->useTemplate($tplIdx, 5, 5, 200);
 $ID = $_GET["uc"];
 // $pdf->EAN13(15,50,$ID,$h=6,$w=.35);$pdf->EAN13(150,50,time(),$h=6,$w=.35);
 // $pdf->EAN13(15,144,$ID,$h=6,$w=.35);$pdf->EAN13(150,144,time(),$h=6,$w=.35);
 $pdf->SetFont('Arial','B',9);
 $pdf->mysqlconnect();
-$query = "SELECT * FROM deceshosp where id='".$ID."'  ";
+$query = "SELECT * FROM eleve where id='".$ID."'  ";
 $resultat=mysql_query($query);
 $pdf->SetFont('Arial','B',08);
 while($row=mysql_fetch_object($resultat))
 {
+
+
+
+
 	
 	//partie administrative***//
-	// $pdf->SetFont('Arial','B',08);
+	$pdf->SetFont('Arial','B',08);
 	// $pdf->SetXY(54,35.5);$pdf->Write(0,'ETABLISSEMENT DE SANTE : '.$pdf->nbrtostring('structure','id',intval(trim($row->STRUCTURED)),'structure'));
-	// $pdf->SetFont('Arial','B',10);
-	// $pdf->SetTextColor(255,0,0);
-	// $pdf->SetXY(42,63.5);$pdf->Write(0,$pdf->nbrtostring('WIL','IDWIL',$row->WILAYAD,'WILAYAS'));$pdf->SetXY(42,59.5);$pdf->Write(0,$pdf->nbrtostring('com','IDCOM',$row->COMMUNED,'COMMUNE'));
-	// $pdf->SetXY(24,61+6);$pdf->Write(0,$row->NOM);
-	// $pdf->SetXY(71,61+6);$pdf->Write(0,$row->PRENOM);
-	// $pdf->SetXY(33,77.7);$pdf->Write(0,$row->FILSDE);$pdf->SetXY(85,77.7);$pdf->Write(0,$row->ETDE);
-	// $pdf->SetXY(24,74);  $pdf->Write(0,$row->SEX);
-	// $pdf->SetXY(48,81.7);$pdf->Write(0,$pdf->dateUS2FR($row->DATENAISSANCE));$pdf->SetXY(85,81.7);$pdf->Write(0,$pdf->nbrtostring('com','IDCOM',$row->COMMUNE,'COMMUNE'));
+	$pdf->SetFont('Arial','B',10);
+	$pdf->SetTextColor(255,0,0);
+	//$pdf->SetXY(42,63.5);$pdf->Write(0,$pdf->nbrtostring('WIL','IDWIL',$row->WILAYAN,'WILAYAS'));$pdf->SetXY(42,59.5);$pdf->Write(0,$pdf->nbrtostring('com','IDCOM',$row->COMMUNEN,'COMMUNE'));
+	$pdf->SetXY(80,146);$pdf->Write(0,$row->NOM.'_'.$row->PRENOM.'('.$row->FILSDE.')');
+	$pdf->SetXY(50,156);$pdf->Write(0,$pdf->dateUS2FR($row->DATENS));
+	$pdf->SetXY(85,160);$pdf->Write(0,$pdf->nbrtostring('com','IDCOM',$row->COMMUNER,'COMMUNE'));
 	// $pdf->SetXY(35,82+3);$pdf->Write(0,$pdf->dateUS2FR($row->DINS));
 	
 	// if ($row->Days >= 365) 
@@ -235,7 +237,7 @@ while($row=mysql_fetch_object($resultat))
 	// $pdf->SetXY(179,136.7+41);$pdf->Write(0,$row->POIDNSC);
 	// $pdf->SetXY(169.5,136.7+43);$pdf->Write(0,$row->AGEMERE);
 	// $pdf->SetXY(173.5,136.7+51.5);$pdf->Write(0,$row->EMDPNAT);
-	Décés maternel 
+	//Décés maternel 
 	// if ($row->DECEMAT=='1')
 	// {
 	// $pdf->SetXY(166.5,136.7+58.5);$pdf->Write(0,"X");
@@ -316,9 +318,9 @@ while($row=mysql_fetch_object($resultat))
 // if ($row->Days >= 365) {$pdf->SetXY(35,53);$pdf->Write(0,$row->Years." A");}
 // if ($row->Days <= 30)  {$pdf->SetXY(35,53);$pdf->Write(0,$row->Days." J");}
 // if ($row->Days > 30  and  $row->Days < 365 ) {$pdf->SetXY(35,53);$pdf->Write(0,$row->Months." M");}
+// }
+$pdf->Output();
+//$pdf->Output($row->NOM.'_'.$row->PRENOM.".pdf","I");
+// }
 }
-
-$pdf->Output($row->NOM.'_'.$row->PRENOM.".pdf","I");
-}
-
 ?>
