@@ -208,8 +208,8 @@ class Dashboard_Model extends Model {
 	
 	public function editPassage() {
 		
-	   
-        $sth = $this->db->prepare("SELECT * FROM $this->tbl");		
+	    $uds = Session::get("uds");
+        $sth = $this->db->prepare("SELECT * FROM $this->tbl where UDS=$uds ");		
 		$sth->execute();
 		while ($datax = $sth->fetch()) 
 		{
