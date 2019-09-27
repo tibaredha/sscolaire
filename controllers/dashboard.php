@@ -294,7 +294,11 @@ class Dashboard extends Controller {
 	function Passage() {
 	    $this->view->title = 'Passage';
 		$this->view->msg = 'Passage';
-		$this->view->render($this->controleur.'/Passage');
+		// $this->view->render($this->controleur.'/Passage');
+		$this->model->editPassage();
+		header('location: '.URL.'administrateur/cfg/');
+		
+		
 	}
 	
 	

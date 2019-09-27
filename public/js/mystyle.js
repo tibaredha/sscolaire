@@ -214,6 +214,8 @@ $(function() {
         if (c == false) return false;   
     });   
 });
+
+
 /*service lit*/
 $(document).ready(function()
 {

@@ -144,7 +144,6 @@ class HTML  {
 	
 	
 	
-	
 	function RGPH($IDWIL) 
 	{
 	$structure= Session::get("structure");

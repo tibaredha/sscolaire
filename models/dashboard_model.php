@@ -204,10 +204,20 @@ class Dashboard_Model extends Model {
 	}
 	
 	
+	//*********************************************************************************************//
 	
-	
-	
-	
+	public function editPassage() {
+		
+	   
+        $sth = $this->db->prepare("SELECT * FROM $this->tbl");		
+		$sth->execute();
+		while ($datax = $sth->fetch()) 
+		{
+		 $NPALIER=$datax['PALIER']+1;
+		 $postData = array('PALIER'=> $NPALIER);
+		 $this->db->update($this->tbl, $postData, "id =" .$datax['id'] . "");
+		}
+		}
 	
 	
 	
