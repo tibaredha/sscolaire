@@ -98,8 +98,31 @@ $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AS",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Tous les 10 ans ",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
 $pdf->SetXY(15,33);$pdf->write1DBarcode($id, 'C39', '', '', '', 18, 0.4, $style, 'N');$pdf->Ln();
- 
-$pdf->FICHEBUCCO();
+$pdf->mysqlconnect();
+$querysbd = "select * from examensbd WHERE IDELEVE= '$id' ";
+$resultatsbd=mysql_query($querysbd);
+while($resultsbd=mysql_fetch_object($resultatsbd))
+{
+$data=array(
+"DATE"           => $resultsbd->DATESBD, 
+"CLASSE"         => $resultsbd->NIVEAUS, 
+"AGE"            => "",
+"HBDA"           => $pdf->verif($resultsbd->HYGIENE,"1"),
+"HBDNA"          => $pdf->verif($resultsbd->HYGIENE,"0"),
+"GO"             => $pdf->verif($resultsbd->GINGIVITE,"1"),
+"GN"             => $pdf->verif($resultsbd->GINGIVITE,"0"),
+"ODFO"           => $pdf->verif($resultsbd->AODF,"1"),
+"ODFN"           => $pdf->verif($resultsbd->AODF,"0"),
+"C"              => $resultsbd->C,
+"A"              => $resultsbd->A,
+"O"              => $resultsbd->O,
+"c"              => $resultsbd->PC,
+"a"              => $resultsbd->PA,
+"o"              => $resultsbd->PO,
+);
+$pdf->FICHEBUCCO($data);
+}
+
 $pdf->SUIVIEMEDICAL();
 $pdf->EXAMENMEDICAL();
 $pdf->AddPage('P','A4');
@@ -108,19 +131,21 @@ $pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"POIDS",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->FICHEBUCCO();
-$pdf->FICHEBUCCO();
-$pdf->FICHEBUCCO();
-$pdf->FICHEBUCCO();
+
+
+// $pdf->FICHEBUCCO($data);
+// $pdf->FICHEBUCCO($data);
+// $pdf->FICHEBUCCO($data);
+// $pdf->FICHEBUCCO($data);
 $pdf->AddPage('P','A4');
 $pdf->setRTL(FALSE); 
 $pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"TAILLE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->FICHEBUCCO();
-$pdf->FICHEBUCCO();
-$pdf->FICHEBUCCO();
+// $pdf->FICHEBUCCO($data);
+// $pdf->FICHEBUCCO($data);
+// $pdf->FICHEBUCCO($data);
 $pdf->EXAMENMEDICAL();
 $pdf->EXAMENMEDICAL();
 $pdf->EXAMENPSYCHO();
