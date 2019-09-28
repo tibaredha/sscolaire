@@ -33,7 +33,7 @@
 			"COMMUNER1"      => $commune1,
 			"COMMUNER2"      => $commune2,
 			"ADRESSE"        => '', 
-			"GABO"           => array("AP"=>"AP","AN"=>"AN","BP"=>"BP","BN"=>"BN","ABP"=>"ABP","ABN"=>"ABN","OP"=>"OP","ON"=>"ON"),
+			"GABO"           => array("A+"=>"AP","A-"=>"AN","B+"=>"BP","B-"=>"BN","AB+"=>"ABP","AB-"=>"ABN","O+"=>"OP","O-"=>"ON"),
 			"ECOLE1"         => '1', 
 			"ECOLE2"         => 'Ecole', 
 			"PALIER1"        => '1', 

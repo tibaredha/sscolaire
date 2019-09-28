@@ -39,14 +39,14 @@ echo '<br>';
 echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="center">';
 	echo'<tr bgcolor="#00CED1"   >';
 	echo'<th colspan="'.$colspan.'" >';
-	echo 'liste des ecoles'; echo '&nbsp;';		
+	echo 'Liste des établissements scolaires UDS : '.HTML::nbrtostring('uds','id',Session::get('uds'),'uds'); echo '&nbsp;';		
 	echo'</th>';
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
-	echo'<th style="width:40%">Ecole FR</th>';
-	echo'<th style="width:40%">Ecole AR</th>';
+	echo'<th style="width:30%">Nom établissement (FR)</th>';
+	echo'<th style="width:30%">Type établissement</th>';
+	echo'<th style="width:30%">Nom établissement (AR)</th>';
 	echo'<th style="width:5%">Wilaya</th>';
-	
 	echo'<th style="width:5%">Update</th>';
 	echo'<th style="width:5%">Delete</th>';
 	echo'</tr>';
@@ -55,7 +55,9 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 		{ 
             $bgcolor_donate ='#EDF7FF';
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
-			echo '<td align="left" ><b>'.$value['ecole'].'<b></td>';
+			echo '<td align="left" ><b>'.ucwords($value['ecole']).'<b></td>';
+			if($value['typeecole']==1){$p="Pri";}elseif($value['typeecole']==2){$p="Moy";}elseif($value['typeecole']==3){$p="Sec";}
+			echo '<td align="center" > *'.$p.'</td>'; 
 			echo '<td align="right" >'.$value['ecolear'].'</td>'; 
 			echo '<td style="width:50px" align="left" >'.View::nbrtostring('wil','IDWIL',$value['idwil'],'WILAYAS').'</td>';
 			//echo '<td align="center"  ><a  title="ecole"     href="'.URL.$ctrl.'/ecole/'.$value['id'].'" ><img src="'.URL.'public/images/comm.png"   width="16" height="16" border="0" alt=""   /></a></td>';

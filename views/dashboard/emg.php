@@ -1,17 +1,12 @@
 <style>
 #inner-grid {
-  display: grid;padding: 8px;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
   grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px;
-  grid-gap: 4px;
+  grid-gap: 5px;padding: 5px;
 }
-#DATESBD{background: yellow; text-align: center; border-radius: 5px;width:50%;height: 100%;}
-#DATECSBD{ text-align: center; border-radius: 5px;width:50%;height: 100%;}
-#x  {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 1  / 4;   grid-row: 7 / 8;}
 
-
-
-#s1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 1 / 2;}
+#s1    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 1 / 2;}
 #s1m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 2 / 3;}
 #s1m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 3 / 4;}
 #s1m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 4 / 5;}
@@ -19,8 +14,7 @@
 #s1m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 6 / 7;}
 #s1m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 7 / 8;}
 
-
-#s2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 1 / 2;}
+#s2    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 1 / 2;}
 #s2m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 2 / 3;}
 #s2m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 3 / 4;}
 #s2m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 4 / 5;}
@@ -28,8 +22,7 @@
 #s2m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 6 / 7;}
 #s2m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 7 / 8;}
 
-
-#s3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 1 / 2;}
+#s3    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 1 / 2;}
 #s3m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 2 / 3;}
 #s3m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 3 / 4;}
 #s3m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 4 / 5;}
@@ -37,10 +30,7 @@
 #s3m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 6 / 7;}
 #s3m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 7 / 8;}
 
-
-
-
-#s4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 1 / 2;}
+#s4    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 1 / 2;}
 #s4m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 2 / 3;}
 #s4m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 3 / 4;}
 #s4m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 4 / 5;}
@@ -48,8 +38,7 @@
 #s4m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 6 / 7;}
 #s4m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 7 / 8;}
 
-
-#s5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 1 / 2;}
+#s5    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 1 / 2;}
 #s5m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 2 / 3;}
 #s5m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 3 / 4;}
 #s5m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 4 / 5;}
@@ -57,8 +46,7 @@
 #s5m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 6 / 7;}
 #s5m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 7 / 8;}
 
-
-#s6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 1 / 2;}
+#s6    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 1 / 2;}
 #s6m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 2 / 3;}
 #s6m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 3 / 4;}
 #s6m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 4 / 5;}
@@ -66,27 +54,14 @@
 #s6m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 6 / 7;}
 #s6m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 7 / 8;}
 
+.remember{ width: 10%;height: 70%; }
 
-
-
-
-
+#x{background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 1  / 4;   grid-row: 7 / 8;}
+.DATESBD{background: yellow; text-align: center; border-radius: 5px;width:50%;height: 100%;}
 #x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 4 / 7;  grid-row: 7 / 8;}
 #y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 7 / 8;}
 
-
-
-
-
-
-.ax {background: yellow; text-align: center; border-radius: 5px;width:11%;height: 100%;}.bx {background: white;  text-align: center; border-radius: 5px;width:11%;height: 100%;}
-
-#a {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 2  / 6;  grid-row: 3 / 4;}#b {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 6  / 10;  grid-row: 3 / 4;}
-
- 
-.remember{background: #00cc00; text-align: center;border-radius: 5px;width: 10%;height: 80%; color: white;}
-
-#l {background: salmon;text-align: center;border-radius: 5px;padding: 5px;grid-column: 16  / 19;  grid-row: 7 / 8;}
+#l {background: salmon;text-align: center;border-radius: 5px;padding: 5px;grid-column: 16  / 19;  grid-row: 6 / 8;}
 #l1 {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
 #l1:hover {background: red;color: #fff;}
 </style>
@@ -94,7 +69,22 @@
 
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
 <div class="sheader2l">Examen médicale de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')';?> </div>
-<div class="sheader2r">b</div>
+<div class="sheader2r">
+<?php
+$ctrl='dashboard';$mdl='search';
+$data = array(
+"c"           => $ctrl,
+"m"           => $mdl,
+"combo"       => array("id"=>'id',"Nom"=>'NOM',"prenom"=>'PRENOM',"Sexe"=>'SEX'),
+"submitvalue" => 'Search',
+"cb1"         => $ctrl,    "mb1" => 'nouveau',     "tb1" => 'Créer un nouveau certificat ',      "vb1" => '',  "icon1" => 'add.PNG',
+"cb2"         => $ctrl,    "mb2" => 'Evaluation',  "tb2" => 'Evaluation Mortalité hospitalière', "vb2" => '',  "icon2" => 'eva.png',
+"cb3"         => $ctrl,    "mb3" => '',            "tb3" => '',                                  "vb3" => '',  "icon3" => 'graph.PNG',
+"cb4"         => $ctrl,    "mb4" => '',            "tb4" => '',                                  "vb4" => '',  "icon4" => 'search.PNG');
+echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/".$data['mb1']."/';  \"   title=\"".$data['tb1']."\">&nbsp;<img src=\"".URL."public/images/".$data['icon1']."\" width='15' height='15' border='0' alt=''/>&nbsp;".$data['vb1']."&nbsp;</button> " ;
+echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/".$data['mb2']."/';  \"   title=\"".$data['tb2']."\">&nbsp;<img src=\"".URL."public/images/".$data['icon2']."\" width='15' height='15' border='0' alt=''/>&nbsp;".$data['vb2']."&nbsp;</button> " ;
+?>
+</div>
 <div class="sheader1l"><p id="dashboard"><?php echo TXT_SMENUE1 ;?></p></div>
 
 <div class="listl">
@@ -195,11 +185,11 @@
 				<div id="s6m1"><input type="checkbox"  class="remember"  name="m54"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/54' ;?>">Autres </a> </div>
 				
 				
-				<div id="x">Vue le  : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
+				<div id="x">Vue le  : <input class="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
 				
 				
 				<div id="x3"> <input type="checkbox"  title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1"  />&nbsp;Convocation  </div>
-				<div id="y3">Le : <input type="txt"   title="Date rdv RDV"               id="DATECSBD"                   name="DATECSBD"   value=""  /> </div>
+				<div id="y3">Le : <input type="txt"   title="Date rdv RDV"               id="DATECSBD" class="DATESBD"   name="DATECSBD"   value=""  /> </div>
 				
 				
 				

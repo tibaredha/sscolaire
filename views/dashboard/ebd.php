@@ -70,7 +70,22 @@
 
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
 <div class="sheader2l">Examen santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')';?> </div>
-<div class="sheader2r">b</div>
+<div class="sheader2r">
+<?php
+$ctrl='dashboard';$mdl='search';
+$data = array(
+"c"           => $ctrl,
+"m"           => $mdl,
+"combo"       => array("id"=>'id',"Nom"=>'NOM',"prenom"=>'PRENOM',"Sexe"=>'SEX'),
+"submitvalue" => 'Search',
+"cb1"         => $ctrl,    "mb1" => 'nouveau',     "tb1" => 'Créer un nouveau certificat ',      "vb1" => '',  "icon1" => 'add.PNG',
+"cb2"         => $ctrl,    "mb2" => 'Evaluation',  "tb2" => 'Evaluation Mortalité hospitalière', "vb2" => '',  "icon2" => 'eva.png',
+"cb3"         => $ctrl,    "mb3" => '',            "tb3" => '',                                  "vb3" => '',  "icon3" => 'graph.PNG',
+"cb4"         => $ctrl,    "mb4" => '',            "tb4" => '',                                  "vb4" => '',  "icon4" => 'search.PNG');
+echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/".$data['mb1']."/';  \"   title=\"".$data['tb1']."\">&nbsp;<img src=\"".URL."public/images/".$data['icon1']."\" width='15' height='15' border='0' alt=''/>&nbsp;".$data['vb1']."&nbsp;</button> " ;
+echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/".$data['mb2']."/';  \"   title=\"".$data['tb2']."\">&nbsp;<img src=\"".URL."public/images/".$data['icon2']."\" width='15' height='15' border='0' alt=''/>&nbsp;".$data['vb2']."&nbsp;</button> " ;
+?>
+</div>
 <div class="sheader1l"><p id="dashboard"><?php echo TXT_SMENUE1 ;?></p></div>
 
 <div class="listl">

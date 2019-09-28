@@ -7,12 +7,12 @@ class ecole_Model extends Model {
 	}
 	//*********************************************************************************************************************//
 	public function userSearchstr($o, $q, $p, $l) {
-	// $structure = Session::get("structure");
-    return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by ecole limit $p,$l ");// 
+	$uds = Session::get("uds");
+    return $this->db->select("SELECT * FROM ecole where iduds=$uds and  $o like '$q%' order by typeecole,ecole limit $p,$l ");// 
     }
     public function userSearchstr1($o, $q) {
-        // $structure = Session::get("structure");
-		return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by ecole");//  
+        $uds = Session::get("uds");
+		return $this->db->select("SELECT * FROM ecole where iduds=$uds and  $o like '$q%' order by typeecole,ecole");//  
     }
 	
 	public function userSingleList($id) {

@@ -645,11 +645,11 @@ class HTML  {
 	echo "<select  id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"   >"."\n";
 	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
 	mysql_query("SET NAMES 'UTF8' ");
-	$result = mysql_query("SELECT * FROM $tb_name where iduds=$iduds order by ecole" );
+	$result = mysql_query("SELECT * FROM $tb_name where iduds=$iduds order by typeecole,ecole" );
 	while($data =  mysql_fetch_array($result))
 	{
 	if($data[13]==1){$p="Pri";}elseif($data[13]==2){$p="Moy";}elseif($data[13]==3){$p="Sec";}
-	echo '<option value="'.$data[0].'">'.ucwords($data[5]).' (*'.$p.')</option>';
+	echo '<option value="'.$data[0].'">'.ucwords($data[5]).' [*'.$p.']</option>';
 	}
 	echo '</select>'."\n"; 
 	}
