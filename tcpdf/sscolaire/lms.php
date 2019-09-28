@@ -99,6 +99,81 @@ $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AS",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Tous les 10 ans ",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
 
+$pdf->AddPage('P','A4');
+$pdf->setRTL(FALSE); 
+$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+5); $pdf->SetFillColor(152, 235, 251 );$pdf->Cell(180,10,"FICHE SANTE BUCCO-DENTAIRE",1,0,'C',1,0);    
+$pdf->SetXY(15,$pdf->GetY()+20);$pdf->Cell(45,10,"DATE",1,0,'L'); 
+$pdf->SetXY(15,$pdf->GetY()+20);$pdf->Cell(45,10,"CLASSE",1,0,'L'); $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"AGE",1,0,'L');
+$pdf->RoundedRect($x=15, $y=$pdf->GetY()+20, $w=180, $h=20, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+20);$pdf->Cell(45,10,"HYGIENNE BUCCO-DENTAIRE",0,0,'L'); $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"O ACCEPTABLE",0,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+10);$pdf->Cell(45,10,"",0,0,'L');                        $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"O NON ACCEPTABLE",0,0,'L');
+$pdf->RoundedRect($x=15, $y=$pdf->GetY()+20, $w=180, $h=30, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+20);$pdf->Cell(45,10,"GYNGIVITE",0,0,'L');               $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"O LOCALISEE",0,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+10);$pdf->Cell(45,10,"",0,0,'L');                        $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"O GENERALISEE",0,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+10);$pdf->Cell(45,10,"",0,0,'L');                        $pdf->Cell(90,10,"",0,0,'L');$pdf->Cell(45,10,"O TARTRE",0,0,'L');
+$pdf->RoundedRect($x=15, $y=$pdf->GetY()+20, $w=60, $h=90, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->RoundedRect($x=15+60, $y=$pdf->GetY()+20, $w=60, $h=90, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->RoundedRect($x=15+120, $y=$pdf->GetY()+20, $w=60, $h=90, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+20);$pdf->Cell(45,10,"INDICE DE CARIE",0,0,'L'); 
+$pdf->Image("dents.jpg", $x=16, $y=$pdf->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+$pdf->Image("dents.jpg", $x=15+61, $y=$pdf->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+$pdf->Image("dents.jpg", $x=15+121, $y=$pdf->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+$pdf->SetXY(15,$pdf->GetY()+80);$pdf->Cell(60,5,"C : ",1,0,'L');$pdf->Cell(60,5,"A : ",1,0,'L');$pdf->Cell(60,5,"O : ",1,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(60,5,"c : ",1,0,'L');$pdf->Cell(60,5,"a : ",1,0,'L');$pdf->Cell(60,5,"o : ",1,0,'L');
+$pdf->RoundedRect($x=15, $y=$pdf->GetY()+10, $w=180, $h=15, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+10);$pdf->Cell(45,5,"ANOMALIE DENTO-FACIALE",0,0,'L');              $pdf->Cell(90,5,"",0,0,'L');$pdf->Cell(45,5,"_______________________",0,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(45,5,"Orientation vers un milieu specialisé",0,0,'L');$pdf->Cell(90,5,"",0,0,'L');$pdf->Cell(45,5,"_______________________",0,0,'L');
+$pdf->RoundedRect($x=15, $y=$pdf->GetY()+15, $w=180, $h=15, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+15);$pdf->Cell(45,5,"AUTRES PATHOLOGIES",0,0,'L');                  $pdf->Cell(90,5,"",0,0,'L');$pdf->Cell(45,5,"_______________________",0,0,'L');
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(45,5,"Orientation vers un milieu specialisé",0,0,'L');$pdf->Cell(90,5,"",0,0,'L');$pdf->Cell(45,5,"_______________________",0,0,'L');
+
+$pdf->AddPage('P','A4');
+$pdf->setRTL(FALSE); 
+$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+5); $pdf->SetFillColor(152, 235, 251 );$pdf->Cell(180,10,"SUIVIE MEDICAL",1,0,'C',1,0);  
+
+$pdf->SetXY(15,$pdf->GetY()+15);$pdf->SetFillColor(253, 253, 9 );$pdf->Cell(26,10,"DATE",1,0,'C',1,0);$pdf->Cell(26,10,"CLASSE",1,0,'C',1,0);      $pdf->Cell(26,10,"AGE",1,0,'C',1,0); $pdf->Cell(66,10,"RESULTAT ET CONCLUSION D'EXAMENS",1,0,'C',1,0);$pdf->Cell(36,10,"MEDECIN",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,"",1,0,'C',1,0);$pdf->Cell(26,10,"",1,0,'C',1,0);      $pdf->Cell(26,10,"",1,0,'C',1,0); $pdf->Cell(66,10,"",1,0,'C',1,0);$pdf->Cell(36,10,"",1,1,'C',1,0);
+
+$pdf->AddPage('P','A4');
+$pdf->setRTL(FALSE); 
+$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+5); $pdf->SetFillColor(152, 235, 251 );$pdf->Cell(180,10,"EXAMEN MEDICAL DE DEPISTAGE",1,0,'C',1,0);  
+$pdf->SetXY(15,$pdf->GetY()+10);$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"CLASSE FREQUENTE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE DE L'ELEVE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
+
+
+
+
 
 $pdf->Output();
 
