@@ -266,6 +266,79 @@ class sscolaire extends FPDI
 	 return $collecte;
 	 }
 
+	 function listeaffection($x,$w,$h,$y){
+	
+	$this->SetXY(05,$y-42); $this->cell(40,$h,"Élèves",1,0,1,'L',0);
+	$this->Rotatedcell($x+(0*$w),$y,$h,$w,'HTA',90);
+	$this->Rotatedcell($x+(1*$w),$y,$h,$w,'Souffle',90);
+	$this->Rotatedcell($x+(2*$w),$y,$h,$w,'Tr .du rythme',90);
+	$this->Rotatedcell($x+(3*$w),$y,$h,$w,'RAA',90);
+	$this->Rotatedcell($x+(4*$w),$y,$h,$w,'Cardiopathie',90);
+	$this->Rotatedcell($x+(5*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(6*$w),$y,$h,$w,'Dermatite atopique',90);
+	$this->Rotatedcell($x+(7*$w),$y,$h,$w,'Gale',90);
+	$this->Rotatedcell($x+(8*$w),$y,$h,$w,'Pédiculose',90);
+	$this->Rotatedcell($x+(9*$w),$y,$h,$w,'Psoriasis',90);
+	$this->Rotatedcell($x+(10*$w),$y,$h,$w,'Teigne',90);
+	$this->Rotatedcell($x+(11*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(12*$w),$y,$h,$w,'Obésité',90);
+	$this->Rotatedcell($x+(13*$w),$y,$h,$w,'Retard stat. Pond',90);
+	$this->Rotatedcell($x+(14*$w),$y,$h,$w,'Surpoid',90);
+	$this->Rotatedcell($x+(15*$w),$y,$h,$w,'Diabète',90);
+	$this->Rotatedcell($x+(16*$w),$y,$h,$w,'Goitre',90);
+	$this->Rotatedcell($x+(17*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(18*$w),$y,$h,$w,'Oxyurose',90);
+	$this->Rotatedcell($x+(19*$w),$y,$h,$w,'Les hernies',90);
+	$this->Rotatedcell($x+(20*$w),$y,$h,$w,'Maladie coeliaque',90);
+	$this->Rotatedcell($x+(21*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(22*$w),$y,$h,$w,'Paleur cut. muque',90);
+	$this->Rotatedcell($x+(23*$w),$y,$h,$w,'Anémie',90);
+	$this->Rotatedcell($x+(24*$w),$y,$h,$w,'Hémophilie',90);
+	$this->Rotatedcell($x+(25*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(26*$w),$y,$h,$w,'Baisse acuité vis',90);
+	$this->Rotatedcell($x+(27*$w),$y,$h,$w,'Nystagmus',90);
+	$this->Rotatedcell($x+(28*$w),$y,$h,$w,'Ptosis',90);
+	$this->Rotatedcell($x+(29*$w),$y,$h,$w,'Strabisme',90);
+	$this->Rotatedcell($x+(30*$w),$y,$h,$w,'Trachome',90);
+	$this->Rotatedcell($x+(31*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(32*$w),$y,$h,$w,'Hypoacousie',90);
+	$this->Rotatedcell($x+(33*$w),$y,$h,$w,'Rhinite allergique',90);
+	$this->Rotatedcell($x+(34*$w),$y,$h,$w,'Surdité',90);
+	$this->Rotatedcell($x+(35*$w),$y,$h,$w,'Otites chroniques',90);
+	$this->Rotatedcell($x+(36*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(37*$w),$y,$h,$w,'Cypho-scoliose',90);
+	$this->Rotatedcell($x+(38*$w),$y,$h,$w,'Déform.squel.',90);
+	$this->Rotatedcell($x+(39*$w),$y,$h,$w,'Scoliose',90);
+	$this->Rotatedcell($x+(40*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(41*$w),$y,$h,$w,'Asthme',90);
+	$this->Rotatedcell($x+(42*$w),$y,$h,$w,'Tuberculose pulm',90);
+	$this->Rotatedcell($x+(43*$w),$y,$h,$w,'Tub.Extra-pulm',90);
+	$this->Rotatedcell($x+(44*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(45*$w),$y,$h,$w,'Diffucultés scolaires',90);
+	$this->Rotatedcell($x+(46*$w),$y,$h,$w,'Tr.du comport',90);
+	$this->Rotatedcell($x+(47*$w),$y,$h,$w,'Tr. Du langage',90);
+	$this->Rotatedcell($x+(48*$w),$y,$h,$w,'Autres',90);
+	
+	$this->Rotatedcell($x+(49*$w),$y,$h,$w,'Cryptorchidie',90);
+	$this->Rotatedcell($x+(50*$w),$y,$h,$w,'Enurésie',90);
+	$this->Rotatedcell($x+(51*$w),$y,$h,$w,'Tr.urinaires',90);
+	$this->Rotatedcell($x+(52*$w),$y,$h,$w,'Autres',90);
+	$this->Rotatedcell($x+(53*$w),$y,$h,$w,'Autres',90);
+	$this->Rotatedcell($x+(54*$w),$y,$h,$w,'Total affections depistées',90);
+	 }
+	 
+	 
+	 
+	 
 	 //*******************************************************************************************************************//
 	
 	

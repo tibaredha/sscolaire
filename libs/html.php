@@ -499,60 +499,7 @@ class HTML  {
 	echo "&nbsp;<input id=\"submitsrh\" type=\"submit\" name=\"\" value=\"".$data['submitvalue']."\"/> " ;
 	echo "</form>" ;	
 	}
-	function tabsbnm($data) 
-	{
-	echo '<label  id="l0bn1">Date</label>';  
-	echo '<input  id="d1"  type="txt"  name="mois"  value="'.$data['mois'].'" autofocus/>';
-	echo '<input  id="d2"  type="txt"  name="annee" value="'.$data['annee'].'"/>';
 	
-	echo '<label  id="l0bn2">Wilaya</label>';HTML::WILAYA('WILAYAD','b0n2c','WILAYAD','wil',$data['WILAYA1'],$data['WILAYA2']) ;  
-	echo '<label  id="l0bn3">Commune</label>';HTML::COMMUNE('COMMUNED','b0n3c','COMMUNED',$data['COMMUNE1'],$data['COMMUNE2']);
-	
-	echo '<label  id="l0bn4">1-Naisances Par Sexe Enregistrées Dans La Commune</label>';
-	echo '<label  id="l0bn5">Masculin</label>';echo '<input  id="b0n5c" type="txt"   name="nm1" value="'.$data['nm1'].'" placeholder="00"/>';echo '<input  id="b0n5" type="txt"  name="nf1" value="'.$data['nf1'].'" placeholder="00"/>';
-	echo '<label  id="l0bn6">Feminin</label>'; echo '<input  id="b0n6c" type="txt"   name="nm2" value="'.$data['nm2'].'" placeholder="00"/>';echo '<input  id="b0n6" type="txt"  name="nf2" value="'.$data['nf2'].'" placeholder="00"/>';
-	echo '<label  id="l0bn7">Survenues Au cours Du Mois</label>';
-	echo '<label  id="l0bn8">Enregistrées Par Jugement</label>';
-	
-	echo '<label  id="l0bn9">2-Mort Nées Enregistrés Dans La Commune Selon Le Sexe</label>';
-	echo '<label  id="l0bn10">Total Des Mort Nées Enregistrés</label>';echo '<input  id="b0n10c" type="txt"    name="mnm1" value="'.$data['mnm1'].'" placeholder="00"/>';echo '<input  id="b0n10" type="txt"  name="mnf1" value="'.$data['mnf1'].'" placeholder="00"/>';
-	
-	echo '<label  id="l0bn11">3-Mariages Enregistrées Dans La Commune</label>';
-	echo '<label  id="l0bn12">Mariages Enregistrés Au Cours Du Moi</label>';              echo '<input  id="b0n12" type="txt"  name="m1" value="'.$data['m1'].'" placeholder="00"/>';
-	echo '<label  id="l0bn13">Mariages Enregistrés Par Jugement Au Cours Du Mois</label>';echo '<input  id="b0n13" type="txt"  name="m2" value="'.$data['m2'].'" placeholder="00"/>';
-	
-	echo '<label  id="l0bn14">4-Deces Enregistrés Par Jugement Dans La Commune</label>';
-	echo '<label  id="l0bn15">Masculin</label>';
-	echo '<label  id="l0bn16">Feminin</label>';
-	echo '<label  id="l0bn17">Survenues Au cours Du Mois</label>';
-	echo '<input  id="b0n15c" type="txt"    name="djm1" value="'.$data['djm1'].'" placeholder="00"/>';echo '<input  id="b0n15" type="txt"  name="djf1" value="'.$data['djf1'].'" placeholder="00"/>';
-	echo '<label  id="lbn0">Décès</label>';      echo '<label  id="bn0c">Masculin</label>';                                                        echo '<label  id="bn0">Feminin</label>'; 
-	echo '<label  id="lbn1">moins 1 ans</label>';echo '<input  id="bn1c" type="txt"   name="dm1"  value="'.$data['dm1'].'"  placeholder="00"/>';echo '<input  id="bn1"  type="txt"  name="df1"  value="'.$data['df1'].'"  placeholder="00"/>';
-	echo '<label  id="lbn2">01-04 ans</label>';  echo '<input  id="bn2c" type="txt"   name="dm2"  value="'.$data['dm2'].'"  placeholder="00"/>';echo '<input  id="bn2"  type="txt"  name="df2"  value="'.$data['df2'].'"  placeholder="00"/>';
-	echo '<label  id="lbn3">05-09 ans</label>';  echo '<input  id="bn3c" type="txt"   name="dm3"  value="'.$data['dm3'].'"  placeholder="00"/>';echo '<input  id="bn3"  type="txt"  name="df3"  value="'.$data['df3'].'"  placeholder="00"/>';
-	echo '<label  id="lbn4">10-14 ans</label>';  echo '<input  id="bn4c" type="txt"   name="dm4"  value="'.$data['dm4'].'"  placeholder="00"/>';echo '<input  id="bn4"  type="txt"  name="df4"  value="'.$data['df4'].'"  placeholder="00"/>';
-	echo '<label  id="lbn5">15-19 ans</label>';  echo '<input  id="bn5c" type="txt"   name="dm5"  value="'.$data['dm5'].'"  placeholder="00"/>';echo '<input  id="bn5"  type="txt"  name="df5"  value="'.$data['df5'].'"  placeholder="00"/>';
-	echo '<label  id="lbn6">20-24 ans</label>';  echo '<input  id="bn6c" type="txt"   name="dm6"  value="'.$data['dm6'].'"  placeholder="00"/>';echo '<input  id="bn6"  type="txt"  name="df6"  value="'.$data['df6'].'"  placeholder="00"/>';
-	echo '<label  id="lbn7">25-29 ans</label>';  echo '<input  id="bn7c" type="txt"   name="dm7"  value="'.$data['dm7'].'"  placeholder="00"/>';echo '<input  id="bn7"  type="txt"  name="df7"  value="'.$data['df7'].'"  placeholder="00"/>';
-	echo '<label  id="lbn8">30-34 ans</label>';  echo '<input  id="bn8c" type="txt"   name="dm8"  value="'.$data['dm8'].'"  placeholder="00"/>';echo '<input  id="bn8"  type="txt"  name="df8"  value="'.$data['df8'].'"  placeholder="00"/>';
-	echo '<label  id="lbn9">35-39 ans</label>';  echo '<input  id="bn9c" type="txt"   name="dm9"  value="'.$data['dm9'].'"  placeholder="00"/>';echo '<input  id="bn9"  type="txt"  name="df9"  value="'.$data['df9'].'"  placeholder="00"/>';
-	echo '<label  id="lbn10">40-44 ans</label>'; echo '<input  id="bn10c" type="txt"  name="dm10" value="'.$data['dm10'].'" placeholder="00"/>';echo '<input  id="bn10" type="txt"  name="df10" value="'.$data['df10'].'" placeholder="00"/>';
-	echo '<label  id="lbn11">45-49 ans</label>'; echo '<input  id="bn11c" type="txt"  name="dm11" value="'.$data['dm11'].'" placeholder="00"/>';echo '<input  id="bn11" type="txt"  name="df11" value="'.$data['df11'].'" placeholder="00"/>';
-	echo '<label  id="lbn12">50-54 ans</label>'; echo '<input  id="bn12c" type="txt"  name="dm12" value="'.$data['dm12'].'" placeholder="00"/>';echo '<input  id="bn12" type="txt"  name="df12" value="'.$data['df12'].'" placeholder="00"/>';
-	echo '<label  id="lbn13">55-59 ans</label>'; echo '<input  id="bn13c" type="txt"  name="dm13" value="'.$data['dm13'].'" placeholder="00"/>';echo '<input  id="bn13" type="txt"  name="df13" value="'.$data['df13'].'" placeholder="00"/>';
-	echo '<label  id="lbn14">60-64 ans</label>'; echo '<input  id="bn14c" type="txt"  name="dm14" value="'.$data['dm14'].'" placeholder="00"/>';echo '<input  id="bn14" type="txt"  name="df14" value="'.$data['df14'].'" placeholder="00"/>';
-	echo '<label  id="lbn15">65-69 ans</label>'; echo '<input  id="bn15c" type="txt"  name="dm15" value="'.$data['dm15'].'" placeholder="00"/>';echo '<input  id="bn15" type="txt"  name="df15" value="'.$data['df15'].'" placeholder="00"/>';
-	echo '<label  id="lbn16">70-74 ans</label>'; echo '<input  id="bn16c" type="txt"  name="dm16" value="'.$data['dm16'].'" placeholder="00"/>';echo '<input  id="bn16" type="txt"  name="df16" value="'.$data['df16'].'" placeholder="00"/>';
-	echo '<label  id="lbn17">75-79 ans</label>'; echo '<input  id="bn17c" type="txt"  name="dm17" value="'.$data['dm17'].'" placeholder="00"/>';echo '<input  id="bn17" type="txt"  name="df17" value="'.$data['df17'].'" placeholder="00"/>';
-	echo '<label  id="lbn18">80-84 ans</label>'; echo '<input  id="bn18c" type="txt"  name="dm18" value="'.$data['dm18'].'" placeholder="00"/>';echo '<input  id="bn18" type="txt"  name="df18" value="'.$data['df18'].'" placeholder="00"/>';
-	echo '<label  id="lbn19">85 et plus</label>';echo '<input  id="bn19c" type="txt"  name="dm19" value="'.$data['dm19'].'" placeholder="00"/>';echo '<input  id="bn19" type="txt"  name="df19" value="'.$data['df19'].'" placeholder="00"/>';
-	
-	echo '<input type="hidden" name="WILAYA"     value="'.Session::get('wilaya').'"/>';
-	echo '<input type="hidden" name="STRUCTURE"  value="'.Session::get('structure').'"/>';
-	echo '<input type="hidden" name="STRUCTURED" value="'.Session::get('structure').'"/>';
-	echo '<input type="hidden" name="login"      value="'.Session::get('login').'"/>';
-	echo '<input id="submitdemo" type="submit" />	'; 
-	}
 	
 	function combov($id,$name,$valeur)  
 	{
@@ -601,180 +548,9 @@ class HTML  {
 	
 	
 	
-	function tabsns($data) 
-	{
-	echo '<div    id="content_1" class="contenttabs1">  ';
-	echo '<label  id="lG">l\'état civil </label>';
 	
-	echo '<label  id="lNOM2">Nom mère :</label>';                  echo '<input id="NOM2"    type="txt"  name="NOM2"    value="'.$data['NOM2'].'" placeholder="xxxxxxx" autofocus onkeyup="javascript:this.value=this.value.toUpperCase();" />';
-	echo '<label  id="lPRENOM2">Prénom mère:</label> ';            echo '<input id="PRENOM2" type="txt"  name="PRENOM2" value="'.$data['PRENOM2'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toLowerCase();"/>';
-	echo '<label  id="lDATENS2">Date naissance mère : </label>';   echo '<input id="DATENS2" type="txt"  name="DATENS2" value="'.$data['DATENS2'].'" placeholder="00-00-0000" onblur="genererCodeP()" />';
-	echo '<label  id="lWILAYA2">Wilaya Nais :</label>';            HTML::WILAYA('WILAYA2','WILAYA2','WILAYA2','wil',$data['WILAYA21'],$data['WILAYA22']) ;
-	echo '<label  id="lCOMMUNE2">Commune Nais :</label>';          HTML::COMMUNE('COMMUNE2','COMMUNE2','COMMUNE2',$data['COMMUNE21'],$data['COMMUNE22']);
-	echo '<label  id="lProfession2">Profession :</label>';         HTML::Profession(44,44,'PROFESSION2','Profession2','Profession',Session::get('structure'),$data['PROFESSION21'],$data['PROFESSION22']) ;
-	echo '<label  id="lGROUPAGEM">Groupage :</label>';             $this->combov('GROUPAGE','GROUPAGE',$data['GROUPAGE']);$this->combov('RH','RH',$data['RH']);
-	echo '<label  id="lNSSMERE">NSS :</label>';                    echo '<input id="NSSMERE"    type="txt"  name="NSSMERE"    value="'.$data['NSSMERE'].'" />';
-	echo '<label  id="lTELMERE">TEL :</label>';                    echo '<input id="TELMERE"    type="txt"  name="TELMERE"    value="'.$data['TELMERE'].'" />';
 	
-	echo '<label  id="lNOM3">Nom père :</label>';                 echo '<input id="NOM3"    type="txt"  name="NOM3"    value="'.$data['NOM3'].'" placeholder="xxxxxxx"  onkeyup="javascript:this.value=this.value.toUpperCase();" />';
-	echo '<label  id="lPRENOM3">Prénom père:</label> ';           echo '<input id="PRENOM3" type="txt"  name="PRENOM3" value="'.$data['PRENOM3'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toLowerCase();"/>';
-	echo '<label  id="lDATENS3">Date naissance père : </label>';  echo '<input id="DATENS3" type="txt"  name="DATENS3" value="'.$data['DATENS3'].'" placeholder="00-00-0000" onblur="genererCodeP()" />';
-	echo '<label  id="lWILAYA3">Wilaya Nais :</label>';           HTML::WILAYA('WILAYA3','WILAYA3','WILAYA3','wil',$data['WILAYA31'],$data['WILAYA32']) ;
-	echo '<label  id="lCOMMUNE3">Commune Nais :</label>';         HTML::COMMUNE('COMMUNE3','COMMUNE3','COMMUNE3',$data['COMMUNE31'],$data['COMMUNE32']);
-	echo '<label  id="lPROFESSION3">Profession :</label>';        HTML::Profession(44,44,'PROFESSION3','PROFESSION3','Profession',Session::get('structure'),$data['PROFESSION31'],$data['PROFESSION32']) ;
-	echo '<label  id="lGROUPAGEP">Groupage :</label>';            $this->combov('GROUPAGEP','GROUPAGEP',$data['GROUPAGEP']);$this->combov('RHP','RHP',$data['RHP']);
-	echo '<label  id="lNSSPERE">NSS :</label>';                   echo '<input id="NSSPERE"    type="txt"  name="NSSPERE"    value="'.$data['NSSPERE'].'" />';
-	echo '<label  id="lTELPERE">TEL :</label>';                   echo '<input id="TELPERE"    type="txt"  name="TELPERE"    value="'.$data['TELPERE'].'" />';
-	echo '<label  id="lWILAYA4">Wilaya RES :</label>';            HTML::WILAYA('WILAYA4','WILAYA4','WILAYA4','wil',$data['WILAYA41'],$data['WILAYA42']) ;
-	echo '<label  id="lCOMMUNE4">Commune RES :</label>';          HTML::COMMUNE('COMMUNE4','COMMUNE4','COMMUNE4',$data['COMMUNE41'],$data['COMMUNE42']);
-	echo '<label  id="lADRESSE4">Adresse de res :</label>';       echo '<input id="ADRESSE4" type="txt" name="ADRESSE4" value="'.$data['ADRESSE4'].'" placeholder="xxxxxxx"  onkeyup="javascript:this.value=this.value.toUpperCase();" />';
 	
-	echo '<label  id="lDECARA">الحالة المدنية</label>';
-	echo '<label id="lNOM6">: لقب الام  </label>                   <input id="NOMAR6"    onkeydown="myFunction()"   type="txt" name="NOMARM"       value="'.$data['NOMARM'].'" placeholder="xxxxxxx"/>';
-	echo '<label id="lPRENOM6">: إسم الام </label>                 <input id="PRENOMAR6" onkeydown="myFunction()"   type="txt" name="PRENOMARM"    value="'.$data['PRENOMARM'].'" placeholder="xxxxxxx"/>';
-	echo '<label id="lNOM7">: لقب الاب </label>                    <input id="NOMAR7"    onkeydown="myFunction()"   type="txt" name="NOMARP"       value="'.$data['NOMARP'].'" placeholder="xxxxxxx"/>';
-	echo '<label id="lPRENOM7">: إسم الاب</label>                  <input id="PRENOMAR7" onkeydown="myFunction()"   type="txt" name="PRENOMARP"    value="'.$data['PRENOMARP'].'" placeholder="xxxxxxx"/>';
-	echo '<label id="lADAR8">: عنوان الإقامة</label>               <input id="ADAR8"     onkeydown="myFunction()"   type="txt" name="ADARPM"        value="'.$data['ADARPM'].'" placeholder="xxxxxxx"/>';
-	
-	echo '<label  id="lNUMLF">: رقم الدفتر </label>';             echo '<input id="NUMLF"  type="txt"  name="NUMLF"  value="'.$data['NUMLF'].'"/>'; echo '<input id="DNUMLF" type="txt"  name="DNUMLF" value="'.$data['DNUMLF'].'"  />';  
-	                                                              HTML::WILAYA('WILAYALF','WILAYALF','WILAYALF','wil',$data['WILAYALF1'],$data['WILAYALF2']) ; HTML::COMMUNE('COMMUNELF','COMMUNELF','COMMUNELF',$data['COMMUNELF1'],$data['COMMUNELF2']);															 
-	                                                             															 
-	echo '</div>';
-	
-	echo '<div    id="content_2" class="contenttabs2">';
-	echo '<label  id="lATCD">ATCD Obstétricaux :</label>';
-	echo '<label  id="lGESTE">Geste :</label>';                   $this->combov('GESTE','GESTE',$data['GESTE']);
-	echo '<label  id="lPARITE">Parité :</label>';                 $this->combov('PARITE','PARITE',$data['PARITE']);
-	echo '<label  id="lABRT">Avortement :</label>';               $this->combov('ABRT','ABRT',$data['ABRT']);
-	echo '<label  id="lCESA">Césarienne :</label>';               $this->combov('CESA','CESA',$data['CESA']);
-	echo '<label  id="lEVBP">EVBP :</label>';                     $this->combov('EVBP','EVBP',$data['EVBP']);
-
-	echo '<label  id="lATCDM">ATCD Médicaux :</label>';
-	echo '<label  id="lDT12">Diabète</label>';                    echo '<input id="DT12" type="checkbox"  name="DT12" value="" '.$data['DT12'].' />';                    
-	echo '<label  id="lHTA">HTA :</label>';                       echo '<input id="HTA"  type="checkbox"  name="HTA"  value="" '.$data['HTA'].' />';                    
-	echo '<label  id="lCRD">Cardiopathie :</label>';              echo '<input id="CRD"  type="checkbox"  name="CRD"  value="" '.$data['CRD'].' />';                
-	echo '<label  id="lEPL">Epilepsie:</label>';                  echo '<input id="EPL"  type="checkbox"  name="EPL"  value="" '.$data['EPL'].' />';                
-	echo '<label  id="lAUT">Autres :</label>';                    echo '<input id="AUT"  type="checkbox"  name="AUT"  value="" '.$data['AUT'].' />';                      
-	
-	echo '</div>';
-	
-	echo '<div id="content_3" class="contenttabs3">';
-	echo '</div>';
-	
-	echo '<div id="content_4" class="contenttabs4"> ';
-	
-	echo '<input type="hidden" name="WILAYA1"    value="'.$data['WILAYA1'].'"/>';
-	echo '<input type="hidden" name="COMMUNE1"   value="'.$data['COMMUNE1'].'"/>';
-	echo '<input type="hidden" name="STRUCTURED" value="'.$data['STRUCTURED'].'"/>';
-	echo '<input type="hidden" name="DINS1"      value="'.$data['DINS1'].'"/>';
-	echo '<input type="hidden" name="HINS1"      value="'.$data['HINS1'].'"/>';
-	echo '<input type="hidden" name="LOGIN"      value="'.$data['LOGIN'].'"/>';
-
-	echo '<input id="submitnew" onclick="playSound()"  type="submit" />	'; 
-	echo '</div>';
-	}
-	
-	function tabsdecesmat($data) 
-	{
-	    echo '<div id="content_1" class="contenttabs1">';  
-		
-		echo '<h4>Caractéristiques de la femme</h4>'; 
-		
-		echo '<label id="lM1">Q1: Numéro d\'identification </label>   <input id="M1"    type="txt"  name="M1"     value="" placeholder="xxxxxxx"/>'; 
-		echo '<label id="lM2">Q2: Date de naissance</label>          <input id="M2"     type="txt" name="M2"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM3">Q3: Age</label>                        <input id="M3"     type="txt" name="M3"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM4">Q4: Date du décès</label>              <input id="M4"     type="txt" name="M4"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM5">Q5: Heure du Décè</label>              <input id="M5"     type="txt" name="M5"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM6">Q6: Wilaya de résidence</label>        <input id="M6"     type="txt" name="M6"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM7">Q7: Profession de la patiente</label>  <input id="M7"     type="txt" name="M7"    value="" placeholder="xxxxxxx" />'; 
-		echo '<label id="lM8">Q8: instruction de la patiente</label>';   
-		
-		echo '<select id="M8"  name="M8"  > ';  
-					echo '<option value="1">Analphabète</option>'; 
-				   echo ' <option value="2">Ecole coranique</option>'; 
-				   echo ' <option value="3">Primaire</option>'; 
-					echo '<option value="4">Moyen</option>'; 
-					echo '<option value="5">Secondaire </option>'; 
-					echo '<option value="6">Universitaire</option>'; 
-					echo '<option value="7">Non précis</option>'; 
-				echo '</select>'; 
-		echo '<label id="lM9">Q9: Profession du conjoint</label>  <input id="M9"     type="txt" name="M9"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM10">Q10:instruction du conjoint</label> ';  
-		echo '<select id="M10"  name="M10"  >';   
-					echo '<option value="1">Analphabète</option>'; 
-				   echo ' <option value="2">Ecole coranique</option>'; 
-				   echo ' <option value="3">Primaire</option>'; 
-					echo '<option value="4">Moyen</option>'; 
-					echo '<option value="5">Secondaire </option>'; 
-					echo '<option value="6">Universitaire</option>'; 
-					echo '<option value="7">Non précis</option>'; 
-				echo '</select>'; 
-		
-		echo '<label id="lM11">Q11: Couverture sociale</label>';   
-		echo '<select id="M11"  name="M11"  > ';  
-					echo '<option value="1">Oui</option>'; 
-				   echo ' <option value="2">Non</option>'; 
-				    echo '<option value="3">Non précisé</option>'; 
-				echo '</select>'; 
-		
-		echo '<label id="lM12">Q12:Lieu du décès</label> ';  
-		echo '<select id="M12"  name="M12"  > ';  
-					echo '<option value="1">Domicile</option>'; 
-				   echo ' <option value="2">Maternité publique extrahospitaiière</option>'; 
-				   echo ' <option value="3">EHS mère/enfant</option>'; 
-					echo '<option value="4">EPH</option>'; 
-					echo '<option value="5">CHU</option>'; 
-					echo '<option value="6">EHU</option>'; 
-					echo '<option value="7">Structure de santé privée</option>'; 
-				   echo ' <option value="8">Autre</option>'; 
-				   echo ' <option value="9">Si autre, Préciser</option>'; 
-				   echo ' </select>'; 
-		echo '<label id="lM13">Q13:Moment du décès</label> ';  
-		echo '<select id="M13"  name="M13"  >';   
-					echo '<option value="1">Pendant la grossesse</option>'; 
-				   echo ' <option value="2">Pendant l\'avortement </option>'; 
-				   echo ' <option value="3">Pendant le travail ou l\'accouchement </option>'; 
-					echo '<option value="4">Dans les 24 heures suivant l\'issue de la grossesse</option>'; 
-					echo '<option value="5">Dans les 42 jours suivant un avortement </option>'; 
-					echo '<option value="6">Dans les 42 jours suivant un accouchement </option>'; 
-					echo '<option value="7">Dans les 42 jours suivant l\'issue d\'une grossesse molaire</option>'; 
-				   echo ' <option value="7">Dans les 42 jours suivant l\'issue d\'une grossesse extra-utérine</option>'; 
-				   echo ' </select>'; 
-		
-		echo '<label id="lM14">Q14: NBR de jours  l\'acc ou de l\'avo, et le décès </label>  <input id="M14"     type="txt" name="M14"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM15">Q15: Nom de l\'assesseur </label>                            <input id="M15"     type="txt" name="M15"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM16">Q16: Qualité de l\'assesseur </label>                        <input id="M16"     type="txt" name="M16"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM17">Q17: Lieu de travail </label>                               <input id="M17"     type="txt" name="M17"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM18">Numéro de téléphone</label>                                 <input id="M18"     type="txt" name="M18"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM19">Adresse email </label>                                      <input id="M19"     type="txt" name="M19"    value="" placeholder="xxxxxxx"   />'; 
-		echo '<label id="lM20">Q18:Date de l\'enquête</label>                               <input id="M20"     type="txt" name="M20"    value="" placeholder="xxxxxxx"   />'; 
-        echo ' </div>'; 
-
-         echo '<div id="content_2" class="contenttabs2"> '; 
-		 echo '<h4>Antécédents personnels de la femme</h4>'; 
-		 echo '</div>'; 
-		
-		 echo '<div id="content_3" class="contenttabs3">';   
-		 echo '<h4>Histoire de la grossesse ayant entraîné le décès</h4> ';    		  
-		 echo '</div>'; 
-
-		 echo '<div id="content_4" class="contenttabs4">';   
-		 echo '<h4>Issue de la grossesse</h4> ';    		  
-		 echo '</div>'; 
-        
-		 echo '<div id="content_5" class="contenttabs5"> ';  
-		 echo '<h4>Enchaînement des événements ayant mené au décès</h4> ';    		  
-		 echo '</div>'; 
-        
-		 echo '<div id="content_6" class="contenttabs6">';   
-		 echo '<h4>Caractéristiques de l\'établissement où a eu lieu i\'issue de la grossesse</h4> ';    		  
-			 echo '<input  id="submitnew" type="submit" />'; 
-		 echo '<input type="hidden" name="WILAYA"      value="'.Session::get('wilaya').'"/>'; 
-		 echo '<input type="hidden" name="STRUCTURE"   value="'.Session::get('structure').' "/>'; 
-		 echo '<input type="hidden" name="STRUCTURED"  value="'.Session::get('structure').' "/>'; 
-		 echo '<input type="hidden" name="login"       value="'.Session::get('login').'"/>'; 	
-		 echo '</div>'; 
-	}
 	
 	
 	function tabs($data) 
@@ -796,7 +572,7 @@ class HTML  {
 	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';         HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
 	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';           echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
 	echo '<label class="deces" id="lLD7">Établissement : </label>';            HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
-    echo '<label class="deces" id="lLD7a">Palier : </label>';                  HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
+    echo '<label class="deces" id="lLD7a">Palier : </label>';                  HTML::PALIERX('PALIER','PALIER','PALIER',$data['PALIER1'],$data['PALIER2']);//HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
 	echo '<label class="deces" id="show_codeP">Code_élève :</label>';          echo'<input id="code_patient"  type="text" name="code_patient" value="'.$data['code_patient'].'" readonly  >';
 	echo '<label class="deces" id="lNOMAR">: اللقب </label>';                  echo'<input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>';                 echo'<input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'"  placeholder="xxxxxxx"/>';
@@ -809,7 +585,6 @@ class HTML  {
 	echo '<input type="hidden" name="LOGIN"      value="'.Session::get('login').'"/>';
 	echo '<input id="submitnew" type="submit" />';  
 	echo '</div>';
-	
 	echo '<div id="content_2" class="contenttabs2">';echo '</div>';
 	echo '<div id="content_3" class="contenttabs3">';echo '</div>';
 	echo '<div id="content_4" class="contenttabs4"> ';echo '</div>';
@@ -873,7 +648,8 @@ class HTML  {
 	$result = mysql_query("SELECT * FROM $tb_name where iduds=$iduds order by ecole" );
 	while($data =  mysql_fetch_array($result))
 	{
-	echo '<option value="'.$data[0].'">'.$data[5].'</option>';
+	if($data[13]==1){$p="Pri";}elseif($data[13]==2){$p="Moy";}elseif($data[13]==3){$p="Sec";}
+	echo '<option value="'.$data[0].'">'.ucwords($data[5]).' (*'.$p.')</option>';
 	}
 	echo '</select>'."\n"; 
 	}
@@ -892,7 +668,12 @@ class HTML  {
 	echo '</select>'."\n"; 
 	}
 	
-	
+	function PALIERX($name,$id,$class,$value,$selected) 
+	{	 
+	echo "<select id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"  >"."\n";
+	echo"<option  value=\"".$value."\" selected=\"selected\">".$selected."</option>"."\n";
+	echo '</select>'."\n";
+	}
 	
 	
     function Profession($x,$y,$name,$idprofession,$tb_name,$structure,$value,$selected) 

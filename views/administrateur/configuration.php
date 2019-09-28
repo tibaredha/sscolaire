@@ -8,7 +8,7 @@ echo "<button class=\"naissance\"  id=\"btna1\"   onclick=\"document.location='"
 echo "<button class=\"naissance\"  id=\"btna2\"   onclick=\"document.location='".URL."str/searchstr/0/10?o=id&q=';\"title=\"Structure\">&nbsp;<img src=\"".URL."public/images/eph.png\" width='15' height='15' border='0' alt=''/>&nbsp;Structure&nbsp;</button> " ;
 echo "<button class=\"naissance\"  id=\"btna3\"   onclick=\"document.location='".URL."uds/searchuds/0/10?o=id&q=';\"title=\"UDS\">&nbsp;<img src=\"".URL."public/images/eph.png\" width='15' height='15' border='0' alt=''/>&nbsp;UDS&nbsp;</button> " ;
 echo "<button class=\"naissance\"  id=\"btna4\"   onclick=\"document.location='".URL."ecole/searchecole/0/10?o=id&q=';\"title=\"Ecole\">&nbsp;<img src=\"".URL."public/images/eph.png\" width='15' height='15' border='0' alt=''/>&nbsp;Ecole&nbsp;</button> " ;
-echo "<button class=\"naissance\"  id=\"btna5\"   onclick=\"document.location='".URL."dashboard/Passage/';\" title=\"Passage\">&nbsp;<img src=\"".URL."public/images/user.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Passage Palier+1 &nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btna5\"   onclick=\"document.location='".URL."dashboard/Passage/';\" title=\"Passage n+1 prbleme ecole??? A REVOIRE \">&nbsp;<img src=\"".URL."public/images/user.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Passage Palier+1 &nbsp;</button> " ;
 
 
 

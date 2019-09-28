@@ -304,8 +304,6 @@ $(document).ready(function()
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".structure").html(html);}});
 		    var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNENCLS").html(html);}});
-		
-		
 		});
 		
 		$(".structure").change(function()
@@ -313,6 +311,14 @@ $(document).ready(function()
 			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxsu.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".uds").html(html);}});
 		});
+		
+		
+		$(".ECOLE").change(function()
+		{
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaecolpal.PHP";
+			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".PALIER").html(html);}});
+		});
+		
 		
 		
 });
