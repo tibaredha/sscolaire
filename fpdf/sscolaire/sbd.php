@@ -22,35 +22,73 @@ if ($_POST['SS']=='0') //liste nominative par medecin uds
 	//$pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
 	// $pdf->entete($UDS,$structure,$datejour1,$datejour2);
 	//$pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'',1,0,'C',1,0);$pdf->cell(66,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);
-	$w=9;$h=42;$y=90;
-	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"NOM_prénom (fils de) ",1,0,1,'L',0);
-	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
-	$pdf->Rotatedcell(50+(1*$w),$y,$h,$w,'Absence cicatrice BCG',90);
-	$pdf->Rotatedcell(50+(2*$w),$y,$h,$w,'Pediculose',90);
-	$pdf->Rotatedcell(50+(3*$w),$y,$h,$w,'Gale',90);
-	$pdf->Rotatedcell(50+(4*$w),$y,$h,$w,'Deformation des membres',90);
-	$pdf->Rotatedcell(50+(5*$w),$y,$h,$w,'Baisse acuite visuelle',90);
-	$pdf->Rotatedcell(50+(6*$w),$y,$h,$w,'Strabisme',90);
-	$pdf->Rotatedcell(50+(7*$w),$y,$h,$w,'Antecedents de RAA',90);
-	$pdf->Rotatedcell(50+(8*$w),$y,$h,$w,'Diabete',90);
-	$pdf->Rotatedcell(50+(9*$w),$y,$h,$w,'Asthme',90);
-	$pdf->Rotatedcell(50+(10*$w),$y,$h,$w,'Epilepsie',90);
-	$pdf->Rotatedcell(50+(11*$w),$y,$h,$w,'Difficultes scolaires',90);
-	$pdf->Rotatedcell(50+(12*$w),$y,$h,$w,'Troubles comportement',90);
-	$pdf->Rotatedcell(50+(13*$w),$y,$h,$w,'Troubles langage',90);
-	$pdf->Rotatedcell(50+(14*$w),$y,$h,$w,'Surdite Hypoacousie',90);
-	$pdf->Rotatedcell(50+(15*$w),$y,$h,$w,'Trachome',90);
-	$pdf->Rotatedcell(50+(16*$w),$y,$h,$w,'Oxyurose',90);
-	$pdf->Rotatedcell(50+(17*$w),$y,$h,$w,'Enuresie',90);
-	$pdf->Rotatedcell(50+(18*$w),$y,$h,$w,'Troubles urinaires',90);
-	$pdf->Rotatedcell(50+(19*$w),$y,$h,$w,'Ptosis Nystagmus',90);
-	$pdf->Rotatedcell(50+(20*$w),$y,$h,$w,'Paleur conjonctivale',90);
-	$pdf->Rotatedcell(50+(21*$w),$y,$h,$w,'Goitre',90);
-	$pdf->Rotatedcell(50+(22*$w),$y,$h,$w,'Souffle cardiaque',90);
-	$pdf->Rotatedcell(50+(23*$w),$y,$h,$w,'Deformations du rachis',90);
-	$pdf->Rotatedcell(50+(24*$w),$y,$h,$w,'Ectopie testiculaire',90);
-	$pdf->Rotatedcell(50+(25*$w),$y,$h,$w+9,'Date examen',90);
-	// $pdf->Rotatedcell(50+(26*$w),$y,$h,$w,'Total eleves examines',90);
+	$x=45;$w=4.45;$h=42;$y=90;
+	$pdf->SetXY(05,$y-42); $pdf->cell(40,$h,"Élèves",1,0,1,'L',0);
+	$pdf->Rotatedcell($x+(0*$w),$y,$h,$w,'HTA',90);
+	$pdf->Rotatedcell($x+(1*$w),$y,$h,$w,'Souffle',90);
+	$pdf->Rotatedcell($x+(2*$w),$y,$h,$w,'Tr .du rythme',90);
+	$pdf->Rotatedcell($x+(3*$w),$y,$h,$w,'RAA',90);
+	$pdf->Rotatedcell($x+(4*$w),$y,$h,$w,'Cardiopathie',90);
+	$pdf->Rotatedcell($x+(5*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(6*$w),$y,$h,$w,'Dermatite atopique',90);
+	$pdf->Rotatedcell($x+(7*$w),$y,$h,$w,'Gale',90);
+	$pdf->Rotatedcell($x+(8*$w),$y,$h,$w,'Pédiculose',90);
+	$pdf->Rotatedcell($x+(9*$w),$y,$h,$w,'Psoriasis',90);
+	$pdf->Rotatedcell($x+(10*$w),$y,$h,$w,'Teigne',90);
+	$pdf->Rotatedcell($x+(11*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(12*$w),$y,$h,$w,'Obésité',90);
+	$pdf->Rotatedcell($x+(13*$w),$y,$h,$w,'Retard stat. Pond',90);
+	$pdf->Rotatedcell($x+(14*$w),$y,$h,$w,'Surpoid',90);
+	$pdf->Rotatedcell($x+(15*$w),$y,$h,$w,'Diabète',90);
+	$pdf->Rotatedcell($x+(16*$w),$y,$h,$w,'Goitre',90);
+	$pdf->Rotatedcell($x+(17*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(18*$w),$y,$h,$w,'Oxyurose',90);
+	$pdf->Rotatedcell($x+(19*$w),$y,$h,$w,'Les hernies',90);
+	$pdf->Rotatedcell($x+(20*$w),$y,$h,$w,'Maladie coeliaque',90);
+	$pdf->Rotatedcell($x+(21*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(22*$w),$y,$h,$w,'Paleur cut. muque',90);
+	$pdf->Rotatedcell($x+(23*$w),$y,$h,$w,'Anémie',90);
+	$pdf->Rotatedcell($x+(24*$w),$y,$h,$w,'Hémophilie',90);
+	$pdf->Rotatedcell($x+(25*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(26*$w),$y,$h,$w,'Baisse acuité vis',90);
+	$pdf->Rotatedcell($x+(27*$w),$y,$h,$w,'Nystagmus',90);
+	$pdf->Rotatedcell($x+(28*$w),$y,$h,$w,'Ptosis',90);
+	$pdf->Rotatedcell($x+(29*$w),$y,$h,$w,'Strabisme',90);
+	$pdf->Rotatedcell($x+(30*$w),$y,$h,$w,'Trachome',90);
+	$pdf->Rotatedcell($x+(31*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(32*$w),$y,$h,$w,'Hypoacousie',90);
+	$pdf->Rotatedcell($x+(33*$w),$y,$h,$w,'Rhinite allergique',90);
+	$pdf->Rotatedcell($x+(34*$w),$y,$h,$w,'Surdité',90);
+	$pdf->Rotatedcell($x+(35*$w),$y,$h,$w,'Otites chroniques',90);
+	$pdf->Rotatedcell($x+(36*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(37*$w),$y,$h,$w,'Cypho-scoliose',90);
+	$pdf->Rotatedcell($x+(38*$w),$y,$h,$w,'Déform.squel.',90);
+	$pdf->Rotatedcell($x+(39*$w),$y,$h,$w,'Scoliose',90);
+	$pdf->Rotatedcell($x+(40*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(41*$w),$y,$h,$w,'Asthme',90);
+	$pdf->Rotatedcell($x+(42*$w),$y,$h,$w,'Tuberculose pulm',90);
+	$pdf->Rotatedcell($x+(43*$w),$y,$h,$w,'Tub.Extra-pulm',90);
+	$pdf->Rotatedcell($x+(44*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(45*$w),$y,$h,$w,'Diffucultés scolaires',90);
+	$pdf->Rotatedcell($x+(46*$w),$y,$h,$w,'Tr.du comport',90);
+	$pdf->Rotatedcell($x+(47*$w),$y,$h,$w,'Tr. Du langage',90);
+	$pdf->Rotatedcell($x+(48*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(49*$w),$y,$h,$w,'Cryptorchidie',90);
+	$pdf->Rotatedcell($x+(50*$w),$y,$h,$w,'Enurésie',90);
+	$pdf->Rotatedcell($x+(51*$w),$y,$h,$w,'Tr.urinaires',90);
+	$pdf->Rotatedcell($x+(52*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(53*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(54*$w),$y,$h,$w,'Total affections depistées',90);
 	$pdf->SetXY(05,$y);
 	$pdf->mysqlconnect();
 	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
@@ -58,14 +96,14 @@ if ($_POST['SS']=='0') //liste nominative par medecin uds
 	$totalmbr1=mysql_num_rows($resultat);
 	while($row=mysql_fetch_object($resultat))
 	{	
-		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
-		for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,'',1,0,'C',0,0);}$pdf->cell(9+9,5,'',1,0,'C',0,0);
+		$pdf->SetFont('Times','',7);
+		$pdf->cell(40,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
+		for($i=0; $i< 54; $i+=1){$pdf->cell(4.45,5,'',1,0,'C',0,0);}$pdf->cell(4.45,5,'',1,0,'C',0,0);
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
 	
-	$pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
+	$pdf->SetXY(05,$pdf->GetY());$pdf->cell(285,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 
 }
 
@@ -362,92 +400,92 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
-//3-AFFECTION DEPISTE PAR eleve ok verifed
+//3-AFFECTION DEPISTE PAR eleve not verifed yet
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"AFFECTIONS DEPISTEES ",$palier);
 
-$pdf->SetXY(5,$pdf->GetY()+15); 
-$pdf->cell(30,15,"Spécialités",1,0,1,'L',0);$pdf->cell(64,5,"Nombre total d'élèves ",1,0,'C',1,0);$pdf->cell(64,5,"Cas dépistés",1,0,'C',1,0);                                    $pdf->cell(64,5,"Cas orientés",1,0,'C',1,0);                           $pdf->cell(64,5,"Cas pris en charge",1,0,'C',1,0);
+$pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(40,15,"Spécialités",1,0,1,'L',0);$pdf->cell(54,5,"Nombre total d'élèves ",1,0,'C',1,0);$pdf->cell(64,5,"Cas dépistés",1,0,'C',1,0);                                    $pdf->cell(64,5,"Cas orientés",1,0,'C',1,0);                           $pdf->cell(64,5,"Cas pris en charge",1,0,'C',1,0);
+$pdf->SetXY(45,$pdf->GetY()+5);$pdf->cell(54,5,"dépistés ",1,0,'C',1,0);$pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0);          $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0); $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0);
+$pdf->SetXY(45,$pdf->GetY()+5);$pdf->cell(54,5,"J2 = ".$pdf->depiste($UDS,$datejour1,$datejour2),1,0,'C',1,0);$pdf->cell(32,5,"B3",1,0,'C',1,0);$pdf->cell(32,5,"B3/J2",1,0,'C',1,0);          $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5,"C3/B3",1,0,'C',1,0); $pdf->cell(32,5,"D3",1,0,'C',1,0);$pdf->cell(32,5,"D3/C3",1,0,'C',1,0);
 
-$pdf->SetXY(35,$pdf->GetY()+5); 
-$pdf->cell(64,5,"dépistés ",1,0,'C',1,0);$pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0);          $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0); $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5," %",1,0,'C',1,0);
+$datad =array();$datap =array();
+for ($i = 1; $i <= 54; $i+= 1){
+$datad['m'.$i]=$pdf->affection($UDS,'m'.$i,$datejour1,$datejour2);
+$datap['m'.$i]=$datad['m'.$i]/$pdf->depiste($UDS,$datejour1,$datejour2);
+}
 
-$pdf->SetXY(35,$pdf->GetY()+5); 
-$pdf->cell(64,5,"J2 =",1,0,'C',1,0);$pdf->cell(32,5,"B3",1,0,'C',1,0);$pdf->cell(32,5,"B3/J2",1,0,'C',1,0);          $pdf->cell(32,5,"Nbre",1,0,'C',1,0);$pdf->cell(32,5,"C3/B3",1,0,'C',1,0); $pdf->cell(32,5,"D3",1,0,'C',1,0);$pdf->cell(32,5,"D3/C3",1,0,'C',1,0);
+$pdf->SetXY(5,$pdf->GetY()+5); 
+$pdf->cell(40,20,"01 - CARDIO",1,0,1,'L',0);$pdf->cell(54,5,"HTA",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m1'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m1'],1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Souffle",1,0,'L',0,0);      $pdf->cell(32,5,$datad['m2'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m2'],1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Tr .du rythme",1,0,'L',0,0);$pdf->cell(32,5,$datad['m3'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m3'],1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);       $pdf->cell(32,5,$datad['m6'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m6'],1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+
+$pdf->SetXY(5,$pdf->GetY()+5); 
+$pdf->cell(40,30,"02 -DERMATO",1,0,1,'L',0);$pdf->cell(54,5,"Dermatite atopique",1,0,'L',0,0);$pdf->cell(32,5,$datad['m7'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m7'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Gale",1,0,'L',0,0);              $pdf->cell(32,5,$datad['m8'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m8'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Pédiculose",1,0,'L',0,0);        $pdf->cell(32,5,$datad['m9'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m9'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Psoriasis",1,0,'L',0,0);         $pdf->cell(32,5,$datad['m10'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m10'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Teigne",1,0,'L',0,0);            $pdf->cell(32,5,$datad['m9'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m9'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);            $pdf->cell(32,5,$datad['m11'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m11'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"01 - CARDIO",1,0,1,'L',0);$pdf->cell(64,5,"HTA",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Souffle",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Tr .du rythme",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,20,"03 -ENDOCRINO",1,0,1,'L',0);$pdf->cell(54,5,"Obésité",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m13'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m13'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);               $pdf->cell(54,5,"Retard stat. Pond",1,0,'L',0,0);$pdf->cell(32,5,$datad['m14'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m14'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);               $pdf->cell(54,5,"Surpoid",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m15'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m15'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);               $pdf->cell(54,5,"Autres",1,0,'L',0,0);           $pdf->cell(32,5,$datad['m18'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m18'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,30,"02 -DERMATO",1,0,1,'L',0);$pdf->cell(64,5,"Dermatite atopique",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Gale",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Pédiculose",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Psoriasis",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Teigne",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-
+$pdf->cell(40,15,"04 -GASTRO",1,0,1,'L',0); $pdf->cell(54,5,"Oxyurose",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m19'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m19'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Les hernies ",1,0,'L',0,0);      $pdf->cell(32,5,$datad['m20'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m20'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);            $pdf->cell(32,5,$datad['m22'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m22'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"03 -ENDOCRINO",1,0,1,'L',0);$pdf->cell(64,5,"Obésité",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Retard stat. Pond",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Surpoid",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,10,"05 -HEMATO",1,0,1,'L',0); $pdf->cell(54,5,"Paleur cut. muque",1,0,'L',0,0);$pdf->cell(32,5,$datad['m23'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m23'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);           $pdf->cell(32,5,$datad['m26'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m26'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,15,"04 -GASTRO",1,0,1,'L',0);$pdf->cell(64,5,"Oxyurose",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Les hernies ",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,30,"06 -OPHTALMO",1,0,1,'L',0);$pdf->cell(54,5,"Baisse acuité vis.",1,0,'L',0,0);$pdf->cell(32,5,$datad['m27'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m27'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Nystagmus",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m28'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m28'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Ptosis",1,0,'L',0,0);             $pdf->cell(32,5,$datad['m29'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m29'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Strabisme",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m30'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m30'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Trachome",1,0,'L',0,0);           $pdf->cell(32,5,$datad['m31'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m31'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);             $pdf->cell(32,5,$datad['m32'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m32'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,10,"05 -HEMATO",1,0,1,'L',0);$pdf->cell(64,5,"Paleur cut. muque",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,20,"07 -ORL",1,0,1,'L',0);    $pdf->cell(54,5,"Hypoacousie",1,0,'L',0,0);       $pdf->cell(32,5,$datad['m33'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m33'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Rhinite allergique",1,0,'L',0,0);$pdf->cell(32,5,$datad['m34'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m34'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Surdité ",1,0,'L',0,0);          $pdf->cell(32,5,$datad['m35'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m35'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);            $pdf->cell(32,5,$datad['m37'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m37'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,30,"06 -OPHTALMO",1,0,1,'L',0);$pdf->cell(64,5,"Baisse acuité vis.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Nystagmus",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Ptosis",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Strabisme",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Trachome",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-
-$pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"07 -ORL",1,0,1,'L',0);    $pdf->cell(64,5,"Hypoacousie",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Rhinite allergique",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Surdité ",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-
-$pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"08 -ORTHOPEDIE",1,0,1,'L',0); $pdf->cell(64,5,"Cypho-scoliose",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Déform.squel.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Scoliose ",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,20,"08 -ORTHOPEDIE",1,0,1,'L',0); $pdf->cell(54,5,"Cypho-scoliose",1,0,'L',0,0);$pdf->cell(32,5,$datad['m38'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m38'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                 $pdf->cell(54,5,"Déform.squel.",1,0,'L',0,0); $pdf->cell(32,5,$datad['m39'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m39'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                 $pdf->cell(54,5,"Scoliose ",1,0,'L',0,0);     $pdf->cell(32,5,$datad['m40'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m40'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                 $pdf->cell(54,5,"Autres",1,0,'L',0,0);        $pdf->cell(32,5,$datad['m41'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m41'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,10,"09 -PNEUMO",1,0,1,'L',0); $pdf->cell(64,5,"Asthme",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,10,"09 -PNEUMO",1,0,1,'L',0); $pdf->cell(54,5,"Asthme",1,0,'L',0,0);$pdf->cell(32,5,$datad['m42'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m42'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres",1,0,'L',0,0);$pdf->cell(32,5,$datad['m45'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m45'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"10 -PSYCHO",1,0,1,'L',0); $pdf->cell(64,5,"Diffucultés scolaires",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Tr.du comport.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Tr. Du langage.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,20,"10 -PSYCHO",1,0,1,'L',0); $pdf->cell(54,5,"Diffucultés scolaires",1,0,'L',0,0);$pdf->cell(32,5,$datad['m46'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m46'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Tr.du comport.",1,0,'L',0,0);       $pdf->cell(32,5,$datad['m47'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m47'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Tr. Du langage.",1,0,'L',0,0);      $pdf->cell(32,5,$datad['m48'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m48'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);             $pdf->cell(54,5,"Autres.",1,0,'L',0,0);              $pdf->cell(32,5,$datad['m49'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m49'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,20,"11 -URO - NEPHRO",1,0,1,'L',0); $pdf->cell(64,5,"Cryptorchidie",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Enurésie.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Tr.urinaires.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
-$pdf->SetXY(35,$pdf->GetY()+5);             $pdf->cell(64,5,"Autres.",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,20,"11 -URO - NEPHRO",1,0,1,'L',0); $pdf->cell(54,5,"Cryptorchidie",1,0,'L',0,0);$pdf->cell(32,5,$datad['m50'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m50'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                   $pdf->cell(54,5,"Enurésie.",1,0,'L',0,0);    $pdf->cell(32,5,$datad['m51'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m51'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                   $pdf->cell(54,5,"Tr.urinaires.",1,0,'L',0,0);$pdf->cell(32,5,$datad['m52'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m52'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->SetXY(45,$pdf->GetY()+5);                   $pdf->cell(54,5,"Autres.",1,0,'L',0,0);      $pdf->cell(32,5,$datad['m53'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m53'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,5,"12 -AUTRES",1,0,1,'L',0); $pdf->cell(64,5,"",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,5,"12 -AUTRES",1,0,1,'L',0); $pdf->cell(54,5,"",1,0,'L',0,0);$pdf->cell(32,5,$datad['m54'],1,0,'C',0,0);$pdf->cell(32,5,$datap['m54'],1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
-$pdf->cell(30,5,"TOTAL",1,0,1,'L',0); $pdf->cell(64,5,"",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+$pdf->cell(40,5,"TOTAL",1,0,1,'L',0); $pdf->cell(54,5,"",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
 
 
@@ -461,35 +499,73 @@ if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"AFFECTIONS DEPISTEES ",$palier);
-	$w=9;$h=42;$y=90;
-	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Élèves",1,0,1,'L',0);
-	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
-	$pdf->Rotatedcell(50+(1*$w),$y,$h,$w,'Absence cicatrice BCG',90);
-	$pdf->Rotatedcell(50+(2*$w),$y,$h,$w,'Pediculose',90);
-	$pdf->Rotatedcell(50+(3*$w),$y,$h,$w,'Gale',90);
-	$pdf->Rotatedcell(50+(4*$w),$y,$h,$w,'Deformation des membres',90);
-	$pdf->Rotatedcell(50+(5*$w),$y,$h,$w,'Baisse acuite visuelle',90);
-	$pdf->Rotatedcell(50+(6*$w),$y,$h,$w,'Strabisme',90);
-	$pdf->Rotatedcell(50+(7*$w),$y,$h,$w,'Antecedents de RAA',90);
-	$pdf->Rotatedcell(50+(8*$w),$y,$h,$w,'Diabete',90);
-	$pdf->Rotatedcell(50+(9*$w),$y,$h,$w,'Asthme',90);
-	$pdf->Rotatedcell(50+(10*$w),$y,$h,$w,'Epilepsie',90);
-	$pdf->Rotatedcell(50+(11*$w),$y,$h,$w,'Difficultes scolaires',90);
-	$pdf->Rotatedcell(50+(12*$w),$y,$h,$w,'Troubles comportement',90);
-	$pdf->Rotatedcell(50+(13*$w),$y,$h,$w,'Troubles langage',90);
-	$pdf->Rotatedcell(50+(14*$w),$y,$h,$w,'Surdite Hypoacousie',90);
-	$pdf->Rotatedcell(50+(15*$w),$y,$h,$w,'Trachome',90);
-	$pdf->Rotatedcell(50+(16*$w),$y,$h,$w,'Oxyurose',90);
-	$pdf->Rotatedcell(50+(17*$w),$y,$h,$w,'Enuresie',90);
-	$pdf->Rotatedcell(50+(18*$w),$y,$h,$w,'Troubles urinaires',90);
-	$pdf->Rotatedcell(50+(19*$w),$y,$h,$w,'Ptosis Nystagmus',90);
-	$pdf->Rotatedcell(50+(20*$w),$y,$h,$w,'Paleur conjonctivale',90);
-	$pdf->Rotatedcell(50+(21*$w),$y,$h,$w,'Goitre',90);
-	$pdf->Rotatedcell(50+(22*$w),$y,$h,$w,'Souffle cardiaque',90);
-	$pdf->Rotatedcell(50+(23*$w),$y,$h,$w,'Deformations du rachis',90);
-	$pdf->Rotatedcell(50+(24*$w),$y,$h,$w,'Ectopie testiculaire',90);
-	$pdf->Rotatedcell(50+(25*$w),$y,$h,$w,'Total affections depistees',90);
-	// $pdf->Rotatedcell(50+(26*$w),$y,$h,$w,'Total eleves examines',90);
+	$x=45;$w=4.45;$h=42;$y=90;
+	$pdf->SetXY(05,$y-42); $pdf->cell(40,$h,"Élèves",1,0,1,'L',0);
+	$pdf->Rotatedcell($x+(0*$w),$y,$h,$w,'HTA',90);
+	$pdf->Rotatedcell($x+(1*$w),$y,$h,$w,'Souffle',90);
+	$pdf->Rotatedcell($x+(2*$w),$y,$h,$w,'Tr .du rythme',90);
+	$pdf->Rotatedcell($x+(3*$w),$y,$h,$w,'RAA',90);
+	$pdf->Rotatedcell($x+(4*$w),$y,$h,$w,'Cardiopathie',90);
+	$pdf->Rotatedcell($x+(5*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(6*$w),$y,$h,$w,'Dermatite atopique',90);
+	$pdf->Rotatedcell($x+(7*$w),$y,$h,$w,'Gale',90);
+	$pdf->Rotatedcell($x+(8*$w),$y,$h,$w,'Pédiculose',90);
+	$pdf->Rotatedcell($x+(9*$w),$y,$h,$w,'Psoriasis',90);
+	$pdf->Rotatedcell($x+(10*$w),$y,$h,$w,'Teigne',90);
+	$pdf->Rotatedcell($x+(11*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(12*$w),$y,$h,$w,'Obésité',90);
+	$pdf->Rotatedcell($x+(13*$w),$y,$h,$w,'Retard stat. Pond',90);
+	$pdf->Rotatedcell($x+(14*$w),$y,$h,$w,'Surpoid',90);
+	$pdf->Rotatedcell($x+(15*$w),$y,$h,$w,'Diabète',90);
+	$pdf->Rotatedcell($x+(16*$w),$y,$h,$w,'Goitre',90);
+	$pdf->Rotatedcell($x+(17*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(18*$w),$y,$h,$w,'Oxyurose',90);
+	$pdf->Rotatedcell($x+(19*$w),$y,$h,$w,'Les hernies',90);
+	$pdf->Rotatedcell($x+(20*$w),$y,$h,$w,'Maladie coeliaque',90);
+	$pdf->Rotatedcell($x+(21*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(22*$w),$y,$h,$w,'Paleur cut. muque',90);
+	$pdf->Rotatedcell($x+(23*$w),$y,$h,$w,'Anémie',90);
+	$pdf->Rotatedcell($x+(24*$w),$y,$h,$w,'Hémophilie',90);
+	$pdf->Rotatedcell($x+(25*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(26*$w),$y,$h,$w,'Baisse acuité vis',90);
+	$pdf->Rotatedcell($x+(27*$w),$y,$h,$w,'Nystagmus',90);
+	$pdf->Rotatedcell($x+(28*$w),$y,$h,$w,'Ptosis',90);
+	$pdf->Rotatedcell($x+(29*$w),$y,$h,$w,'Strabisme',90);
+	$pdf->Rotatedcell($x+(30*$w),$y,$h,$w,'Trachome',90);
+	$pdf->Rotatedcell($x+(31*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(32*$w),$y,$h,$w,'Hypoacousie',90);
+	$pdf->Rotatedcell($x+(33*$w),$y,$h,$w,'Rhinite allergique',90);
+	$pdf->Rotatedcell($x+(34*$w),$y,$h,$w,'Surdité',90);
+	$pdf->Rotatedcell($x+(35*$w),$y,$h,$w,'Otites chroniques',90);
+	$pdf->Rotatedcell($x+(36*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(37*$w),$y,$h,$w,'Cypho-scoliose',90);
+	$pdf->Rotatedcell($x+(38*$w),$y,$h,$w,'Déform.squel.',90);
+	$pdf->Rotatedcell($x+(39*$w),$y,$h,$w,'Scoliose',90);
+	$pdf->Rotatedcell($x+(40*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(41*$w),$y,$h,$w,'Asthme',90);
+	$pdf->Rotatedcell($x+(42*$w),$y,$h,$w,'Tuberculose pulm',90);
+	$pdf->Rotatedcell($x+(43*$w),$y,$h,$w,'Tub.Extra-pulm',90);
+	$pdf->Rotatedcell($x+(44*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(45*$w),$y,$h,$w,'Diffucultés scolaires',90);
+	$pdf->Rotatedcell($x+(46*$w),$y,$h,$w,'Tr.du comport',90);
+	$pdf->Rotatedcell($x+(47*$w),$y,$h,$w,'Tr. Du langage',90);
+	$pdf->Rotatedcell($x+(48*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(49*$w),$y,$h,$w,'Cryptorchidie',90);
+	$pdf->Rotatedcell($x+(50*$w),$y,$h,$w,'Enurésie',90);
+	$pdf->Rotatedcell($x+(51*$w),$y,$h,$w,'Tr.urinaires',90);
+	$pdf->Rotatedcell($x+(52*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(53*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(54*$w),$y,$h,$w,'Total affections depistées',90);
 	$pdf->SetXY(05,$y);
 	$pdf->mysqlconnect();
 	$query = "SELECT * FROM examenemg where UDS=$UDS";
@@ -498,13 +574,13 @@ if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',8);
-		$pdf->cell(45,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0); $pdf->SetFont('Times','B',10); 
-		for($i=0; $i< 25; $i+=1){$maladie='m'.$i;if($row->$maladie==1) {$pdf->cell(9,5,'x',1,0,'C',0,0);} else {$pdf->cell(9,5,'-',1,0,'C',0,0);}}
-		$pdf->cell(9,5,$pdf->sumafection($row->id),1,0,'C',1,0);
+		$pdf->cell(40,5,$pdf->nbrtostring('eleve','id',$row->IDELEVE,'NOM').'_'.$pdf->nbrtostring('eleve','id',$row->IDELEVE,'PRENOM'),1,0,'L',1,0); $pdf->SetFont('Times','B',10); 
+		for($i=1; $i< 55; $i+=1){$maladie='m'.$i;if($row->$maladie==1) {$pdf->cell(4.45,5,'x',1,0,'C',0,0);} else {$pdf->cell(4.45,5,'-',1,0,'C',0,0);}}
+		$pdf->cell(4.45,5,$pdf->sumafection($row->id),1,0,'C',1,0);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
-	$pdf->cell(45,5,"Total UDS ",1,0,'C',1,0);
-	for($i=0; $i< 25; $i+=1){$pdf->cell(9,5,$pdf->totafection('m'.$i),1,0,'C',1,0);}$pdf->cell(9,5,'',1,0,'C',1,0);
+	$pdf->cell(40,5,"Total UDS ",1,0,'C',1,0);
+	for($i=1; $i< 55; $i+=1){$pdf->cell(4.45,5,$pdf->totafection('m'.$i),1,0,'C',1,0);}$pdf->cell(4.45,5,'',1,0,'C',1,0);
 }
 
 if ($_POST['SS']=='6') //AFFECTION DEPISTE PAR ECOLE
@@ -512,35 +588,73 @@ if ($_POST['SS']=='6') //AFFECTION DEPISTE PAR ECOLE
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
     $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"AFFECTIONS DEPISTEES ",$palier);
 
-	$w=9;$h=42;$y=90;
-	$pdf->SetXY(05,$y-42); $pdf->cell(45,$h,"Etablissement",1,0,1,'L',0);
-	$pdf->Rotatedcell(50+(0*$w),$y,$h,$w,'Vaccination incomplete',90);
-	$pdf->Rotatedcell(50+(1*$w),$y,$h,$w,'Absence cicatrice BCG',90);
-	$pdf->Rotatedcell(50+(2*$w),$y,$h,$w,'Pediculose',90);
-	$pdf->Rotatedcell(50+(3*$w),$y,$h,$w,'Gale',90);
-	$pdf->Rotatedcell(50+(4*$w),$y,$h,$w,'Deformation des membres',90);
-	$pdf->Rotatedcell(50+(5*$w),$y,$h,$w,'Baisse acuite visuelle',90);
-	$pdf->Rotatedcell(50+(6*$w),$y,$h,$w,'Strabisme',90);
-	$pdf->Rotatedcell(50+(7*$w),$y,$h,$w,'Antecedents de RAA',90);
-	$pdf->Rotatedcell(50+(8*$w),$y,$h,$w,'Diabete',90);
-	$pdf->Rotatedcell(50+(9*$w),$y,$h,$w,'Asthme',90);
-	$pdf->Rotatedcell(50+(10*$w),$y,$h,$w,'Epilepsie',90);
-	$pdf->Rotatedcell(50+(11*$w),$y,$h,$w,'Difficultes scolaires',90);
-	$pdf->Rotatedcell(50+(12*$w),$y,$h,$w,'Troubles comportement',90);
-	$pdf->Rotatedcell(50+(13*$w),$y,$h,$w,'Troubles langage',90);
-	$pdf->Rotatedcell(50+(14*$w),$y,$h,$w,'Surdite Hypoacousie',90);
-	$pdf->Rotatedcell(50+(15*$w),$y,$h,$w,'Trachome',90);
-	$pdf->Rotatedcell(50+(16*$w),$y,$h,$w,'Oxyurose',90);
-	$pdf->Rotatedcell(50+(17*$w),$y,$h,$w,'Enuresie',90);
-	$pdf->Rotatedcell(50+(18*$w),$y,$h,$w,'Troubles urinaires',90);
-	$pdf->Rotatedcell(50+(19*$w),$y,$h,$w,'Ptosis Nystagmus',90);
-	$pdf->Rotatedcell(50+(20*$w),$y,$h,$w,'Paleur conjonctivale',90);
-	$pdf->Rotatedcell(50+(21*$w),$y,$h,$w,'Goitre',90);
-	$pdf->Rotatedcell(50+(22*$w),$y,$h,$w,'Souffle cardiaque',90);
-	$pdf->Rotatedcell(50+(23*$w),$y,$h,$w,'Deformations du rachis',90);
-	$pdf->Rotatedcell(50+(24*$w),$y,$h,$w,'Ectopie testiculaire',90);
-	$pdf->Rotatedcell(50+(25*$w),$y,$h,$w,'Total affections depistees',90);
-	// $pdf->Rotatedcell(50+(26*$w),$y,$h,$w,'Total eleves examines',90);
+	$x=45;$w=4.45;$h=42;$y=90;
+	$pdf->SetXY(05,$y-42); $pdf->cell(40,$h,"Élèves",1,0,1,'L',0);
+	$pdf->Rotatedcell($x+(0*$w),$y,$h,$w,'HTA',90);
+	$pdf->Rotatedcell($x+(1*$w),$y,$h,$w,'Souffle',90);
+	$pdf->Rotatedcell($x+(2*$w),$y,$h,$w,'Tr .du rythme',90);
+	$pdf->Rotatedcell($x+(3*$w),$y,$h,$w,'RAA',90);
+	$pdf->Rotatedcell($x+(4*$w),$y,$h,$w,'Cardiopathie',90);
+	$pdf->Rotatedcell($x+(5*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(6*$w),$y,$h,$w,'Dermatite atopique',90);
+	$pdf->Rotatedcell($x+(7*$w),$y,$h,$w,'Gale',90);
+	$pdf->Rotatedcell($x+(8*$w),$y,$h,$w,'Pédiculose',90);
+	$pdf->Rotatedcell($x+(9*$w),$y,$h,$w,'Psoriasis',90);
+	$pdf->Rotatedcell($x+(10*$w),$y,$h,$w,'Teigne',90);
+	$pdf->Rotatedcell($x+(11*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(12*$w),$y,$h,$w,'Obésité',90);
+	$pdf->Rotatedcell($x+(13*$w),$y,$h,$w,'Retard stat. Pond',90);
+	$pdf->Rotatedcell($x+(14*$w),$y,$h,$w,'Surpoid',90);
+	$pdf->Rotatedcell($x+(15*$w),$y,$h,$w,'Diabète',90);
+	$pdf->Rotatedcell($x+(16*$w),$y,$h,$w,'Goitre',90);
+	$pdf->Rotatedcell($x+(17*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(18*$w),$y,$h,$w,'Oxyurose',90);
+	$pdf->Rotatedcell($x+(19*$w),$y,$h,$w,'Les hernies',90);
+	$pdf->Rotatedcell($x+(20*$w),$y,$h,$w,'Maladie coeliaque',90);
+	$pdf->Rotatedcell($x+(21*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(22*$w),$y,$h,$w,'Paleur cut. muque',90);
+	$pdf->Rotatedcell($x+(23*$w),$y,$h,$w,'Anémie',90);
+	$pdf->Rotatedcell($x+(24*$w),$y,$h,$w,'Hémophilie',90);
+	$pdf->Rotatedcell($x+(25*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(26*$w),$y,$h,$w,'Baisse acuité vis',90);
+	$pdf->Rotatedcell($x+(27*$w),$y,$h,$w,'Nystagmus',90);
+	$pdf->Rotatedcell($x+(28*$w),$y,$h,$w,'Ptosis',90);
+	$pdf->Rotatedcell($x+(29*$w),$y,$h,$w,'Strabisme',90);
+	$pdf->Rotatedcell($x+(30*$w),$y,$h,$w,'Trachome',90);
+	$pdf->Rotatedcell($x+(31*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(32*$w),$y,$h,$w,'Hypoacousie',90);
+	$pdf->Rotatedcell($x+(33*$w),$y,$h,$w,'Rhinite allergique',90);
+	$pdf->Rotatedcell($x+(34*$w),$y,$h,$w,'Surdité',90);
+	$pdf->Rotatedcell($x+(35*$w),$y,$h,$w,'Otites chroniques',90);
+	$pdf->Rotatedcell($x+(36*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(37*$w),$y,$h,$w,'Cypho-scoliose',90);
+	$pdf->Rotatedcell($x+(38*$w),$y,$h,$w,'Déform.squel.',90);
+	$pdf->Rotatedcell($x+(39*$w),$y,$h,$w,'Scoliose',90);
+	$pdf->Rotatedcell($x+(40*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(41*$w),$y,$h,$w,'Asthme',90);
+	$pdf->Rotatedcell($x+(42*$w),$y,$h,$w,'Tuberculose pulm',90);
+	$pdf->Rotatedcell($x+(43*$w),$y,$h,$w,'Tub.Extra-pulm',90);
+	$pdf->Rotatedcell($x+(44*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(45*$w),$y,$h,$w,'Diffucultés scolaires',90);
+	$pdf->Rotatedcell($x+(46*$w),$y,$h,$w,'Tr.du comport',90);
+	$pdf->Rotatedcell($x+(47*$w),$y,$h,$w,'Tr. Du langage',90);
+	$pdf->Rotatedcell($x+(48*$w),$y,$h,$w,'Autres',90);
+	
+	$pdf->Rotatedcell($x+(49*$w),$y,$h,$w,'Cryptorchidie',90);
+	$pdf->Rotatedcell($x+(50*$w),$y,$h,$w,'Enurésie',90);
+	$pdf->Rotatedcell($x+(51*$w),$y,$h,$w,'Tr.urinaires',90);
+	$pdf->Rotatedcell($x+(52*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(53*$w),$y,$h,$w,'Autres',90);
+	$pdf->Rotatedcell($x+(54*$w),$y,$h,$w,'Total affections depistées',90);
 	$pdf->SetXY(05,$y);
 	$pdf->mysqlconnect();
 	$query = "SELECT * from ecole where iduds = $UDS  order by ecole";
@@ -549,17 +663,17 @@ if ($_POST['SS']=='6') //AFFECTION DEPISTE PAR ECOLE
 	$pdf->SetXY(5,$pdf->GetY());
 	while($row=mysql_fetch_object($resultat))
 	{
-		$pdf->SetFont('Times','',8);
-		$pdf->cell(45,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
-		// for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-		// $pdf->cell($w,5,"tp",1,0,'C',1,0);
-		// for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-		// $pdf->cell($w,5,"tam",1,0,'C',1,0);
-		// for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-		// $pdf->cell($w,5,"ts",1,0,'C',1,0);
-		// $pdf->cell($w,5,"tt",1,0,'C',1,0);
+		$pdf->SetFont('Times','',7.5);
+		$pdf->cell(40,5,strtoupper($row->ecole),1,0,'L',1,0);
+		for($i=1; $i< 55; $i+=1){$pdf->cell($w,5,$pdf->affectionx($row->id,'m'.$i),1,0,'C',0,0);}//
+		$pdf->cell($w,5,"tt",1,0,'C',1,0);
 		$pdf->SetXY(5,$pdf->GetY()+5);
 	}
+	
+	$pdf->cell(40,5,"Total UDS ",1,0,'C',1,0);
+	for($i=1; $i< 55; $i+=1){$pdf->cell(4.45,5,$pdf->totafection('m'.$i),1,0,'C',1,0);}$pdf->cell(4.45,5,'',1,0,'C',1,0);
+	
+	
 }
 
 

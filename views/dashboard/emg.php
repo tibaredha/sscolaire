@@ -109,7 +109,6 @@
 		
 			<div id="content_1" class="contenttabs1"><div id="inner-grid">
 				
-				
 				<div id="s1">01 - CARDIO </div>
 				<div id="s1m1"><input type="checkbox"  class="remember"  name="m1"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/1' ;?>">HTA</a> </div>
 				<div id="s1m2"><input type="checkbox"  class="remember"  name="m2"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/2';?>">Souffle</a> </div>
@@ -117,10 +116,6 @@
 				<div id="s1m4"><input type="checkbox"  class="remember"  name="m4"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/4' ;?>">RAA</a> </div>
 				<div id="s1m5"><input type="checkbox"  class="remember"  name="m5"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/5' ;?>">Cardiopathie</a> </div>
 				<div id="s1m6"><input type="checkbox"  class="remember"  name="m6"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/6' ;?>">Autres</a> </div>
-				
-				
-				
-				
 				
 				<div id="s2">02 -DERMATO </div>
 				<div id="s2m1"><input type="checkbox"  class="remember"  name="m7"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/7' ;?>">Dermatite atopique</a> </div>
@@ -130,7 +125,6 @@
 				<div id="s2m5"><input type="checkbox"  class="remember"  name="m11"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/11' ;?>">Teigne</a> </div>
 				<div id="s2m6"><input type="checkbox"  class="remember"  name="m12"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/12' ;?>">Autres</a> </div>
 				
-				
 				<div id="s3">03 - ENDOCRINO </div>
 				<div id="s3m1"><input type="checkbox"  class="remember"  name="m13"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/13' ;?>">Obésité</a> </div>
 				<div id="s3m2"><input type="checkbox"  class="remember"  name="m14"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/14' ;?>">Retard stat. Pond</a> </div>
@@ -139,14 +133,11 @@
 				<div id="s3m5"><input type="checkbox"  class="remember"  name="m17"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/17' ;?>">Goitre</a> </div>
 				<div id="s3m6"><input type="checkbox"  class="remember"  name="m18"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/18' ;?>">Autres</a> </div>
 				
-				
 				<div id="s4">04 - GASTRO </div>
 				<div id="s4m1"><input type="checkbox"  class="remember"  name="m19"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/19' ;?>">Oxyurose</a> </div>
 				<div id="s4m2"><input type="checkbox"  class="remember"  name="m20"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/20' ;?>">Les hernies </a> </div>
 				<div id="s4m3"><input type="checkbox"  class="remember"  name="m21"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/21' ;?>">Maladie coeliaque </a> </div>
 				<div id="s4m4"><input type="checkbox"  class="remember"  name="m22"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/22' ;?>">Autres </a> </div>
-				
-				
 				
 				<div id="s5">05 - HEMATO </div>
 				<div id="s5m1"><input type="checkbox"  class="remember"  name="m23"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/trt/'.$this->user[0]['id'].'/23' ;?>">Paleur cut. muque</a> </div>

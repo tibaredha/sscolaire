@@ -229,7 +229,7 @@ class sscolaire extends FPDI
 	 //*******************************************examen medicale************************************************************************//
 	 function sumafection($id){
 	 $this->mysqlconnect();
-	 $sql = " SELECT UDS,sum(m0+m1+m2+m3+m4+m5+m6+m7+m8+m9+m10+m11+m12+m13+m14+m15+m16+m17+m18+m19+m20+m21+m22+m23+m24) as nbr FROM examenemg where id = $id"; //  UDS=$UDS 
+	 $sql = " SELECT UDS,sum(m1+m2+m3+m4+m5+m6+m7+m8+m9+m10+m11+m12+m13+m14+m15+m16+m17+m18+m19+m20+m21+m22+m23+m24) as nbr FROM examenemg where id = $id"; //  UDS=$UDS 
 	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
 	 $row = mysql_fetch_array($requete); 
 	 return $row['nbr'];
@@ -242,9 +242,30 @@ class sscolaire extends FPDI
 	 return $collecte;
 	 }
 	 
+	 function affection($UDS,$mal,$datejour1,$datejour2){
+	 $this->mysqlconnect();
+	 $sql = " SELECT UDS,$mal,DATESBD FROM examenemg where UDS=$UDS and  $mal = 1  and (DATESBD BETWEEN '$datejour1' AND '$datejour2')   "; //  UDS=$UDS 
+	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	 
+	 function affectionx($ETABLIS,$mal){
+	 $this->mysqlconnect();
+	 $sql = " SELECT ETABLIS,$mal FROM examenemg where ETABLIS=$ETABLIS and  $mal = 1    "; //  UDS=$UDS 
+	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	 
-	 
+	 function depiste($UDS,$datejour1,$datejour2){
+	 $this->mysqlconnect();
+	 $sql = " SELECT UDS,DATESBD FROM examenemg where UDS=$UDS and (DATESBD BETWEEN '$datejour1' AND '$datejour2')"; 
+	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
+
 	 //*******************************************************************************************************************//
 	
 	

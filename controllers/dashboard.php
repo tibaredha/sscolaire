@@ -266,7 +266,7 @@ class Dashboard extends Controller {
 	public function createemg() 
 	{
 	$data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 0; $i <= 24; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
+	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
 	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
 	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
     $data['IDELEVE']          = $_POST['IDELEVE'];
@@ -274,7 +274,7 @@ class Dashboard extends Controller {
 	$data['UDS']              = $_POST['UDS'];
 	$data['ETABLIS']          = $_POST['ETABLIS'];
 	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	//echo '<pre>';print_r ($data);echo '<pre>'; 
+	// echo '<pre>';print_r ($data);echo '<pre>'; 
     $last_id=$this->model->createemg($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		 
 	}
