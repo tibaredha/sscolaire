@@ -85,18 +85,18 @@ $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10," ",1,0,'C');    $pdf->Cell(
 $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10," ",1,0,'C');    $pdf->Cell(45,10,"",1,0,'C');
 $pdf->SetXY(15,$pdf->GetY()+10); 
 $pdf->SetFillColor(152, 235, 251 );$pdf->Cell(90,10,"Vaccination",1,0,'R',1,0);$pdf->Cell(90,10,"التلقيحات",1,1,'L',1,0);    
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"",1,0,'L');$pdf->SetFillColor(253, 253, 9);$pdf->Cell(36,10,"Vaccins",1,0,'C',1,0);      $pdf->SetFillColor(253, 253, 9 );$pdf->Cell(36,10,"Fait le",1,0,'C',1,0); $pdf->SetFillColor(253, 253, 9 );$pdf->Cell(36,10,"A refaire le",1,0,'C',1,0);$pdf->SetFillColor(253, 253, 9 );$pdf->Cell(36,10,"Observation",1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Naissance",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1er mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"3eme mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"4eme mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"5eme mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"9eme mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"18eme mois",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AP",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AM",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AS",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Tous les 10 ans ",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"",1,0,'L',1,0);$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,0,'L');$pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"",1,0,'L');                             $pdf->SetFillColor(253, 253, 9);  $pdf->Cell(36,10,"Vaccins",1,0,'C',1,0);            $pdf->Cell(36,10,"Fait le",1,0,'C',1,0);$pdf->Cell(36,10,"A refaire le",1,0,'C',1,0);$pdf->Cell(36,10,"Observation",1,1,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Naissance",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"BCG-POLIO:O-HVB1",1,0,'C',1,0);   $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1er mois",1,0,'C',1,0);                 $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"HVB2",1,0,'C',1,0);               $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"3eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTCOQ-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"4eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTCOQ-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"5eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTCOQ-POLIO:O-HVB3",1,0,'C',1,0); $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"9eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"ROR",1,0,'C',1,0);                $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"18eme mois",1,0,'C',1,0);               $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTCOQ-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AP",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTE-POLIO:O-RR",1,0,'C',1,0);     $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AM",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTA-POLIO:O",1,0,'C',1,0);        $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AS",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTA-POLIO:O",1,0,'C',1,0);        $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"18 ans (Tous les 10 ans) ",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(36,10,"DTA",1,0,'C',1,0);                $pdf->Cell(36,10,"",1,0,'L');           $pdf->Cell(36,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
 $pdf->SetXY(15,33);$pdf->write1DBarcode($id, 'C39', '', '', '', 18, 0.4, $style, 'N');$pdf->Ln();
 $pdf->mysqlconnect();
 $querysbd = "select * from examensbd WHERE IDELEVE= '$id' ";
@@ -119,8 +119,6 @@ $data=array(
 "c"              => $resultsbd->PC,
 "a"              => $resultsbd->PA,
 "o"              => $resultsbd->PO,
-
-
 "d11"            => $resultsbd->d11,
 "d12"            => $resultsbd->d12,
 "d13"            => $resultsbd->d13,
@@ -129,7 +127,6 @@ $data=array(
 "d16"            => $resultsbd->d16,
 "d17"            => $resultsbd->d17,
 "d18"            => $resultsbd->d18,
-
 "d21"            => $resultsbd->d21,
 "d22"            => $resultsbd->d22,
 "d23"            => $resultsbd->d23,
@@ -138,16 +135,14 @@ $data=array(
 "d26"            => $resultsbd->d26,
 "d27"            => $resultsbd->d27,
 "d28"            => $resultsbd->d28,
-
-"d31"            => $resultsbd->d21,
-"d32"            => $resultsbd->d22,
-"d33"            => $resultsbd->d23,
-"d34"            => $resultsbd->d24,
-"d35"            => $resultsbd->d25,
-"d36"            => $resultsbd->d26,
-"d37"            => $resultsbd->d27,
-"d38"            => $resultsbd->d28,
-
+"d31"            => $resultsbd->d31,
+"d32"            => $resultsbd->d32,
+"d33"            => $resultsbd->d33,
+"d34"            => $resultsbd->d34,
+"d35"            => $resultsbd->d35,
+"d36"            => $resultsbd->d36,
+"d37"            => $resultsbd->d37,
+"d38"            => $resultsbd->d38,
 "d41"            => $resultsbd->d41,
 "d42"            => $resultsbd->d42,
 "d43"            => $resultsbd->d43,
@@ -156,15 +151,15 @@ $data=array(
 "d46"            => $resultsbd->d46,
 "d47"            => $resultsbd->d47,
 "d48"            => $resultsbd->d48
-
-
-
 );
 $pdf->FICHEBUCCO($data);
 }
 
 $pdf->SUIVIEMEDICAL();
 $pdf->EXAMENMEDICAL();
+$pdf->EXAMENPSYCHO();
+
+
 $pdf->AddPage('P','A4');
 $pdf->setRTL(FALSE); 
 $pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
@@ -173,23 +168,12 @@ $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"A
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"POIDS",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 
 
-// $pdf->FICHEBUCCO($data);
-// $pdf->FICHEBUCCO($data);
-// $pdf->FICHEBUCCO($data);
-// $pdf->FICHEBUCCO($data);
 $pdf->AddPage('P','A4');
 $pdf->setRTL(FALSE); 
 $pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"TAILLE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-// $pdf->FICHEBUCCO($data);
-// $pdf->FICHEBUCCO($data);
-// $pdf->FICHEBUCCO($data);
-$pdf->EXAMENMEDICAL();
-$pdf->EXAMENMEDICAL();
-$pdf->EXAMENPSYCHO();
-
 $pdf->Output();
 
 

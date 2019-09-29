@@ -1,7 +1,5 @@
 <?php
-
 require('../TCPDF.php');
-
 class sscolaire extends TCPDF
 { 
      public $nomprenom ="tibaredha";
@@ -18,10 +16,6 @@ class sscolaire extends TCPDF
 	public $dspfr="Direction de la sante et de la population de la wilaya de ";
 	public $dspar="مـديريــــــة الصحــــة و الســـــكان لولايـــــة ";
 
-	
-	
-	
-	
 	function mysqlconnect()
 	{
 	$this->db_host;
@@ -83,7 +77,7 @@ class sscolaire extends TCPDF
 		$DATEPV="في عـــام الفيــــن و".$ANNEE1."وفي اليـــوم ".$JOURS1." من شهـــر ".$MOIS1;
 		
 		return $DATEPV;
-}
+    }
 
 
    function arDate() {
@@ -138,9 +132,6 @@ class sscolaire extends TCPDF
 			else{
 			return $MINUTE1="الصفر";
 			}
-		
-		
-		
 		// $M      = substr($HINS,4,2);                  
 		// if($M>0){
 		// $MINUTE = array("الاولى","الثانية","الثالثة","الرابعة","الخامسة","السادسة","السابعة","الثامنة","التاسعة","العاشرة","الحادي عشرة","الثاني عشرة","الثالث عشرة"," الرابع عشرة  "," الخامس عشرة "," السادس عشرة "," السابع عشرة "," الثامن عشرة "," التاسع عشرة "," العشرين "," الواحد و العشرين"," الثاني و العشرين "," الثالث و العشرين "," الرابع و العشرين ");
@@ -155,52 +146,46 @@ function verif($id,$val)
 {
 if ($id == $val){return 'X';}else{return 'O';} 
 }
-function BUCCO($data) {
-$this->SetFillColor(10 );
-if($data['d11']=='c') {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d12']=='c') {$this->SetXY(37.5,162);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d13']=='c') {$this->SetXY(35,164.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d14']=='c') {$this->SetXY(33.2,168);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d15']=='c') {$this->SetXY(31.2,171.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d16']=='c') {$this->SetXY(30,175.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d17']=='c') {$this->SetXY(29,180);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d18']=='c') {$this->SetXY(29,184.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
 
-if($data['d21']=='c') {$this->SetXY(41.5+4,161);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d22']=='c') {$this->SetXY(37.5+12,162);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d23']=='c') {$this->SetXY(35+16.5,164.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d24']=='c') {$this->SetXY(33.2+20.5,168);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d25']=='c') {$this->SetXY(31.2+24.5,171.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d26']=='c') {$this->SetXY(30+27,175.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d27']=='c') {$this->SetXY(29+29,180);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d28']=='c') {$this->SetXY(29+28.5,184.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-
-if($data['d31']=='c') {$this->SetXY(45,217);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d32']=='c') {$this->SetXY(48,216);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d33']=='c') {$this->SetXY(50.3,214.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d34']=='c') {$this->SetXY(52.5,211);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d35']=='c') {$this->SetXY(55,207);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d36']=='c') {$this->SetXY(57,202.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d37']=='c') {$this->SetXY(58,198.4);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d38']=='c') {$this->SetXY(58,193.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-
-if($data['d41']=='c') {$this->SetXY(42,217);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d42']=='c') {$this->SetXY(39.5,216);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d43']=='c') {$this->SetXY(37,214.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d44']=='c') {$this->SetXY(35,211);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d45']=='c') {$this->SetXY(32,208);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d46']=='c') {$this->SetXY(30.5,203);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d47']=='c') {$this->SetXY(29,198.4);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-if($data['d48']=='c') {$this->SetXY(29,193.5);$this->Cell(2,0,"",0,0,'L',1,0);} else {$this->SetXY(41.5,161);$this->Cell(2,0,"",0,0,'L');}
-
-
-
+function BUCCO($data,$c,$x,$v) 
+{
+if($c=='c') {$this->SetFillColor(0);} else {$this->SetFillColor(255);}
+if($data['d11']==$c) {$this->SetXY(41.5+$x,161);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d12']==$c) {$this->SetXY(37.5+$x,162);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d13']==$c) {$this->SetXY(35+$x,164.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d14']==$c) {$this->SetXY(33.2+$x,168);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d15']==$c) {$this->SetXY(31.2+$x,171.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d16']==$c) {$this->SetXY(30+$x,175.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d17']==$c) {$this->SetXY(29+$x,180);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d18']==$c) {$this->SetXY(29+$x,184.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d21']==$c) {$this->SetXY(45.5+$x,161);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d22']==$c) {$this->SetXY(48.5+$x,162);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d23']==$c) {$this->SetXY(51.5+$x,164.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d24']==$c) {$this->SetXY(53.7+$x,168);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d25']==$c) {$this->SetXY(55.7+$x,171.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d26']==$c) {$this->SetXY(57+$x,175.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d27']==$c) {$this->SetXY(58+$x,180);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d28']==$c) {$this->SetXY(57.5+$x,184.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d31']==$c) {$this->SetXY(45+$x,217);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d32']==$c) {$this->SetXY(48+$x,216);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d33']==$c) {$this->SetXY(50.3+$x,214.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d34']==$c) {$this->SetXY(52.5+$x,211);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d35']==$c) {$this->SetXY(55+$x,207);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d36']==$c) {$this->SetXY(57+$x,202.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d37']==$c) {$this->SetXY(58+$x,198.4);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d38']==$c) {$this->SetXY(58+$x,193.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d41']==$c) {$this->SetXY(42+$x,217);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d42']==$c) {$this->SetXY(39.5+$x,216);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d43']==$c) {$this->SetXY(37+$x,214.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d44']==$c) {$this->SetXY(35+$x,211);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d45']==$c) {$this->SetXY(32+$x,208);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d46']==$c) {$this->SetXY(30.5+$x,203);$this->Cell(2,0,$v,0,0,'C',1,0);}
+if($data['d47']==$c) {$this->SetXY(29+$x,198.4);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+if($data['d48']==$c) {$this->SetXY(29+$x,193.5);$this->Cell(2,0,$v,0,0,'C',1,0);} 
 }
 
-
-
-
-function FICHEBUCCO($data) {
+function FICHEBUCCO($data) 
+{
 $this->AddPage('P','A4');
 $this->setRTL(FALSE); 
 $this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
@@ -221,8 +206,6 @@ $this->SetXY(15,$this->GetY()+20);$this->Cell(45,10,"3-Indice de carie",0,0,'L')
 $this->Image("dents.jpg", $x=16, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 $this->Image("dents.jpg", $x=15+61, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 $this->Image("dents.jpg", $x=15+121, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
-
-
 $this->SetXY(15,$this->GetY()+80);$this->Cell(60,5,"C : ".$data['C'],1,0,'L');$this->Cell(60,5,"A : ".$data['A'],1,0,'L');$this->Cell(60,5,"O : ".$data['O'],1,0,'L');
 $this->SetXY(15,$this->GetY()+5);$this->Cell(60,5,"c : ".$data['c'],1,0,'L');$this->Cell(60,5,"a : ".$data['a'],1,0,'L');$this->Cell(60,5,"o : ".$data['o'],1,0,'L');
 $this->RoundedRect($x=15, $y=$this->GetY()+10, $w=180, $h=10, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
@@ -231,8 +214,9 @@ $this->SetXY(15,$this->GetY()+5);$this->Cell(45,5,"Orientation vers un milieu sp
 $this->RoundedRect($x=15, $y=$this->GetY()+15, $w=180, $h=15, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->SetXY(15,$this->GetY()+15);$this->Cell(45,5,"5-Autres pathologies",0,0,'L');                  $this->Cell(90,5,"",0,0,'L');$this->Cell(45,5,"_______________________",0,0,'L');
 $this->SetXY(15,$this->GetY()+5);$this->Cell(45,5,"Orientation vers un milieu specialisé",0,0,'L');$this->Cell(90,5,"",0,0,'L');$this->Cell(45,5,"_______________________",0,0,'L');
-
-$this->BUCCO($data);
+$this->BUCCO($data,"c",0,"");
+$this->BUCCO($data,"a",60,"X");
+$this->BUCCO($data,"o",120,"O");
 }
 
 function SUIVIEMEDICAL() {
@@ -272,32 +256,32 @@ $this->AddPage('P','A4');
 $this->setRTL(FALSE); 
 $this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->SetXY(15,$this->GetY()+5); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"EXAMEN MEDICAL DE DEPISTAGE",1,0,'C',1,0);  
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"CLASSE FREQUENTE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AGE DE L'ELEVE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TENSSION ARTERIEL",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"ACUITÉ VISUELLE OD",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"ACUITÉ VISUELLE OG",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"PEDICULLOSE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Date de l'examen",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Classe frequente",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Age de l'eleve",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Tenssion arteriel",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Acuité visuelle OD",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Acuité visuelle OG",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Pedicullose",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 $this->SetXY(15,$this->GetY()); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"ATCD DE L'ELEVE",1,0,'C',1,0);  
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"HOSPITALISATION",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DIABETE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"ASTHME",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"EPILEPSIE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY()); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"EXAMEN MEDICAL",1,0,'C',1,0); 
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP NEUROLOGIQUE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP ENDOCRINIENE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"RACHIS ET MEMBRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"PEAU ET PHANERS",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP OPHTALMIQUE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Hospitalisation",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Diabete",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Asthme",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Epilepsie",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"Examen medical",1,0,'C',1,0); 
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App neurologique",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App endocriniene",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Rachis et membres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Peau et phaners",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App ophtalmique",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 $this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP ORL",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP RESPIRATOIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP CARDIO-VASCULAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP DIGESTIF",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP URINAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"APP GENITAL",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES ANOMALIES ",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App respiratoire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App cardio-vasculaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App digestif",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App urinaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"App genital",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres anomalies ",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 
 }
 
@@ -306,29 +290,29 @@ $this->AddPage('P','A4');
 $this->setRTL(FALSE); 
 $this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->SetXY(15,$this->GetY()+5); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"EXAMEN ET SUIVIE PSYCHOLOGIQUE",1,0,'C',1,0);  
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DIFFICULTES SCOLAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU LANGAGE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU COMPORTEMENT",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Date de l'examen",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Difficultes scolaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du langage",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du comportement",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DIFFICULTES SCOLAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU LANGAGE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU COMPORTEMENT",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Date de l'examen",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Difficultes scolaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du langage",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du comportement",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DIFFICULTES SCOLAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU LANGAGE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU COMPORTEMENT",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Date de l'examen",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Difficultes scolaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du langage",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du comportement",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 
-$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DATE DE L'EXAMEN",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"DIFFICULTES SCOLAIRE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU LANGAGE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"TROUBLE DU COMPORTEMENT",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"AUTRES",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+10);$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Date de l'examen",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Difficultes scolaire",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du langage",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Trouble du comportement",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,10,"Autres",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,0,'C',1,0);$this->Cell(35,10,"",1,1,'C',1,0);
 
 }
 
