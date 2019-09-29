@@ -119,6 +119,46 @@ $data=array(
 "c"              => $resultsbd->PC,
 "a"              => $resultsbd->PA,
 "o"              => $resultsbd->PO,
+
+
+"d11"            => $resultsbd->d11,
+"d12"            => $resultsbd->d12,
+"d13"            => $resultsbd->d13,
+"d14"            => $resultsbd->d14,
+"d15"            => $resultsbd->d15,
+"d16"            => $resultsbd->d16,
+"d17"            => $resultsbd->d17,
+"d18"            => $resultsbd->d18,
+
+"d21"            => $resultsbd->d21,
+"d22"            => $resultsbd->d22,
+"d23"            => $resultsbd->d23,
+"d24"            => $resultsbd->d24,
+"d25"            => $resultsbd->d25,
+"d26"            => $resultsbd->d26,
+"d27"            => $resultsbd->d27,
+"d28"            => $resultsbd->d28,
+
+"d31"            => $resultsbd->d21,
+"d32"            => $resultsbd->d22,
+"d33"            => $resultsbd->d23,
+"d34"            => $resultsbd->d24,
+"d35"            => $resultsbd->d25,
+"d36"            => $resultsbd->d26,
+"d37"            => $resultsbd->d27,
+"d38"            => $resultsbd->d28,
+
+"d41"            => $resultsbd->d41,
+"d42"            => $resultsbd->d42,
+"d43"            => $resultsbd->d43,
+"d44"            => $resultsbd->d44,
+"d45"            => $resultsbd->d45,
+"d46"            => $resultsbd->d46,
+"d47"            => $resultsbd->d47,
+"d48"            => $resultsbd->d48
+
+
+
 );
 $pdf->FICHEBUCCO($data);
 }

@@ -232,6 +232,40 @@ jQuery(function($){
         $("#DATECSBD").mask("99-99-9999");
         $("#NEC").mask("99999");
 		
+		$("#FDATE1").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE2").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE3").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE4").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE5").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE6").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE7").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE8").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE9").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE10").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#FDATE11").mask("99-99-9999",{placeholder:"00/00/0000"});
+		
+		$("#RDATE1").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE2").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE3").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE4").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE5").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE6").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE7").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE8").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE9").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE10").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#RDATE11").mask("99-99-9999",{placeholder:"00/00/0000"});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	});
 
 

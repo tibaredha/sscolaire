@@ -301,10 +301,64 @@ class Dashboard extends Controller {
 		
 	}
 	
+	// ******************************************vaccination****************************************************************************************//
+	function vaccination($id) {
+	    $this->view->title = 'vaccination';
+		$this->view->msg = 'vaccination';
+		$this->view->user = $this->model->userSingleList($id);
+		$this->view->render($this->controleur.'/vaccination');
+	}
 	
 	
+	public function createvaccin() 
+	{
+	$data['FDATE1']          = $_POST['FDATE1'];
+	$data['FDATE2']          = $_POST['FDATE2'];
+	$data['FDATE3']          = $_POST['FDATE3'];
+	$data['FDATE4']          = $_POST['FDATE4'];
+	$data['FDATE5']          = $_POST['FDATE5'];
+	$data['FDATE6']          = $_POST['FDATE6'];
+	$data['FDATE7']          = $_POST['FDATE7'];
+	$data['FDATE8']          = $_POST['FDATE8'];
+	$data['FDATE9']          = $_POST['FDATE9'];
+	$data['FDATE10']         = $_POST['FDATE10'];
+	$data['FDATE11']         = $_POST['FDATE11'];
+	
+	$data['RDATE1']          = $_POST['RDATE1'];
+	$data['RDATE2']          = $_POST['RDATE2'];
+	$data['RDATE3']          = $_POST['RDATE3'];
+	$data['RDATE4']          = $_POST['RDATE4'];
+	$data['RDATE5']          = $_POST['RDATE5'];
+	$data['RDATE6']          = $_POST['RDATE6'];
+	$data['RDATE7']          = $_POST['RDATE7'];
+	$data['RDATE8']          = $_POST['RDATE8'];
+	$data['RDATE9']          = $_POST['RDATE9'];
+	$data['RDATE10']         = $_POST['RDATE10'];
+	$data['RDATE11']         = $_POST['RDATE11'];
+	
+	$data['OBSER1']          = $_POST['OBSER1'];
+	$data['OBSER2']          = $_POST['OBSER2'];
+	$data['OBSER3']          = $_POST['OBSER3'];
+	$data['OBSER4']          = $_POST['OBSER4'];
+	$data['OBSER5']          = $_POST['OBSER5'];
+	$data['OBSER6']          = $_POST['OBSER6'];
+	$data['OBSER7']          = $_POST['OBSER7'];
+	$data['OBSER8']          = $_POST['OBSER8'];
+	$data['OBSER9']          = $_POST['OBSER9'];
+	$data['OBSER10']         = $_POST['OBSER10'];
+	$data['OBSER11']         = $_POST['OBSER11'];
+	
+	$data['IDELEVE']         = $_POST['IDELEVE'];
+	$data['NIVEAUS']         = $_POST['NIVEAUS'];
+	$data['ETABLIS']         = $_POST['ETABLIS'];
+	$data['UDS']             = $_POST['UDS'];
+	$data['STRUCTURE']       = $_POST['STRUCTURE'];
 	
 	
+	echo '<pre>';print_r ($data);echo '<pre>';
+	// $last_id=$this->model->createvac($data);
+     header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);			
+	}
 	
 	
 		
