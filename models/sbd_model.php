@@ -2,10 +2,7 @@
 
 class sbd_Model extends Model {
 
-    public $tbl="eleve";
     public $tblesbc="examensbd";
-	public $tbleemg="examenemg";
-	public $vaccination="vaccination";
 	
 	public function __construct() {
 		parent::__construct();
@@ -15,119 +12,20 @@ class sbd_Model extends Model {
 	//*********************************************************************************************************************//
 	public function userSearch($o, $q, $p, $l,$ad) {
 	$structure = Session::get("structure");
-    return $this->db->select("SELECT * FROM $this->tbl where STRUCTURE=$structure and $o like '$q%' order by $o $ad limit $p,$l ");// 
+    return $this->db->select("SELECT * FROM $this->tblesbc where STRUCTURE=$structure and $o like '$q%' order by $o $ad limit $p,$l ");// 
     }
     public function userSearch1($o, $q ,$ad) {
         $structure = Session::get("structure");
-		return $this->db->select("SELECT * FROM $this->tbl where STRUCTURE=$structure and $o like '$q%' order by $o $ad ");//  
+		return $this->db->select("SELECT * FROM $this->tblesbc where STRUCTURE=$structure and $o like '$q%' order by $o $ad ");//  
     }
-	 public function userSingleList($id) {
-        return $this->db->select("SELECT * FROM $this->tbl WHERE id = :id", array(':id' => $id));
-    }
-	
-	
-	public function createeleve($data) {
-		$Date1 = $this->dateFR2US($data['DATENS']);//echo '</br>';
-		$Date2 = $this->dateFR2US($data['DINS']);//echo '</br>';
-		$Timestamp1 = $this->CalculateTimestampFromCurrDatetime($Date1);//echo '</br>';
-		$Timestamp2 = $this->CalculateTimestampFromCurrDatetime($Date2);//echo '</br>';
-		$DateDiff = $this->CalculateDateDifference($Timestamp1, $Timestamp2);//echo '</br>';
-	    //echo '<pre>';print_r ($DateDiff);echo '<pre>';
-		$this->db->insert($this->tbl, array(
-			
-			'DINS'     => $this->dateFR2US($data['DINS']),
-            'HINS'     => $data['HINS'],
-            'NOM'      => $data['NOM'],
-            'PRENOM'   => $data['PRENOM'],
-            'FILSDE'   => $data['FILSDE'],
-			'ETDE'     => $data['ETDE'],
-			'SEX'      => $data['SEXE'],
-			'DATENS'   => $this->dateFR2US($data['DATENS']),
-			'Days'     => $DateDiff['days'],
-            'Weeks'    => $DateDiff['weeks'],
-            'Months'   => $DateDiff['months'],
-            'Years'    => $DateDiff['years'],
-			'WILAYAN'  => $data['WILAYAN'],
-            'COMMUNEN' => $data['COMMUNEN'],
-            'WILAYAR'  => $data['WILAYAR'],
-            'COMMUNER' => $data['COMMUNER'],
-            'ADRESSE'  => $data['ADRESSE'],
-			'GABO'     => $data['GABO'],
-			'NEC'      => $data['NEC'],
-			'WILAYA'   => $data['WILAYA'],
-			'STRUCTURE'=> $data['STRUCTURE'],
-            'UDS'      => $data['UDS'],
-			'ECOLE'    => $data['ECOLE'],
-			'PALIER'   => $data['PALIER'],
-			'LOGIN'    => $data['LOGIN'],
-			'NOMAR'    => $data['NOMAR'],
-			'PRENOMAR' => $data['PRENOMAR'],
-			'FILSDEAR' => $data['FILSDEAR'],
-			'ETDEAR'   => $data['ETDEAR'],
-			'ADRESSEAR'=> $data['ADRESSEAR'],
-			'code_patient'=> $data['code_patient'],
-			'aprouve'  => "0"	
-        ));
-        echo '<pre>';print_r ($data);echo '<pre>';
-		// return $last_id = $this->db->lastInsertId();
-    }
-	public function editSave($data) {
-		$Date1 = $this->dateFR2US($data['DATENS']) ;//echo '</br>';
-		$Date2 = $this->dateFR2US($data['DINS']) ;//echo '</br>';
-		$Timestamp1 = $this->CalculateTimestampFromCurrDatetime($Date1);//echo '</br>';
-		$Timestamp2 = $this->CalculateTimestampFromCurrDatetime($Date2);//echo '</br>';
-		$DateDiff = $this->CalculateDateDifference($Timestamp1, $Timestamp2);//echo '</br>';
-	    //echo '<pre>';print_r ($DateDiff);echo '<pre>';
-		
-		 $postData = array(
-			'DINS'     => $this->dateFR2US($data['DINS']),
-            'HINS'     => $data['HINS'],
-            'NOM'      => $data['NOM'],
-            'PRENOM'   => $data['PRENOM'],
-            'FILSDE'   => $data['FILSDE'],
-			'ETDE'     => $data['ETDE'],
-			'SEX'      => $data['SEXE'],
-			'DATENS'   => $this->dateFR2US($data['DATENS']),
-			'Days'     => $DateDiff['days'],
-            'Weeks'    => $DateDiff['weeks'],
-            'Months'   => $DateDiff['months'],
-            'Years'    => $DateDiff['years'],
-			'WILAYAN'  => $data['WILAYAN'],
-            'COMMUNEN' => $data['COMMUNEN'],
-            'WILAYAR'  => $data['WILAYAR'],
-            'COMMUNER' => $data['COMMUNER'],
-            'ADRESSE'  => $data['ADRESSE'],
-			'GABO'     => $data['GABO'],
-			'NEC'      => $data['NEC'],
-			'WILAYA'   => $data['WILAYA'],
-			'STRUCTURE'=> $data['STRUCTURE'],
-            'UDS'      => $data['UDS'],
-			'ECOLE'    => $data['ECOLE'],
-			'PALIER'   => $data['PALIER'],
-			'LOGIN'    => $data['LOGIN'],
-			'NOMAR'    => $data['NOMAR'],
-			'PRENOMAR' => $data['PRENOMAR'],
-			'FILSDEAR' => $data['FILSDEAR'],
-			'ETDEAR'   => $data['ETDEAR'],
-			'ADRESSEAR'=> $data['ADRESSEAR'],
-			'code_patient'=> $data['code_patient'],
-			'aprouve'  => "0"	
-        );
-       //echo '<pre>';print_r ($postData);echo '<pre>'; 
-        $this->db->update($this->tbl, $postData, "id =" . $data['id'] . "");
-		return $last_id = $data['id'];
+	public function userSingleList($id) {
+        return $this->db->select("SELECT * FROM $this->tblesbc WHERE id = :id", array(':id' => $id));
     }
 	
-	public function deleteeleve($id) {       
-        $this->db->delete($this->tbl, "id = '$id'");
+	public function userSingleListe($id) {
+        return $this->db->select("SELECT * FROM eleve WHERE id = :id", array(':id' => $id));
     }
-    
-	public function Aprouve($data) {
-        $postData = array('aprouve' => $data['aprouve']);
-        $this->db->update($this->tbl, $postData, "id =" . $data['id'] . "");
-		//echo '<pre>';print_r ($postData);echo '<pre>'; 
-    }
-	//*****************************************************************************************************************//
+	
 	public function createexamen($data) {
 	
 	$this->db->insert($this->tblesbc, array(
@@ -209,147 +107,6 @@ class sbd_Model extends Model {
 		 
 		return $last_id = $this->db->lastInsertId();
 	}
-	
-	//*****************************************************************************************************************//
-	public function createemg($data) {
-	
-	$this->db->insert($this->tbleemg, array(
-	            
-				'DATESBD'=> $this->dateFR2US($data['DATESBD']),
-				'm1'     => $data['m1'],
-				'm2'     => $data['m2'],
-				'm3'     => $data['m3'],
-				'm4'     => $data['m4'],
-				'm5'     => $data['m5'],
-				'm6'     => $data['m6'],
-				'm7'     => $data['m7'],
-				'm8'     => $data['m8'],
-				'm9'     => $data['m9'],
-				'm10'    => $data['m10'],
-				'm11'    => $data['m11'],
-				'm12'    => $data['m12'],
-				'm13'    => $data['m13'],
-				'm14'    => $data['m14'],
-				'm15'    => $data['m15'],
-				'm16'    => $data['m16'],
-				'm17'    => $data['m17'],
-				'm18'    => $data['m18'],
-				'm19'    => $data['m19'],
-				'm20'    => $data['m20'],
-				'm21'    => $data['m21'],
-				'm22'    => $data['m22'],
-				'm23'    => $data['m23'],
-				'm24'    => $data['m24'],
-				'm25'    => $data['m25'],
-				'm26'    => $data['m26'],
-				'm27'    => $data['m27'],
-				'm28'    => $data['m28'],
-				'm29'    => $data['m29'],
-				'm30'    => $data['m30'],
-				'm31'    => $data['m31'],
-				'm32'    => $data['m32'],
-				'm33'    => $data['m33'],
-				'm34'    => $data['m34'],
-				'm35'    => $data['m35'],
-				'm36'    => $data['m36'],
-				'm37'    => $data['m37'],
-				'm38'    => $data['m38'],
-				'm39'    => $data['m39'],
-				'm40'    => $data['m40'],
-				'm41'    => $data['m41'],
-				'm42'    => $data['m42'],
-				'm43'    => $data['m43'],
-				'm44'    => $data['m44'],
-				'm45'    => $data['m45'],
-				'm46'    => $data['m46'],
-				'm47'    => $data['m47'],
-				'm48'    => $data['m48'],
-				'm49'    => $data['m49'],
-				'm50'    => $data['m50'],
-				'm51'    => $data['m51'],
-				'm52'    => $data['m52'],
-				'm53'    => $data['m53'],
-				'm54'    => $data['m54'],
-				'OKRDV'     => $data['OKRDV'],
-				'DATECSBD'  =>$this->dateFR2US($data['DATECSBD']),
-				'IDELEVE'   => $data['IDELEVE'],
-				'STRUCTURE' => $data['STRUCTURE'],
-				'UDS'       => $data['UDS'],
-				'ETABLIS'   => $data['ETABLIS'],
-				'NIVEAUS'   => $data['NIVEAUS']
-        ));
-        
-		echo '<pre>';print_r ($data);echo '<pre>';
-		 
-		return $last_id = $this->db->lastInsertId();
-	}
-	
-	//*********************************************************************************************//
-	public function createvac($data) {
-	
-	$this->db->insert($this->vaccination, array(
-	            
-				'FDATE1'=> $this->dateFR2US($data['FDATE1']),
-				'FDATE2'=> $this->dateFR2US($data['FDATE2']),
-				'FDATE3'=> $this->dateFR2US($data['FDATE3']),
-				'FDATE4'=> $this->dateFR2US($data['FDATE4']),
-				'FDATE5'=> $this->dateFR2US($data['FDATE5']),
-				'FDATE6'=> $this->dateFR2US($data['FDATE6']),
-				'FDATE7'=> $this->dateFR2US($data['FDATE7']),
-				'FDATE8'=> $this->dateFR2US($data['FDATE8']),
-				'FDATE9'=> $this->dateFR2US($data['FDATE9']),
-				'FDATE10'=> $this->dateFR2US($data['FDATE10']),
-				'FDATE11'=> $this->dateFR2US($data['FDATE11']),
-				'RDATE1'=> $this->dateFR2US($data['RDATE1']),
-				'RDATE2'=> $this->dateFR2US($data['RDATE2']),
-				'RDATE3'=> $this->dateFR2US($data['RDATE3']),
-				'RDATE4'=> $this->dateFR2US($data['RDATE4']),
-				'RDATE5'=> $this->dateFR2US($data['RDATE5']),
-				'RDATE6'=> $this->dateFR2US($data['RDATE6']),
-				'RDATE7'=> $this->dateFR2US($data['RDATE7']),
-				'RDATE8'=> $this->dateFR2US($data['RDATE8']),
-				'RDATE9'=> $this->dateFR2US($data['RDATE9']),
-				'RDATE10'=> $this->dateFR2US($data['RDATE10']),
-				'RDATE11'=> $this->dateFR2US($data['RDATE11']),
-				'OBSER1'   => $data['OBSER1'],
-				'OBSER2'   => $data['OBSER2'],
-				'OBSER3'   => $data['OBSER3'],
-				'OBSER4'   => $data['OBSER4'],
-				'OBSER5'   => $data['OBSER5'],
-				'OBSER6'   => $data['OBSER6'],
-				'OBSER7'   => $data['OBSER7'],
-				'OBSER8'   => $data['OBSER8'],
-				'OBSER9'   => $data['OBSER9'],
-				'OBSER10'   => $data['OBSER10'],
-				'OBSER11'   => $data['OBSER11'],
-				'IDELEVE'   => $data['IDELEVE'],
-				'NIVEAUS'   => $data['NIVEAUS'],
-				'ETABLIS'   => $data['ETABLIS'],
-				'UDS'       => $data['UDS'],
-				'STRUCTURE' => $data['STRUCTURE']		
-        ));
-		//echo '<pre>';print_r ($data);echo '<pre>'; 
-		return $last_id = $this->db->lastInsertId();
-	}
-	//*********************************************************************************************//
-	
-	public function editPassage() {
-		
-	    $uds = Session::get("uds");
-        $sth = $this->db->prepare("SELECT * FROM $this->tbl where UDS=$uds ");		
-		$sth->execute();
-		while ($datax = $sth->fetch()) 
-		{
-		 $NPALIER=$datax['PALIER']+1;
-		 $postData = array('PALIER'=> $NPALIER);
-		 $this->db->update($this->tbl, $postData, "id =" .$datax['id'] . "");
-		}
-		}
-	
-	
-	
-	
-	//*********************************************************************************************//
 	
 	
 	

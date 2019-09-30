@@ -28,7 +28,7 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">CAT santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')'.$this->soins;?></div>
+<div class="sheader2l">CAT santé buco-dentaire de l'élève : <?php //echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')'.$this->soins;?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'dashboard/soinsx';?>" method="post">			

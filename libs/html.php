@@ -35,7 +35,7 @@ class HTML  {
 	
 	function caol($lcao,$name,$id)
 	{
-	echo'<label class ="'.$lcao.'" ><a href="'.URL.'dashboard/soins/'.$id.'/'.$name.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo'<label class ="'.$lcao.'" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
 	// switch ($name) 
 	// {
     // case 18 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'dashboard/soins/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
@@ -95,7 +95,7 @@ class HTML  {
 	
 	function caol1($lcaol1,$name,$id)
 	{
-	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'dashboard/soins/'.$id.'/'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'">'.$name.'</a></label>&nbsp;';
 	}
 	
 	function photosdb($station,$css) 

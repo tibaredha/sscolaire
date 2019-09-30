@@ -72,7 +72,7 @@
 <div class="sheader2l">Examen santé buco-dentaire de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')';?> </div>
 <div class="sheader2r">
 <?php
-$ctrl='dashboard';$mdl='search';
+$ctrl='sbd';$mdl='search';
 $data = array(
 "c"           => $ctrl,
 "m"           => $mdl,
@@ -89,13 +89,13 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 <div class="sheader1l"><p id="dashboard"><?php echo TXT_SMENUE1 ;?></p></div>
 
 <div class="listl">
-	<form action="<?php echo URL.'dashboard/createexamen';?>" method="post">			
+	<form action="<?php echo URL.'sbd/createexamen';?>" method="post">			
 		<div id="inner-grid">
 		
 			<div id="x">Date examen : <input id="DATESBD"   type="txt"  name="DATESBD"   value="<?php echo date('d-m-Y');?>"  /> </div>
-			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/1' ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>			
-			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/2' ;?>"title="Gingivite ">Gingivite (Oui/Non)</a> </div>
-			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL.'dashboard/soins/'.$this->user[0]['id'].'/3' ;?>"title="Anomalie ODF ">AODF (Oui/Non)</a> </div>
+			<div id="y"><input type="checkbox"  class="remember"  name="HYGIENE"   value="1" />&nbsp;<a href="<?php echo URL.$ctrl.'/soins/'.$this->user[0]['id'].'/1' ;?>"title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>			
+			<div id="x1"><input type="checkbox" class="remember"  name="GINGIVITE" value="1"/>&nbsp;<a href="<?php echo URL.$ctrl.'/soins/'.$this->user[0]['id'].'/2' ;?>"title="Gingivite ">Gingivite (Oui/Non)</a> </div>
+			<div id="y1"><input type="checkbox" class="remember"  name="AODF"/>&nbsp;<a href="<?php echo URL.$ctrl.'/soins/'.$this->user[0]['id'].'/3' ;?>"title="Anomalie ODF ">AODF (Oui/Non)</a> </div>
 			
 			<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>
 			<div id="a"><?php for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i);} ?></div> <div id="b"><?php for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i);} ?></div>
