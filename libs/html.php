@@ -18,18 +18,14 @@ class HTML  {
 	echo " <input type=\"text\" name=\"".$name."\" size=\"".$size."\" value=\"".$value."\"  id=\"".$param."\"   required />";
 	}
 
-	function cao($idcao,$name)
+	function cao($idcao,$name,$value,$selected)
 	{
 	echo '<select id ="'.$idcao.'" class="ax" name="'.$name.'">';
+	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
 	echo '<option value="s">S</option>';
 	echo '<option value="c">C</option>';
-	//echo '<option value="f">f</option>';
-	echo '<option value="o">O</option>';
-	//echo '<option value="p">p</option>';
-	//echo '<option value="i">i</option>';
-	//echo '<option value="e">e</option>';
-	//echo '<option value="i">i</option>';
 	echo '<option value="a">A</option>';
+	echo '<option value="o">O</option>';
 	echo "</select>&nbsp;";
 	}
 	
@@ -78,18 +74,14 @@ class HTML  {
 	}
 	
 	
-	function cao1($idcaol,$name)
+	function cao1($idcaol,$name,$value,$selected)
 	{
 	echo '<select id ="'.$idcaol.'"  class="ax1" name="'.$name.'">';
+	echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
 	echo '<option value="s">S</option>';
 	echo '<option value="c">C</option>';
-	//echo '<option value="f">f</option>';
-	echo '<option value="o">O</option>';
-	//echo '<option value="p">p</option>';
-	//echo '<option value="i">i</option>';
-	//echo '<option value="e">e</option>';
-	//echo '<option value="i">i</option>';
 	echo '<option value="a">A</option>';
+	echo '<option value="o">O</option>';
 	echo "</select>&nbsp;";
 	}
 	
@@ -98,6 +90,51 @@ class HTML  {
 	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'">'.$name.'</a></label>&nbsp;';
 	}
 	
+	function fichesbd($data)
+	{
+	echo '<form action="'.URL.'sbd/'.$data['mdl'].'" method="post">	';
+			echo '<div id="inner-grid">';
+				echo '<div id="x">Date examen : <input id="DATESBD" type="txt" name="DATESBD" value="'.$data['datee'].'"/> </div>';
+				echo '<div id="y"><input  type="checkbox"  class="remember"   name="HYGIENE"   value="1" '.$data['hygiene'].'/>&nbsp;<a href="'.URL.$data['ctrl'].'/soins/'.$this->user[0]['id'].'/1"   title="Hygiene Bucco-dentaire Non Acceptable ">Hygiene BD NA (Oui/Non)</a> </div>';
+				echo '<div id="x1"><input type="checkbox"  class="remember"   name="GINGIVITE" value="1" '.$data['gingivite'].'/>&nbsp;<a href="'.URL.$data['ctrl'].'/soins/'.$this->user[0]['id'].'/2"   title="Gingivite">Gingivite (Oui/Non)</a> </div>';
+				echo '<div id="y1"><input type="checkbox"  class="remember"   name="AODF"      value="1" '.$data['aodf'].'/>&nbsp;<a href="'.URL.$data['ctrl'].'/soins/'.$this->user[0]['id'].'/3"   title="Anomalie ODF ">AODF (Oui/Non)</a> </div>';
+				echo '<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>';
+				echo '<div id="a">';for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);} echo '</div>';
+				echo '<div id="b">';for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);} echo '</div>';
+				echo '<div id="c">';for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="d">';for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>'; 
+				
+				echo '<div id="e">';for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="f">';for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="g">';for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				echo '<div id="h">';for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				
+				echo '<div id="a1">';for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				echo '<div id="b1">';for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				echo '<div id="c1">';for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="d1">';for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				
+				echo '<div id="e1">';for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="f1">';for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="g1">';for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				echo '<div id="h1">';for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
+				
+				echo '<div id="xz">Etablissement scolaire : '.HTML::nbrtostring('ecole','id',$this->user[0]['ECOLE'],'ecole').' </div>';
+				echo '<div id="x3">     <input type="checkbox" title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1" '.$data['okrdv'].' />&nbsp;Convocation (Oui/Non)  </div>';
+				echo '<div id="y3">Le : <input type="txt"      title="Date rdv RDV"               id="DATECSBD"                   name="DATECSBD"   value="'.$data['datecsbd'].'"  /> </div>';
+				echo '<div id="l"><input id="l1" onclick="playSound()"  type="submit" value="Envoyer"/> </div>';
+				echo '<div ><input type="hidden" name="IDELEVE"  value="'.$this->user[0]['id'].'"/> </div>';
+				echo '<div ><input type="hidden" name="NIVEAUS"  value="'.$this->user[0]['PALIER'].'"/> </div>';
+				echo '<div ><input type="hidden" name="ETABLIS"  value="'.$this->user[0]['ECOLE'].'"/> </div>';
+				echo '<div ><input type="hidden" name="UDS"      value="'.$this->user[0]['UDS'].'"/> </div>';
+				echo '<div ><input type="hidden" name="STRUCTURE"value="'.$this->user[0]['STRUCTURE'].'"/> </div>';
+			echo '</div>';	
+		echo '</form>';	
+	}
+	
+	
+	
+	//*****************************************************************************************************************************************//
 	function photosdb($station,$css) 
 	{
 	    $w=300;$h=250;
