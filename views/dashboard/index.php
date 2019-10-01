@@ -58,7 +58,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		echo '<div class="listl">';
 		echo '<br>';
 		echo'<table>';
-			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'"> La liste des eleves scolarisés </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
+			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'"> La liste des élèves scolarisés </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
 			echo'<tr bgcolor="#00CED1">';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/'.$down.'"   width="10" height="10" border="0" alt=""/>&nbsp;<A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=aprouve&ad='.$ad.'">Ok</A></th>';
 			echo'<th class="nomprenom"><img src="'.URL.'public/images/table/'.$down.'"   width="10" height="10" border="0" alt=""/>&nbsp;<A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=NOM&ad='.$ad.'">Nom_Prénom_( Fils de )</A></th>';
@@ -67,17 +67,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=Days&ad='.$ad.'">Age</A></th>';
 			echo'<th class="crtldate"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=DINS&ad='.$ad.'">Date inscription</A></th>';
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=HINS&ad='.$ad.'">Heure</A></th>';
-			echo'<th class="service"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=ECOLE&ad='.$ad.'">ECOLE</A></th>';
-			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">PALIER</A></th>';
-			
+			echo'<th class="service"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=ECOLE&ad='.$ad.'">Ecole</A></th>';
+			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">Palier</A></th>';
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">EMG</th>';
 			echo'<th class="crtl">VACCIN</th>';
 			echo'<th class="crtl">BIO</th>';
+			//echo'<th class="crtl">DMS</th>';
 			echo'<th class="crtl">DMS</th>';
-			echo'<th class="crtl">DMS</th>';
-			// echo'<th class="crtl">ADM</th>';
-			// echo'<th class="crtl">CDP</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'</tr>';
@@ -94,13 +91,11 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center"  >'.$value['HINS'].'</td>';
 			echo '<td align="left"  >'.HTML::nbrtostring('ECOLE','id',$value['ECOLE'],'ecole').'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring('PALIER','id',$value['PALIER'],'nompalier').'</td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen buco-dentairex"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen bucco-dentaire"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen de médecine générale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/vaccination/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/rectangle.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-            echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+            //echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			if ($value['aprouve']==0){
 			echo '<td align="center" style="width:10px;" ><a  title="Editer élève scolarisé"  href="'.URL.$ctrl.'/edit/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';

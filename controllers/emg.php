@@ -50,21 +50,51 @@ class emg extends Controller {
 	
 	public function createexamen() 
 	{
-	
+	$data['DATESBD']          = $_POST['DATESBD'];
+	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
+	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
+	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
+    $data['IDELEVE']          = $_POST['IDELEVE'];
+    $data['STRUCTURE']        = $_POST['STRUCTURE'];
+	$data['UDS']              = $_POST['UDS'];
+	$data['ETABLIS']          = $_POST['ETABLIS'];
+	$data['NIVEAUS']          = $_POST['NIVEAUS'];
+	// echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->createemg($data);
+    header('location: '.URL.$this->controleur.'/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
 	}
 	
 	function edit($id) {
-	   
+	 $url1 = explode('/',$_GET['url']);	
+		$this->view->title = 'edit Examens de médecine generale ';
+		$this->view->msg = 'Edit Examens de médecine generale';
+		$this->view->usercao = $this->model->userSingleList($url1[3]);
+		$this->view->user = $this->model->userSingleListe($url1[2]);
+		$this->view->render($this->controleur.'/edit');  
 	}
 	
 	function editeexamen($id) {
-	   
+	 $data['DATESBD']          = $_POST['DATESBD'];
+	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
+	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
+	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
+    $data['IDELEVE']          = $_POST['IDELEVE'];
+    $data['STRUCTURE']        = $_POST['STRUCTURE'];
+	$data['UDS']              = $_POST['UDS'];
+	$data['ETABLIS']          = $_POST['ETABLIS'];
+	$data['NIVEAUS']          = $_POST['NIVEAUS'];
+	$data['id']          = $id;
+	//echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->editSave($data);
+    header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);
 	}
 	
 	
 	public function delete($id)
 	{
-	
+	$url1 = explode('/',$_GET['url']);	
+	$this->model->deleteeemg($url1[3]);    
+	header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$url1[2]);
 	}
 	
    //**********************************************************************************************************************************//

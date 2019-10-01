@@ -69,7 +69,7 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			// echo'<th class="service"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=ECOLE&ad='.$ad.'">ECOLE</A></th>';
 			// echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">PALIER</A></th>';
 			
-			echo'<th >Date d\'éxamen</th>';
+			echo'<th >Date d\'examen</th>';
 			echo'<th >HYGIENE B-D</th>';
 			echo'<th >GINGIVITE</th>';
 			echo'<th >AODF</th>';

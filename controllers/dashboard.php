@@ -56,7 +56,6 @@ class Dashboard extends Controller {
 
 	//**********************************************************************************************************************************//
 	
-	
 	function search()
 	{
 	    $url1 = explode('/',$_GET['url']);	
@@ -114,14 +113,6 @@ class Dashboard extends Controller {
 		$last_id=$this->model->createeleve($data);
 		header('location: '.URL.$this->controleur.'/nouveau/');
 	}
-	
-	// public function view($id) 
-	// {
-        // $this->view->title = 'view deces';
-		// $this->view->msg = 'view deces';
-		// $this->view->user = $this->model->userSingleList($id);
-		// $this->view->render($this->controleur.'/view');
-	// }
 	
 	function edit($id) {
 	    $this->view->title = 'edit deces';
@@ -182,103 +173,6 @@ class Dashboard extends Controller {
 		header('location: ' . URL .$this->controleur.'/search/'.$url1[4].'/'.$url1[5].'?o=id&q=');
 	}
 
-	
-	// **********************************************************************************************************************************//
-	function ebd($id) {
-	    $this->view->title = 'ebd';
-		$this->view->msg = 'ebd';
-		$this->view->user = $this->model->userSingleList($id);
-		$this->view->render($this->controleur.'/ebd');
-	}
-	
-	public function createexamen() 
-	{
-		$data = array();$datac = array();$dataa = array();$datao = array();
-		for ($i = 11; $i <= 18; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datac[]=$data['d'.$i];}if($data['d'.$i]=='a') {$dataa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datao[]=$data['d'.$i];}}
-		for ($i = 21; $i <= 28; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datac[]=$data['d'.$i];}if($data['d'.$i]=='a') {$dataa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datao[]=$data['d'.$i];}}
-		for ($i = 31; $i <= 38; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datac[]=$data['d'.$i];}if($data['d'.$i]=='a') {$dataa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datao[]=$data['d'.$i];}}
-		for ($i = 41; $i <= 48; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datac[]=$data['d'.$i];}if($data['d'.$i]=='a') {$dataa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datao[]=$data['d'.$i];}}
-		$datapc = array();$datapa = array();$datapo = array();
-		for ($i = 51; $i <= 55; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datapc[]=$data['d'.$i];}if($data['d'.$i]=='a') {$datapa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datapo[]=$data['d'.$i];}}
-		for ($i = 61; $i <= 65; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datapc[]=$data['d'.$i];}if($data['d'.$i]=='a') {$datapa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datapo[]=$data['d'.$i];}}
-		for ($i = 71; $i <= 75; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datapc[]=$data['d'.$i];}if($data['d'.$i]=='a') {$datapa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datapo[]=$data['d'.$i];}}
-		for ($i = 81; $i <= 85; $i+= 1){$data['d'.$i]      = $_POST['d'.$i];if($data['d'.$i]=='c') {$datapc[]=$data['d'.$i];}if($data['d'.$i]=='a') {$datapa[]=$data['d'.$i];}if($data['d'.$i]=='o') {$datapo[]=$data['d'.$i];}}
-		if (isset($_POST['HYGIENE'])){$data['HYGIENE']='1';}else{$data['HYGIENE']='';}
-		if (isset($_POST['GINGIVITE'])){$data['GINGIVITE']='1';}else{$data['GINGIVITE']='';}
-		if (isset($_POST['AODF'])){$data['AODF']='1';}else{$data['AODF']='';}
-		$data['DATESBD']          = $_POST['DATESBD'];
-		$data['C']                = count($datac);
-		$data['A']                = count($dataa);
-		$data['O']                = count($datao);
-		$data['CAO']              = count($datac)+count($dataa)+count($datao);
-		$data['PC']                = count($datapc);
-		$data['PA']                = count($datapa);
-		$data['PO']                = count($datapo);
-		$data['PCAO']              = count($datapc)+count($datapa)+count($datapo);
-		$data['IDELEVE']          = $_POST['IDELEVE'];
-		$data['STRUCTURE']        = $_POST['STRUCTURE'];
-		$data['UDS']              = $_POST['UDS'];
-		$data['ETABLIS']          = $_POST['ETABLIS'];
-		$data['NIVEAUS']          = $_POST['NIVEAUS'];
-		if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	    if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
-		// echo '<pre>';print_r ($data);echo '<pre>';  
-		$last_id=$this->model->createexamen($data);
-		header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		
-	}
-	
-	function soins($id) {
-	    $url1 = explode('/',$_GET['url']);	
-		$this->view->title = 'soins';
-		$this->view->msg = 'soins';
-		$this->view->user = $this->model->userSingleList($id);
-		
-		if($url1[3]==1){$this->view->soins = ' : [Hygiene BD NA]';} 
-		else if ($url1[3]==2){$this->view->soins = ' : [Gingivite]';}
-		else if ($url1[3]==3){$this->view->soins = ' : [ODF]';}
-		else{$this->view->soins = ' : N°['.$url1[3].']';}
-		//echo '<pre>';print_r ($url1);echo '<pre>';  
-		$this->view->render($this->controleur.'/soins');
-	}
-	
-	function soinsx() {
-	$data = array();
-	$data['IDELEVE']          = $_POST['IDELEVE'];
-	$data['typetrt']          = $_POST['typetrt'];
-	$data['datetrt']          = $_POST['datetrt'];
-	// $data['']          = $_POST[''];
-	// $data['']          = $_POST[''];
-
-	// echo '<pre>';print_r ($data);echo '<pre>';  
-	header('location: '.URL.$this->controleur.'/ebd/'.$_POST['IDELEVE']);	   
-	}
-	
-	
-	
-	// **********************************************************************************************************************************//
-	function emg($id) {
-	    $this->view->title = 'ebd';
-		$this->view->msg = 'ebd';
-		$this->view->user = $this->model->userSingleList($id);
-		$this->view->render($this->controleur.'/emg');
-	}
-	
-	public function createemg() 
-	{
-	$data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
-	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
-    $data['IDELEVE']          = $_POST['IDELEVE'];
-    $data['STRUCTURE']        = $_POST['STRUCTURE'];
-	$data['UDS']              = $_POST['UDS'];
-	$data['ETABLIS']          = $_POST['ETABLIS'];
-	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	// echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->createemg($data);
-    header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$data['IDELEVE']);		 
-	}
-	
 	// **********************************************************************************************************************************//
 	function Evaluation() {
 	    $this->view->title = 'Evaluation';

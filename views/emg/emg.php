@@ -6,7 +6,7 @@
   grid-gap: 5px;padding: 5px;
 }
 
-#s1    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 1 / 2;}
+#s1    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 1 / 2;}
 #s1m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 2 / 3;}
 #s1m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 3 / 4;}
 #s1m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 4 / 5;}
@@ -14,7 +14,7 @@
 #s1m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 6 / 7;}
 #s1m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 7 / 8;}
 
-#s2    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 1 / 2;}
+#s2    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 1 / 2;}
 #s2m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 2 / 3;}
 #s2m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 3 / 4;}
 #s2m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 4 / 5;}
@@ -22,7 +22,7 @@
 #s2m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 6 / 7;}
 #s2m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 7 / 8;}
 
-#s3    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 1 / 2;}
+#s3    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 1 / 2;}
 #s3m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 2 / 3;}
 #s3m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 3 / 4;}
 #s3m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 4 / 5;}
@@ -30,7 +30,7 @@
 #s3m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 6 / 7;}
 #s3m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 7 / 8;}
 
-#s4    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 1 / 2;}
+#s4    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 1 / 2;}
 #s4m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 2 / 3;}
 #s4m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 3 / 4;}
 #s4m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 4 / 5;}
@@ -38,7 +38,7 @@
 #s4m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 6 / 7;}
 #s4m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 7 / 8;}
 
-#s5    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 1 / 2;}
+#s5    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 1 / 2;}
 #s5m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 2 / 3;}
 #s5m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 3 / 4;}
 #s5m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 4 / 5;}
@@ -46,7 +46,7 @@
 #s5m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 6 / 7;}
 #s5m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 7 / 8;}
 
-#s6    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 1 / 2;}
+#s6    {background: red; color:white ; text-align: center; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 1 / 2;}
 #s6m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 2 / 3;}
 #s6m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 3 / 4;}
 #s6m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 4 / 5;}
@@ -56,12 +56,12 @@
 
 .remember{ width: 10%;height: 70%; }
 
-#x{background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 1  / 4;   grid-row: 7 / 8;}
+#x{background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 16  / 19;   grid-row: 4 / 5;}
 .DATESBD{background: yellow; text-align: center; border-radius: 5px;width:50%;height: 100%;}
-#x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 4 / 7;  grid-row: 7 / 8;}
-#y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 7 / 8;}
+#x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 16 / 19;  grid-row: 5 / 6;}
+#y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 6 / 7;}
 
-#l {background: salmon;text-align: center;border-radius: 5px;padding: 5px;grid-column: 16  / 19;  grid-row: 6 / 8;}
+#l {background: salmon;text-align: center;border-radius: 5px;padding: 0px;grid-column: 16  / 19;  grid-row: 7 / 8;}
 #l1 {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
 #l1:hover {background: red;color: #fff;}
 </style>
@@ -102,6 +102,62 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 				"ctrl"  => $ctrl,
 				"mdl"   => "createexamen",
 				"datee" => date('d-m-Y'),
+				"okrdv" =>"",
+			    "datecsbd" => date('d-m-Y'),
+				"m1"   => "",
+				"m2"   => "",
+				"m3"   => "",
+				"m4"   => "",
+				"m5"   => "",
+				"m6"   => "",
+				"m7"   => "",
+				"m8"   => "",
+				"m9"   => "",
+				"m10"   => "",
+				"m11"   => "",
+				"m12"   => "",
+				"m13"   => "",
+				"m14"   => "",
+				"m15"   => "",
+				"m16"   => "",
+				"m17"   => "",
+				"m18"   => "",
+				"m19"   => "",
+				"m20"   => "",
+				"m21"   => "",
+				"m22"   => "",
+				"m23"   => "",
+				"m24"   => "",
+				"m25"   => "",
+				"m26"   => "",
+				"m27"   => "",
+				"m28"   => "",
+				"m29"   => "",
+				"m30"   => "",
+				"m31"   => "",
+				"m32"   => "",
+				"m33"   => "",
+				"m34"   => "",
+				"m35"   => "",
+				"m36"   => "",
+				"m37"   => "",
+				"m38"   => "",
+				"m39"   => "",
+				"m40"   => "",
+				"m41"   => "",
+				"m42"   => "",
+				"m43"   => "",
+				"m44"   => "",
+				"m45"   => "",
+				"m46"   => "",
+				"m47"   => "",
+				"m48"   => "",
+				"m49"   => "",
+				"m50"   => "",
+				"m51"   => "",
+				"m52"   => "",
+				"m53"   => "",
+				"m54"   => "",
 				);
                 html::ficheemg($data);
 				?>
