@@ -94,21 +94,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center"  >'.$value['HINS'].'</td>';
 			echo '<td align="left"  >'.HTML::nbrtostring('ECOLE','id',$value['ECOLE'],'ecole').'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring('PALIER','id',$value['PALIER'],'nompalier').'</td>';
-			
-			
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen buco-dentairex"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
-			
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen médical génerale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			
 			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/vaccination/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/rectangle.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
-			
-			
             echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
-
 			if ($value['aprouve']==0){
 			echo '<td align="center" style="width:10px;" ><a  title="Editer élève scolarisé"  href="'.URL.$ctrl.'/edit/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer élève scolarisé"  href="'.URL.$ctrl.'/delete/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
