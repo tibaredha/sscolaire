@@ -134,6 +134,97 @@ class HTML  {
 	
 	
 	
+	function ficheemg($data)
+	{
+				echo '<form action="'.'emg/'.$data['mdl'].'" method="post">	';
+				echo '<div id="content_1" class="contenttabs1"><div id="inner-grid">' ;
+				echo '<div id="s1">01 - CARDIO </div>' ;
+				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m1"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/1'.'">HTA</a> </div>' ;
+				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m2"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/2'.'">Souffle</a> </div>' ;
+				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m3"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/3'.'">Tr .du rythme</a> </div>' ;
+				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m4"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/4'.'">RAA</a> </div>' ;
+				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m5"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/5'.'">Cardiopathie</a> </div>' ;
+				echo '<div id="s1m6"><input type="checkbox"  class="remember"  name="m6"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/6'.'">Autres</a> </div>' ;
+				echo '<div id="s2">02 - DERMATO </div>' ;
+				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m7"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/7'.'">Dermatite atopique</a> </div>' ;
+				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m8"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/8'.'">Gale</a> </div>' ;
+				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m9"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/9'.'">Pédiculose</a> </div>' ;
+				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m10"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/10'.'">Psoriasis</a> </div>' ;
+				echo '<div id="s2m5"><input type="checkbox"  class="remember"  name="m11"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/11'.'">Teigne</a> </div>' ;
+				echo '<div id="s2m6"><input type="checkbox"  class="remember"  name="m12"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/12'.'">Autres</a> </div>' ;
+				echo '<div id="s3">03 - ENDOCRINO </div>' ;
+				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m13"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/13'.'">Obésité</a> </div>' ;
+				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m14"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/14'.'">Retard stat. Pond</a> </div>' ;
+				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m15"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/15'.'">Surpoid</a> </div>' ;
+				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m16"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/16'.'">Diabète</a> </div>' ;
+				echo '<div id="s3m5"><input type="checkbox"  class="remember"  name="m17"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/17'.'">Goitre</a> </div>' ;
+				echo '<div id="s3m6"><input type="checkbox"  class="remember"  name="m18"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/18'.'">Autres</a> </div>' ;
+				echo '<div id="s4">04 - GASTRO </div>' ;
+				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m19"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/19'.'">Oxyurose</a> </div>' ;
+				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m20"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/20'.'">Les hernies </a> </div>' ;
+				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m21"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/21'.'">Maladie coeliaque</a> </div>' ;
+				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m22"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/22'.'">Autres</a> </div>' ;
+				echo '<div id="s5">05 - HEMATO </div>' ;
+				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m23"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/23'.'">Paleur cut. muque</a> </div>' ;
+				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m24"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/24'.'">Anémie </a> </div>' ;
+				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m25"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/25'.'">Hémophilie</a> </div>' ;
+				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m26"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/26'.'">Autres</a> </div>' ;
+				echo '<div id="s6">06 - OPHTALMO </div>' ;
+				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m27"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/27'.'">Baisse acuité vis.</a> </div>' ;
+				echo '<div id="s6m2"><input type="checkbox"  class="remember"  name="m28"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/28'.'">Nystagmus</a> </div>' ;
+				echo '<div id="s6m3"><input type="checkbox"  class="remember"  name="m29"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/29'.'">Ptosis</a> </div>' ;
+				echo '<div id="s6m4"><input type="checkbox"  class="remember"  name="m30"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/30'.'">Strabisme</a> </div>' ;
+				echo '<div id="s6m5"><input type="checkbox"  class="remember"  name="m31"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/31'.'">Trachome</a> </div>' ;
+				echo '<div id="s6m6"><input type="checkbox"  class="remember"  name="m32"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/32'.'">Autres</a> </div>' ;
+				echo '</div></div>';
+				echo '<div id="content_2" class="contenttabs2"><div id="inner-grid">';
+				echo '<div id="s1">07 - ORL</div>' ;
+				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m33"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/33'.'">Hypoacousie</a> </div>' ;
+				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m34"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/34'.'">Rhinite allergique</a> </div>' ;
+				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m35"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/35'.'">Surdité</a> </div>' ;
+				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m36"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/36'.'">Otites chroniques</a> </div>' ;
+				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m37"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/37'.'">Autres</a> </div>' ;
+				echo '<div id="s2">08 - ORTHOPEDIE</div>' ;
+				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m38"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/38'.'">Cypho-scoliose</a> </div>' ;
+				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m39"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/39'.'">Déform.squel. </a> </div>' ;
+				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m40"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/40'.'">Scoliose </a> </div>' ;
+				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m41"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/41'.'">Autres</a> </div>' ;
+				echo '<div id="s3">09 - PNEUMO</div>' ;
+				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m42"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/42'.'">Asthme</a> </div>' ;
+				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m43"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/43'.'">Tuberculose pulm</a> </div>' ;
+				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m44"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/44'.'">Tub.Extra-pulm.</a> </div>' ;
+				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m45"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/45'.'">Autres</a> </div>' ;
+				echo '<div id="s4">10 - NEURO-PSYCHYA </div>' ;
+				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m46"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/46'.'">Diffucultés scolaires</a> </div>' ;
+				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m47"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/47'.'">Tr.du comport.</a> </div>' ;
+				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m48"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/48'.'">Tr. Du langage</a> </div>' ;
+				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m49"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/49'.'">Autres</a> </div>' ;
+				echo '<div id="s5">11- URO - NEPHRO</div>' ;
+				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m50"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/50'.'">Cryptorchidie</a> </div>' ;
+				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m51"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/51'.'">Enurésie</a> </div>' ;
+				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m52"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/52'.'">Tr.urinaires</a> </div>' ;
+				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m53"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/53'.'">Autres</a> </div>' ;
+				echo '<div id="s6">12 - AUTRES </div>' ;
+				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m54"   value="1" />&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/54'.'">Autres</a> </div>' ;
+				echo '<div id="x">Vue le  : <input class="DATESBD"   type="txt"  name="DATESBD"   value="'.date('d-m-Y').'"  /> </div>' ;
+				echo '<div id="x3"> <input type="checkbox"  title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1"  />&nbsp;Convocation  </div>' ;
+				echo '<div id="y3">Le : <input type="txt"   title="Date rdv RDV"               id="DATECSBD" class="DATESBD"   name="DATECSBD"   value=""  /> </div>' ;
+				echo '<div id="l"><input id="l1" onclick="playSound()"  type="submit" value="Envoyer"/> </div>';
+				echo '<div ><input type="hidden" name="IDELEVE"  value="'.$this->user[0]['id'].'"/> </div>';
+				echo '<div ><input type="hidden" name="NIVEAUS"  value="'.$this->user[0]['PALIER'].'"/> </div>';
+				echo '<div ><input type="hidden" name="ETABLIS"  value="'.$this->user[0]['ECOLE'].'"/> </div>';
+				echo '<div ><input type="hidden" name="UDS"      value="'.$this->user[0]['UDS'].'"/> </div>';
+				echo '<div ><input type="hidden" name="STRUCTURE"value="'.$this->user[0]['STRUCTURE'].'"/> </div>';
+				echo '</div></div>' ;
+				echo '<div id="content_3" class="contenttabs3"><div id="inner-grid"></div></div>' ;
+				echo '<div id="content_4" class="contenttabs4"><div id="inner-grid">' ;
+				echo '</div></div>' ;
+				echo '</form>';
+	}
+	
+	
+	
+	
 	//*****************************************************************************************************************************************//
 	function photosdb($station,$css) 
 	{
