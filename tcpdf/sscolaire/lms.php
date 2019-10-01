@@ -106,9 +106,15 @@ while($resultsbd=mysql_fetch_object($resultatsbd))
 $data=array(
 "DATE"           => $resultsbd->DATESBD, 
 "CLASSE"         => $resultsbd->NIVEAUS, 
-"AGE"            => "",
-"HBDA"           => $pdf->verif($resultsbd->HYGIENE,"1"),
-"HBDNA"          => $pdf->verif($resultsbd->HYGIENE,"0"),
+"ID"             => $id,
+"ETABLIS"        => $resultsbd->ETABLIS,
+"UDS"            => $resultsbd->UDS,
+
+"CPSO"            => $pdf->verif($resultsbd->OKRDV,"1"),
+"CPSN"            => $pdf->verif($resultsbd->OKRDV,"0"),
+
+"HBDNA"          => $pdf->verif($resultsbd->HYGIENE,"1"),
+"HBDA"           => $pdf->verif($resultsbd->HYGIENE,"0"),
 "GO"             => $pdf->verif($resultsbd->GINGIVITE,"1"),
 "GN"             => $pdf->verif($resultsbd->GINGIVITE,"0"),
 "ODFO"           => $pdf->verif($resultsbd->AODF,"1"),

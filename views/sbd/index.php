@@ -42,7 +42,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 ?>
 </div>
 <?php
-
+function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 		if (isset($this->userListview))
 		{
 		ob_start();
@@ -69,18 +69,19 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			// echo'<th class="service"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=ECOLE&ad='.$ad.'">ECOLE</A></th>';
 			// echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">PALIER</A></th>';
 			
-			echo'<th >DATESBD</th>';
-			echo'<th >HYGIENE</th>';
+			echo'<th >Date d\'éxamen</th>';
+			echo'<th >HYGIENE B-D</th>';
 			echo'<th >GINGIVITE</th>';
 			echo'<th >AODF</th>';
 			echo'<th >C</th>';
 			echo'<th >A</th>';
 			echo'<th >O</th>';
-			echo'<th >PC</th>';
-			echo'<th >PA</th>';
-			echo'<th >PO</th>';
+			echo'<th >c</th>';
+			echo'<th >a</th>';
+			echo'<th >o</th>';
 			echo'<th >RDV</th>';
-	        echo'<th >DATERDV</th>';
+	        echo'<th >Date RDV</th>';
+			echo'<th ><img src="'.URL.'public/images/pdf.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'</tr>';
@@ -91,16 +92,16 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			//$url1 = explode('/',$_GET['url']);if ($value['aprouve']==1){echo '<td align="center"><a  title="Désaprouvé "  href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/0/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>'; } else{echo '<td align="center"><a  title="Aprouvé"     href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/1/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';  }
 			// echo '<td align="left" ><b><a target="_blank" title="Visualiser la fiche "  href="'.URL.$ctrl.'/view/'.$value['id'].'" >'.strtoupper($value['NOM']).'_'.strtolower($value['PRENOM']).' ('.strtolower($value['FILSDE']).')'.'<b></a></td>';
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATESBD']).'</td>';
-			echo '<td align="center"  >'.$value['HYGIENE'].'</td>';
-			echo '<td align="center"  >'.$value['GINGIVITE'].'</td>';
-			echo '<td align="center"  >'.$value['AODF'].'</td>';
+			echo '<td align="center"  >'.anomalie ($value['HYGIENE'],"Non acceptable","Acceptable").'</td>';
+			echo '<td align="center"  >'.anomalie ($value['GINGIVITE'],"Oui","Non").'</td>';
+			echo '<td align="center"  >'.anomalie ($value['AODF'],"Oui","Non").'</td>';
 			echo '<td align="center"  >'.$value['C'].'</td>';
 			echo '<td align="center"  >'.$value['A'].'</td>';
 			echo '<td align="center"  >'.$value['O'].'</td>';
 			echo '<td align="center"  >'.$value['PC'].'</td>';
 			echo '<td align="center"  >'.$value['PA'].'</td>';
 			echo '<td align="center"  >'.$value['PO'].'</td>';
-			echo '<td align="center"  >'.$value['OKRDV'].'</td>';
+			echo '<td align="center"  >'.anomalie ($value['OKRDV'],"Oui","Non").'</td>';
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATECSBD']).'</td>';
 			// echo '<td align="center"style="width:100px;" >'.HTML::dateUS2FR($value['DATENS']).'</td>';
 			// if ($value['Years'] > 0 ){echo "<td style=\"width:50px;\" align=\"center\" >".$value['Years']." A </td>" ;} else {if ($value['Days'] <= 30 ) {echo "<td style=\"width:50px;\" align=\"center\" >".$value['Days']." J </td>" ;} else{echo "<td style=\"width:50px;\" align=\"center\" >".$value['Months']." M </td>" ;} }
@@ -113,8 +114,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			// echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/vaccination/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			// echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/rectangle.png"   width="16" height="16" border="0" alt=""   /></a></td>';
             // echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			// echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="fiche bucco-dentaires"  href="'.URL.'tcpdf/sscolaire/fbd.php?ideleve='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a  title="Editer Examens bucco-dentaires"  href="'.URL.$ctrl.'/edit/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer Examens bucco-dentaires"  href="'.URL.$ctrl.'/delete/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
