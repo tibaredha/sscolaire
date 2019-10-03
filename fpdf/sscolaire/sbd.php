@@ -127,7 +127,7 @@ $pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',
 
 if ($_POST['SS']=='4') //EFF not yet  verifed
 {
-//2-page effec
+//1-page effec
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Effectifs des élèves inscrits ",$palier);
 
@@ -396,6 +396,65 @@ $pdf->cell(40,5,"12 -AUTRES",1,0,1,'L',0);       $pdf->cell(54,5,"",1,0,'L',0,0)
 
 $pdf->SetXY(5,$pdf->GetY()+5); 
 $pdf->cell(40,5,"TOTAL",1,0,1,'L',0); $pdf->cell(54,5,"",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
+
+
+//3-vaccination
+$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
+$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Vaccination en Milieu Scolaire ",$palier);$w= 23.2;
+$pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(($w*11)+30,5,"Tableau 1.couverture vaccinale",1,0,1,'L',0);
+$pdf->SetXY(5,$pdf->GetY()+5);
+
+$pdf->cell(30,15,"1-Etablissements",1,0,1,'L',0);$pdf->cell($w,5,"2. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"3. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"4.Rapport",1,0,1,'L',0);          $pdf->cell($w,5,"5. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"6.Rapport",1,0,1,'L',0);           $pdf->cell($w,5,"7. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"8. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"9.Rapport",1,0,1,'L',0);          $pdf->cell($w,5,"10. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"11. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"12.Rapport",1,0,1,'L',0); 
+$pdf->SetXY(35,$pdf->GetY()+5);                  $pdf->cell($w,5,"1AP",1,0,1,'L',0);         $pdf->cell($w,5,"DTE 1AP",1,0,1,'L',0);        $pdf->cell($w,5,"%",1,0,1,'L',0);           $pdf->cell($w,5,"RR 1AP",1,0,1,'L',0);         $pdf->cell($w,5,"%",1,0,1,'L',0);            $pdf->cell($w,5,"1AM",1,0,1,'L',0);         $pdf->cell($w,5,"DTA 1AM",1,0,1,'L',0);        $pdf->cell($w,5,"%",1,0,1,'L',0);           $pdf->cell($w,5,"1AS",1,0,1,'L',0);          $pdf->cell($w,5,"DTA 1AS",1,0,1,'L',0);          $pdf->cell($w,5,"%",1,0,1,'L',0); 
+$pdf->SetXY(35,$pdf->GetY()+5);                  $pdf->cell($w,5,"A6",1,0,1,'L',0);          $pdf->cell($w,5,"B6",1,0,1,'L',0);             $pdf->cell($w,5,"(B6/A6)*100",1,0,1,'L',0); $pdf->cell($w,5,"C6",1,0,1,'L',0);             $pdf->cell($w,5,"(C6/A6)*100",1,0,1,'L',0);  $pdf->cell($w,5,"D6",1,0,1,'L',0);          $pdf->cell($w,5,"E6",1,0,1,'L',0);             $pdf->cell($w,5,"(E6/D6)*100",1,0,1,'L',0); $pdf->cell($w,5,"F6",1,0,1,'L',0);           $pdf->cell($w,5,"G6",1,0,1,'L',0);               $pdf->cell($w,5,"(G6/F6)*100",1,0,1,'L',0);
+$pdf->mysqlconnect();
+$query = "SELECT * from ecole where iduds = $UDS  order by typeecole,ecole";
+$resultat=mysql_query($query);
+$totalmbr1=mysql_num_rows($resultat);
+while($row=mysql_fetch_object($resultat))
+{
+	$pdf->SetXY(5,$pdf->GetY()+5);$pdf->SetFont('Times','B',7);
+	
+	$pdf->SetFillColor(250);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+	$pdf->cell($w,5,$pdf->INSCRITSPE("2",$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);
+	$pdf->cell($w,5,$pdf->POPVAC("2",$row->id,$datejour1,$datejour2,$UDS,"19"),1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,$pdf->INSCRITSPE("7",$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,$pdf->INSCRITSPE("11",$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->cell($w,5,"",1,0,'C',0,0);
+	$pdf->SetFillColor(230);	
+}
+$pdf->SetFillColor(250);
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(30,5,"total uds",1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+$pdf->cell($w,5,"",1,0,'C',1,0);
+
+
+$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(($w*11)+30,5,"Tableau 2.Vaccination incomplete",1,0,1,'L',0);
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(95,5,"1 . NB Elèves éxaminés (J2) ",1,0,1,'L',0);$pdf->cell(95,5," 2 . Vaccination  incomplète (H6)",1,0,1,'L',0);$pdf->cell(95,5,"3 . (H6/J2)*100",1,0,1,'L',0);
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(95,5,"",1,0,'L',0,0);$pdf->cell(95,5,"",1,0,'L',0,0);$pdf->cell(95,5,"",1,0,'L',0,0);
+
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->cell(($w*11)+30,5,"Tableau 3.Vaccination par le BCG",1,0,1,'L',0);
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(57,5,"1.POP cible1AP (A6) ",1,0,'L',1,0);$pdf->cell(57,5,"2.absence de cicatrice BCG (I6)",1,0,'L',1,0);$pdf->cell(57,5,"3.(I6/A6)*100",1,0,'L',1,0);$pdf->cell(57,5,"4.POP 1AP vaccinée par le BCG (J6)",1,0,'L',1,0);$pdf->cell(57,5,"5.TCV BCG (J6/I6)*100",1,0,'L',1,0);
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->cell(57,5,"",1,0,'L',0,0);$pdf->cell(57,5,"",1,0,'L',0,0);$pdf->cell(57,5,"",1,0,'L',0,0);$pdf->cell(57,5,"",1,0,'L',0,0);$pdf->cell(57,5,"",1,0,'L',0,0);
+
+
+
 
 }
 if ($_POST['SS']=='5') //AFFECTION DEPISTE PAR eleve ok verifed

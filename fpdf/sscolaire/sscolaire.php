@@ -339,9 +339,16 @@ class sscolaire extends FPDI
 	 
 	 
 	 
-	 //*******************************************************************************************************************//
+	 //********************************************************vaccination***********************************************************//
+	function POPVAC($NIVEAUS,$ECOLE,$datejour1,$datejour2,$UDS,$vaccin){
+	 $this->mysqlconnect();
+	 $sql = " select NIVEAUS,ETABLIS,vaccin,datevac from vaccination1  where vaccin=$vaccin and NIVEAUS=$NIVEAUS";   //   ( UDS=$UDS)  and (ETABLIS=$ECOLE and ) and (datevac BETWEEN '$datejour1' AND '$datejour2')
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	
-	
+	//*******************************************************************************************************************//
 	
 	
 	 public $nomprenom ="tibaredha";
