@@ -142,6 +142,19 @@ class sscolaire extends TCPDF
 		// return $MINUTE1="???";
 		// }
 	}
+
+function vaccin($id,$vaccin) 
+{
+$this->mysqlconnect();
+$querysbd = "select * from vaccination1 WHERE IDELEVE= '$id' and vaccin=$vaccin";
+$resultatvac=mysql_query($querysbd);
+while($resultvac=mysql_fetch_object($resultatvac))
+{ 
+return $this->dateUS2FR($resultvac->datevac);
+
+}
+}	
+	
 function verif($id,$val) 
 {
 if ($id == $val){return 'X';}else{return 'O';} 
@@ -221,20 +234,20 @@ $this->SetXY(15,$this->GetY()+20);$this->Cell(50,10,"NOM PRENOM : ".$this->nbrto
 $this->SetXY(15,$this->GetY()+20);$this->Cell(50,10,"DATE : ".$this->dateUS2FR($data['DATE']),1,0,'L'); $this->Cell(85,10,"",0,0,'L');$this->Cell(45,10,"Ecole : ".$this->nbrtostring("ecole","id",$data['ETABLIS'],"ecole"),1,0,'L');
 $this->SetXY(15,$this->GetY()+20);$this->Cell(50,10,"CLASSE : ".$this->nbrtostring("palier","id",$data['CLASSE'],"nompalier"),1,0,'L'); $this->Cell(85,10,"",0,0,'L');$this->Cell(45,10,"AGE : ".$this->nbrtostring("eleve","id",$data['ID'],"Years").' Ans',1,0,'L');
 $this->RoundedRect($x=15, $y=$this->GetY()+20, $w=180, $h=10, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$this->SetXY(15,$this->GetY()+20);$this->Cell(45,5,"1-Hygienne bucco-dentaire",0,0,'L'); $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['HBDA'],1,0,'C');$this->Cell(40,5,"ACCEPTABLE " ,0,0,'L');
+$this->SetXY(15,$this->GetY()+20);$this->Cell(45,5,"1-Hygienne bucco-dentaire (Indice OHI Simplifié) ",0,0,'L'); $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['HBDA'],1,0,'C');$this->Cell(40,5,"ACCEPTABLE " ,0,0,'L');
 $this->SetXY(15,$this->GetY()+5);$this->Cell(45,5,"",0,0,'L');                           $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['HBDNA'],1,0,'C');$this->Cell(40,5,"NON ACCEPTABLE ",0,0,'L');
 $this->RoundedRect($x=15, $y=$this->GetY()+20, $w=180, $h=10, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$this->SetXY(15,$this->GetY()+20);$this->Cell(45,5,"2-Gingivite",0,0,'L');               $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['GO'],1,0,'C');$this->Cell(45,5,"OUI",0,0,'L');
+$this->SetXY(15,$this->GetY()+20);$this->Cell(45,5,"2-Gingivite (inflammation de la gencive)",0,0,'L');               $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['GO'],1,0,'C');$this->Cell(45,5,"OUI",0,0,'L');
 $this->SetXY(15,$this->GetY()+5);$this->Cell(45,5,"",0,0,'L');                           $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['GN'],1,0,'C');$this->Cell(45,5,"NON",0,0,'L');
 $this->RoundedRect($x=15, $y=$this->GetY()+20, $w=60, $h=80, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->RoundedRect($x=15+60, $y=$this->GetY()+20, $w=60, $h=80, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->RoundedRect($x=15+120, $y=$this->GetY()+20, $w=60, $h=80, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$this->SetXY(15,$this->GetY()+20);$this->Cell(45,10,"3-Indice de carie",0,0,'L'); 
+$this->SetXY(15,$this->GetY()+20);$this->Cell(45,10,"3-Indice CAO de KLEIN et PALMER",0,0,'L'); 
 $this->Image("dents.jpg", $x=16, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 $this->Image("dents.jpg", $x=15+61, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 $this->Image("dents.jpg", $x=15+121, $y=$this->GetY()+10, $w=58, $h=70, $type='jpg', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
-$this->SetXY(15,$this->GetY()+80);$this->Cell(60,5,"C : ".$data['C'],1,0,'L');$this->Cell(60,5,"A : ".$data['A'],1,0,'L');$this->Cell(60,5,"O : ".$data['O'],1,0,'L');
-$this->SetXY(15,$this->GetY()+5);$this->Cell(60,5,"c : ".$data['c'],1,0,'L');$this->Cell(60,5,"a : ".$data['a'],1,0,'L');$this->Cell(60,5,"o : ".$data['o'],1,0,'L');
+$this->SetXY(15,$this->GetY()+80);$this->Cell(60,5,"C (*les dents cariées) : ".$data['C'],1,0,'L');$this->Cell(60,5,"A (*les dents absentes) : ".$data['A'],1,0,'L');$this->Cell(60,5,"O (*les dents obturées) : ".$data['O'],1,0,'L');
+$this->SetXY(15,$this->GetY()+5);$this->Cell(60,5,"c (*les dents cariées) : ".$data['c'],1,0,'L');$this->Cell(60,5,"a (*les dents absentes) : ".$data['a'],1,0,'L');$this->Cell(60,5,"o (*les dents obturées) : ".$data['o'],1,0,'L');
 $this->RoundedRect($x=15, $y=$this->GetY()+10, $w=180, $h=10, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->SetXY(15,$this->GetY()+10);$this->Cell(45,5,"4-Anomalie orthopedie-dento-faciale ODF",0,0,'L');               $this->Cell(90,5,"",0,0,'L');$this->Cell(5,5,$data['ODFO'],1,0,'C');$this->Cell(45,5,"OUI",0,0,'L');
 $this->SetXY(15,$this->GetY()+5);$this->Cell(45,5,"",0,0,'L');$this->Cell(90,5,"",0,0,'L');                                       $this->Cell(5,5,$data['ODFN'],1,0,'C');$this->Cell(45,5,"NON",0,0,'L');
