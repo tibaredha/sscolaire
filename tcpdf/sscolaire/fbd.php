@@ -158,7 +158,28 @@ $data=array(
 "d45"            => $resultsbd->d45,
 "d46"            => $resultsbd->d46,
 "d47"            => $resultsbd->d47,
-"d48"            => $resultsbd->d48
+"d48"            => $resultsbd->d48,
+
+"d51"            => $resultsbd->d51,
+"d52"            => $resultsbd->d52,
+"d53"            => $resultsbd->d53,
+"d54"            => $resultsbd->d54,
+"d55"            => $resultsbd->d55,
+"d61"            => $resultsbd->d61,
+"d62"            => $resultsbd->d62,
+"d63"            => $resultsbd->d63,
+"d64"            => $resultsbd->d64,
+"d65"            => $resultsbd->d65,
+"d71"            => $resultsbd->d71,
+"d72"            => $resultsbd->d72,
+"d73"            => $resultsbd->d73,
+"d74"            => $resultsbd->d74,
+"d75"            => $resultsbd->d75,
+"d81"            => $resultsbd->d81,
+"d82"            => $resultsbd->d82,
+"d83"            => $resultsbd->d83,
+"d84"            => $resultsbd->d84,
+"d85"            => $resultsbd->d85
 );
 $pdf->FICHEBUCCO($data);
 }

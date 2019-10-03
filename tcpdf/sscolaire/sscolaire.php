@@ -182,6 +182,28 @@ if($data['d45']==$c) {$this->SetXY(32+$x,208+$y);$this->Cell(2,0,$v,0,0,'C',1,0)
 if($data['d46']==$c) {$this->SetXY(30.5+$x,203+$y);$this->Cell(2,0,$v,0,0,'C',1,0);}
 if($data['d47']==$c) {$this->SetXY(29+$x,198.4+$y);$this->Cell(2,0,$v,0,0,'C',1,0);} 
 if($data['d48']==$c) {$this->SetXY(29+$x,193.5+$y);$this->Cell(2,0,$v,0,0,'C',1,0);} 
+
+
+if($data['d51']==$c) {$this->SetXY(43.7+$x,176+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d52']==$c) {$this->SetXY(42.5+$x,177+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d53']==$c) {$this->SetXY(41+$x,177.4+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d54']==$c) {$this->SetXY(39.8+$x,179.4+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d55']==$c) {$this->SetXY(38.8+$x,182.5+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+
+if($data['d61']==$c) {$this->SetXY(44.9+$x,176+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d62']==$c) {$this->SetXY(46.3+$x,177+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d63']==$c) {$this->SetXY(47.8+$x,177.4+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d64']==$c) {$this->SetXY(49+$x,179.4+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d65']==$c) {$this->SetXY(50+$x,182.5+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+
+if($data['d71']==$c) {$this->SetXY(45.5+$x,199.7+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d72']==$c) {$this->SetXY(47.4+$x,198.7+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d73']==$c) {$this->SetXY(48.5+$x,197+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d74']==$c) {$this->SetXY(49.5+$x,195+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+if($data['d75']==$c) {$this->SetXY(50+$x,192.5+$y);$this->Cell(0.5,0,$v,0,0,'C',1,0);} 
+
+
+
 }
 
 function FICHEBUCCO($data) 
