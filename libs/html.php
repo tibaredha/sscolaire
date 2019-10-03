@@ -628,7 +628,6 @@ class HTML  {
 	echo "</form>" ;	
 	}
 	
-	
 	function combov($id,$name,$valeur)  
 	{
 	
@@ -653,7 +652,6 @@ class HTML  {
 	echo '</select>'."\n"; 
 	}
 	
-	
 	function NLIT($class,$id,$name,$value,$selected) 
 	{
 	echo "<select size=1 class=\"".$class."\" id=\"".$id."\"  name=\"".$name."\">"."\n";
@@ -673,13 +671,6 @@ class HTML  {
 	}
 	echo '</select>'."\n"; 
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	function tabs($data) 
 	{
@@ -801,6 +792,41 @@ class HTML  {
 	echo "<select id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"  >"."\n";
 	echo"<option  value=\"".$value."\" selected=\"selected\">".$selected."</option>"."\n";
 	echo '</select>'."\n";
+	}
+	
+	
+	function VACCIN($name,$id,$class,$tb_name,$value,$selected,$idvac) 
+	{
+	$this->mysqlconnect();
+	echo "<select  id=\"".$id."\" size=1 class=\"".$class."\" name=\"".$name."\" onblur=\"genererCodeP()\"   >"."\n";
+	// echo"<option  value=\"".$value."\"  selected=\"selected\">".$selected."</option>"."\n";
+	mysql_query("SET NAMES 'UTF8' ");
+	$result = mysql_query("SELECT * FROM $tb_name where id = $idvac order by id " );//
+	while($data =  mysql_fetch_array($result))
+	{
+	echo '<option value="'.$data[0].'">'.$data[1].'</option>';
+	}
+	echo '</select>'."\n"; 
+	}
+	
+	function VACCINID($IDELEVE) 
+	{
+	if(isset($IDELEVE)){
+	$this->mysqlconnect();
+	mysql_query("SET NAMES 'UTF8' ");
+	$result = mysql_query("SELECT * FROM vaccination1 where IDELEVE=$IDELEVE order by vaccin desc limit 0,1" );
+	$OP=mysql_num_rows($result);
+	if($OP>0)
+	{
+		while($data =  mysql_fetch_array($result))
+		{
+		return $data[1]+1;
+		}
+	} else {
+	return 1;
+	}
+	}
+	
 	}
 	
 	

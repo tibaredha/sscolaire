@@ -256,8 +256,9 @@ jQuery(function($){
 		$("#RDATE10").mask("99-99-9999",{placeholder:"00/00/0000"});
 		$("#RDATE11").mask("99-99-9999",{placeholder:"00/00/0000"});
 		
-		
-		
+		$("#datevac").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#dateper").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#ndlot").mask("9999999999",{placeholder:"0000"});
 		
 		
 		
