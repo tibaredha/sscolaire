@@ -50,43 +50,45 @@ class para extends Controller {
 	
 	public function createpara() 
 	{
-	$data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
-	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
+	$data['DATEEXAMEN']    = html::dateFR2US($_POST['DATEEXAMEN']);
+	$data['POIDS']         = $_POST['POIDS'];
+	$data['TAILLE']        = $_POST['TAILLE'];
+	$data['TA']            = $_POST['TA'];
+	$data['AV']            = $_POST['AV'];
+	if (isset($_POST['ACV'])){$data['ACV']='1';}else{$data['ACV']='';}
     $data['IDELEVE']          = $_POST['IDELEVE'];
     $data['STRUCTURE']        = $_POST['STRUCTURE'];
 	$data['UDS']              = $_POST['UDS'];
 	$data['ETABLIS']          = $_POST['ETABLIS'];
 	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	// echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->createemg($data);
+	echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->createpara($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
 	}
 	
 	function edit($id) {
-	 $url1 = explode('/',$_GET['url']);	
-		$this->view->title = 'edit Examens de médecine generale ';
-		$this->view->msg = 'Edit Examens de médecine generale';
-		$this->view->usercao = $this->model->userSingleList($url1[3]);
-		$this->view->user = $this->model->userSingleListe($url1[2]);
-		$this->view->render($this->controleur.'/edit');  
+	 // $url1 = explode('/',$_GET['url']);	
+		// $this->view->title = 'edit Examens de médecine generale ';
+		// $this->view->msg = 'Edit Examens de médecine generale';
+		// $this->view->usercao = $this->model->userSingleList($url1[3]);
+		// $this->view->user = $this->model->userSingleListe($url1[2]);
+		// $this->view->render($this->controleur.'/edit');  
 	}
 	
 	function editepara($id) {
-	 $data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
-	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
-    $data['IDELEVE']          = $_POST['IDELEVE'];
-    $data['STRUCTURE']        = $_POST['STRUCTURE'];
-	$data['UDS']              = $_POST['UDS'];
-	$data['ETABLIS']          = $_POST['ETABLIS'];
-	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	$data['id']          = $id;
-	//echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->editSave($data);
-    header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);
+	 // $data['DATESBD']          = $_POST['DATESBD'];
+	// for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
+	// if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
+	// if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
+    // $data['IDELEVE']          = $_POST['IDELEVE'];
+    // $data['STRUCTURE']        = $_POST['STRUCTURE'];
+	// $data['UDS']              = $_POST['UDS'];
+	// $data['ETABLIS']          = $_POST['ETABLIS'];
+	// $data['NIVEAUS']          = $_POST['NIVEAUS'];
+	// $data['id']          = $id;
+	echo '<pre>';print_r ($data);echo '<pre>'; 
+    // $last_id=$this->model->editSave($data);
+    // header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);
 	}
 	
 	

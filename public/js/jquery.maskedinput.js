@@ -261,6 +261,12 @@ jQuery(function($){
 		$("#ndlot").mask("9999999999",{placeholder:"0000"});
 		
 		
+		$("#DATEEXAMEN").mask("99-99-9999",{placeholder:"00/00/0000"});
+		$("#POIDS").mask("99",{placeholder:"00"});
+		$("#TAILLE").mask("999",{placeholder:"000"});
+		$("#TA").mask("999-999",{placeholder:"000-000"});
+		$("#AV").mask("99-99",{placeholder:"00-00"});
+		
 		
 		
 		

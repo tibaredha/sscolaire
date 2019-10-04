@@ -264,7 +264,7 @@ $this->AddPage('P','A4');
 $this->setRTL(FALSE); 
 $this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $this->SetXY(15,$this->GetY()+5); $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"SUIVIE MEDICAL",1,0,'C',1,0);  
-$this->SetXY(15,$this->GetY()+15);$this->SetFillColor(253, 253, 9 );$this->Cell(26,10,"DATE",1,0,'C',1,0);$this->Cell(26,10,"CLASSE",1,0,'C',1,0);      $this->Cell(26,10,"AGE",1,0,'C',1,0); $this->Cell(66,10,"RESULTAT ET CONCLUSION D'EXAMENS",1,0,'C',1,0);$this->Cell(36,10,"MEDECIN",1,1,'C',1,0);
+$this->SetXY(15,$this->GetY()+15);$this->SetFillColor(253, 253, 9 );$this->Cell(26,10,"DATE",1,0,'C',1,0);$this->Cell(26,10,"PALIER",1,0,'C',1,0);      $this->Cell(26,10,"AGE",1,0,'C',1,0); $this->Cell(66,10,"RESULTAT ET CONCLUSION D'EXAMENS",1,0,'C',1,0);$this->Cell(36,10,"MEDECIN",1,1,'C',1,0);
 $this->SetXY(15,$this->GetY());$this->SetFillColor(152, 235, 251 );$this->Cell(26,10,"",1,0,'C',1,0);$this->Cell(26,10,"",1,0,'C',1,0);      $this->Cell(26,10,"",1,0,'C',1,0); $this->Cell(66,10,"",1,0,'C',1,0);$this->Cell(36,10,"",1,1,'C',1,0);
 $this->SetXY(15,$this->GetY());$this->SetFillColor(152, 235, 251 );$this->Cell(26,10,"",1,0,'C',1,0);$this->Cell(26,10,"",1,0,'C',1,0);      $this->Cell(26,10,"",1,0,'C',1,0); $this->Cell(66,10,"",1,0,'C',1,0);$this->Cell(36,10,"",1,1,'C',1,0);
 $this->SetXY(15,$this->GetY());$this->SetFillColor(152, 235, 251 );$this->Cell(26,10,"",1,0,'C',1,0);$this->Cell(26,10,"",1,0,'C',1,0);      $this->Cell(26,10,"",1,0,'C',1,0); $this->Cell(66,10,"",1,0,'C',1,0);$this->Cell(36,10,"",1,1,'C',1,0);
@@ -356,15 +356,38 @@ $this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(40,1
 
 }
 
+function EXAMENPARA($id,$SEX) {
+$this->AddPage('P','A4');
+$this->setRTL(FALSE); 
+$this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$this->SetXY(15,$this->GetY());  $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"Examens paramédicale",1,1,'C',1,0);$w=24.15;
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(35,10,"DATE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell($w,10,"PALIER",1,0,'C',1,0);$this->Cell($w,10,"POIDS",1,0,'C',1,0);$this->Cell($w,10,"TAILLE",1,0,'C',1,0);$this->Cell($w,10,"AV",1,0,'C',1,0);$this->Cell($w,10,"TA",1,0,'C',1,0);$this->Cell($w,10,"ACV",1,1,'C',1,0);
+$this->mysqlconnect();
+$querypara= "select * from para WHERE IDELEVE= '$id'  order by DATEEXAMEN desc limit 0,4";
+$resultatpara=mysql_query($querypara);
+$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);
+while($resultpara=mysql_fetch_object($resultatpara))
+{
+
+$this->Cell(35,5,$this->dateUS2FR($resultpara->DATEEXAMEN),1,0,'C',1,0);
+$this->SetFillColor(152, 245, 255 );
+$this->Cell($w,5,$this->nbrtostring("palier","id",$resultpara->NIVEAUS,"nompalier"),1,0,'C',1,0);
+$this->Cell($w,5,$resultpara->POIDS,1,0,'C',1,0);
+$this->Cell($w,5,$resultpara->TAILLE,1,0,'C',1,0);
+$this->Cell($w,5,$resultpara->AV,1,0,'C',1,0);
+$this->Cell($w,5,$resultpara->TA,1,0,'C',1,0);
+$this->Cell($w,5,verif($resultpara->ACV,"1"),1,0,'C',1,0);
+$this->SetXY(15,$this->GetY()+5);
+$this->SetFillColor(253, 253, 9);
+}
+if($SEX=="M")  {
+$this->Image("002.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+} else {
+$this->Image("001.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+} 
 
 
-
-
-
-
-
-
-
+}
 
 
 

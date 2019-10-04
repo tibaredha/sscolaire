@@ -71,9 +71,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">Palier</A></th>';
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">EMG</th>';
-			echo'<th class="crtl">VACCIN</th>';
-			echo'<th class="crtl">BIO</th>';
-			//echo'<th class="crtl">DMS</th>';
+			echo'<th class="crtl" colspan="2"   >PARA</th>';
 			echo'<th class="crtl">DMS</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
@@ -95,7 +93,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen de médecine générale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			//echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/vaccination/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.'vac/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.$ctrl.'/emg/'.$value['id'].'" ><img src="'.URL.'public/images/rectangle.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.'para/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/biometrie.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
             //echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			if ($value['aprouve']==0){

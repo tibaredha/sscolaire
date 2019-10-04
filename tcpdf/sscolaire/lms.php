@@ -16,6 +16,7 @@ $style = array(
     'fontsize' => 8,
     'stretchtext' => 4
 );
+function verif($id,$val){if ($id == $val){return 'Oui';}else{return 'Non';} }
 require('sscolaire.php');
 $pdf = new sscolaire( 'P', 'mm', 'A4',true,'UTF-8',false );
 $pdf->setPrintHeader(false);$pdf->SetAutoPageBreak(TRUE, 0);$pdf->setPrintFooter(false);
@@ -83,10 +84,8 @@ $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10,"",1,0,'C');    $pdf->Cell(4
 $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10," ",1,0,'C');    $pdf->Cell(45,10,"",1,0,'C');      
 $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10," ",1,0,'C');    $pdf->Cell(45,10,"",1,0,'C');      
 $pdf->SetXY(15,$pdf->GetY()+10);  $pdf->Cell(135,10," ",1,0,'C');    $pdf->Cell(45,10,"",1,0,'C');
-$pdf->SetXY(15,$pdf->GetY()+10);
 
-
-$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(90,10,"Vaccination",1,0,'R',1,0);$pdf->Cell(90,10,"التلقيحات",1,1,'L',1,0);    
+$pdf->SetXY(15,$pdf->GetY()+10);  $pdf->SetFillColor(152, 235, 251 );$pdf->Cell(90,10,"Vaccination",1,0,'R',1,0);$pdf->Cell(90,10,"التلقيحات",1,1,'L',1,0);    
 
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251);$pdf->Cell(20,10,"Age",1,0,'L',1,0);                               $pdf->SetFillColor(200 ); $pdf->Cell(20,10,"BCG",1,0,'C',1,0);               $pdf->SetFillColor(255, 185, 0);  $pdf->Cell(20,10,"HBV",1,0,'C',1,0);               $pdf->SetFillColor(255, 8, 0);$pdf->Cell(20,10,"VPO",1,0,'C',1,0);                $pdf->SetFillColor(8, 255, 0);  $pdf->Cell(20,10,"DTC",1,0,'C',1,0);                $pdf->Cell(20,10,"HIB",1,0,'C',1,0);               $pdf->SetFillColor(255, 0, 0); $pdf->Cell(20,10,"AR",1,0,'C',1,0);                $pdf->SetFillColor(0, 201, 255); $pdf->Cell(20,10,"DTE",1,0,'C',1,0);               $pdf->SetFillColor(0, 131, 167); $pdf->Cell(20,10,"DTA",1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10,"Naissance",1,0,'L',1,0);                        $pdf->SetFillColor(200 ); $pdf->Cell(20,10,$pdf->vaccin($id,1),1,0,'C',1,0); $pdf->SetFillColor(255, 185, 0);  $pdf->Cell(20,10,$pdf->vaccin($id,2),1,0,'C',1,0); $pdf->SetFillColor(255, 8, 0);$pdf->Cell(20,10,$pdf->vaccin($id,3),1,0,'C',1,0);  $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );      $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,1,'C',1,0); 
@@ -99,23 +98,13 @@ $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10,"1ere AP",1,0,'L',1,0);                          $pdf->SetFillColor(240 ); $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );         $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(255, 8, 0);$pdf->Cell(20,10,$pdf->vaccin($id,21),1,0,'C',1,0); $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(255, 0, 0); $pdf->Cell(20,10,$pdf->vaccin($id,20),1,0,'C',1,0); $pdf->SetFillColor(0, 201, 255); $pdf->Cell(20,10,$pdf->vaccin($id,19),1,0,'C',1,0); $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,1,'C',1,0); 
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10,"1ere AM",1,0,'L',1,0);                          $pdf->SetFillColor(240 ); $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );         $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(255, 8, 0);$pdf->Cell(20,10,$pdf->vaccin($id,23),1,0,'C',1,0); $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );      $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(0, 131, 167); $pdf->Cell(20,10,$pdf->vaccin($id,22),1,1,'C',1,0);
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10,"1ere AS",1,0,'L',1,0);                          $pdf->SetFillColor(240 ); $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );         $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(255, 8, 0);$pdf->Cell(20,10,$pdf->vaccin($id,25),1,0,'C',1,0); $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );      $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(0, 131, 167); $pdf->Cell(20,10,$pdf->vaccin($id,24),1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10,"18 ans",1,0,'L',1,0);                           $pdf->SetFillColor(240 ); $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );         $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );     $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );      $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(0, 131, 167); $pdf->Cell(20,10,$pdf->vaccin($id,26),1,1,'C',1,0);
-
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"",1,0,'L');                             $pdf->SetFillColor(253, 253, 9);  $pdf->Cell(40,10,"Vaccins",1,0,'C',1,0);                $pdf->Cell(36,10,"Fait le",1,0,'C',1,0);$pdf->Cell(32,10,"A refaire le",1,0,'C',1,0);$pdf->Cell(36,10,"Observation",1,1,'C',1,0);
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"Naissance",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"BCG-POLIO:O-HVB1",1,0,'C',1,0);       $pdf->Cell(36,10,$pdf->vaccin($id,1),1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1er mois",1,0,'C',1,0);                 $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"HVB2",1,0,'C',1,0);                   $pdf->Cell(36,10,$pdf->vaccin($id,4),1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"3eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTCOQ-HIB-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,$pdf->vaccin($id,5),1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"4eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTCOQ-HIB-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,$pdf->vaccin($id,8),1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"5eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTCOQ-HIB-POLIO:O-HVB3",1,0,'C',1,0); $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"9eme mois",1,0,'C',1,0);                $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"ROR",1,0,'C',1,0);                    $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"18eme mois",1,0,'C',1,0);               $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTCOQ-HIB-POLIO:O",1,0,'C',1,0);      $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AP",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTE-POLIO:O-RR",1,0,'C',1,0);         $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AM",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTA-POLIO:O",1,0,'C',1,0);            $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"1ere AS",1,0,'C',1,0);                  $pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTA-POLIO:O",1,0,'C',1,0);            $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-// $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(11, 193, 31 );$pdf->Cell(36,10,"18 ans (Tous les 10 ans) ",1,0,'C',1,0);$pdf->SetFillColor(152, 235, 251);$pdf->Cell(40,10,"DTA",1,0,'C',1,0);                    $pdf->Cell(36,10,"",1,0,'C');           $pdf->Cell(32,10,"",1,0,'L');                $pdf->Cell(36,10,"",1,1,'L');
-
+$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(20,10," /10 ans ",1,0,'L',1,0);                           $pdf->SetFillColor(240 ); $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );         $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );     $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );       $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(240 );      $pdf->Cell(20,10,"",1,0,'C',1,0);                   $pdf->SetFillColor(240 );        $pdf->Cell(20,10,"",1,0,'C',1,0);                  $pdf->SetFillColor(0, 131, 167); $pdf->Cell(20,10,$pdf->vaccin($id,26),1,1,'C',1,0);
 
 $pdf->SetXY(15,33);$pdf->write1DBarcode($id, 'C39', '', '', '', 18, 0.4, $style, 'N');$pdf->Ln();
+
+
+
+$pdf->EXAMENPARA($id,$result->SEX);
 $pdf->mysqlconnect();
 $querysbd = "select * from examensbd WHERE IDELEVE= '$id' ";
 $resultatsbd=mysql_query($querysbd);
@@ -198,7 +187,8 @@ $pdf->FICHEBUCCO($data);
 }
 
 
-function verif($id,$val){if ($id == $val){return 'Oui';}else{return 'Non';} }
+
+$pdf->mysqlconnect();
 $queryemg = "select * from examenemg WHERE IDELEVE= '$id' ";
 $resultatemg=mysql_query($queryemg);
 while($resultemg=mysql_fetch_object($resultatemg))
@@ -212,34 +202,11 @@ $data=array(
 );
 $pdf->EXAMENMEDICAL($data);
 }
-
-
 $pdf->EXAMENPSYCHO();
 
-$pdf->AddPage('P','A4');
-$pdf->setRTL(FALSE); 
-$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"POIDS",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->Image("001.jpg", $x=5, $y=$pdf->GetY()+10, $w=200, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
-
-$pdf->AddPage('P','A4');
-$pdf->setRTL(FALSE); 
-$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"DATE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"AGE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(253, 253, 9);$pdf->Cell(40,10,"TAILLE",1,0,'C',1,0);$pdf->SetFillColor(152, 245, 255 );$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,0,'C',1,0);$pdf->Cell(35,10,"",1,1,'C',1,0);
-$pdf->Image("002.jpg", $x=5, $y=$pdf->GetY()+10, $w=200, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 $pdf->SUIVIEMEDICAL();
 $pdf->Output();
-
-
 }
-
-
-
-
 
 ?>
 
