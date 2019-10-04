@@ -16,7 +16,6 @@ class sbd extends Controller {
 		$this->view->css = array($this->controleur.'/css/default.css?t='.time());
 	}
 	
-
 	function index() {
 	    $this->view->title = 'dashboard';
 		$this->view->msg = 'dashboard';
@@ -24,6 +23,7 @@ class sbd extends Controller {
 	}
 
 	//**********************************************************************************************************************************//
+	
 	function search()
 	{
 	    $url1 = explode('/',$_GET['url']);	
@@ -40,7 +40,9 @@ class sbd extends Controller {
 		// $this->view->nbrvalide = $this->model->listeAprouve();
 		$this->view->render($this->controleur.'/index');
 	}
+	
 	// **********************************************************************************************************************************//
+	
 	function ebd($id) {
 	    $this->view->title = 'ebd';
 		$this->view->msg = 'ebd';
@@ -129,8 +131,6 @@ class sbd extends Controller {
 		$last_id=$this->model->editSave($data);
 		header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);
 	}
-	
-	
 	
 	public function delete($id)
 	{

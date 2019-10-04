@@ -34,14 +34,11 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 <div class="contentl formaut">
 	<form action="<?php echo URL.'vac/createvac/'.$this->user[0]['id'];?>" method="post">			
 		<div id="inner-grid">
-			<?php //echo HTML::VACCINID($this->user[0]['id']);?>
-			
-			
-			<div id="a">Vaccin :   <?php echo HTML::VACCIN("vaccin","aa","vaccin","vaccin","1","BCG",HTML::VACCINID($this->user[0]['id']) );?> </div>
-			<div id="b">Date Vac : <input class="bb" id="datevac" type="text"  name="datevac"  value="<?php echo date('d-m-Y');?>"  required="" /></div>
-			<div id="c">Date Pér : <input class="bb" id="dateper" type="text"  name="dateper"  value="<?php echo date('d-m-Y');?>"  required="" /></div>
-			<div id="d">N° de lot : <input class="bb"   id="ndlot"   type="text"  name="ndlot"    value="0000000"      required="" /></div>
-			<div id="e"></div>
+			<div id="a">Type Vaccin :   <?php echo HTML::VACCIN("vaccin","aa","vaccin","vaccin","1","BCG",HTML::VACCINID($this->user[0]['id']) );?> </div>
+			<div id="b">Date Vaccin : <input class="bb" id="datevac" type="text"  name="datevac"  value="<?php echo date('d-m-Y');?>"  required="" /></div>
+			<div id="c">Date Péremption : <input class="bb" id="dateper" type="text"  name="dateper"  value="<?php echo date('d-m-Y');?>"  required="" /></div>
+			<div id="d">N° du lot : <input class="bb"   id="ndlot"   type="text"  name="ndlot"    value="0000000"      required="" /></div>
+			<div id="e">***</div>
 			<?php 
 			echo '<div ><input type="hidden" name="IDELEVE"  value="'.$this->user[0]['id'].'"/> </div>';
 			echo '<div ><input type="hidden" name="NIVEAUS"  value="'.$this->user[0]['PALIER'].'"/> </div>';
@@ -50,8 +47,6 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 			echo '<div ><input type="hidden" name="STRUCTURE"value="'.$this->user[0]['STRUCTURE'].'"/> </div>';
 			?>
 			<div id="f"><input class="dd" onclick="playSound()"  name="submit1"   type="submit" value="Vacciner"/> </div>
-		    
-		
 		</div>
 	</form>
 </div>	

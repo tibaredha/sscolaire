@@ -27,7 +27,6 @@ class sbd_Model extends Model {
     }
 	
 	public function createexamen($data) {
-	
 	$this->db->insert($this->tblesbc, array(
 	            
 				'IDELEVE'   => $data['IDELEVE'],
@@ -104,7 +103,6 @@ class sbd_Model extends Model {
         ));
         
 		// echo '<pre>';print_r ($data);echo '<pre>';
-		 
 		return $last_id = $this->db->lastInsertId();
 	}
 	
