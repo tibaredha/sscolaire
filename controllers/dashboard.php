@@ -197,7 +197,36 @@ class Dashboard extends Controller {
 
 	
 	
+	//******************************************************CHANGER PHOTOS********************************************************//
+	//**CHANGER PHOTOS**//
 	
+	function upl() 
+	{
+	$this->view->title = 'upload';
+	$this->view->render($this->controleur.'/upl');    
+	}
+	function upl1($id) 
+	{
+		$this->view->title = 'upload';
+		if (isset($_POST))
+		{
+			if (isset($_FILES))
+			{
+			
+			$uploadLocation = "D:\\sscolaire/public/images/photos/sscolaire/"; 
+			$target_path = $uploadLocation.trim($id).".jpg";      
+				if(move_uploaded_file($_FILES['upfile']['tmp_name'], $target_path)) 
+				{	
+				$this->view->msg ='le fichier :  '.basename( $_FILES['upfile']['name']).'  a été corectement envoyer merci';
+				} 
+				else
+				{
+				$this->view->msg ='il ya une erreur d\'envoie du fichier :  '.basename( $_FILES['upfile']['name']).'  veillez recomencer svp';	
+				}
+			}	
+		}
+		header('location: ' . URL .$this->controleur.'/search/0/10?o=id&q='.$id); 
+	}	
 	
 	
 	
