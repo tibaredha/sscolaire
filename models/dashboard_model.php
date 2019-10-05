@@ -119,6 +119,10 @@ class Dashboard_Model extends Model {
 	
 	public function deleteeleve($id) {       
         $this->db->delete($this->tbl, "id = '$id'");
+		$this->db->deletem("examensbd", "IDELEVE = '$id'");
+		$this->db->deletem("examenemg", "IDELEVE = '$id'");
+		$this->db->deletem("vaccination1", "IDELEVE = '$id'");
+		$this->db->deletem("para", "IDELEVE = '$id'");	
     }
     
 	public function Aprouve($data) {

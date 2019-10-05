@@ -1,17 +1,17 @@
 <?php
 require('sscolaire.php');
 $pdf = new sscolaire('L', 'mm', 'A4');$pdf->AliasNbPages();
-
 $datejour1=$pdf->dateFR2US($_POST['Datedebut']);
 $datejour2=$pdf->dateFR2US($_POST['Datefin']);
 if ($datejour1>$datejour2 or  $datejour1==$datejour2 ){header("Location: /sscolaire/dashboard/Evaluation/") ;}
-
 $UDS=$_POST['uds'];
 $structure=$_POST['structure'];
 $login=$_POST['login'];
-
 if ($_POST['ECOLE']==0){$ecole=null;} else {$ecole='='.$_POST['ECOLE'];} 
 if ($_POST['PALIER']==0){$palier=null;} else {$palier='='.$_POST['PALIER'];} 
+
+
+
 
 if ($_POST['SS']=='0') //liste nominative par medecin uds
 {
@@ -42,9 +42,6 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (Dentiste) ",$palier);
-	// $pdf->SetXY(5,10);             $pdf->cell(288,5,$pdf->mspfr,1,0,'C',1,0);
-	// $pdf->SetXY(5,$pdf->GetY()+5); $pdf->cell(288,5,$pdf->dspfr,1,0,'C',1,0);
-    // $pdf->SetXY(5,$pdf->GetY()+8); $pdf->cell(96,5,'UDS : '.$pdf->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);$pdf->cell(96,5,'Liste nominative des élèves (Dentiste)',1,0,'C',1,0);$pdf->cell(66,5,'établissement scolaire : '.$pdf->nbrtostring('ecole','id',substr($ecole, 1, 2),'ecole'),1,0,'L',1,0);$pdf->cell(30,5,'Palier : '.$pdf->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+10);
 	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
 	$pdf->cell(15,5,'HYNA',1,0,'C',1,0);
@@ -84,7 +81,40 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 $pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
 
-if ($_POST['SS']=='2') //liste nominative paramedicale par uds
+if ($_POST['SS']=='2') //liste nominative psychologue par uds
+{
+
+	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
+	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (psychologue) ",$palier);
+	$pdf->SetXY(05,$pdf->GetY()+10);
+	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
+	$pdf->cell(45,5,'Difficultes scolaire',1,0,'C',1,0);
+	$pdf->cell(45,5,'Trouble du langage',1,0,'C',1,0);
+	$pdf->cell(45,5,'Trouble du comportement',1,0,'C',1,0);
+	$pdf->cell(45,5,'Autres',1,0,'C',1,0);
+	$pdf->cell(31.5,5,'Date EXA',1,0,'C',1,0);
+	$pdf->cell(31.5,5,'Date RDV',1,0,'C',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+5);
+	$pdf->mysqlconnect();
+	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
+	$resultat=mysql_query($query);
+	$totalmbr1=mysql_num_rows($resultat);
+	while($row=mysql_fetch_object($resultat))
+	{
+		$pdf->SetFont('Times','',9);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
+		$pdf->cell(45,5,'',1,0,'C',0,0);
+		$pdf->cell(45,5,'',1,0,'C',0,0);
+		$pdf->cell(45,5,'',1,0,'C',0,0);
+		$pdf->cell(45,5,'',1,0,'C',0,0);
+		$pdf->cell(31.5,5,'',1,0,'C',0,0);
+		$pdf->cell(31.5,5,'',1,0,'C',0,0);
+		$pdf->SetFont('Times','B',10);
+		$pdf->SetXY(5,$pdf->GetY()+5); 
+	}
+$pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
+}
+if ($_POST['SS']=='3') //liste nominative paramedicale par uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (Para-médicale) ",$palier);

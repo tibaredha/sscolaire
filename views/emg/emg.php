@@ -103,7 +103,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 				"mdl"   => "createexamen",
 				"datee" => date('d-m-Y'),
 				"okrdv" =>"",
-			    "datecsbd" => date('d-m-Y'),
+			    "datecsbd" => "",
 				"m1"   => "",
 				"m2"   => "",
 				"m3"   => "",

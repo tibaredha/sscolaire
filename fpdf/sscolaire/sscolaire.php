@@ -3,9 +3,6 @@ require('../fpdi.php');
 
 class sscolaire extends FPDI
 {
-
-
-    
 	
 	//*******************************************examen medicale************************************************************************//
      function INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS){

@@ -48,12 +48,29 @@ class Agenda extends Controller {
 	    header('location: ' . URL .$this->controleur.'/Agenda/'.$_POST['url2'].'/'.$_POST['url3'].'/'.$_POST['url4']);	
 	}
 	
-	public function deleterdv($id)//la supression de la visite medicale
+	public function deleterdv($id)
 	{
 	$url = explode('/',$_GET['url']);	
+	echo "<pre>"; print_r($url);  echo "</pre>";  
 	$this->model->deleterdv($id);     
 	header('location: ' . URL .$this->controleur.'/Agenda/'.$url[3].'/'.$url[4].'/'.$url[5]);
 	}
-	//****************fin Agenda***********************//	
+	//****************fin Agenda***********************//
+
+    public function Aprouve($id)
+	{
+	$url = explode('/',$_GET['url']);	
+	$data = array();
+	$data['id']         = $url[2];
+	$data['RDVOK']      = $url[3];
+	$this->model->Aprouve($data);     
+	header('location: ' . URL .$this->controleur.'/Agenda/'.$url[4].'/'.$url[5].'/'.$url[6]);
+	}
+
+
+
+
+
+	
 	
 }

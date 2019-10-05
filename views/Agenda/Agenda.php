@@ -25,19 +25,23 @@ echo'</form>';
 $this->clagenda->agenda($ctrl,Session::get('structure'));
 $nbr=$this->userListviewt;
 echo'<table class="tableaux_centrer2" >';
-	echo( "<tr class=\"calendar1\"><td  colspan=\"4\"><div align=\"center\"><font  color=\"green\">Liste des décès  :(".$nbr.")</td></tr>" ); 
+	echo( "<tr class=\"calendar1\"><td  colspan=\"5\"><div align=\"center\"><font  color=\"green\">Liste des RDVs par praticien    :(".$nbr.")</td></tr>" ); 
     echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
+	echo'<th style="width:5px;">Paraticien</th>';
 	echo'<th style="width:10px;">Nom_Prenom_Filsde</th>';
-	
-	echo'<th style="width:5px;">Age</th>';
-	echo'<th style="width:10px;">Médecin</th>';
+	echo'<th style="width:5px;">Date examen</th>';
+	echo'<th style="width:10px;">OK</th>';
+	echo'<th style="width:10px;">DEL</th>';
 	echo'</tr>';
 	if ($nbr <=0 ) 
 	{
 	echo'<tr bgcolor="#EDF7FF">';
 	echo'<td style="width:10px;">***</td>';
 	echo'<td style="width:10px;">***</td>';
+	echo'<td style="width:10px;">***</td>';
+	echo'<td style="width:10px;">***</td>';
+	
 	echo'<td style="width:10px;">***</td>';
 	echo'</tr>';
 	}
@@ -47,17 +51,33 @@ echo'<table class="tableaux_centrer2" >';
 	{
 	$bgcolor_donate ='#EDF7FF';
 	echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
-	echo '<td align="left" ><b><a target="_blank" title="éditer décès "  href="'.URL.'dashboard/edit/'.$value['id'].'" >'.strtoupper($value['NOM']).'_'.strtolower($value['PRENOM']).' ('.strtolower($value['FILSDE']).')'.'<b></a></td>';
-	if ($value['Years'] > 0 ){echo "<td style=\"width:50px;\" align=\"center\" >".$value['Years']." A </td>" ;} else {if ($value['Days'] <= 30 ) {echo "<td style=\"width:50px;\" align=\"center\" >".$value['Days']." J </td>" ;} else{echo "<td style=\"width:50px;\" align=\"center\" >".$value['Months']." M </td>" ;} }		
-	echo'<td align="left" >'.$value['MEDECINHOSPIT'].'</td>';
+	echo'<td align="center" >'.$value['PRATICIEN'].'</td>';
+	echo '<td align="left" ><b><a target="_blank" title="éditer rdv "  href="'.URL.'dashboard/***/'.$value['id'].'" >'.strtoupper(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'NOM')).'_'.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'PRENOM')).' ('.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'FILSDE')).')'.'<b></a></td>';
+	echo'<td align="center" >'.HTML::dateUS2FR($value['DATEEXAMEN']).'</td>';
+	
+	
+	$url1 = explode('/',$_GET['url']);
+	if ($value['RDVOK']==1)
+	{
+		echo '<td align="center"><a  title="Désaprouvé "  href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/0/'.$url1[2].'/'.$url1[3].'/'.$url1[4].'" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>'; 
+	} 
+	else
+	{
+		echo '<td align="center"><a  title="Aprouvé"     href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/1/'.$url1[2].'/'.$url1[3].'/'.$url1[4].'" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';  
+	}
+	$url = explode('/',$_GET['url']);
+	echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer élève scolarisé"  href="'.URL.$ctrl.'/deleterdv/'.$value['id'].'/'.$url[2].'/'.$url[3].'/'.$url[4].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+					
 	echo '</tr>';
 	}			
 	}
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
+	echo'<th style="width:5px;">Paraticien</th>';
 	echo'<th style="width:10px;">Nom_Prenom_Filsde</th>';
-	echo'<th style="width:5px;">Age</th>';
-	echo'<th style="width:10px;">Médecin</th>';
+	echo'<th style="width:5px;">Date examen</th>';
+	echo'<th style="width:10px;">OK</th>';
+	echo'<th style="width:10px;">DEL</th>';
 	echo'</tr>';				
 echo "</table>";
 echo "</div>";

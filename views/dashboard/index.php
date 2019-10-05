@@ -86,10 +86,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			$bgcolor_donate ='#EDF7FF';
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
 			$url1 = explode('/',$_GET['url']);if ($value['aprouve']==1){echo '<td align="center"><a  title="Désaprouvé "  href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/0/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>'; } else{echo '<td align="center"><a  title="Aprouvé"     href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/1/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';  }
-			
 			echo "<td align=\"center\"><a title=\"Modifier Photos\" href=\"".URL.$ctrl."/upl/".$value['id']."\" ><img  src=\"".$fichier."\"  width='20' height='20' border='1' alt='photos'></td> " ; 
-			
-			
 			echo '<td align="left" ><b><a  title="Visualiser la fiche "  href="'.URL.$ctrl.'/view/'.$value['id'].'" >'.strtoupper($value['NOM']).'_'.strtolower($value['PRENOM']).' ('.strtolower($value['FILSDE']).')'.'<b></a></td>';
 			echo '<td align="center"  >'.$value['SEX'].'</td>';
 			echo '<td align="center"style="width:100px;" >'.HTML::dateUS2FR($value['DATENS']).'</td>';

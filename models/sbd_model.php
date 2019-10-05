@@ -103,7 +103,19 @@ class sbd_Model extends Model {
         ));
         
 		// echo '<pre>';print_r ($data);echo '<pre>';
-		return $last_id = $this->db->lastInsertId();
+		// return $last_id = $this->db->lastInsertId();
+		if($data['OKRDV']=="1") {
+		$this->db->insert("rdvsscolaire", array(
+	            
+				'DATEEXAMEN'=> $this->dateFR2US($data['DATESBD']),
+				'DATERDV'   => $this->dateFR2US($data['DATECSBD']),
+				'IDELEVE'   => $data['IDELEVE'],
+				'PRATICIEN' => "Dentiste",
+		        'RDVOK'     => "0"
+        ));
+		}
+		
+		
 	}
 	
 	public function editSave($data) {

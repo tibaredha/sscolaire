@@ -60,7 +60,7 @@ class clagenda  {
 		if($d <= 9) {$d1='0'.$d;}else {$d1=$d;}
 		$dateLa = $year.'-'.$month1.'-'.$d1;
 		//$extraire = mysql_query("select * from rdv WHERE DATERDV='$dateLa' and   str='".$str."' ");
-		$extraire = mysql_query("select * from deceshosp  WHERE DINS='$dateLa' and   STRUCTURED = $str");
+		$extraire = mysql_query("select * from rdvsscolaire  WHERE DATERDV='$dateLa'   ");//group by IDELEVE 
 		$nbrEvents = mysql_num_rows($extraire);
 		if ($nbrEvents > 0) {$nbrEvents1='['.$nbrEvents.']';return $nbrEvents1;}else{$nbrEvents1='';return $nbrEvents1;}
 	}
