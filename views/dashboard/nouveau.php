@@ -23,6 +23,7 @@
 			"FILSDE"         => '', 
 			"ETDE"           => '',
 			"SEXE"           => array("M"=>"M","F"=>"F"),
+			"classep"        => array("A"=>"A","B"=>"B","C"=>"C","D"=>"D","E"=>"E","F"=>"F","G"=>"G","H"=>"H","I"=>"I","J"=>"J","K"=>"K","L"=>"L","M"=>"M","N"=>"N","O"=>"O","P"=>"P","Q"=>"Q","R"=>"R","S"=>"S","T"=>"T","U"=>"U","V"=>"V","W"=>"W","X"=>"X","Y"=>"Y","Z"=>"Z"),
 			"DATENS"         => date('d-m-Y'),
 			"WILAYAN1"       => $wilayad1, 
 			"WILAYAN2"       => $wilayad2, 

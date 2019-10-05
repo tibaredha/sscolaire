@@ -683,7 +683,7 @@ class HTML  {
 	echo '<label class="deces" id="lPRENOM">Prénom :</label> ';                echo '<input id="PRENOM" type="txt"  name="PRENOM" value="'.$data['PRENOM'].'" required placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
 	echo '<label class="deces" id="lFILSDE">Père :</label>';                   echo '<input id="FILSDE" type="txt"  name="FILSDE" value="'.$data['FILSDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
 	echo '<label class="deces" id="lETDE">Mère :</label>';                     echo '<input id="ETDE"   type="txt"  name="ETDE"   value="'.$data['ETDE'].'" placeholder="xxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
-	echo '<label class="deces" id="lSEXE">Sexe :</label>';                     $this->combov('SEXE','SEXE',$data['SEXE']);
+	echo '<label class="deces" id="lSEXE">Sexe :</label>';                     $this->combov('SEXE','SEXE',$data['SEXE']);$this->combov('classep','classep',$data['classep']);
 	echo '<label class="deces" id="lDATENS">Né(e)le : </label>';               echo '<input id="DATENS" type="txt"  name="DATENS" value="'.$data['DATENS'].'" placeholder="00-00-0000" onblur="genererCodeP()" />';
 	echo '<label class="deces" id="lWILAYAN">Wilaya Nais :</label>';           HTML::WILAYA('WILAYAN','WILAYAN','WILAYAN','wil',$data['WILAYAN1'],$data['WILAYAN2']) ;
 	echo '<label class="deces" id="lCOMMUNEN">Commune Nais :</label>';         HTML::COMMUNE('COMMUNEN','COMMUNEN','COMMUNEN',$data['COMMUNEN1'],$data['COMMUNEN2']);

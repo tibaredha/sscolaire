@@ -101,6 +101,7 @@ class Dashboard extends Controller {
 		$data['UDS']           = $_POST['UDS'];
         $data['ECOLE']         = $_POST['ECOLE'];
         $data['PALIER']        = $_POST['PALIER'];
+		$data['classep']       = $_POST['classep'];
 		$data['LOGIN']         = $_POST['LOGIN'];
 		$data['NEC']           = $_POST['NEC'];
 		$data['NOMAR']         = $_POST['NOMAR'];
@@ -144,6 +145,7 @@ class Dashboard extends Controller {
 		$data['UDS']           = $_POST['UDS'];
         $data['ECOLE']         = $_POST['ECOLE'];
         $data['PALIER']        = $_POST['PALIER'];
+		$data['classep']       = $_POST['classep'];
 		$data['LOGIN']         = $_POST['LOGIN'];
 		$data['NOMAR']         = $_POST['NOMAR'];
 		$data['PRENOMAR']      = $_POST['PRENOMAR'];

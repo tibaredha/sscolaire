@@ -40,6 +40,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			"FILSDE"         => $this->user[0]['FILSDE'],                                                          //ok 
 			"ETDE"           => $this->user[0]['ETDE'],                                                            //ok
 			"SEXE"           => array($this->user[0]['SEX']=>$this->user[0]['SEX'],"Masculin"=>"M","Feminin"=>"F"),//ok
+			"classep"        => array($this->user[0]['classep']=>$this->user[0]['classep'],"A"=>"A","B"=>"B","C"=>"C","D"=>"D","E"=>"E","F"=>"F","G"=>"G","H"=>"H","I"=>"I","J"=>"J","K"=>"K","L"=>"L","M"=>"M","N"=>"N","O"=>"O","P"=>"P","Q"=>"Q","R"=>"R","S"=>"S","T"=>"T","U"=>"U","V"=>"V","W"=>"W","X"=>"X","Y"=>"Y","Z"=>"Z"),
 			"DATENS"         => HTML::dateUS2FR($this->user[0]['DATENS']),                                         //ok 
 			"WILAYAN1"       => $this->user[0]['WILAYAN'],                                                         //ok  
 			"WILAYAN2"       => HTML::nbrtostring('wil','IDWIL',$this->user[0]['WILAYAN'],'WILAYAS'),              //ok  
