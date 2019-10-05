@@ -125,7 +125,8 @@ class Dashboard_Model extends Model {
 		$this->db->deletem("examenemg", "IDELEVE = '$id'");
 		$this->db->deletem("vaccination1", "IDELEVE = '$id'");
 		$this->db->deletem("para", "IDELEVE = '$id'");	
-    }
+        $this->db->deletem("rdvsscolaire", "IDELEVE = '$id'");
+	}
     
 	public function Aprouve($data) {
         $postData = array('aprouve' => $data['aprouve']);
