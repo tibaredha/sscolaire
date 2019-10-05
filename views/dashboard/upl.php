@@ -24,12 +24,12 @@
 <?php 
 // echo $_COOKIE['rememberme'];
 Session::init();
-if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorlogin'].'</p>';}else{echo '<p id="llogin">Gérer un compte </p>';}
+if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorlogin'].'</p>';}else{echo '<p id="llogin">Gérer la photos de l\'élève scolarisé </p>';}
 $url1 = explode('/',$_GET['url']);	
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">Se Connecter <?php //echo EDRSFR;?></div>
+<div class="sheader2l">Créer une photos <?php //echo EDRSFR;?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'dashboard/upl1/'.$url1[2];?>" method="post" name="fileForm" id="fileForm" enctype="multipart/form-data"   >			
@@ -42,8 +42,26 @@ $url1 = explode('/',$_GET['url']);
 			<div id="f"><input id="dd" onclick="playSound()"  type="submit" value="Envoyer"/> </div>
 		</div>
 	</form>
-</div>	
-<div class="content"><img id="image" src="<?php echo URL;?>public/images/Login.jpg" ></div>
+</div>
+<?php 
+$dphotos='sscolaire';//dossier photos
+$fichier1 = "d:/sscolaire/public/images/photos/".$dphotos."/".$url1[2].'.jpg' ;
+if (file_exists($fichier1)){
+//{$fichier = URL."public/images/photos/".$dphotos."/".$value['id'].'.jpg?t='.time() ;}else {if ($value['SEX']=='M') {$fichier = URL."public/images/photos/".$dphotos."/m.jpg?t=".time() ;} else {$fichier = URL."public/images/photos/".$dphotos."/f.jpg?t=".time() ;}}			
+?>
+<div class="content"><img id="image" src="<?php echo URL;?>public/images/photos/sscolaire/<?php echo $url1[2].".jpg?t=".time();?>" ></div>
+<?php 
+}else{
+if($url1[3]=="M"){
+?>
+<div class="content"><img id="image" src="<?php echo URL;?>public/images/photos/sscolaire/<?php echo "m.jpg?t=".time();?>" ></div>	
+<?php
+}else{
+?> 
+ <div class="content"><img id="image" src="<?php echo URL;?>public/images/photos/sscolaire/<?php echo "f.jpg?t=".time();?>" ></div>
+<?php
+}}
+?>
 <div class="contentr"><img id="image" src="<?php echo URL;?>public/images/<?php echo logod;?>"></div>	
 <div class="scontentl2"><?php echo EDRSUS;?> <?php //echo "Date d'expiration : ".Session::dateexpiration; ?></div>		
 <div class="scontentl3"><?php html::rsc();?></div>
