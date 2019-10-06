@@ -50,18 +50,13 @@ class hsl extends Controller {
 	
 	public function createhsl() 
 	{
-	$data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
-	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
-    $data['IDELEVE']          = $_POST['IDELEVE'];
-    $data['STRUCTURE']        = $_POST['STRUCTURE'];
-	$data['UDS']              = $_POST['UDS'];
-	$data['ETABLIS']          = $_POST['ETABLIS'];
-	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	// echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->createemg($data);
-    header('location: '.URL.$this->controleur.'/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
+	$data['DATEV']          = $_POST['DATEV'];
+	$data['ECOLE']          = $_POST['ECOLE'];
+    $data['STRUCTURE']      = $_POST['STRUCTURE'];
+	$data['UDS']            = $_POST['UDS'];
+	//echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->createhsl($data);
+    header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
 	}
 	
 	function edit($id) {
@@ -92,9 +87,8 @@ class hsl extends Controller {
 	
 	public function delete($id)
 	{
-	$url1 = explode('/',$_GET['url']);	
-	$this->model->deletehsl($url1[3]);    
-	header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$url1[2]);
+	$this->model->deletehsl($id);    
+	header('location: ' . URL .$this->controleur. '/search/0/10?o=id&q='.Session::get('uds'));
 	}
 	
    //**********************************************************************************************************************************//

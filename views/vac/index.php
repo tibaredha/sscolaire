@@ -55,7 +55,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		echo '<div class="contentl formaut">';
 		echo '<br>';
 		echo'<table>';
-			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?o=IDELEVE&q='.$this->userListviewq.'"> La liste des actes de vaccination </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
+			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.'/tcpdf/sscolaire/certificat.php?ideleve='.$this->userListviewq.'"> La liste des actes de vaccination </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
 			echo'<tr bgcolor="#00CED1">';
 			echo'<th >DCI vaccin</th>';
 			echo'<th >Date vaccin</th>';
