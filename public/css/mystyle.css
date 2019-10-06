@@ -22,9 +22,9 @@ cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAEAAQCoEAAAFgAAACgAAAAgAAAAQA
 
 #bnav{background: yellow; color: white; text-align: center; border-radius: 15px; padding: 0px;margin: 0px 0px 0px 0px ;height: 32px;width: 20%; }
 
-#wdj{background: yellow; color: red;padding: 0px; margin: 0px 0px 0px 0px ; border-radius: 15px;}
-#wdj1{background: yellow; color: red;padding: 0px; margin: 0px 0px 0px 0px ; border-radius: 15px;text-align: center;float: right;width: 350px;}
-#wdj2{background: white; color: black;padding: 0px; margin: 0px 0px 0px 0px ; border-radius: 15px;text-align: center;width: 100%;}
+#wdj{background: yellow;  color: red;padding: 0px; margin: 0px 0px 0px 0px ;   border-radius: 15px;}
+#wdj1{background: yellow; color: red; border-radius: 15px;text-align: center;float: right;height: 32px;width: 350px;}
+#wdj2{background: white;  color: black;padding: 0px; margin: 0px 0px 0px 0px ; border-radius: 15px;text-align: center;width: 100%;}
 	
 
 /*acceuil*/
