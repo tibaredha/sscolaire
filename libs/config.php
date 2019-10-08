@@ -29,7 +29,7 @@ define('HASH_GENERAL_KEY', 'MixitUp200');
 define('HASH_PASSWORD_KEY', 'catsFLYhigh2000miles');
 define('path', 'D:\sscolaire\libs\sessions');
 define('EDRSFR', "Système électronique d'enregistrement des élèves scolarisés");
-define('EDRSUS', 'Electronic *** Registration System');
+define('EDRSUS', 'Electronic Student Health Registration System');
 
 
 function renemefille ($tiba,$amrane)
