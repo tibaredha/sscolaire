@@ -57,7 +57,7 @@ class Register_Model extends Model
 				$user_id = $this->db->lastInsertId();
 				$this->msgint($user_id,$user_id,'Bienvenue et Profil','Bienvenue dans votre espace membre',$data['structure']); //envoyer une message interne
 				$sth1 = $this->db->prepare("SELECT * FROM activation WHERE activation = :activation ");
-				$sth1->execute(array( ':activation' => 1	));
+				$sth1->execute(array( ':activation' => 1 ));
 				$methode = $sth1 -> fetch(PDO::FETCH_ASSOC);
 				switch($methode['id']) 
 				{
