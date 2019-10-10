@@ -21,7 +21,7 @@ $(document).ready(function(){
 <div class="sheader2l">
 Examens de médecine-génerale de l'élève : 
 <?php
-$ctrl='emg';$mdl='search';
+$ctrl='psy';$mdl='search';
 $data = array(
 "c"           => $ctrl,
 "m"           => $mdl,
@@ -80,7 +80,7 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer Examens médecine-génerale"  href="'.URL.$ctrl.'/delete/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			}
-			if ($total_count <= 0 ){header('location: ' . URL .$ctrl.'/emg/'.$this->userListviewq);	}else{echo '<tr bgcolor="#00CED1"><td id="bdn"  colspan="'.$colspan.'" >'. HTML::barre_navigation ($total_count,$this->userListviewl,$this->userListviewo,$this->userListviewq,$this->userListviewp,$this->userListviewb,$ctrl,$mdl,$order).'</td></tr>';		 	}	
+			if ($total_count <= 0 ){header('location: ' . URL .$ctrl.'/psy/'.$this->userListviewq);	}else{echo '<tr bgcolor="#00CED1"><td id="bdn"  colspan="'.$colspan.'" >'. HTML::barre_navigation ($total_count,$this->userListviewl,$this->userListviewo,$this->userListviewq,$this->userListviewp,$this->userListviewb,$ctrl,$mdl,$order).'</td></tr>';		 	}	
 		echo "</table>";
 		echo "</div>";
 		ob_end_flush();
