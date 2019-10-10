@@ -61,11 +61,12 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo'<th >RDV</th>';
 	        echo'<th >Date RDV</th>';
 			echo'<th ><img src="'.URL.'public/images/pdf.png"          width="16" height="16" border="0" alt=""/></th>';
-			echo'<th ><img src="'.URL.'public/images/labo.jpg"          width="16" height="16" border="0" alt=""/></th>';
 			
+			echo'<th ><img src="'.URL.'public/images/labo.jpg"          width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/radiologie.png"          width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/FP.png"          width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/pha.jpg"          width="16" height="16" border="0" alt=""/></th>';
+			echo'<th ><img src="'.URL.'public/images/DHE.png"          width="16" height="16" border="0" alt=""/></th>';
 			
 			echo'<th ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
@@ -79,11 +80,11 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATECSBD']).'</td>';
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="fiche médecine-génerale"  href="'.URL.'tcpdf/sscolaire/fmg.php?ideleve='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
-			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="bilan biologique"        href="'.URL.'tcpdf/rds/bio.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/labo.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="bilan radiologique"      href="'.URL.'tcpdf/rds/rad.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/radiologie.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="orientation specialisé"  href="'.URL.'tcpdf/rds/orie.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/FP.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Bilan biologique"        href="'.URL.'tcpdf/rds/bio.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/labo.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Bilan radiologique"      href="'.URL.'tcpdf/rds/rad.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/radiologie.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Orientation spécialisé"  href="'.URL.'tcpdf/rds/orie.php?uc='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/FP.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a  title="ordonnance"  href="'.URL.'rds/ordonnace/'.$value['IDELEVE'].'" ><img src="'.URL.'public/images/pha.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="RDV de consultation "    href="'.URL.'tcpdf/rds/rdv.php?uc='.$value['IDELEVE'].'&rdv='.$value['DATECSBD'].'" ><img src="'.URL.'public/images/DHE.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
 			echo '<td align="center" style="width:10px;" ><a  title="Editer Examens médecine-génerale"  href="'.URL.$ctrl.'/edit/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer Examens médecine-génerale"  href="'.URL.$ctrl.'/delete/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';

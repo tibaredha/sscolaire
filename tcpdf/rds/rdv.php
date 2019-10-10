@@ -1,5 +1,6 @@
 <?php
 $id=$_GET["uc"];
+$rdv=$_GET["rdv"];
 require('naisance.php');
 $pdf = new naisance( 'P', 'mm', 'A5',true,'UTF-8',false ); $pdf->setPrintHeader(false);$pdf->SetAutoPageBreak(TRUE, 0);$pdf->setPrintFooter(false);
 $pdf->AddPage('p','A5');session_start();
@@ -19,8 +20,8 @@ $pdf->SetXY(5,12);$pdf->Cell(135,5,"ETABLISSEMENT PUBLIC DE SANTE DE PROXIMITE :
 $pdf->Text(80,30,"A ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"com")." Le : ".$dateeuro);
 $pdf->SetXY(5,19);$pdf->Cell(67.5,5,"UDS : ".$pdf->nbrtostring("uds","id",$result->UDS,"uds"),0,0,'L',1,0);$pdf->Cell(67.5,5,"ECOLE : ".$pdf->nbrtostring("ecole","id",$result->ECOLE,"ecole"),0,1,'L',1,0);
 $pdf->SetFont('aefurat', '', 15);
-$pdf->SetXY(5,40);$pdf->Cell(135,5,"DEMANDE D 'EXAMENS",0,1,'C',1,0);
-$pdf->SetXY(5,48);$pdf->Cell(135,5,"RADIOLOGIQUES",0,1,'C',1,0);
+$pdf->SetXY(5,40);$pdf->Cell(135,5,"وصــفــة",0,1,'C',1,0);
+$pdf->SetXY(5,48);$pdf->Cell(135,5,"ORDONNANCE",0,1,'C',1,0);
 $pdf->SetFont('aefurat', '', 14);
 $pdf->Text(5,60,"Delivrée par le Docteur :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
 $pdf->Text(5,70,"A Mme/Melle :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
@@ -29,13 +30,15 @@ $pdf->Text(103,70,"Age : _ _ Ans");$pdf->SetTextColor(0,0,0);$pdf->Text(115,70,$
 $pdf->Text(5,80,"Domicile :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 $pdf->SetTextColor(255,0,0);$pdf->Text(26,80,$result->ADRESSE.'_'.$pdf->nbrtostring("com","IDCOM",$result->COMMUNER,"COMMUNE"));$pdf->SetTextColor(0,0,0);
 $pdf->SetFont('aefurat', '', 14);
-$pdf->SetXY(5,$pdf->GetY()+10);$pdf->Cell(135,5,"FAIRE SVP Rx ",0,1,'C',1,0);
-$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(135,6,"1) -CRANE (F/P) -FACE -PANORAMIQUE  -COU (F/P) ",0,1,'L',0,0);
-$pdf->SetXY(05,$pdf->GetY()+5);$pdf->cell(135,6,"2) -THORAX (F/P)",0,1,'L',0,0);
-$pdf->SetXY(05,$pdf->GetY()+5);$pdf->cell(135,6,"3) -EPAULE -BRAS -COUDE -AVBRAS -POIGNET -MAIN (G/D)",0,1,'L',0,0);
-$pdf->SetXY(05,$pdf->GetY()+5);$pdf->cell(135,6,"4) -ASP (D/C) -RACHIS LOMBAIRE (F/P) -HANCHE (F/P)",0,1,'L',0,0);
-$pdf->SetXY(05,$pdf->GetY()+5);$pdf->cell(135,6,"4) -CUISSE -GENOU -JAMBE -CHEVILLE -PIED  (G/D)",0,1,'L',0,0);
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->Cell(135,5,"RDV DE CONSULTATION",0,1,'C',1,0);
 
+$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(135,6,"le : ".$pdf->dateUS2FR($rdv) .'   A 08 H 00',0,1,'L',0,0);
+$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(135,6,"Pour suivi et controle ",0,1,'L',0,0);
+$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(135,6,"Au niveau du siège de l UDS ",0,1,'L',0,0);
+$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(135,6,"Acompagne du tuteur légale  ",0,1,'L',0,0);
+
+
+ 
 // $nbArticles=count($_SESSION['ordonnace']['libelleProduit']);
 // $pdf->SetXY(05,$pdf->GetY()+10);
 // for ($i=0 ;$i < $nbArticles ; $i++)
