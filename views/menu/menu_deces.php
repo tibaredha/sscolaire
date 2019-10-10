@@ -1,5 +1,5 @@
 <?php 
-if (Session::get('role') == '1'){
+if (Session::get('role') == '1'){ //administrateur
 echo '<li class="parent">';echo '<a href="'.URL.'administrateur">'.TXT_ACCUEIL.' <img src="'.URL.'public/images/b_home.png" width="16" height="16" border="0" alt=""/></a></li>'; 
 echo '<li class="parent">';echo '<a href="'.URL.'users/searchusers/0/10?o=id&q="> '.TXT_MEMBERS.' <img src="'.URL.'public/images/users.jpg" width="16" height="16" border="0" alt=""/></a></li>'; 
 echo '<li class="parent">';echo '<a href="'.URL.'Msgs">'.TXT_MESSAGES.' <img src="'.URL.'public/images/alerte.jpg" width="16" height="16" border="0" alt=""/></a></li>'; 

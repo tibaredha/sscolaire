@@ -11,7 +11,7 @@ class Login_Model extends Model
 	public function run()
 	{
 	    
-		$sth = $this->db->prepare("SELECT * FROM users WHERE login = :login AND password = :password  and token = '' and ");		
+		$sth = $this->db->prepare("SELECT * FROM users WHERE login = :login AND password = :password  and token = '' ");		
 		$sth->execute(array(
 			':login'    => stripslashes($_POST['login']),
 			':password' => md5(stripslashes($_POST['password']))
