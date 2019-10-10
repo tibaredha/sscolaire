@@ -1,5 +1,5 @@
 <div class="sheader1l"><p id="dashboard">Ordonnance</p></div><div class="sheader1r"><p id="dashboard"><?php html::NAV();?></p></div>
-<div class="sheader2l"><P><?php echo "Femme gestante : ".$this->user[0]['NOM2'];?> <?php echo $this->user[0]['PRENOM2'];?><?php //echo $this->user[0]['id'];?></P><?php $ctrl='rds';?></div>
+<div class="sheader2l"><P><?php //echo "Femme gestante : ".$this->user[0]['NOM'];?> <?php //echo $this->user[0]['PRENOM'];?><?php //echo $this->user[0]['id'];?></P><?php $ctrl='rds';?></div>
 <div class="sheader2r">MSPRH<?php?></div>
 <?php
 echo '<div class="listl">';
@@ -12,7 +12,7 @@ echo '<label  id="idqteProduit">NBR de boites </label>';                  echo '
 echo '<label  id="idprix">Prix/boite</label>';                            echo '<input  class ="ord"  id="prix"              type="text" name="prixProduit"        value="1"/>';
 echo '<label  id="iddate">Date préscription</label>';                     echo '<input  class ="ord"  id="date"              type="text" name="DATE"               value="'.date('d-m-Y').'"/>';
 echo '<label  id="idfn">Inclusion Fiche navette</label>';                 echo '<input  class ="ord"  id="fn"                type="checkbox" name="fn"             value="1"/>';
-echo '<input  class ="ord"  id="id"                type="hidden" name="id"                 value="'.$this->user[0]['id'].'"/>';
+//echo '<input  class ="ord"  id="id" type="hidden" name="id"  value="'.$this->user[0]['id'].'"/>';
 echo '<input  type="hidden" name="STR"             value="'.Session::get('structure').'"/>';
 echo '<input  class ="ord"  id="submitord"  type="submit" />';
 echo'</form>';
@@ -22,7 +22,7 @@ echo "<div  style=\" position:absolute;left:".$x."px;top:".$y."px;\">";
 echo"<table width='97%' border='1' cellpadding='5' cellspacing='1' align='left'>";
 echo"<tr><th colspan=\"7\">Votre Ordonnance (max 07 medicaments) </th></th>";echo"<tr>";
 echo"<tr>";
-echo"<th colspan=\"7\">".$this->user[0]['NOM2']."_".$this->user[0]['PRENOM2']." </th>";
+//echo"<th colspan=\"7\">".$this->user[0]['NOM2']."_".$this->user[0]['PRENOM2']." </th>";
 
 echo"<tr>";
 echo"<th style=\"width:700px;\"    id=\"tiba\" >Libellé</th>";

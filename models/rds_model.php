@@ -6,7 +6,7 @@ class rds_Model extends Model {
     }
 	
 	 public function userSingleList($id) {
-        return $this->db->select('SELECT * FROM naissance WHERE id = :id', array(':id' => $id));
+        return $this->db->select('SELECT * FROM eleve WHERE id = :id', array(':id' => $id));
      }
 	
 	public function createmedfn($data) {
