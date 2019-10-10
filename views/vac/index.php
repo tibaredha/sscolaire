@@ -55,7 +55,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		echo '<div class="contentl formaut">';
 		echo '<br>';
 		echo'<table>';
-			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.'/tcpdf/sscolaire/certificat.php?ideleve='.$this->userListviewq.'"> La liste des actes de vaccination </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
+			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.'/tcpdf/sscolaire/certificat.php?ideleve='.$this->userListviewq.'"> Certificat de vaccination </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
 			echo'<tr bgcolor="#00CED1">';
 			echo'<th >DCI vaccin</th>';
 			echo'<th >Date vaccin</th>';
@@ -75,7 +75,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['dateper']).'</td>';
 			echo '<td align="center"  >'.$value['ndlot'].'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring("palier","id",$value['NIVEAUS'],"nompalier").'</td>';
-			echo '<td align="center" style="width:10px;"><a target="_blank" title="fiche Vaccination"  href="'.URL.'tcpdf/sscolaire/fmg.php?ideleve='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"><a target="_blank" title="fiche Vaccination"  href="'.URL.'tcpdf/sscolaire/certificat.php?ideleve='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"><a title="Editer Vaccination"  href="'.URL.$ctrl.'/edit*/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"><a class="delete" title="Supprimer Vaccination"  href="'.URL.$ctrl.'/delete/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			}

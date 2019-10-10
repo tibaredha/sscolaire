@@ -5,7 +5,7 @@ $pdf = new naisance( 'P', 'mm', 'A5',true,'UTF-8',false ); $pdf->setPrintHeader(
 $pdf->AddPage('p','A5');session_start();
 
 $pdf->mysqlconnect();
-$query = "select * from naissance WHERE  id = '$id'    ";
+$query = "select * from eleve WHERE  id = '$id'    ";
 $resultat=mysql_query($query);
 while($result=mysql_fetch_object($resultat))
 {
@@ -14,20 +14,20 @@ $pdf->SetFillColor(245);
 $pdf->SetTextColor(0,0,255);
 $pdf->SetDisplayMode('fullpage','single');//mode d affichage 
 $pdf->SetFont('aefurat', '', 11);
-$pdf->SetXY(5,5);$pdf->Cell(135,5,"المؤسسة العمومية "." ".$pdf->nbrtostring("structure","id",$result->STRUCTURED,"structurear"),0,1,'C',1,0);
-$pdf->SetXY(5,12);$pdf->Cell(135,5,"ETABLISSEMENT PUBLIC ".$pdf->nbrtostring("structure","id",$result->STRUCTURED,"structure"),0,1,'C',1,0);
-$pdf->Text(80,30,"A ".$pdf->nbrtostring("structure","id",$result->STRUCTURED,"com")." Le : ".$dateeuro);
-$pdf->SetXY(5,19);$pdf->Cell(135,5,"SERVICE ".$pdf->nbrtostring("servicedeces","id",$result->SERVI,"service"),0,1,'C',1,0);
+$pdf->SetXY(5,5);$pdf->Cell(135,5,"المؤسسة العمومية "." ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"structurear"),0,1,'C',1,0);
+$pdf->SetXY(5,12);$pdf->Cell(135,5,"ETABLISSEMENT PUBLIC DE SANTE DE PROXIMITE : ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"structure"),0,1,'C',1,0);
+$pdf->Text(80,30,"A ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"com")." Le : ".$dateeuro);
+$pdf->SetXY(5,19);$pdf->Cell(67.5,5,"UDS : ".$pdf->nbrtostring("uds","id",$result->UDS,"uds"),0,0,'L',1,0);$pdf->Cell(67.5,5,"ECOLE : ".$pdf->nbrtostring("ecole","id",$result->ECOLE,"ecole"),0,1,'L',1,0);
 $pdf->SetFont('aefurat', '', 15);
 $pdf->SetXY(5,40);$pdf->Cell(135,5,"وصــفــة",0,1,'C',1,0);
 $pdf->SetXY(5,48);$pdf->Cell(135,5,"ORDONNANCE",0,1,'C',1,0);
 $pdf->SetFont('aefurat', '', 14);
 $pdf->Text(5,60,"Delivrée par le Docteur :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
 $pdf->Text(5,70,"A Mme/Melle :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
-$pdf->SetTextColor(255,0,0);$pdf->Text(40,70,$result->NOM2.'  '.$result->PRENOM2);$pdf->SetTextColor(0,0,255);
-$pdf->Text(103,70,"Age : _ _ Ans");$pdf->SetTextColor(0,0,0);$pdf->Text(115,70,$result->AGE2);$pdf->SetTextColor(0,0,255);
+$pdf->SetTextColor(255,0,0);$pdf->Text(40,70,$result->NOM.'  '.$result->PRENOM);$pdf->SetTextColor(0,0,255);
+$pdf->Text(103,70,"Age : _ _ Ans");$pdf->SetTextColor(0,0,0);$pdf->Text(115,70,$result->Years);$pdf->SetTextColor(0,0,255);
 $pdf->Text(5,80,"Domicile :_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
-$pdf->SetTextColor(255,0,0);$pdf->Text(26,80,$result->ADRESSE4.'_'.$pdf->nbrtostring("com","IDCOM",$result->COMMUNE4,"COMMUNE"));$pdf->SetTextColor(0,0,0);
+$pdf->SetTextColor(255,0,0);$pdf->Text(26,80,$result->ADRESSE.'_'.$pdf->nbrtostring("com","IDCOM",$result->COMMUNER,"COMMUNE"));$pdf->SetTextColor(0,0,0);
 $pdf->SetFont('aefurat', '', 11);
 $nbArticles=count($_SESSION['ordonnace']['libelleProduit']);
 $pdf->SetXY(05,$pdf->GetY()+10);

@@ -70,9 +70,9 @@ class Session
 	{
 		if (date('Y-m-d') <= self::dateexpiration )
 		{ 
-		session_save_path(self::path);       //default session.save_path = "c:/wamp/tmp"  +  path = constante definie dans le fichier lib/config 
-		session_name('Sessiontiba');         //default session.name = PHPSESSID  session_id()= nom du fichier stocker dans D:\framework\libs\sessions; 
-		session_set_cookie_params(0);        // kill session when browser closed
+		// session_save_path(self::path);       //default session.save_path = "c:/wamp/tmp"  +  path = constante definie dans le fichier lib/config 
+		// session_name('Sessiontiba');         //default session.name = PHPSESSID  session_id()= nom du fichier stocker dans D:\framework\libs\sessions; 
+		// session_set_cookie_params(0);        // kill session when browser closed
 		@session_start();
 		// setcookie('tibaredha','030570', time() + 365*24*3600, self::path, null, false, true);
 		}

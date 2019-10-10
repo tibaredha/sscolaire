@@ -70,9 +70,10 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=HINS&ad='.$ad.'">Heure</A></th>';
 			echo'<th class="service"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=ECOLE&ad='.$ad.'">Ecole</A></th>';
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=PALIER&ad='.$ad.'">Palier</A></th>';
-			echo'<th class="crtl">EBD</th>';
-			echo'<th class="crtl">EMG</th>';
 			echo'<th class="crtl" colspan="2"   >PARA</th>';
+			echo'<th class="crtl">EMG</th>';
+			echo'<th class="crtl">EBD</th>';
+			echo'<th class="crtl">PSY</th>';
 			echo'<th class="crtl">DMS</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
@@ -95,12 +96,12 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center"  >'.$value['HINS'].'</td>';
 			echo '<td align="left"  >'.HTML::nbrtostring('ECOLE','id',$value['ECOLE'],'ecole').'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring('PALIER','id',$value['PALIER'],'nompalier').'</td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen bucco-dentaire"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;"  ><a  title="Examen de médecine générale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			//echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.$ctrl.'/vaccination/'.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Acte de vaccination"  href="'.URL.'vac/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/vaccin.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="biometrie"  href="'.URL.'para/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/biometrie.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-            //echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'fpdf/sscolaire/cms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+            echo '<td align="center" style="width:10px;"  ><a  title="Examen de médecine générale"  href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen bucco-dentaire"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a  title="Examen psychologique"  href="'.URL.'psy/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/defcra.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			if ($value['aprouve']==0){
 			echo '<td align="center" style="width:10px;" ><a  title="Editer élève scolarisé"  href="'.URL.$ctrl.'/edit/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';

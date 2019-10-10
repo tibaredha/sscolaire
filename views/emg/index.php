@@ -60,8 +60,9 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo'<th >Date d\'éxamen</th>';
 			echo'<th >RDV</th>';
 	        echo'<th >Date RDV</th>';
-			echo'<th >Date RDV</th>';
 			echo'<th ><img src="'.URL.'public/images/pdf.png"          width="16" height="16" border="0" alt=""/></th>';
+			echo'<th ><img src="'.URL.'public/images/pha.jpg"          width="16" height="16" border="0" alt=""/></th>';
+			
 			echo'<th ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'</tr>';
@@ -73,7 +74,7 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo '<td align="center"  >'.anomalie ($value['OKRDV'],"Oui","Non").'</td>';
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATECSBD']).'</td>';
 			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="fiche médecine-génerale"  href="'.URL.'tcpdf/sscolaire/fmg.php?ideleve='.$value['IDELEVE'].'&idfiche='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
-			echo '<td align="center" style="width:10px;" ><a  title="ordonnance"  href="'.URL.'rds/ordonnace/'.$value['IDELEVE'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;" ><a  title="ordonnance"  href="'.URL.'rds/ordonnace/'.$value['IDELEVE'].'" ><img src="'.URL.'public/images/pha.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
 			echo '<td align="center" style="width:10px;" ><a  title="Editer Examens médecine-génerale"  href="'.URL.$ctrl.'/edit/'.$value['IDELEVE'].'/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			

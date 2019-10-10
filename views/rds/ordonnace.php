@@ -22,8 +22,8 @@ echo "<div  style=\" position:absolute;left:".$x."px;top:".$y."px;\">";
 echo"<table width='97%' border='1' cellpadding='5' cellspacing='1' align='left'>";
 echo"<tr><th colspan=\"7\">Votre Ordonnance (max 07 medicaments) </th></th>";echo"<tr>";
 echo"<tr>";
-echo"<th colspan=\"7\">".$this->user[0]['NOM2']."_".$this->user[0]['PRENOM2']." </th>";
-
+echo'<th colspan="7"><a href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$this->user[0]['id'].'">'.$this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' </a></th>';
+//echo 'Imprimer';echo '&nbsp;'; 
 echo"<tr>";
 echo"<th style=\"width:700px;\"    id=\"tiba\" >Libellé</th>";
 echo"<th>Dose</th>";
@@ -78,7 +78,7 @@ echo"</tr>";
 			  echo '<a href="'.URL.'tcpdf/rds/ord.php?uc='.$this->user[0]['id'].'">Imprimer</a>';echo '&nbsp;'; 
 			  echo "</div>";
 			  echo "</td>";
-			  
+//http://localhost/sscolaire/emg/search/0/10?o=IDELEVE&q=6			  
 		echo "</tr>";	  
 	   }
 	   echo"<tr><th colspan=\"7\">Votre Ordonnance (max 07 medicaments) </th></th>";

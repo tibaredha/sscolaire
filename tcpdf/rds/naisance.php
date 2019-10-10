@@ -6,7 +6,7 @@ class naisance extends TCPDF
 { 
 	public $nomprenom ="tibaredha";
 	public $db_host="localhost";
-	public $db_name="framework"; 
+	public $db_name="sscolaire"; 
 	public $db_user="root";
 	public $db_pass="";
 	public $utf8 = "" ;
