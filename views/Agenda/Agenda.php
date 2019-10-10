@@ -3,7 +3,7 @@
 <div class="sheader2r">MSPRH</div>
 
 <?php
-echo '<div class="listl">';//<br/><br/>
+echo '<div class="listl">';//<br/><br/>http://localhost/6
 echo "</br>";echo "</br>";echo "</br>";echo "</br>";echo "</br>";echo "</br>";echo "</br>";echo "</br>";
 echo'<form  action="'.URL.$ctrl.'/createrdv/" method="post">';
 // echo '<input  id="daterdv" type="text" name="TIRDV"  placeholder="Titre" value=""/>';
@@ -41,7 +41,6 @@ echo'<table class="tableaux_centrer2" >';
 	echo'<td style="width:10px;">***</td>';
 	echo'<td style="width:10px;">***</td>';
 	echo'<td style="width:10px;">***</td>';
-	
 	echo'<td style="width:10px;">***</td>';
 	echo'</tr>';
 	}
@@ -51,11 +50,9 @@ echo'<table class="tableaux_centrer2" >';
 	{
 	$bgcolor_donate ='#EDF7FF';
 	echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
-	echo'<td align="center" >'.$value['PRATICIEN'].'</td>';
-	echo '<td align="left" ><b><a target="_blank" title="éditer rdv "  href="'.URL.'dashboard/***/'.$value['id'].'" >'.strtoupper(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'NOM')).'_'.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'PRENOM')).' ('.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'FILSDE')).')'.'<b></a></td>';
+	if ($value['PRATICIEN']=='Dentiste'){echo'<td align="center" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></td>';} else {echo'<td align="center" ><img src="'.URL.'public/images/med.jpg"   width="16" height="16" border="0" alt=""   /></td>';}
+	echo '<td align="left" ><b><a target="_blank" title="éditer rdv "  href="'.URL.'dashboard/search/0/10?o=id&q='.$value['IDELEVE'].'" >'.strtoupper(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'NOM')).'_'.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'PRENOM')).' ('.strtolower(HTML::nbrtostring('eleve','id',$value['IDELEVE'],'FILSDE')).')'.'<b></a></td>';
 	echo'<td align="center" >'.HTML::dateUS2FR($value['DATEEXAMEN']).'</td>';
-	
-	
 	$url1 = explode('/',$_GET['url']);
 	if ($value['RDVOK']==1)
 	{

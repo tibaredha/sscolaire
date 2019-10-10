@@ -51,7 +51,7 @@ class Agenda extends Controller {
 	public function deleterdv($id)
 	{
 	$url = explode('/',$_GET['url']);	
-	echo "<pre>"; print_r($url);  echo "</pre>";  
+	//echo "<pre>"; print_r($url);  echo "</pre>";  
 	$this->model->deleterdv($id);     
 	header('location: ' . URL .$this->controleur.'/Agenda/'.$url[3].'/'.$url[4].'/'.$url[5]);
 	}
