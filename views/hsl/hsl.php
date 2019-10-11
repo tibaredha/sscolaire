@@ -16,11 +16,12 @@ ul.tabs li a.active {background-color: #ffffff;color: #282e32;border: 1px solid 
   grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
   grid-gap: 5px;
 }
+.hsl{background: yellow; text-align: center;border-radius: 5px;width: 100%;height: 100%; }
+
 #DATEV,#DATEP {background: yellow; text-align: center ; border-radius: 5px;width: 100%;height: 100%;}
+
 #hh {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
 #hh:hover {background: red;color: #fff;}
-#gg1 {background: green;text-align: center;border-radius: 5px;  height: 100%;}
-#gg2 {background: yellow; text-align: center;border-radius: 5px; float: right;width: 30%; height: 100%;}
 
 
 #a {background: salmon;text-align: center;border-radius:5px;padding: 0px;grid-column: 1  / 3;  grid-row: 1 / 2;}
@@ -123,18 +124,18 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			</ul>    	 
 		 
 		<div id="contenth_1" class="contenttabsh1"><div id="inner-grid">
-		    <div id="a"><input id="DATEV" type="text"     name="DATEV"    value="<?php echo date ('d-m-Y')  ;?>"  required=""   /> </div>
+		    <div id="a"><input id="DATEV" type="text"     name="DATEV"    value="<?php echo date ('d-m-Y')  ;?>" required=""/> </div>
 			<div id="b"><?php HTML::ECOLE('ECOLE','IDECOLE','CLECOLE','ecole',"","",Session::get('uds'));?></div>
 			<div id="c">CLASSE</div>
 			
-			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"><select name="" id="" class="" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>     
-			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
-			<div id="f">Chauffage (modalité) </div>                         <div id="f1"><select name="" id="" class=""><option value="1">El</option><option value="2">Ga</option><option value="3">PE</option></select></div> 
-			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"></div> 	
-			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"></div> 
-			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"></div> 
-			<div id="j">Eclairage </div>                                    <div id="j1"></div> 
-			<div id="k">Distance 1ère table tableau</div>                   <div id="k1"></div> 
+			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"><select name="" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>     
+			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="f">Chauffage (modalité) </div>                         <div id="f1"><select name="" id="" class="hsl"><option value="1">El</option><option value="2">Ga</option><option value="3">PE</option></select></div> 
+			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 	
+			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="j">Eclairage </div>                                    <div id="j1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="k">Distance 1ère table tableau</div>                   <div id="k1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
 		</div></div>
 		
 		
@@ -143,14 +144,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b">***</div>
 			<div id="c">EAU</div>
 			
-			<div id="d">Approvisionnement en eau potable</div>             <div id="d1"></div>   
-			<div id="e">Traitement (chaux-javel) fréquence</div>           <div id="e1"></div> 
+			<div id="d">Approvisionnement en eau potable</div>             <div id="d1"><input  name="" id="" class="hsl" type="text" value=""  /></div>   
+			<div id="e">Traitement (chaux-javel) fréquence</div>           <div id="e1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
 			<div id="f">Date de prélevemnt</div>                           <div id="f1"><input id="DATEP" type="text" name="DATEP"value="<?php echo date ('d-m-Y')  ;?>"  required=""   /></div> 
-			<div id="g">Résultat bacteriologique (colimetrie) </div>       <div id="g1"></div> 
-			<div id="h">Controle de la cloration</div>                     <div id="h1"></div> 
-			<div id="i">Evacuation des eaux usées </div>                   <div id="i1"></div> 
-			<div id="j"> </div>                   <div id="j1"></div> 
-			<div id="k"></div>                                             <div id="k1"></div> 
+			<div id="g">Résultat bacteriologique (colimetrie) </div>       <div id="g1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="h">Controle de la cloration</div>                     <div id="h1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="i">Evacuation des eaux usées </div>                   <div id="i1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="j">***</div>                                          <div id="j1">***</div> 
+			<div id="k">***</div>                                          <div id="k1">***</div> 
 		</div></div>
 		
 		<div id="contenth_3" class="contenttabsh3"><div id="inner-grid"> 
@@ -158,7 +159,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b">***</div>
 			
 			<div id="c">LAVABOS</div>
-			<div id="d">Nombre de robinet fonctionnels / Total</div> <div id="d1"></div>   
+			<div id="d">Nombre de robinet fonctionnels / Total</div> <div id="d1"><input  name="" id="" class="hsl" type="text" value=""  /></div>   
 			<div id="e"></div>                                       <div id="e1"></div> 
 			<div id="f"></div>                                       <div id="f1"></div> 
 			<div id="g"></div>                                       <div id="g1"></div> 
@@ -172,10 +173,10 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">TOILETTE</div>
-			<div id="d">Nombre de cabinets fonctionnels / Total </div><div id="d1"></div>   
-			<div id="e">Nombre d'urinoirs</div>                       <div id="e1"></div> 
-			<div id="f">Désinfection journalière </div>               <div id="f1"></div> 
-			<div id="g">Propreté noter de 01 a 10 </div>              <div id="g1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="d">Nombre de cabinets fonctionnels / Total </div><div id="d1"><input  name="" id="" class="hsl" type="text" value=""  /></div>   
+			<div id="e">Nombre d'urinoirs</div>                       <div id="e1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="f">Désinfection journalière </div>               <div id="f1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="g">Propreté noter de 01 a 10 </div>              <div id="g1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
 			<div id="h"></div>                                        <div id="h1"></div> 
 			<div id="i"></div>                                        <div id="i1"></div> 
 			<div id="j"></div>                                        <div id="j1"></div> 
@@ -186,9 +187,9 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">COUR</div>
-			<div id="d">Sol </div>                                    <div id="d1"></div>   
-			<div id="e">Cloture</div>                                 <div id="e1"></div>
-			<div id="f">Signalisation routiere </div>                 <div id="f1"></div>
+			<div id="d">Sol </div>                                    <div id="d1"><input  name="" id="" class="hsl" type="text" value=""  /></div>   
+			<div id="e">Cloture</div>                                 <div id="e1"><input  name="" id="" class="hsl" type="text" value=""  /></div>
+			<div id="f">Signalisation routiere </div>                 <div id="f1"><input  name="" id="" class="hsl" type="text" value=""  /></div>
 			<div id="g"></div>                                        <div id="g1"></div>
 			<div id="h"></div>                                        <div id="h1"></div>
 			<div id="i"></div>                                        <div id="i1"></div>
@@ -201,9 +202,9 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b">***</div>
 			<div id="c">CUISINE</div>
 			<div id="d">Etat du sol et des murs</div>                      <div id="d1"></div>   
-			<div id="e">Lavage journalier noter de 01 a 10</div>           <div id="e1"><select name="" id="" class="" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
-			<div id="f">Propreté ustensiles noter de 01 a 10 </div>        <div id="f1"><select name="" id="" class="" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
-			<div id="g">Propreté du personnel noter de 01 a 10 </div>      <div id="g1"><select name="" id="" class="" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="e">Lavage journalier noter de 01 a 10</div>           <div id="e1"><select name="" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="f">Propreté ustensiles noter de 01 a 10 </div>        <div id="f1"><select name="" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="g">Propreté du personnel noter de 01 a 10 </div>      <div id="g1"><select name="" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
 			<div id="h"></div>                                             <div id="h1"></div>
 			<div id="i"></div>                                             <div id="i1"></div>
 			<div id="j"></div>                                             <div id="j1"></div>
@@ -214,7 +215,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">STOCKAGE DES ALIMENTS</div>
-			<div id="d">Propreté du local noter de 01 a 10</div>      <div id="d1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="d">Propreté du local noter de 01 a 10</div>      <div id="d1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
 			<div id="e">Condition (réfrigérateur-garde manger)</div>  <div id="e1"></div>  
 			<div id="f"></div>                                        <div id="f1"></div>  
 			<div id="g"></div>                                        <div id="g1"></div>  
@@ -229,9 +230,9 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b">***</div>
 			<div id="c">REFECTOIRE</div>
 			<div id="d">Etat du local</div>                          <div id="d1"></div>  
-			<div id="e">Propreté du sol noter de 01 a 10</div>       <div id="e1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
-			<div id="f">Propreté des tables noter de 01 a 10</div>   <div id="f1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
-			<div id="g">Propreté des couverts  noter de 01 a 10</div><div id="g1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="e">Propreté du sol noter de 01 a 10</div>       <div id="e1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="f">Propreté des tables noter de 01 a 10</div>   <div id="f1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="g">Propreté des couverts  noter de 01 a 10</div><div id="g1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
 			<div id="h"></div>                                       <div id="h1"></div> 
 			<div id="i"></div>                                       <div id="i1"></div> 
 			<div id="j"></div>                                       <div id="j1"></div> 
@@ -242,8 +243,8 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">DORTOIRE</div>
-			<div id="d">Propreté des chambres noter de 01 a 10</div>  <div id="d1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
-			<div id="e">Propreté des toilettes noter de 01 a 10</div> <div id="e1"><select name="" id="" class=""><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="d">Propreté des chambres noter de 01 a 10</div>  <div id="d1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="e">Propreté des toilettes noter de 01 a 10</div> <div id="e1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
 			<div id="f">Chauffage</div>                               <div id="f1"></div>   
 			<div id="g">Espassement des lits</div>                    <div id="g1"></div>   
 			<div id="h"></div>                                        <div id="h1"></div>   
@@ -255,7 +256,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		
 		<div id="contenth_10" class="contenttabsh10"><div id="inner-grid"> 
 		    <div id="a">***</div>
-			<div id="b">***</div>
+			<div id="b"><input id="hh" onclick="playSound()"  name="submit1"   type="submit" value="Envoyer"/> </div>
 			<div id="c">DESINFECTION ET DERATISATION</div>
 			<div id="d"> </div>                                      <div id="d1"></div>   
 			<div id="e"></div>                                       <div id="e1"></div>   
@@ -274,7 +275,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 	<?php echo '</div>'; ?>
 	
 	
-	<?php 
+	        <?php 
 			echo '<div ><input type="hidden" name="UDS"      value="'.Session::get('uds').'"/> </div>';
 			echo '<div ><input type="hidden" name="STRUCTURE"value="'.Session::get('structure').'"/> </div>';
 			?>
