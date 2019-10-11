@@ -126,32 +126,32 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		<div id="contenth_1" class="contenttabsh1"><div id="inner-grid">
 		    <div id="a"><input id="DATEV" type="text"     name="DATEV"    value="<?php echo date ('d-m-Y')  ;?>"  required=""   /> </div>
 			<div id="b"><?php HTML::ECOLE('ECOLE','IDECOLE','CLECOLE','ecole',"","",Session::get('uds'));?></div>
-			
 			<div id="c">CLASSE</div>
-			<div id="d">Fréquence de néttoyage humide</div> <div id="d1"></div>     
-			<div id="e">Propreté noter de 01 a 10 </div>
-			<div id="f">Chauffage (modalité) </div>
-			<div id="g">Nombre d'appareils en bonne etat / Total </div>	
-			<div id="h">Nombre de porte mentaux par classe </div>
-			<div id="i">Nombre de carreaux cassées</div>
-			<div id="j">Eclairage </div>
-			<div id="k">Distance 1ère table tableau</div>
+			
+			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"></div>     
+			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"></div> 
+			<div id="f">Chauffage (modalité) </div>                         <div id="f1"></div> 
+			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"></div> 	
+			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"></div> 
+			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"></div> 
+			<div id="j">Eclairage </div>                                    <div id="j1"></div> 
+			<div id="k">Distance 1ère table tableau</div>                   <div id="k1"></div> 
 		</div></div>
 		
 		
 		<div id="contenth_2" class="contenttabsh2"><div id="inner-grid">
 		    <div id="a">***</div>
 			<div id="b">***</div>
-			
 			<div id="c">EAU</div>
-			<div id="d">Fréquence de nettoyage humide</div> <div id="d1"></div>   
-			<div id="e">Approvisionnement en eau potable</div>
-			<div id="f">Traitement (chaux-javel) fréquence</div>
-			<div id="g">Date de prélevemnt </div>
-			<div id="h">Résultat bacteriologique (colimetrie)</div>
-			<div id="i">Controle de la cloration </div>
-			<div id="j">Evacuation des eaux usées </div>
-			<div id="k"></div>
+			
+			<div id="d">Fréquence de nettoyage humide</div>                <div id="d1"></div>   
+			<div id="e">Approvisionnement en eau potable</div>             <div id="e1"></div> 
+			<div id="f">Traitement (chaux-javel) fréquence</div>           <div id="f1"></div> 
+			<div id="g">Date de prélevemnt </div>                          <div id="g1"></div> 
+			<div id="h">Résultat bacteriologique (colimetrie)</div>        <div id="h1"></div> 
+			<div id="i">Controle de la cloration </div>                    <div id="i1"></div> 
+			<div id="j">Evacuation des eaux usées </div>                   <div id="j1"></div> 
+			<div id="k"></div>                                             <div id="k1"></div> 
 		</div></div>
 		
 		<div id="contenth_3" class="contenttabsh3"><div id="inner-grid"> 
@@ -160,13 +160,13 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			
 			<div id="c">LAVABOS</div>
 			<div id="d">Nombre de robinet fonctionnels / Total</div> <div id="d1"></div>   
-			<div id="e"></div>
-			<div id="f"></div>
-			<div id="g"></div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="e"></div>                                       <div id="e1"></div> 
+			<div id="f"></div>                                       <div id="f1"></div> 
+			<div id="g"></div>                                       <div id="g1"></div> 
+			<div id="h"></div>                                       <div id="h1"></div> 
+			<div id="i"></div>                                       <div id="i1"></div> 
+			<div id="j"></div>                                       <div id="j1"></div> 
+			<div id="k"></div>                                       <div id="k1"></div> 
 		</div></div>
 		
 		<div id="contenth_4" class="contenttabsh4"><div id="inner-grid"> 
@@ -174,83 +174,83 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b">***</div>
 			<div id="c">TOILETTE</div>
 			<div id="d">Nombre de cabinet fonctionnels / Total </div> <div id="d1"></div>   
-			<div id="e">Nombre d'urinoire</div>
-			<div id="f">Désinfection journalière </div>
-			<div id="g">Propreté noter de 01 a 10 </div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="e">Nombre d'urinoire</div>                       <div id="e1"></div> 
+			<div id="f">Désinfection journalière </div>               <div id="f1"></div> 
+			<div id="g">Propreté noter de 01 a 10 </div>              <div id="g1"></div> 
+			<div id="h"></div>                                        <div id="h1"></div> 
+			<div id="i"></div>                                        <div id="i1"></div> 
+			<div id="j"></div>                                        <div id="j1"></div> 
+			<div id="k"></div>                                        <div id="k1"></div> 
 		</div></div>
 		
 		<div id="contenth_5" class="contenttabsh5"><div id="inner-grid">
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">COUR</div>
-			<div id="d">Sol </div> <div id="d1"></div>   
-			<div id="e">Cloture</div>
-			<div id="f">Signalisation routiere </div>
-			<div id="g"></div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d">Sol </div>                                    <div id="d1"></div>   
+			<div id="e">Cloture</div>                                 <div id="e1"></div>
+			<div id="f">Signalisation routiere </div>                 <div id="f1"></div>
+			<div id="g"></div>                                        <div id="g1"></div>
+			<div id="h"></div>                                        <div id="h1"></div>
+			<div id="i"></div>                                        <div id="i1"></div>
+			<div id="j"></div>                                        <div id="j1"></div>
+			<div id="k"></div>                                        <div id="k1"></div>
 		</div></div>
 		
 		<div id="contenth_6" class="contenttabsh6"><div id="inner-grid">
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">CUISINE</div>
-			<div id="d">Etat du sol et des murs</div> <div id="d1"></div>   
-			<div id="e">Lavage journalier noter de 01 a 10</div>
-			<div id="f">Propreté ustensiles noter de 01 a 10 </div>
-			<div id="g">Propreté du personnel noter de 01 a 10 </div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d">Etat du sol et des murs</div>                      <div id="d1"></div>   
+			<div id="e">Lavage journalier noter de 01 a 10</div>           <div id="e1"></div>
+			<div id="f">Propreté ustensiles noter de 01 a 10 </div>        <div id="f1"></div>
+			<div id="g">Propreté du personnel noter de 01 a 10 </div>      <div id="g1"></div>
+			<div id="h"></div>                                             <div id="h1"></div>
+			<div id="i"></div>                                             <div id="i1"></div>
+			<div id="j"></div>                                             <div id="j1"></div>
+			<div id="k"></div>                                             <div id="k1"></div>
 		</div></div>
 		
 		<div id="contenth_7" class="contenttabsh7"><div id="inner-grid"> 
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">STOCKAGE DES ALIMENTS</div>
-			<div id="d">Propreté du local </div> <div id="d1"></div>   
-			<div id="e">Condition (réfrigérateur-garde manger)</div>
-			<div id="f"></div>
-			<div id="g"></div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d">Propreté du local </div>                      <div id="d1"></div>   
+			<div id="e">Condition (réfrigérateur-garde manger)</div>  <div id="e1"></div>  
+			<div id="f"></div>                                        <div id="f1"></div>  
+			<div id="g"></div>                                        <div id="g1"></div>  
+			<div id="h"></div>                                        <div id="h1"></div>  
+			<div id="i"></div>                                        <div id="i1"></div>  
+			<div id="j"></div>                                        <div id="j1"></div>  
+			<div id="k"></div>                                        <div id="k1"></div>  
 		</div></div>
 		
 		<div id="contenth_8" class="contenttabsh8"><div id="inner-grid"> 
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">REFECTOIRE</div>
-			<div id="d">Etat du local</div>  <div id="d1"></div>  
-			<div id="e">Propreté du sol</div>
-			<div id="f">Propreté des tables </div>
-			<div id="g">Propreté des couverts  </div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d">Etat du local</div>                          <div id="d1"></div>  
+			<div id="e">Propreté du sol</div>                        <div id="e1"></div> 
+			<div id="f">Propreté des tables </div>                   <div id="f1"></div> 
+			<div id="g">Propreté des couverts  </div>                <div id="g1"></div> 
+			<div id="h"></div>                                       <div id="h1"></div> 
+			<div id="i"></div>                                       <div id="i1"></div> 
+			<div id="j"></div>                                       <div id="j1"></div> 
+			<div id="k"></div>                                       <div id="k1"></div> 
 		</div></div>
 		
 		<div id="contenth_9" class="contenttabsh9"><div id="inner-grid"> 
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">DORTOIRE</div>
-			<div id="d">Propreté des chambres</div> <div id="d1"></div>   
-			<div id="e">Propreté des toilettes</div>
-			<div id="f">Chauffage</div>
-			<div id="g">Espassement des lits  </div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d">Propreté des chambres</div>                   <div id="d1"></div>   
+			<div id="e">Propreté des toilettes</div>                  <div id="e1"></div>   
+			<div id="f">Chauffage</div>                               <div id="f1"></div>   
+			<div id="g">Espassement des lits</div>                    <div id="g1"></div>   
+			<div id="h"></div>                                        <div id="h1"></div>   
+			<div id="i"></div>                                        <div id="i1"></div>   
+			<div id="j"></div>                                        <div id="j1"></div>   
+			<div id="k"></div>                                        <div id="k1"></div>   
 		</div></div>
 		
 		
@@ -258,14 +258,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		    <div id="a">***</div>
 			<div id="b">***</div>
 			<div id="c">DESINFECTION ET DERATISATION</div>
-			<div id="d"> </div> <div id="d1"></div>   
-			<div id="e"></div>
-			<div id="f"></div>
-			<div id="g"></div>
-			<div id="h"></div>
-			<div id="i"></div>
-			<div id="j"></div>
-			<div id="k"></div>
+			<div id="d"> </div>                                      <div id="d1"></div>   
+			<div id="e"></div>                                       <div id="e1"></div>   
+			<div id="f"></div>                                       <div id="f1"></div>   
+			<div id="g"></div>                                       <div id="g1"></div>   
+			<div id="h"></div>                                       <div id="h1"></div>   
+			<div id="i"></div>                                       <div id="i1"></div>   
+			<div id="j"></div>                                       <div id="j1"></div>   
+			<div id="k"></div>                                       <div id="k1"></div>   
 		</div></div>
 	
 	<?php echo '</div>'; ?>
