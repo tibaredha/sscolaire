@@ -35,8 +35,11 @@ $pdf->SetFont('DejaVuSans','B',10);
 $pdf->SetXY(5,$pdf->GetY());$pdf->Cell(200,6,$pdf->repfr,0,0,'C',0,1);
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,$pdf->mspfr,0,0,'C',0,1);
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,$pdf->dspfr.'Djelfa',0,0,'C',0,1);
+
 $pdf->SetFont('DejaVuSans','',10);
-$pdf->SetXY(5,$pdf->GetY()+15);$pdf->Cell(200,6,"Nom de l'UDS : ".$pdf->nbrtostring("uds","id",$result->UDS,"uds"),1,0,'L');
+$pdf->SetXY(5,$pdf->GetY()+10);$pdf->Cell(200,6,'Fiche d\'hygiene et salubrité des locaux d\'un établissement scolaire ',1,0,'C',0,1);
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,"Nom de l'EPSP : ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"structure"),1,0,'L');
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,"Nom de l'UDS : ".$pdf->nbrtostring("uds","id",$result->UDS,"uds"),1,0,'L');
 $pdf->SetXY(5,$pdf->GetY()+6); $pdf->Cell(200,6,"Nom de l'établissement : ".$pdf->nbrtostring("ecole","id",$result->ETABLIS,"ecole"),1,0,'L');
 $pdf->SetXY(5,$pdf->GetY()+6); $pdf->Cell(200,6,"Date de la visite : ".$pdf->dateUS2FR($result->DATEV),1,0,'L');
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*8,"CLASSE",1,0,'C');$pdf->Cell(100,6,"Fréquence de néttoyage humide",1,0,'L');             $pdf->Cell(50,6,"...",1,0,'C');
@@ -48,17 +51,16 @@ $pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100
 $pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Eclairage ",1,0,'L');                                $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Distance 1ère table tableau ",1,0,'L');              $pdf->Cell(50,6,"...",1,0,'C');
 
-$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*7,"EAU",1,0,'C');   $pdf->Cell(100,6,"Fréquence de nettoyage humide",1,0,'L');             $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Approvisionnement en eau potable",1,0,'L');          $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Traitement  (chaux-javel) fréquence  ",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Date de prélevemnt  ",1,0,'L');                      $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Résultat bacteriologique (colimetrie)",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Controle de la cloration ",1,0,'L');                 $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Evacuation des eaux usées ",1,0,'L');                                                       $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*6,"EAU",1,0,'C');   $pdf->Cell(100,6,"Approvisionnement en eau potable",1,0,'L');             $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Traitement  (chaux-javel) fréquence ",1,0,'L');          $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Date de prélevemnt  ",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Résultat bacteriologique (colimetrie) ",1,0,'L');                      $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6,"Controle de la cloration",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100,6," Evacuation des eaux usées",1,0,'L');                 $pdf->Cell(50,6,"...",1,0,'C');
 
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6,"LAVABOS",1,0,'C'); $pdf->Cell(100,6,"Nombre de robinet fonctionnels / Total",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
 
-$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*4,"TOILETTE",1,0,'C');$pdf->Cell(100,6,"Nombre de cabinet fonctionnels / Total",1,0,'L');   $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*4,"TOILETTES",1,0,'C');$pdf->Cell(100,6,"Nombre de cabinet fonctionnels / Total",1,0,'L');   $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Nombre d'urinoire",1,0,'L');                        $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Désinfection journalière  ",1,0,'L');               $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Propreté noter de 01 a 10  ",1,0,'L');                  $pdf->Cell(50,6,"...",1,0,'C');
