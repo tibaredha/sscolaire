@@ -60,8 +60,8 @@ $pdf->SetXY(55,$pdf->GetY()+6);                                   $pdf->Cell(100
 
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6,"LAVABOS",1,0,'C'); $pdf->Cell(100,6,"Nombre de robinet fonctionnels / Total",1,0,'L');     $pdf->Cell(50,6,"...",1,0,'C');
 
-$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*4,"TOILETTES",1,0,'C');$pdf->Cell(100,6,"Nombre de cabinet fonctionnels / Total",1,0,'L');   $pdf->Cell(50,6,"...",1,0,'C');
-$pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Nombre d'urinoire",1,0,'L');                        $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(50,6*4,"TOILETTES",1,0,'C');$pdf->Cell(100,6,"Nombre de cabinets fonctionnels / Total",1,0,'L');   $pdf->Cell(50,6,"...",1,0,'C');
+$pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Nombre d'urinoirs",1,0,'L');                        $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Désinfection journalière  ",1,0,'L');               $pdf->Cell(50,6,"...",1,0,'C');
 $pdf->SetXY(55,$pdf->GetY()+6);                                     $pdf->Cell(100,6,"Propreté noter de 01 a 10  ",1,0,'L');                  $pdf->Cell(50,6,"...",1,0,'C');
 
