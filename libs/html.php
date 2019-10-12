@@ -358,7 +358,18 @@ class HTML  {
 	return $OP;
 	}
 	
-	
+	function medicamentx($name,$selected,$value) 
+	{
+	$this->mysqlconnect();	 
+	echo "<select size=1 class=\"med\"  name=\"".$name."\">"."\n";
+	echo"<option value=\"1883\"    selected=\"".$class."\">".$value."</option>"."\n";
+	$result = mysql_query("SELECT * FROM pharmacie order by dci " );
+	while($data =  mysql_fetch_array($result))
+	{
+	echo '<option value="'.$data['id'].'">'.$data['dci'].$data['pre'].'</option>';
+	}
+	echo '</select>'."\n"; 
+	}
 	
     
 	
