@@ -269,7 +269,10 @@ jQuery(function($){
 		
 		$("#DATEV").mask("99-99-9999",{placeholder:"00/00/0000"});
 		
-		
+		$("#hsl4").mask("99-99",{placeholder:"00-00"});
+		$("#hsl5").mask("99",{placeholder:"00"});
+		$("#hsl6").mask("99",{placeholder:"00"});
+		$("#hsl8").mask("999",{placeholder:"00"});
 		
 		
 		

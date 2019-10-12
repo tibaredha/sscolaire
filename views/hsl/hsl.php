@@ -128,14 +128,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			<div id="b"><?php HTML::ECOLE('ECOLE','IDECOLE','CLECOLE','ecole',"","",Session::get('uds'));?></div>
 			<div id="c">CLASSE</div>
 			
-			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"><select name="" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>     
-			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"><select name="" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
-			<div id="f">Chauffage (modalité) </div>                         <div id="f1"><select name="" id="" class="hsl"><option value="1">El</option><option value="2">Ga</option><option value="3">PE</option></select></div> 
-			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 	
-			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
-			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
-			<div id="j">Eclairage </div>                                    <div id="j1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
-			<div id="k">Distance 1ère table tableau</div>                   <div id="k1"><input  name="" id="" class="hsl" type="text" value=""  /></div> 
+			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"><select name="hsl1" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>     
+			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"><select name="hsl2" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="f">Chauffage (modalité) </div>                         <div id="f1"><select name="hsl3" id="" class="hsl"><option value="1">Electricite</option><option value="2">Gaz naturel</option><option value="3">Petrole</option><option value="4">Charbon</option><option value="5">Aucun</option></select></div> 
+			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"><input  name="hsl4" id="hsl4" class="hsl" type="text" value=""  /></div> 	
+			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"><input  name="hsl5" id="hsl5" class="hsl" type="text" value=""  /></div> 
+			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"><input  name="hsl6" id="hsl6" class="hsl" type="text" value=""  /></div> 
+			<div id="j">Eclairage </div>                                    <div id="j1"><select name="hsl7" id="" class="hsl"><option value="1">Naturel</option><option value="2">Electricite</option><option value="3">Aucun</option></select></div> 
+			<div id="k">Distance 1ère table tableau en cm </div>            <div id="k1"><input  name="hsl8" id="hsl8" class="hsl" type="text" value=""  /></div> 
 		</div></div>
 		
 		

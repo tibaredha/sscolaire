@@ -54,9 +54,20 @@ class hsl extends Controller {
 	$data['ECOLE']          = $_POST['ECOLE'];
     $data['STRUCTURE']      = $_POST['STRUCTURE'];
 	$data['UDS']            = $_POST['UDS'];
-	//echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->createhsl($data);
-    header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
+	
+	$data['hsl1']            = $_POST['hsl1'];
+	$data['hsl2']            = $_POST['hsl2'];
+	$data['hsl3']            = $_POST['hsl3'];
+	$data['hsl4']            = $_POST['hsl4'];
+	$data['hsl5']            = $_POST['hsl5'];
+	$data['hsl6']            = $_POST['hsl6'];
+	$data['hsl7']            = $_POST['hsl7'];
+	$data['hsl8']            = $_POST['hsl8'];
+	
+	
+	echo '<pre>';print_r ($data);echo '<pre>'; 
+    // $last_id=$this->model->createhsl($data);
+    // header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
 	}
 	
 	function edit($id) {
