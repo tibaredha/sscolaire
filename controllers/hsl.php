@@ -54,6 +54,7 @@ class hsl extends Controller {
 	$data['ECOLE']          = $_POST['ECOLE'];
     $data['STRUCTURE']      = $_POST['STRUCTURE'];
 	$data['UDS']            = $_POST['UDS'];
+	$data['DATEV']            = $_POST['DATEV'];
 	
 	$data['hsl1']            = $_POST['hsl1'];
 	$data['hsl2']            = $_POST['hsl2'];
@@ -63,11 +64,33 @@ class hsl extends Controller {
 	$data['hsl6']            = $_POST['hsl6'];
 	$data['hsl7']            = $_POST['hsl7'];
 	$data['hsl8']            = $_POST['hsl8'];
+	$data['hsl9']            = $_POST['hsl9'];
+	$data['hsl10']           = $_POST['hsl10'];$data['DATEP']            = $_POST['DATEP'];
+	$data['hsl11']           = $_POST['hsl11'];
+	$data['hsl12']           = $_POST['hsl12'];
+	$data['hsl13']           = $_POST['hsl13'];
+	$data['hsl14']           = $_POST['hsl14'];
+	$data['hsl15']           = $_POST['hsl15'];
+	$data['hsl16']           = $_POST['hsl16'];
+	$data['hsl17']           = $_POST['hsl17'];
+	$data['hsl18']           = $_POST['hsl18'];
+	$data['hsl19']           = $_POST['hsl19'];
+	$data['hsl20']           = $_POST['hsl20'];
+	$data['hsl21']           = $_POST['hsl21'];
+	$data['hsl22']           = $_POST['hsl22'];
+	$data['hsl23']           = $_POST['hsl23'];
+	$data['hsl24']           = $_POST['hsl24'];
+	$data['hsl25']           = $_POST['hsl25'];
+	$data['hsl26']           = $_POST['hsl26'];
+	$data['hsl27']           = $_POST['hsl27'];
+	$data['hsl28']           = $_POST['hsl28'];
+	$data['hsl29']           = $_POST['hsl29'];
+	$data['hsl30']           = $_POST['hsl30'];
 	
 	
-	echo '<pre>';print_r ($data);echo '<pre>'; 
-    // $last_id=$this->model->createhsl($data);
-    // header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
+	// echo '<pre>';print_r ($data);echo '<pre>'; 
+    $last_id=$this->model->createhsl($data);
+    header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
 	}
 	
 	function edit($id) {
