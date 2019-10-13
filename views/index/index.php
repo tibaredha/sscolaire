@@ -1,4 +1,4 @@
-<style>.a {background: salmon;text-align: left;color: white; border-radius: 5px;padding: 3px;}</style>
+<style>.a {background: salmon;text-align: center;color: white; border-radius: 5px;padding: 3px;}</style>
 <div class="sheader1l"><?php Session::init();if (isset($_SESSION['errorlogin'])) {$sError = '<p id="errorregister">' . $_SESSION['errorlogin'] . '</p>';echo $sError;}else{$sError='<p id="lregister">Accueil </p>';echo $sError;}?></div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
 <div class="sheader2l"><?php echo EDRSFR;?></div>
@@ -58,17 +58,17 @@ if (isset($_COOKIE['tibaredha'])) {
         </div>
     </div>	
 
-
+-->
 <marquee behavior="slide" direction="up" scrollamount="2">
-<p class="a">* Les informations rapportées par les certificats de décès permettent l'élaboration </p>
-<p class="a">* Des statistiques exhaustives des causes médicales de décès en Algerie</p>
-<p class="a">* Dont l'utilisation à pour  but  d'orienter et d'évaluer les actions et les recherches </p>
-<p class="a">* Dans le domaine de la santé publique</p>
-<p class="a">* Donc la qualité et la précision des certificats de décès doit etre ameliorée</p>
-<p class="a">* Compte tenu des évolutions technologiques, le passage à un mode de certification </p>
-<p class="a">* Electronique des décès est imperatif</p>
-<p class="a">* Deverait permettre d'ameliorer considerablement le circuit du certificat de décès </p>	
-</marquee>-->
+<p class="a">G-UDS</p>
+<p class="a">GESTION-UNITE-DE-DEPISTAGE-ET-DE-SOINS</p>
+<p class="a">V2.0.0</p>
+<p class="a">SANTE SCOLAIRE </p>
+<p class="a">2019</p>
+<p class="a">DSP-DJELFA</p>
+
+	
+</marquee>
 </div>	
 <div class="content"><img id="image" src="<?php echo URL;?>public/images/accueil.jpg"></div>
 <div class="contentr"><img id="image" src="<?php echo URL;?>public/images/<?php echo logod;?>">
