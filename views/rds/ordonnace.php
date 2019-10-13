@@ -17,80 +17,80 @@
 #h {background: salmon;text-align: left;border-radius: 5px;padding: 0px;grid-column: 1  / 6;  grid-row: 8 / 9;}
 
 
-#a2 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 19;  grid-row: 1 / 2;color: white;}
-#b2 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 19;  grid-row: 2 / 3;color: white;}
+#a2 {background: #90C600;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 19;  grid-row: 1 / 2;color: white;}
+#b2 {background: #90C600;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 19;  grid-row: 2 / 3;color: white;}
 
-#c2 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 3 / 4;color: white;}
-#c3 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 3 / 4;color: white;}
-#c4 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 3 / 4;color: white;}
-#c5 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 3 / 4;color: white;}
-#c6 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 3 / 4;color: white;}
-#c7 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 3 / 4;color: white;}
-#c8 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 3 / 4;color: white;}
+#c2 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 3 / 4;color: white;}
+#c3 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 3 / 4;color: white;}
+#c4 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 3 / 4;color: white;}
+#c5 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 3 / 4;color: white;}
+#c6 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 3 / 4;color: white;}
+#c7 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 3 / 4;color: white;}
+#c8 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 3 / 4;color: white;}
 
-#d20 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 4 / 5;color: white;}
-#d30 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 4 / 5;color: white;}
-#d40 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 4 / 5;color: white;}
-#d50 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 4 / 5;color: white;}
-#d60 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 4 / 5;color: white;}
-#d70 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 4 / 5;color: white;}
-#d80 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 4 / 5;color: white;}
+#d20 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 4 / 5;color: white;}
+#d30 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 4 / 5;color: white;}
+#d40 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 4 / 5;color: white;}
+#d50 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 4 / 5;color: white;}
+#d60 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 4 / 5;color: white;}
+#d70 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 4 / 5;color: white;}
+#d80 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 4 / 5;color: white;}
 
-#d21 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 5 / 6;color: white;}
-#d31 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 5 / 6;color: white;}
-#d41 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 5 / 6;color: white;}
-#d51 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 5 / 6;color: white;}
-#d61 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 5 / 6;color: white;}
-#d71 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 5 / 6;color: white;}
-#d81 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 5 / 6;color: white;}
+#d21 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 5 / 6;color: white;}
+#d31 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 5 / 6;color: white;}
+#d41 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 5 / 6;color: white;}
+#d51 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 5 / 6;color: white;}
+#d61 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 5 / 6;color: white;}
+#d71 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 5 / 6;color: white;}
+#d81 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 5 / 6;color: white;}
 
-#d22 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 6 / 7;color: white;}
-#d32 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 6 / 7;color: white;}
-#d42 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 6/ 7;color: white;}
-#d52 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 6 / 7;color: white;}
-#d62 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 6 / 7;color: white;}
-#d72 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 6 / 7;color: white;}
-#d82 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 6 / 7;color: white;}
-
-
-#d23 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 7 / 8;color: white;}
-#d33 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 7 / 8;color: white;}
-#d43 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 7/ 8;color: white;}
-#d53 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 7 / 8;color: white;}
-#d63 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 7 / 8;color: white;}
-#d73 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 7 / 8;color: white;}
-#d83 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 7 / 8;color: white;}
-
-#d24 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 8 / 9;color: white;}
-#d34 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 8 / 9;color: white;}
-#d44 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 8/ 9;color: white;}
-#d54 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 8 / 9;color: white;}
-#d64 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 8 / 9;color: white;}
-#d74 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 8 / 9;color: white;}
-#d84 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 8 / 9;color: white;}
+#d22 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 6 / 7;color: white;}
+#d32 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 6 / 7;color: white;}
+#d42 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 6/ 7;color: white;}
+#d52 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 6 / 7;color: white;}
+#d62 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 6 / 7;color: white;}
+#d72 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 6 / 7;color: white;}
+#d82 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 6 / 7;color: white;}
 
 
-#d25 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 9 / 10;color: white;}
-#d35 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 9 / 10;color: white;}
-#d45 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 9/ 10;color: white;}
-#d55 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 9 / 10;color: white;}
-#d65 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 9 / 10;color: white;}
-#d75 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 9 / 10;color: white;}
-#d85 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 9 / 10;color: white;}
+#d23 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 7 / 8;color: white;}
+#d33 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 7 / 8;color: white;}
+#d43 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 7/ 8;color: white;}
+#d53 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 7 / 8;color: white;}
+#d63 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 7 / 8;color: white;}
+#d73 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 7 / 8;color: white;}
+#d83 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 7 / 8;color: white;}
 
-#d26 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 10 / 11;color: white;}
-#d36 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 10 / 11;color: white;}
-#d46 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 10 / 11;color: white;}
-#d56 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 10 / 11;color: white;}
-#d66 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 10 / 11;color: white;}
-#d76 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 10 / 11;color: white;}
-#d86 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 10 / 11;color: white;}
+#d24 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 8 / 9;color: white;}
+#d34 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 8 / 9;color: white;}
+#d44 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 8/ 9;color: white;}
+#d54 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 8 / 9;color: white;}
+#d64 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 8 / 9;color: white;}
+#d74 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 8 / 9;color: white;}
+#d84 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 8 / 9;color: white;}
 
-#e2 {background: salmon;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 11 / 12;color: white;}
-#e3 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 17;  grid-row: 11 / 12;color: white;}
 
-#e7 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 11 / 12;color: white;}
-#e8 {background: salmon;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 11 / 12;color: white;}
+#d25 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 9 / 10;color: white;}
+#d35 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 9 / 10;color: white;}
+#d45 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 9/ 10;color: white;}
+#d55 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 9 / 10;color: white;}
+#d65 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 9 / 10;color: white;}
+#d75 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 9 / 10;color: white;}
+#d85 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 9 / 10;color: white;}
+
+#d26 {background: #9CE7FB;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 10 / 11;color: white;}
+#d36 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 14;  grid-row: 10 / 11;color: white;}
+#d46 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 14  / 15;  grid-row: 10 / 11;color: white;}
+#d56 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 15  / 16;  grid-row: 10 / 11;color: white;}
+#d66 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 16  / 17;  grid-row: 10 / 11;color: white;}
+#d76 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 10 / 11;color: white;}
+#d86 {background: #9CE7FB;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 10 / 11;color: white;}
+
+#e2 {background: #90C600;text-align: left; border-radius: 5px;padding: 5px;grid-column: 6  / 13;  grid-row: 11 / 12;color: white;}
+#e3 {background: #90C600;text-align: center; border-radius: 5px;padding: 5px;grid-column: 13  / 17;  grid-row: 11 / 12;color: white;}
+
+#e7 {background: #90C600;text-align: center; border-radius: 5px;padding: 5px;grid-column: 17  / 18;  grid-row: 11 / 12;color: white;}
+#e8 {background: #90C600;text-align: center; border-radius: 5px;padding: 5px;grid-column: 18  / 19;  grid-row: 11 / 12;color: white;}
 
 
 
@@ -109,20 +109,20 @@
 echo '<div class="listl">';
 echo'<form  action="'.URL.$ctrl.'/ajouterArticle/" method="post">';
 echo '<div id="inner-grid">';
-echo '<div id="a">Produit DCI</div>';         echo '<div id="a1">';html::medicamentx("libelleProduit","","Choisir un produit");echo '</div>';                     
-echo '<div id="b">Dose / presentation</div>'; echo '<div id="b1">';echo '<input  class ="med" type="text" name="doseparprise"       value="1"/></div>';
-echo '<div id="c">Nbr/jours</div>';           echo '<div id="c1">';echo '<input  class ="med" type="text" name="nbrdrfoisparjours"  value="1"/></div>';
+echo '<div id="a">DCI Produit  </div>';         echo '<div id="a1">';html::medicamentx("libelleProduit","","Choisir un produit");echo '</div>';                     
+echo '<div id="b">Dose et présentation</div>'; echo '<div id="b1">';echo '<input  class ="med" type="text" name="doseparprise"       value="1"/></div>';
+echo '<div id="c">Nbr par jours</div>';           echo '<div id="c1">';echo '<input  class ="med" type="text" name="nbrdrfoisparjours"  value="1"/></div>';
 echo '<div id="d">Durée en Jours</div>';      echo '<div id="d1">';echo '<input  class ="med" type="text" name="nbrdejours"         value="10"/></div>';
-echo '<div id="e">NBR de boites</div>';       echo '<div id="e1">';echo '<input  class ="med" type="text" name="qteProduit"         value="1"/></div>';
-echo '<div id="f">Prix/boite</div>';          echo '<div id="f1">';echo '<input  class ="med" type="text" name="prixProduit"        value="1"/></div>';
+echo '<div id="e">Nbr de boites</div>';       echo '<div id="e1">';echo '<input  class ="med" type="text" name="qteProduit"         value="1"/></div>';
+echo '<div id="f">Prix par boite (Da)</div>';          echo '<div id="f1">';echo '<input  class ="med" type="text" name="prixProduit"        value="1"/></div>';
 echo '<div id="g">Date préscription</div>';   echo '<div id="g1">';echo '<input  class ="med"  id="date"  type="text" name="DATE"   value="'.date('d-m-Y').'"/></div>';
 echo '<input  type="hidden" name="id"  value="'.$this->user[0]['id'].'"/>';
 echo '<input  type="hidden" name="STR" value="'.Session::get('structure').'"/>';
 
 echo '<div id="h"><input id="dd" onclick="playSound()"  type="submit" value="Envoyer"/> </div>'; 
 
-echo '<div id="a2">';echo 'Votre Ordonnance (max 05 medicaments) </div>';
-echo '<div id="b2">';echo '<a href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$this->user[0]['id'].'">'.$this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' </a></div>';
+echo '<div id="a2">';echo 'Ordonnance </div>';
+echo '<div id="b2">';echo 'Nom et prénom : <a href="'.URL.'emg/search/0/10?o=IDELEVE&q='.$this->user[0]['id'].'">'.$this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' </a></div>';
 echo '<div id="c2">';echo 'Libellé</div>';echo '<div id="c3">';echo 'Dose</div>';echo '<div id="c4">';echo 'Nbr</div>';echo '<div id="c5">';echo 'Jours</div>';echo '<div id="c6">';echo 'Quantite</div>';echo '<div id="c7">';echo 'Prix</div>';echo '<div id="c8">';echo 'Action</div>';
 echo '<div id="d20">';echo '</div>'; echo '<div id="d30">';echo '</div>'; echo '<div id="d40">';echo '</div>';echo '<div id="d50">';echo '</div>';echo '<div id="d60">';echo '</div>';echo '<div id="d70">';echo '</div>';echo '<div id="d80">';echo '</div>';
 echo '<div id="d21">';echo '</div>'; echo '<div id="d31">';echo '</div>'; echo '<div id="d41">';echo '</div>';echo '<div id="d51">';echo '</div>';echo '<div id="d61">';echo '</div>';echo '<div id="d71">';echo '</div>';echo '<div id="d81">';echo '</div>';
@@ -150,7 +150,7 @@ if ( rds::creationPanier() )
       }
 
 }
-echo '<div id="e2">';echo 'Nombre total de medicament : '.rds::compterArticles().'</div>';
+echo '<div id="e2">';echo 'Nombre total de médicament : '.rds::compterArticles().'</div>';
 echo '<div id="e3">';echo '<a href="'.URL.'rds/supprimePanier/'.$this->user[0]['id'].'">Annuler</a>';echo '</div>';
 // echo '<div id="e4">';echo 'Nbr</div>';
 // echo '<div id="e5">';echo 'Jours</div>';
