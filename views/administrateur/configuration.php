@@ -27,14 +27,13 @@ echo "<button class=\"naissance\"  id=\"btna5\"   onclick=\"document.location='"
 
 //echo "<button class=\"naissance\"  id=\"btnc\"  onclick=\"document.location='".URL."cha/searchcha/0/10?o=IDCHAP&q=';\"title=\"Cim\">&nbsp;<img src=\"".URL."public/images/cim.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Chapitre-Cim10&nbsp;</button> " ;
 //echo "<button class=\"naissance\"  id=\"btnc1\"  onclick=\"document.location='".URL."cim/searchcim/0/10?o=row_id&q=';\"title=\"Cim\">&nbsp;<img src=\"".URL."public/images/cim.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Categorie-Cim10&nbsp;</button> " ;
-
-//echo "<button class=\"naissance\"  id=\"btnd\"  onclick=\"document.location='".URL."pha/searchpha/0/10?o=id&q=';\"title=\"Pharmacie \">&nbsp;<img src=\"".URL."public/images/pha.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Pharmacie &nbsp;</button> " ;
-//echo "<button class=\"naissance\"  id=\"btnd1\"  onclick=\"document.location='".URL."lab/searchlab/0/10?o=id&q=';\"title=\"Laboratoires pharmaceutiques\">&nbsp;<img src=\"".URL."public/images/lab_l.png\" width='15' height='15' border='0' alt=''/>&nbsp;Laboratoires pharma &nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btnd\"  onclick=\"document.location='".URL."pha/searchpha/0/10?o=id&q=';\"title=\"Pharmacie \">&nbsp;<img src=\"".URL."public/images/pha.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;Pharmacie &nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btnd1\"  onclick=\"document.location='".URL."lab/searchlab/0/10?o=id&q=';\"title=\"Laboratoires pharmaceutiques\">&nbsp;<img src=\"".URL."public/images/lab_l.png\" width='15' height='15' border='0' alt=''/>&nbsp;Laboratoires pharma &nbsp;</button> " ;
 //echo "<button class=\"naissance\"  id=\"btnd2\"  onclick=\"document.location='".URL."ln/';\"title=\"Exporter une table deces sql\">&nbsp;<img src=\"".URL."public/images/ln.png\" width='15' height='15' border='0' alt=''/>&nbsp;Lois normales&nbsp;</button> " ;
 
-//echo "<button class=\"naissance\"  id=\"btnd4\"  onclick=\"document.location='".URL."naissance/map/';\"title=\"Map\">&nbsp;<img src=\"".URL."public/images/lab_l.png\" width='15' height='15' border='0' alt=''/>&nbsp;Map &nbsp;</button> " ;
-//echo "<button class=\"naissance\"  id=\"btnd5\"   onclick=\"document.location='".URL."dashboard/flv6/videoplayback.mp4';\"title=\"video\">&nbsp;<img src=\"".URL."public/images/video.png\" width='15' height='15' border='0' alt=''/>&nbsp;Video&nbsp;</button> " ;
-//echo "<button class=\"naissance\"  id=\"btnd1\"  onclick=\"document.location='".URL."dashboard/imp/';\"title=\"import\">&nbsp;<img src=\"".URL."public/images/sante.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;import&nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btnd4\"  onclick=\"document.location='".URL."naissance/map/';\"title=\"Map\">&nbsp;<img src=\"".URL."public/images/lab_l.png\" width='15' height='15' border='0' alt=''/>&nbsp;Map &nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btnd5\"   onclick=\"document.location='".URL."dashboard/flv6/videoplayback.mp4';\"title=\"video\">&nbsp;<img src=\"".URL."public/images/video.png\" width='15' height='15' border='0' alt=''/>&nbsp;Video&nbsp;</button> " ;
+echo "<button class=\"naissance\"  id=\"btnd1\"  onclick=\"document.location='".URL."dashboard/imp/';\"title=\"import\">&nbsp;<img src=\"".URL."public/images/sante.jpg\" width='15' height='15' border='0' alt=''/>&nbsp;import&nbsp;</button> " ;
 ?>
 </div>	
 <div class="content"><img id="image" src="<?php echo URL;?>public/images/cfg.jpg"></div>
