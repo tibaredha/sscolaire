@@ -54,7 +54,7 @@ class hsl extends Controller {
 	$data['ECOLE']          = $_POST['ECOLE'];
     $data['STRUCTURE']      = $_POST['STRUCTURE'];
 	$data['UDS']            = $_POST['UDS'];
-	$data['DATEV']            = $_POST['DATEV'];
+	$data['DATEV']          = $_POST['DATEV'];
 	
 	$data['hsl1']            = $_POST['hsl1'];
 	$data['hsl2']            = $_POST['hsl2'];
@@ -86,8 +86,7 @@ class hsl extends Controller {
 	$data['hsl28']           = $_POST['hsl28'];
 	$data['hsl29']           = $_POST['hsl29'];
 	$data['hsl30']           = $_POST['hsl30'];
-	
-	
+
 	// echo '<pre>';print_r ($data);echo '<pre>'; 
     $last_id=$this->model->createhsl($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=id&q='.$last_id);	
@@ -97,25 +96,51 @@ class hsl extends Controller {
 	 $url1 = explode('/',$_GET['url']);	
 		$this->view->title = 'edit Examens de médecine generale ';
 		$this->view->msg = 'Edit Examens de médecine generale';
-		$this->view->usercao = $this->model->userSingleList($url1[3]);
-		$this->view->user = $this->model->userSingleListe($url1[2]);
+		$this->view->user = $this->model->userSingleList($url1[2]);
 		$this->view->render($this->controleur.'/edit');  
 	}
 	
 	function editehsl($id) {
-	 $data['DATESBD']          = $_POST['DATESBD'];
-	for ($i = 1; $i <= 54; $i+= 1){if (isset($_POST['m'.$i])){$data['m'.$i]='1';}else{$data['m'.$i]='0';}}
-	if (isset($_POST['OKRDV'])){$data['OKRDV']='1';}else{$data['OKRDV']='';}
-	if (isset($_POST['DATECSBD'])){$data['DATECSBD']=$_POST['DATECSBD'];}else{$data['DATECSBD']='00-00-0000';}
-    $data['IDELEVE']          = $_POST['IDELEVE'];
-    $data['STRUCTURE']        = $_POST['STRUCTURE'];
-	$data['UDS']              = $_POST['UDS'];
-	$data['ETABLIS']          = $_POST['ETABLIS'];
-	$data['NIVEAUS']          = $_POST['NIVEAUS'];
+	$data['DATEV']          = $_POST['DATEV'];
+	$data['ECOLE']          = $_POST['ECOLE'];
+    $data['STRUCTURE']      = $_POST['STRUCTURE'];
+	$data['UDS']            = $_POST['UDS'];
+	$data['DATEV']          = $_POST['DATEV'];
+	
+	$data['hsl1']            = $_POST['hsl1'];
+	$data['hsl2']            = $_POST['hsl2'];
+	$data['hsl3']            = $_POST['hsl3'];
+	$data['hsl4']            = $_POST['hsl4'];
+	$data['hsl5']            = $_POST['hsl5'];
+	$data['hsl6']            = $_POST['hsl6'];
+	$data['hsl7']            = $_POST['hsl7'];
+	$data['hsl8']            = $_POST['hsl8'];
+	$data['hsl9']            = $_POST['hsl9'];
+	$data['hsl10']           = $_POST['hsl10'];$data['DATEP']            = $_POST['DATEP'];
+	$data['hsl11']           = $_POST['hsl11'];
+	$data['hsl12']           = $_POST['hsl12'];
+	$data['hsl13']           = $_POST['hsl13'];
+	$data['hsl14']           = $_POST['hsl14'];
+	$data['hsl15']           = $_POST['hsl15'];
+	$data['hsl16']           = $_POST['hsl16'];
+	$data['hsl17']           = $_POST['hsl17'];
+	$data['hsl18']           = $_POST['hsl18'];
+	$data['hsl19']           = $_POST['hsl19'];
+	$data['hsl20']           = $_POST['hsl20'];
+	$data['hsl21']           = $_POST['hsl21'];
+	$data['hsl22']           = $_POST['hsl22'];
+	$data['hsl23']           = $_POST['hsl23'];
+	$data['hsl24']           = $_POST['hsl24'];
+	$data['hsl25']           = $_POST['hsl25'];
+	$data['hsl26']           = $_POST['hsl26'];
+	$data['hsl27']           = $_POST['hsl27'];
+	$data['hsl28']           = $_POST['hsl28'];
+	$data['hsl29']           = $_POST['hsl29'];
+	$data['hsl30']           = $_POST['hsl30'];
 	$data['id']          = $id;
 	//echo '<pre>';print_r ($data);echo '<pre>'; 
     $last_id=$this->model->editSave($data);
-    header('location: ' . URL .$this->controleur. '/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);
+    header('location: ' . URL .$this->controleur. '/search/0/10?o=id&q='.$data['id']);
 	}
 	
 	

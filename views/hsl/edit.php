@@ -1,83 +1,102 @@
 <style>
+#tabbed_box{margin: 0px auto 0px 220px;width: 640px;}
+.tabbed_box h4 {font-size: 18px;color:#2F4F6F; letter-spacing:-1px;margin-bottom:10px;}  
+.tabbed_area {border: 1px solid #494e52;background-color: green;padding: 8px;}  
+ul.tabs {margin: 0px; padding: 0px;margin-top: 5px;margin-bottom: 6px;}  
+ul.tabs li {list-style: none;display: inline;}  
+ul.tabs li a {background-color: #464c54;color: #ffebb5;padding: 8px 14px 8px 14px;text-decoration: none;font-size: 9px;font-family: Verdana, Arial, Helvetica, sans-serif;font-weight: bold;text-transform: uppercase;border: 1px solid #464c54;            }  
+ul.tabs li a:hover {background-color: #2f343a;border-color: #2f343a;}  
+ul.tabs li a.active {background-color: #ffffff;color: #282e32;border: 1px solid #464c54;border-bottom: 1px solid #ffffff;  }
+.contenttabsh1,.contenttabsh2,.contenttabsh3,.contenttabsh4,.contenttabsh5,.contenttabsh6,.contenttabsh7,.contenttabsh8,.contenttabsh9,.contenttabsh10 {background-color: white; padding: 10px;  border: 1px solid #464c54;height: 340px;}  
+#contenth_2, #contenth_3 , #contenth_4 , #contenth_5, #contenth_6, #contenth_7, #contenth_8, #contenth_9, #contenth_10{ display: none; height: 340px; clear: all;} 
+
 #inner-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
-  grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px;
-  grid-gap: 5px;padding: 5px;
+  display: grid;padding: 8px;
+  grid-template-columns: 1fr 1fr 1fr  1fr 1fr 1fr ;
+  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+  grid-gap: 5px;
+}
+.hsl{background: yellow; text-align: center;border-radius: 5px;width: 100%;height: 100%; }
+
+#DATEV,#DATEP {background: yellow; text-align: center ; border-radius: 5px;width: 100%;height: 100%;}
+
+#hh {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
+#hh:hover {background: red;color: #fff;}
+
+
+#a {background: salmon;text-align: center;border-radius:5px;padding: 0px;grid-column: 1  / 3;  grid-row: 1 / 2;}
+#b {background: salmon;text-align: center;border-radius:5px;padding: 0px;grid-column: 1  / 3;  grid-row: 2 / 3;}
+
+#c {background: salmon;text-align: center;border-radius:5px;padding: 0px;grid-column: 3  / 8;  grid-row: 1 / 2;color:white;}
+#d {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 2 / 3;}
+#e {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 3 / 4;}
+#f {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 4 / 5;}
+#g {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 5 / 6;}
+#h {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 6 / 7;}
+#i {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 7 / 8;}
+#j {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 8 / 9;}
+#k {background: salmon;text-align: left;  border-radius:5px;padding: 0px;grid-column: 3  / 6;  grid-row: 9 / 10;}
+
+
+
+#d1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 2 / 3;}
+#e1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 3 / 4;}
+#f1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 4 / 5;}
+#g1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 5 / 6;}
+#h1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 6 / 7;}
+#i1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 7 / 8;}
+#j1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 8 / 9;}
+#k1 {background: salmon;text-align: center;  border-radius:5px;padding: 0px;grid-column: 6  / 8;  grid-row: 9 / 10;}
+
+
+</style>
+<script>
+        /*Activates the Tabs*/
+function tabSwitch(new_tab, new_content) {    
+    document.getElementById('contenth_1').style.display = 'none';  
+    document.getElementById('contenth_2').style.display = 'none';  
+    document.getElementById('contenth_3').style.display = 'none';  
+	document.getElementById('contenth_4').style.display = 'none';  
+	document.getElementById('contenth_5').style.display = 'none';  
+	document.getElementById('contenth_6').style.display = 'none';  
+	document.getElementById('contenth_7').style.display = 'none';  
+	document.getElementById('contenth_8').style.display = 'none';  
+	document.getElementById('contenth_9').style.display = 'none';  
+	document.getElementById('contenth_10').style.display = 'none';  
+	
+	/*document.getElementById('content_3').style.display = 'none';*/ 
+	document.getElementById(new_content).style.display = 'block';     
+    document.getElementById('tabh_1').className = '';  
+    document.getElementById('tabh_2').className = '';  
+    document.getElementById('tabh_3').className = '';  
+	document.getElementById('tabh_4').className = '';  
+	document.getElementById('tabh_5').className = '';  
+	document.getElementById('tabh_6').className = '';  
+	document.getElementById('tabh_7').className = '';  
+	document.getElementById('tabh_8').className = '';  
+	document.getElementById('tabh_9').className = '';  
+	document.getElementById('tabh_10').className = '';  
+	
+	/*document.getElementById('tab_3').className = ''; */        
+    document.getElementById(new_tab).className = 'active';        
 }
 
-#s1    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 1 / 2;}
-#s1m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 2 / 3;}
-#s1m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 3 / 4;}
-#s1m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 4 / 5;}
-#s1m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 5 / 6;}
-#s1m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 6 / 7;}
-#s1m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 1 / 4; grid-row: 7 / 8;}
 
-#s2    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 1 / 2;}
-#s2m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 2 / 3;}
-#s2m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 3 / 4;}
-#s2m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 4 / 5;}
-#s2m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 5 / 6;}
-#s2m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 6 / 7;}
-#s2m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 4 / 7; grid-row: 7 / 8;}
 
-#s3    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 1 / 2;}
-#s3m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 2 / 3;}
-#s3m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 3 / 4;}
-#s3m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 4 / 5;}
-#s3m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 5 / 6;}
-#s3m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 6 / 7;}
-#s3m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 7 / 10; grid-row: 7 / 8;}
 
-#s4    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 1 / 2;}
-#s4m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 2 / 3;}
-#s4m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 3 / 4;}
-#s4m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 4 / 5;}
-#s4m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 5 / 6;}
-#s4m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 6 / 7;}
-#s4m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 10 / 13; grid-row: 7 / 8;}
-
-#s5    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 1 / 2;}
-#s5m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 2 / 3;}
-#s5m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 3 / 4;}
-#s5m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 4 / 5;}
-#s5m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 5 / 6;}
-#s5m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 6 / 7;}
-#s5m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 13 / 16; grid-row: 7 / 8;}
-
-#s6    {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 1 / 2;}
-#s6m1  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 2 / 3;}
-#s6m2  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 3 / 4;}
-#s6m3  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 4 / 5;}
-#s6m4  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 5 / 6;}
-#s6m5  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 6 / 7;}
-#s6m6  {background: #FFE4E1;text-align: left; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 7 / 8;}
-
-.remember{ width: 10%;height: 70%; }
-
-#x{background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 16  / 19;   grid-row: 4 / 5;}
-.DATESBD{background: yellow; text-align: center; border-radius: 5px;width:50%;height: 100%;}
-#x3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 16 / 19;  grid-row: 5 / 6;}
-#y3 {background: salmon;text-align: center; border-radius: 5px;padding: 8px;grid-column: 16 / 19; grid-row: 6 / 7;}
-
-#l {background: salmon;text-align: center;border-radius: 5px;padding: 0px;grid-column: 16  / 19;  grid-row: 7 / 8;}
-#l1 {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
-#l1:hover {background: red;color: #fff;}
-</style>
-
+</script>
 
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">Examen médicale de l'élève : <?php echo $this->user[0]['NOM'].'_'.$this->user[0]['PRENOM'].' ('.$this->user[0]['FILSDE'].')';?> </div>
+<div class="sheader2l">Hygiene et salubrité des locaux UDS  : <?php echo HTML::nbrtostring('uds','id',Session::get('uds'),'uds') ;?> </div>
 <div class="sheader2r">
 <?php
-$ctrl='dashboard';$mdl='search';
+$ctrl='hsl';$mdl='search';
 $data = array(
 "c"           => $ctrl,
 "m"           => $mdl,
 "combo"       => array("id"=>'id',"Nom"=>'NOM',"prenom"=>'PRENOM',"Sexe"=>'SEX'),
 "submitvalue" => 'Search',
-"cb1"         => $ctrl,    "mb1" => 'nouveau',     "tb1" => 'Créer un nouveau élève scolarisé',      "vb1" => '',  "icon1" => 'add.PNG',
+"cb1"         => $ctrl,    "mb1" => '***',         "tb1" => 'Créer un nouveau élève scolarisé',      "vb1" => '',  "icon1" => 'add.PNG',
 "cb2"         => $ctrl,    "mb2" => 'Evaluation',  "tb2" => 'Evaluation la santé scolaire',          "vb2" => '',  "icon2" => 'eva.png',
 "cb3"         => $ctrl,    "mb3" => '',            "tb3" => '',                                      "vb3" => '',  "icon3" => 'graph.PNG',
 "cb4"         => $ctrl,    "mb4" => '',            "tb4" => '',                                      "vb4" => '',  "icon4" => 'search.PNG');
@@ -87,85 +106,184 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 </div>
 <div class="sheader1l"><p id="dashboard"><?php echo TXT_SMENUE1 ;?></p></div>
 
-<div class="listl">
-		
+<div class="contentl formaut">
+	<form class="tabaut"action="<?php echo URL."hsl/editehsl/".$this->user[0]['id'];?>" method="post">	
 		<div class="tabbed_area">  
 			<ul class="tabs">  
-				<li><a href="javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active">1er partie</a></li>  
-				<li><a href="javascript:tabSwitch('tab_2', 'content_2');" id="tab_2">2em partie</a></li> 
-				<li><a href="javascript:tabSwitch('tab_3', 'content_3');" id="tab_3">3em partie</a></li> 	
-				<li><a href="javascript:tabSwitch('tab_4', 'content_4');" id="tab_4">4em partie </a></li> 	
+				<li><a href="javascript:tabSwitch('tabh_1', 'contenth_1');" id="tabh_1" class="active">classe</a></li>  
+				<li><a href="javascript:tabSwitch('tabh_2', 'contenth_2');" id="tabh_2">eau</a></li> 
+				<li><a href="javascript:tabSwitch('tabh_3', 'contenth_3');" id="tabh_3">lavabos</a></li> 	
+				<li><a href="javascript:tabSwitch('tabh_4', 'contenth_4');" id="tabh_4">toilettes</a></li> 
+				<li><a href="javascript:tabSwitch('tabh_5', 'contenth_5');" id="tabh_5">COUR</a></li> 	
+				<li><a href="javascript:tabSwitch('tabh_6', 'contenth_6');" id="tabh_6">CUISINE</a></li> 	
+			    <li><a href="javascript:tabSwitch('tabh_7', 'contenth_7');" id="tabh_7">STOCKAGE</a></li> 	
+			    <li><a href="javascript:tabSwitch('tabh_8', 'contenth_8');" id="tabh_8">REFECTOIRE</a></li> 	
+			    <li><a href="javascript:tabSwitch('tabh_9', 'contenth_9');" id="tabh_9">DORTOIRE</a></li> 	
+			    <li><a href="javascript:tabSwitch('tabh_10', 'contenth_10');" id="tabh_10">DESIN,DERA</a></li> 	
+			
 			</ul>    	 
-		    	
-				<?php
-				function verif($id,$val){if ($id == $val){return 'checked';}}
-				$data = array(
-				"ctrl"  => $ctrl,
-				"mdl"   => "editeexamen/".$this->usercao[0]['id'],
-				"datee" => HTML::dateUS2FR($this->usercao[0]['DATESBD']),
-				"okrdv" =>verif($this->usercao[0]['OKRDV'],"1"),
-			    "datecsbd" => HTML::dateUS2FR($this->usercao[0]['DATECSBD']),
-				"m1"   => verif($this->usercao[0]['m1'],"1"),
-				"m2"   => verif($this->usercao[0]['m2'],"1"),
-				"m3"   => verif($this->usercao[0]['m3'],"1"),
-				"m4"   => verif($this->usercao[0]['m4'],"1"),
-				"m5"   => verif($this->usercao[0]['m5'],"1"),
-				"m6"   => verif($this->usercao[0]['m6'],"1"),
-				"m7"   => verif($this->usercao[0]['m7'],"1"),
-				"m8"   => verif($this->usercao[0]['m8'],"1"),
-				"m9"   => verif($this->usercao[0]['m9'],"1"),
-				"m10"   => verif($this->usercao[0]['m10'],"1"),
-				"m11"   => verif($this->usercao[0]['m11'],"1"),
-				"m12"   => verif($this->usercao[0]['m12'],"1"),
-				"m13"   => verif($this->usercao[0]['m13'],"1"),
-				"m14"   => verif($this->usercao[0]['m14'],"1"),
-				"m15"   => verif($this->usercao[0]['m15'],"1"),
-				"m16"   => verif($this->usercao[0]['m16'],"1"),
-				"m17"   => verif($this->usercao[0]['m17'],"1"),
-				"m18"   => verif($this->usercao[0]['m18'],"1"),
-				"m19"   => verif($this->usercao[0]['m19'],"1"),
-				"m20"   => verif($this->usercao[0]['m20'],"1"),
-				"m21"   => verif($this->usercao[0]['m21'],"1"),
-				"m22"   => verif($this->usercao[0]['m22'],"1"),
-				"m23"   => verif($this->usercao[0]['m23'],"1"),
-				"m24"   => verif($this->usercao[0]['m24'],"1"),
-				"m25"   => verif($this->usercao[0]['m25'],"1"),
-				"m26"   => verif($this->usercao[0]['m26'],"1"),
-				"m27"   => verif($this->usercao[0]['m27'],"1"),
-				"m28"   => verif($this->usercao[0]['m28'],"1"),
-				"m29"   => verif($this->usercao[0]['m29'],"1"),
-				"m30"   => verif($this->usercao[0]['m30'],"1"),
-				"m31"   => verif($this->usercao[0]['m31'],"1"),
-				"m32"   => verif($this->usercao[0]['m32'],"1"),
-				"m33"   => verif($this->usercao[0]['m33'],"1"),
-				"m34"   => verif($this->usercao[0]['m34'],"1"),
-				"m35"   => verif($this->usercao[0]['m35'],"1"),
-				"m36"   => verif($this->usercao[0]['m36'],"1"),
-				"m37"   => verif($this->usercao[0]['m37'],"1"),
-				"m38"   => verif($this->usercao[0]['m38'],"1"),
-				"m39"   => verif($this->usercao[0]['m39'],"1"),
-				"m40"   => verif($this->usercao[0]['m40'],"1"),
-				"m41"   => verif($this->usercao[0]['m41'],"1"),
-				"m42"   => verif($this->usercao[0]['m42'],"1"),
-				"m43"   => verif($this->usercao[0]['m43'],"1"),
-				"m44"   => verif($this->usercao[0]['m44'],"1"),
-				"m45"   => verif($this->usercao[0]['m45'],"1"),
-				"m46"   => verif($this->usercao[0]['m46'],"1"),
-				"m47"   => verif($this->usercao[0]['m47'],"1"),
-				"m48"   => verif($this->usercao[0]['m48'],"1"),
-				"m49"   => verif($this->usercao[0]['m49'],"1"),
-				"m50"   => verif($this->usercao[0]['m50'],"1"),
-				"m51"   => verif($this->usercao[0]['m51'],"1"),
-				"m52"   => verif($this->usercao[0]['m52'],"1"),
-				"m53"   => verif($this->usercao[0]['m53'],"1"),
-				"m54"   => verif($this->usercao[0]['m54'],"1")
-				);
-                html::ficheemg($data);
-				?>
+		 
+		<div id="contenth_1" class="contenttabsh1"><div id="inner-grid">
+		    <div id="a"><input id="DATEV" type="text"     name="DATEV"    value="<?php echo date ('d-m-Y')  ;?>" required=""/> </div>
+			<div id="b"><?php HTML::ECOLE('ECOLE','IDECOLE','CLECOLE','ecole',"","",Session::get('uds'));?></div>
+			<div id="c">CLASSE</div>
+			
+			<div id="d">Fréquence de néttoyage humide</div>                 <div id="d1"><select name="hsl1" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>     
+			<div id="e">Propreté noter de 01 a 10 </div>                    <div id="e1"><select name="hsl2" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="f">Chauffage (modalité) </div>                         <div id="f1"><select name="hsl3" id="" class="hsl"><option value="1">Electricite</option><option value="2">Gaz naturel</option><option value="3">Petrole</option><option value="4">Charbon</option><option value="5">Aucun</option></select></div> 
+			<div id="g">Nombre d'appareils en bonne etat / Total </div>     <div id="g1"><input  name="hsl4" id="hsl4" class="hsl" type="text" value="<?php echo $this->user[0]['hsl4'] ;?>"  /></div> 	
+			<div id="h">Nombre de porte mentaux par classe </div>           <div id="h1"><input  name="hsl5" id="hsl5" class="hsl" type="text" value="<?php echo $this->user[0]['hsl5'] ;?>"  /></div> 
+			<div id="i">Nombre de carreaux cassées</div>                    <div id="i1"><input  name="hsl6" id="hsl6" class="hsl" type="text" value="<?php echo $this->user[0]['hsl6'] ;?>"  /></div> 
+			<div id="j">Eclairage </div>                                    <div id="j1"><select name="hsl7" id="" class="hsl"><option value="1">Naturel</option><option value="2">Electricite</option><option value="3">Aucun</option></select></div> 
+			<div id="k">Distance 1ère table tableau en cm </div>            <div id="k1"><input  name="hsl8" id="hsl8" class="hsl" type="text" value="<?php echo $this->user[0]['hsl8'] ;?>"  /></div> 
+		</div></div>
 		
-		</div>
 		
+		<div id="contenth_2" class="contenttabsh2"><div id="inner-grid">
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">EAU</div>
+			
+			<div id="d">Approvisionnement en eau potable</div>             <div id="d1"><input  name="hsl9"  id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl9'] ;?>"  /></div>   
+			<div id="e">Traitement (chaux-javel) fréquence</div>           <div id="e1"><input  name="hsl10" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl10'] ;?>"  /></div> 
+			<div id="f">Date de prélevemnt</div>                           <div id="f1"><input  name="DATEP" id="DATEP" type="text" value="<?php echo date ('d-m-Y')  ;?>"  required=""   /></div> 
+			<div id="g">Résultat bacteriologique (colimetrie) </div>       <div id="g1"><input  name="hsl11" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl11'] ;?>"  /></div> 
+			<div id="h">Controle de la cloration</div>                     <div id="h1"><input  name="hsl12" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl12'] ;?>"  /></div> 
+			<div id="i">Evacuation des eaux usées </div>                   <div id="i1"><input  name="hsl13" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl13'] ;?>"  /></div> 
+			<div id="j">***</div>                                          <div id="j1">***</div> 
+			<div id="k">***</div>                                          <div id="k1">***</div> 
+		</div></div>
+		
+		<div id="contenth_3" class="contenttabsh3"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			
+			<div id="c">LAVABOS</div>
+			<div id="d">Nombre de robinet fonctionnels / Total</div> <div id="d1"><input  name="hsl14" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl14'] ;?>"  /></div>   
+			<div id="e"></div>                                       <div id="e1"></div> 
+			<div id="f"></div>                                       <div id="f1"></div> 
+			<div id="g"></div>                                       <div id="g1"></div> 
+			<div id="h"></div>                                       <div id="h1"></div> 
+			<div id="i"></div>                                       <div id="i1"></div> 
+			<div id="j"></div>                                       <div id="j1"></div> 
+			<div id="k"></div>                                       <div id="k1"></div> 
+		</div></div>
+		
+		<div id="contenth_4" class="contenttabsh4"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">TOILETTE</div>
+			<div id="d">Nombre de cabinets fonctionnels / Total </div><div id="d1"><input  name="hsl15" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl15'] ;?>"  /></div>   
+			<div id="e">Nombre d'urinoirs</div>                       <div id="e1"><input  name="hsl16" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl16'] ;?>"  /></div> 
+			<div id="f">Désinfection journalière </div>               <div id="f1"><input  name="hsl17" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl17'] ;?>"  /></div> 
+			<div id="g">Propreté noter de 01 a 10 </div>              <div id="g1"><select name="hsl18" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="h"></div>                                        <div id="h1"></div> 
+			<div id="i"></div>                                        <div id="i1"></div> 
+			<div id="j"></div>                                        <div id="j1"></div> 
+			<div id="k"></div>                                        <div id="k1"></div> 
+		</div></div>
+		
+		<div id="contenth_5" class="contenttabsh5"><div id="inner-grid">
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">COUR</div>
+			<div id="d">Sol </div>                                    <div id="d1"><input  name="hsl19" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl19'] ;?>"  /></div>   
+			<div id="e">Cloture</div>                                 <div id="e1"><input  name="hsl20" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl20'] ;?>"  /></div>
+			<div id="f">Signalisation routiere </div>                 <div id="f1"><input  name="hsl21" id="" class="hsl" type="text" value="<?php echo $this->user[0]['hsl21'] ;?>"  /></div>
+			<div id="g"></div>                                        <div id="g1"></div>
+			<div id="h"></div>                                        <div id="h1"></div>
+			<div id="i"></div>                                        <div id="i1"></div>
+			<div id="j"></div>                                        <div id="j1"></div>
+			<div id="k"></div>                                        <div id="k1"></div>
+		</div></div>
+		
+		<div id="contenth_6" class="contenttabsh6"><div id="inner-grid">
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">CUISINE</div>
+			<div id="d">Etat du sol et des murs</div>                      <div id="d1"></div>   
+			<div id="e">Lavage journalier noter de 01 a 10</div>           <div id="e1"><select name="hsl22" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="f">Propreté ustensiles noter de 01 a 10 </div>        <div id="f1"><select name="hsl23" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="g">Propreté du personnel noter de 01 a 10 </div>      <div id="g1"><select name="hsl24" id="" class="hsl" ><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+			<div id="h"></div>                                             <div id="h1"></div>
+			<div id="i"></div>                                             <div id="i1"></div>
+			<div id="j"></div>                                             <div id="j1"></div>
+			<div id="k"></div>                                             <div id="k1"></div>
+		</div></div>
+		
+		<div id="contenth_7" class="contenttabsh7"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">STOCKAGE DES ALIMENTS</div>
+			<div id="d">Propreté du local noter de 01 a 10</div>      <div id="d1"><select name="hsl25" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="e">Condition (réfrigérateur-garde manger)</div>  <div id="e1"></div>  
+			<div id="f"></div>                                        <div id="f1"></div>  
+			<div id="g"></div>                                        <div id="g1"></div>  
+			<div id="h"></div>                                        <div id="h1"></div>  
+			<div id="i"></div>                                        <div id="i1"></div>  
+			<div id="j"></div>                                        <div id="j1"></div>  
+			<div id="k"></div>                                        <div id="k1"></div>  
+		</div></div>
+		
+		<div id="contenth_8" class="contenttabsh8"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">REFECTOIRE</div>
+			<div id="d">Etat du local</div>                          <div id="d1"></div>  
+			<div id="e">Propreté du sol noter de 01 a 10</div>       <div id="e1"><select name="hsl26" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="f">Propreté des tables noter de 01 a 10</div>   <div id="f1"><select name="hsl27" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="g">Propreté des couverts  noter de 01 a 10</div><div id="g1"><select name="hsl28" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div> 
+			<div id="h"></div>                                       <div id="h1"></div> 
+			<div id="i"></div>                                       <div id="i1"></div> 
+			<div id="j"></div>                                       <div id="j1"></div> 
+			<div id="k"></div>                                       <div id="k1"></div> 
+		</div></div>
+		
+		<div id="contenth_9" class="contenttabsh9"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b">***</div>
+			<div id="c">DORTOIRE</div>
+			<div id="d">Propreté des chambres noter de 01 a 10</div>  <div id="d1"><select name="hsl29" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="e">Propreté des toilettes noter de 01 a 10</div> <div id="e1"><select name="hsl30" id="" class="hsl"><option value="1">1</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>   
+			<div id="f">Chauffage</div>                               <div id="f1"></div>   
+			<div id="g">Espassement des lits</div>                    <div id="g1"></div>   
+			<div id="h"></div>                                        <div id="h1"></div>   
+			<div id="i"></div>                                        <div id="i1"></div>   
+			<div id="j"></div>                                        <div id="j1"></div>   
+			<div id="k"></div>                                        <div id="k1"></div>   
+		</div></div>
+		
+		
+		<div id="contenth_10" class="contenttabsh10"><div id="inner-grid"> 
+		    <div id="a">***</div>
+			<div id="b"><input id="hh" onclick="playSound()"  name="submit1"   type="submit" value="Envoyer"/> </div>
+			<div id="c">DESINFECTION ET DERATISATION</div>
+			<div id="d"> </div>                                      <div id="d1"></div>   
+			<div id="e"></div>                                       <div id="e1"></div>   
+			<div id="f"></div>                                       <div id="f1"></div>   
+			<div id="g"></div>                                       <div id="g1"></div>   
+			<div id="h"></div>                                       <div id="h1"></div>   
+			<div id="i"></div>                                       <div id="i1"></div>   
+			<div id="j"></div>                                       <div id="j1"></div>   
+			<div id="k"></div>                                       <div id="k1"></div>   
+		</div></div>
+	
+	
+	
+	
+	
+	<?php echo '</div>'; ?>
+	
+	
+	        <?php 
+			echo '<div ><input type="hidden" name="UDS"      value="'.Session::get('uds').'"/> </div>';
+			echo '<div ><input type="hidden" name="STRUCTURE"value="'.Session::get('structure').'"/> </div>';
+			?>
+	</form>				
 </div>	
+
+<div class="content"><img id="image" src="<?php echo URL;?>public/images/hsl.jpg" ></div>
+<div class="contentr"><img id="image" src="<?php echo URL;?>public/images/<?php echo logod;?>"></div>
 <div class="scontentl2"></div>		
 <div class="scontentl3"></div>
 <div class="scontentr1"></div>		
