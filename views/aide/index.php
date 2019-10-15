@@ -20,6 +20,7 @@
 			echo '<li>';echo '<a href="'.URL.'fpdf/doc/Program_2016.pdf">Program_sante scolaire 2016.pdf</a>';echo '&nbsp;';echo '</li>';
 		    echo '<li>';echo '<a href="'.URL.'fpdf/doc/Organisation&fonctionnement-de-la_sante_universitaire.pdf">Organisation&fonctionnement-de-la_sante_universitaire</a>';echo '&nbsp;';echo '</li>';
 			echo '<li>';echo '<a href="'.URL.'fpdf/doc/plan_fr_mnt.pdf">plan_fr_mnt.pdf </a>';echo '&nbsp;';echo '</li>';
+		    echo '<li>';echo '<a href="'.URL.'fpdf/doc/Guide_vaccination-2015.pdf">Guide_vaccination-2015.pdf </a>';echo '&nbsp;';echo '</li>';
 		
 		
 		echo '</Ol>';
