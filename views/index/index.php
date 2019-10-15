@@ -66,8 +66,9 @@ if (isset($_COOKIE['tibaredha'])) {
 <p class="a">SANTE SCOLAIRE </p>
 <p class="a">2019</p>
 <p class="a">DSP-DJELFA</p>
+<p class="a">MANAGEMENT OF SCREENING AND CARE UNIT</p>
+<p class="a">NEW DIMENSIONS OF SCHOOL HEALTH</p>
 
-	
 </marquee>
 </div>	
 <div class="content"><img id="image" src="<?php echo URL;?>public/images/accueil.jpg"></div>
