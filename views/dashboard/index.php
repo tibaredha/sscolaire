@@ -47,7 +47,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		if (isset($this->userListview))
 		{
 		ob_start();
-		$colspan=18;
+		$colspan=19;
 		$commune2=HTML::nbrtostring('structure','id',Session::get('structure'),'com');
 		$wilayad2=HTML::nbrtostring('wil','IDWIL',Session::get('wilaya'),'WILAYAS');
 		$total_count=count($this->userListview1);
@@ -74,6 +74,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<th class="crtl">EMG</th>';
 			echo'<th class="crtl">EBD</th>';
 			echo'<th class="crtl">PSY</th>';
+			echo'<th class="crtl">QUES</th>';
 			echo'<th class="crtl">DMS</th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
@@ -102,7 +103,9 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen bucco-dentaire"  href="'.URL.'sbd/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/dent.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;"  ><a  title="Examen psychologique"  href="'.URL.'psy/search/0/10?o=IDELEVE&q='.$value['id'].'" ><img src="'.URL.'public/images/defcra.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
 			
-			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Questionnaire parents"  href="'.URL.'tcpdf/sscolaire/ques.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/user.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/lms.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			
 			if ($value['aprouve']==0){
 			echo '<td align="center" style="width:10px;" ><a  title="Editer élève scolarisé"  href="'.URL.$ctrl.'/edit/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer élève scolarisé"  href="'.URL.$ctrl.'/delete/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
