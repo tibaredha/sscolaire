@@ -61,7 +61,7 @@ if (isset($_COOKIE['tibaredha'])) {
 -->
 <marquee behavior="slide" direction="up" scrollamount="2">
 <p class="a">G-UDS</p>
-<p class="a">GESTION-UNITE-DE-DEPISTAGE-ET-DE-SOINS</p>
+<p class="a">GESTION-UNITE-DE-DEPISTAGE-ET-DE-SUIVI</p>
 <p class="a">V2.0.0</p>
 <p class="a">SANTE SCOLAIRE </p>
 <p class="a">2019</p>
