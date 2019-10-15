@@ -46,6 +46,7 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 	echo'<th style="width:40%">UDS FR</th>';
 	echo'<th style="width:40%">UDS AR</th>';
 	echo'<th style="width:5%">Wilaya</th>';
+	echo'<th style="width:5%">FT</th>';
 	echo'<th style="width:5%">Ecole</th>';
 	echo'<th style="width:5%">Update</th>';
 	echo'<th style="width:5%">Delete</th>';
@@ -58,6 +59,8 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 			echo '<td align="left" ><b>'.$value['uds'].'<b></td>';
 			echo '<td align="right" >'.$value['udsar'].'</td>'; 
 			echo '<td style="width:50px" align="left" >'.View::nbrtostring('wil','IDWIL',$value['idwil'],'WILAYAS').'</td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Fiche technique uds"  href="'.URL.'tcpdf/sscolaire/ftuds.php?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			
 			echo '<td align="center"  ><a  title="ecole"     href="'.URL.$ctrl.'/ecole/'.$value['id'].'" ><img src="'.URL.'public/images/comm.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  ><a  title="edituds"   href="'.URL.$ctrl.'/edituds/'.$value['id'].'" ><img src="'.URL.'public/images/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  ><a class="delete" title="supprimer"  href="'.URL.$ctrl.'/deleteuds/'.$value['id'].'" ><img src="'.URL.'public/images/delete.png"   width="16" height="16" border="0" alt=""   /></a></td>';

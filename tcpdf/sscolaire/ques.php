@@ -35,7 +35,7 @@ $pdf->SetXY(15,$pdf->GetY());$pdf->Cell(45,5,"EPSP : ".$pdf->nbrtostring("struct
 $pdf->SetFont('DejaVuSans','B',19);
 $pdf->SetXY(5,$pdf->GetY()+5);$pdf->Cell(200,6,"إستبيان خاص بالأولياء",0,1,'C');
 $pdf->SetFont('DejaVuSans','B',14);
-$pdf->SetXY(5,$pdf->GetY());$pdf->Cell(200,6,"QUESTIONNAIRE POUR LES PARENTS",0,1,'C');
+$pdf->SetXY(5,$pdf->GetY());$pdf->Cell(200,6,"Questionnaire à remplir par les parents de chaque élève de 1°, 2° A.F",0,1,'C');
 $pdf->RoundedRect($x=15, $y=$pdf->GetY()+5, $w=180, $h=230, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $pdf->SetFont('DejaVuSans','',10);
 $pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(45,5,"Nom et prénom  : ".$result->NOM.'_'.$result->PRENOM,0,0,'L');                 $pdf->Cell(45,5,"الاسم و اللقب : ",0,0,'R');  $pdf->Cell(45,5,"Prénom du père : ".$result->FILSDE,0,0,'L');  $pdf->Cell(45,5,"اسم الاب : ",0,1,'R');
@@ -72,7 +72,7 @@ $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(180,6,"...............................
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(180,6,".....................................",1,1,'R');
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(180,6,".....................................",1,1,'R');
 
-
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(180,6,".....................................",1,1,'R');
 $pdf->Output();
 }
 
