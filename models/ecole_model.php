@@ -8,11 +8,11 @@ class ecole_Model extends Model {
 	//*********************************************************************************************************************//
 	public function userSearchstr($o, $q, $p, $l) {
 	$uds = Session::get("uds");
-    return $this->db->select("SELECT * FROM ecole where iduds=$uds and  $o like '$q%' order by typeecole,ecole limit $p,$l ");// 
+    return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by typeecole,ecole limit $p,$l ");// iduds=$uds and 
     }
     public function userSearchstr1($o, $q) {
         $uds = Session::get("uds");
-		return $this->db->select("SELECT * FROM ecole where iduds=$uds and  $o like '$q%' order by typeecole,ecole");//  
+		return $this->db->select("SELECT * FROM ecole where  $o like '$q%' order by typeecole,ecole");//  iduds=$uds and 
     }
 	
 	public function userSingleList($id) {

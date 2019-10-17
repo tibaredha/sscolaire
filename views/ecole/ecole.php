@@ -43,12 +43,12 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 	echo'</th>';
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
-	echo'<th style="width:30%">Nom établissement (FR)</th>';
-	echo'<th style="width:30%">Type établissement</th>';
-	echo'<th style="width:30%">Nom établissement (AR)</th>';
-	echo'<th style="width:5%">Wilaya</th>';
-	echo'<th style="width:5%">Update</th>';
-	echo'<th style="width:5%">Delete</th>';
+	echo'<th style="width:300px">Nom  (FR)</th>';
+	echo'<th >Type </th>';
+	echo'<th >Nom  (AR)</th>';
+	echo'<th style="width:150px">Commune</th>';
+	echo'<th style="width:10px">Update</th>';
+	echo'<th style="width:10px">Delete</th>';
 	echo'</tr>';
 		
 		foreach($this->userListview as $key => $value)
@@ -59,7 +59,7 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 			if($value['typeecole']==1){$p="Pri";}elseif($value['typeecole']==2){$p="Moy";}elseif($value['typeecole']==3){$p="Sec";}
 			echo '<td align="center" > *'.$p.'</td>'; 
 			echo '<td align="right" >'.$value['ecolear'].'</td>'; 
-			echo '<td style="width:50px" align="left" >'.View::nbrtostring('wil','IDWIL',$value['idwil'],'WILAYAS').'</td>';
+			echo '<td style="width:50px" align="left" >'.View::nbrtostring('com','IDCOM',$value['idcom'],'COMMUNE').'</td>';
 			//echo '<td align="center"  ><a  title="ecole"     href="'.URL.$ctrl.'/ecole/'.$value['id'].'" ><img src="'.URL.'public/images/comm.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  ><a  title="editecole"   href="'.URL.$ctrl.'/editecole/'.$value['id'].'" ><img src="'.URL.'public/images/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  ><a class="delete" title="supprimer"  href="'.URL.$ctrl.'/deleteecole/'.$value['id'].'" ><img src="'.URL.'public/images/delete.png"   width="16" height="16" border="0" alt=""   /></a></td>';
@@ -67,7 +67,11 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 		}
 		$total_count=count($this->userListview1);
 		$total_count1=count($this->userListview);
-		if ($total_count <= 0 ){header('location: ' . URL .$ctrl.'/nouveauecole/'.$this->userListviewq);	}else{echo '<tr bgcolor="#00CED1"><td id="btdn" ><span>'.$total_count1.'</span></td><td id="btdn"><span>'.$total_count.' Record(s) found</span></td><td id="bdn"  colspan="'.$colspan.'" >'. HTML::barre_navigation ($total_count,$this->userListviewl,$this->userListviewo,$this->userListviewq,$this->userListviewp,$this->userListviewb,$ctrl,$mdl,$order).'</td></tr>';		 	}	
+		if ($total_count <= 0 ){header('location: ' . URL .$ctrl.'/nouveauecole/'.$this->userListviewq);	}else{
+		echo '<tr bgcolor="#00CED1"><td id="bdn"  colspan="'.$colspan.'" >'. HTML::barre_navigation ($total_count,$this->userListviewl,$this->userListviewo,$this->userListviewq,$this->userListviewp,$this->userListviewb,$ctrl,$mdl,$order).'</td></tr>';		 	
+		echo '<tr bgcolor="#00CED1"><td id="bdn"  colspan="'.$colspan.'" >'.$total_count.'Record(s) found /'.$total_count1.'</td></tr>';		 	
+		
+		}	
 		
 		
 echo "</table>";
