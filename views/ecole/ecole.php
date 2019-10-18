@@ -39,7 +39,7 @@ echo '<br>';
 echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="center">';
 	echo'<tr bgcolor="#00CED1"   >';
 	echo'<th colspan="'.$colspan.'" >';
-	echo 'Liste des établissements scolaires UDS : '.HTML::nbrtostring('uds','id',Session::get('uds'),'uds'); echo '&nbsp;';		
+	echo '<a target="_blank" title="Fiche technique uds"  href="'.URL.'tcpdf/sscolaire/uds.php?uc='.Session::get('uds').'" >Liste des établissements scolaires UDS : '.HTML::nbrtostring('uds','id',Session::get('uds'),'uds'); echo '&nbsp;';		
 	echo'</th>';
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
