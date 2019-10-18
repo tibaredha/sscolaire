@@ -20,59 +20,42 @@ function verif($id,$val){if ($id == $val){return 'Oui';}else{return 'Non';} }
 require('sscolaire.php');
 $pdf = new sscolaire( 'P', 'mm', 'A4',true,'UTF-8',false );
 $pdf->setPrintHeader(false);$pdf->SetAutoPageBreak(TRUE, 0);$pdf->setPrintFooter(false);
+
+// $pdf->AddPage('P','A4');
+// $pdf->SetXY(15,$pdf->GetY()+5);$pdf->cell(90,5,"Nom unite de dépistage et de suivi",1,0,'L',0,0);$pdf->cell(90,5,"Nom EPSP",1,0,'L',0,0);
+// $pdf->SetFont('DejaVuSans','',11);
+$pdf->SetFont('Times','',10);
+
+
 $pdf->mysqlconnect();
-$query = "select * from uds WHERE  id = '$id'";//
+$query = "select * from uds order by ids";//WHERE  id = '$id'
 $resultat=mysql_query($query);
+$xx=0;
 while($result=mysql_fetch_object($resultat))
 {
-$pdf->AddPage('P','A4');
-$pdf->setRTL(FALSE); 
-$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$pdf->SetFont('DejaVuSans','',11);
-$pdf->SetXY(15,$pdf->GetY()+5); $pdf->Cell(180,6,"4-établissements scolaires",1,1,'L');
-$pdf->SetXY(15,$pdf->GetY());   $pdf->Cell(89,4,"Nom établissements scolaires",1,0,'L');$pdf->Cell(22,5,"Commune",1,0,'C');$pdf->Cell(22,5,"***",1,0,'C');$pdf->Cell(47,5,"***",1,0,'C');
-$pdf->mysqlconnect();
-$query = "SELECT * from ecole  order by typeecole,ecole";//where iduds = $result->ids 
-$resultat=mysql_query($query);
-$totalmbr1=mysql_num_rows($resultat);
-while($row=mysql_fetch_object($resultat))
-{
-	$pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFont('Times','B',7);
-	
-	$w=15;
-	if($row->typeecole==1)
-	{
-	$pdf->SetFillColor(250);$pdf->cell(89,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);$pdf->Cell(32,5,$pdf->nbrtostring("com","IDCOM",$row->idcom,"COMMUNE"),1,0,'L');$pdf->Cell(22,5,"_",1,0,'C');$pdf->Cell(37,5,"_",1,0,'C');
-
-	$pdf->SetFillColor(230);
+$pdf->AddPage('P','A4');$pdf->setRTL(FALSE);$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFillColor(250);
+$pdf->cell(10,5,($xx=$xx+1),1,0,'C',1,0);$pdf->cell(80,5,"UDS : ".strtoupper($result->uds),1,0,'L',1,0);$pdf->cell(90,5,"EPSP : ".$pdf->nbrtostring("structure","id",$result->ids,"structure"),1,0,'L',1,0);
+    //***********************************************************************************************************//
+	$querye = "SELECT * from ecole where iduds = $result->id  order by typeecole,ecole";$resultate=mysql_query($querye);$totalmbre=mysql_num_rows($resultate);
+    $pdf->SetXY(15,$pdf->GetY()+10);$pdf->cell(10,5,"N°",1,0,'C',1,0);$pdf->cell(60,5,"Nom école(FR)",1,0,'C',1,0);$pdf->cell(60,5,"Nom école(AR)",1,0,'C',1,0);$pdf->Cell(25,5,"Commune",1,0,'C',1,0);$pdf->cell(25,5,"Type école",1,1,'C',1,0);
+	$pdf->SetXY(15,$pdf->GetY());$pdf->SetFont('Times','B',7);$x=0;
+	while($rowe=mysql_fetch_object($resultate))
+    {
+	$pdf->cell(10,5,$x=$x+1,1,0,'C',0,0);
+	$pdf->cell(60,5,strtoupper($rowe->ecole),1,0,'L',0,0);$pdf->SetFont('DejaVuSans','',10);
+	$pdf->cell(60,5,strtoupper($rowe->ecolear),1,0,'R',0,0);$pdf->SetFont('Times','B',7);
+	$pdf->Cell(25,5,$pdf->nbrtostring("com","IDCOM",$rowe->idcom,"COMMUNE"),1,0,'C');
+	if($rowe->typeecole==1){$pdf->cell(25,5,"primaire",1,0,'C',0,0);}
+	if($rowe->typeecole==2){$pdf->cell(25,5,"moyenne",1,0,'C',0,0);}
+	if($rowe->typeecole==3){$pdf->cell(25,5,"lycée",1,0,'C',0,0);}
+	$pdf->SetXY(15,$pdf->GetY()+5);
 	}
-	
-	if($row->typeecole==2)
-	{
-	$pdf->SetFillColor(230);$pdf->cell(89,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);$pdf->Cell(32,5,$pdf->nbrtostring("com","IDCOM",$row->idcom,"COMMUNE"),1,0,'L');$pdf->Cell(22,5,"_",1,0,'C');$pdf->Cell(37,5,"_",1,0,'C');
-
-	$pdf->SetFillColor(230);
-	}
-	
-	
-	if($row->typeecole==3)
-	{
-	$pdf->SetFillColor(200);$pdf->cell(89,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);$pdf->Cell(32,5,$pdf->nbrtostring("com","IDCOM",$row->idcom,"COMMUNE"),1,0,'L');$pdf->Cell(22,5,"_",1,0,'C');$pdf->Cell(37,5,"_",1,0,'C');
-
-	$pdf->SetFillColor(230);
-	}
- 
-	
+	$pdf->SetXY(15,$pdf->GetY());$pdf->cell(180,5,"Total uds : ".$totalmbre,1,0,'L',1,0);
+	//***********************************************************************************************************//
+$pdf->SetXY(15,$pdf->GetY()+5);
 }
-
-
-
-
-
-
 $pdf->Output();
-}
-
 ?>
 
 
