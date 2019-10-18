@@ -44,7 +44,8 @@ $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(90,5,"Adresse des parents : ".$result-
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(45,5,"Profession père  : ",0,0,'L');    $pdf->Cell(45,5,"مهنة الاب : ",0,0,'R');      $pdf->Cell(45,5,"Profession mère : ",0,0,'L'); $pdf->Cell(45,5,"مهنة الام : ",0,1,'R');
 
 $pdf->SetFont('DejaVuSans','',12);
-$pdf->SetXY(15,$pdf->GetY()+5); $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');       $pdf->Cell(136,6,"سبق له علاج الإلتهابات داخل أو خارج المستشفى",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(180,6,"هل ابنك لديه : ",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');       $pdf->Cell(136,6,"سبق له علاج الإلتهابات داخل أو خارج المستشفى",1,1,'R');
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"يأخذ حقن من 15 إلى 20 يوما",1,1,'R');
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"نقص جسماني مفاجئ",1,1,'R');
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"إضطراب في التنفس",1,1,'R');
@@ -95,16 +96,16 @@ $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(90,5,"Adresse des parents : ".$result-
 $pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(45,5,"Profession père  : ",0,0,'L');    $pdf->Cell(45,5,"مهنة الاب : ",0,0,'R');      $pdf->Cell(45,5,"Profession mère : ",0,0,'L'); $pdf->Cell(45,5,"مهنة الام : ",0,1,'R');
 
 $pdf->SetFont('DejaVuSans','',12);
-$pdf->SetXY(15,$pdf->GetY()+5); $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');       $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
-$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->Cell(180,6,"هل تلميذك لديه :",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"نقص في الرؤية",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"إضطرابات سمعية",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"تأخر دراسي",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"اضطربات في السلوك",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"اضطربات في التعبير",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"غيابات متكررة",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"إحمرار مستمر للعين",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"سيلان الأنف المستمر",1,1,'R');
+$pdf->SetXY(15,$pdf->GetY());  $pdf->Cell(22,6,"لا",1,0,'C');   $pdf->Cell(22,6,"نعم",1,0,'C');        $pdf->Cell(136,6,"يحس بألم بقناة التبول أو الإحتياج للتبول الدائم",1,1,'R');
 
 $pdf->Output();
 }
