@@ -61,4 +61,12 @@ class ecole_Model extends Model {
 		return $last_id = $this->db->lastInsertId();
     }
 	
+	
+	public function deleteecole($id) {       
+        $this->db->delete("ecole", "id = '$id'");
+	}
+	
+	
+	
+	
 }

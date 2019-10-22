@@ -123,7 +123,11 @@ class ecole extends Controller {
 		header('location: '.URL.$this->controleur.'/searchecole/0/10?o=id&q='.$id);
 	}
 	
-	
+	public function deleteecole($id)
+	{
+	$this->model->deleteecole($id);    
+	header('location: ' . URL .$this->controleur. '/searchecole/0/10?o=id&q=');
+	}
 	
 		
 }

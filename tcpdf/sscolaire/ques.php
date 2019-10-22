@@ -85,7 +85,7 @@ $pdf->SetFont('DejaVuSans','',10);
 $pdf->SetXY(15,$pdf->GetY());$pdf->Cell(45,5,"Wilaya : DJELFA",1,0,'L'); $pdf->Cell(45,5,"الولاية: الجلفة",1,0,'R'); $pdf->Cell(45,5,"Commune : ".$pdf->nbrtostring("com","IDCOM",$pdf->nbrtostring("ecole","id",$result->ECOLE,"idcom"),"COMMUNE"),1,0,'L'); $pdf->Cell(45,5,"البلدية"	,1,1,'R');
 $pdf->SetXY(15,$pdf->GetY());$pdf->Cell(45,5,"EPSP : ".$pdf->nbrtostring("structure","id",$result->STRUCTURE,"structure"),1,0,'L'); $pdf->Cell(45,5,"م. ع. ص .ج : ",1,0,'R'); $pdf->Cell(45,5,"UDS : ".$pdf->nbrtostring("uds","id",$result->UDS,"uds"),1,0,'L'); $pdf->Cell(45,5,"و. ك. م : ",1,1,'R');
 $pdf->SetFont('DejaVuSans','B',19);
-$pdf->SetXY(5,$pdf->GetY()+5);$pdf->Cell(200,6,"إستبيان خاص بالأولياء",0,1,'C');
+$pdf->SetXY(5,$pdf->GetY()+5);$pdf->Cell(200,6,"إستبيان خاص بالمعلمين",0,1,'C');
 $pdf->SetFont('DejaVuSans','B',14);
 $pdf->SetXY(5,$pdf->GetY());$pdf->Cell(200,6,"Questionnaire à remplir par l’enseignant de chaque élève de 1°, 2° A.F",0,1,'C');
 $pdf->RoundedRect($x=15, $y=$pdf->GetY()+5, $w=180, $h=230, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
