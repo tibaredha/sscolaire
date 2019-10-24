@@ -60,7 +60,7 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo'<th >Date d\'éxamen</th>';
 			echo'<th >Etablissement</th>';
 	        // echo'<th >Date RDV</th>';
-			echo'<th ><img src="'.URL.'public/images/pdf.png"   width="16" height="16" border="0" alt=""/></th>';
+			echo'<th ><a target="_blank" title="fiche Hygiene et salubrité des locaux vierge"  href="'.URL.'tcpdf/sscolaire/fhslv.php?iduds='.Session::get('uds').'" ><img src="'.URL.'public/images/pdf.png"   width="16" height="16" border="0" alt=""   /></a></th>';
 			echo'<th ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'<th ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""/></th>';
 			echo'</tr>';
@@ -70,7 +70,7 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATEV']).'</td>';
 			echo '<td align="center"  >'.HTML::nbrtostring('ecole','id',$value['ETABLIS'],'ecole').'</td>';
-			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="fiche Hygiene et salubrité des locaux"  href="'.URL.'tcpdf/sscolaire/fhsl.php?id='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="center" style="width:10px;"  ><a target="_blank" title="fiche Hygiene et salubrité des locaux"  href="'.URL.'tcpdf/sscolaire/fhsl.php?id='.$value['id'].'" ><img src="'.URL.'public/images/pdf.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a  title="Editer Hygiene et salubrité des locaux"  href="'.URL.$ctrl.'/edit/'.$value['id'].'" ><img src="'.URL.'public/images/table/edit.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center" style="width:10px;" ><a class="delete" title="Supprimer Hygiene et salubrité des locaux"  href="'.URL.$ctrl.'/delete/'.$value['id'].'" ><img src="'.URL.'public/images/table/erase.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			}
