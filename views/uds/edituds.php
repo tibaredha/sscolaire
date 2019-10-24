@@ -1,37 +1,5 @@
 <style>
-#inner-grid {
-  display: grid;padding: 8px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 20px 45px 45px 45px 45px 45px ;
-  grid-gap: 5px;
-}
 
-#wilayarg,#structurerg,#lang,#dd,#ee,#ff,#gg {background: yellow; text-align: center ; border-radius: 5px;width: 70%;height: 100%;}
-
-#udsfr {background: yellow; text-align: left;border-radius: 5px;width: 70%;height: 100%;}
-#udsar {background: yellow; text-align: right;border-radius: 5px;width: 70%;height: 100%;}
-#lat,#lg {background: yellow; text-align: center;border-radius: 5px;width: 70%;height: 100%;}
-
-
-#dd {background: #00cc00; text-align: center;border-radius: 5px;width: 100%;height: 100%; color: white;}
-#dd:hover {background: red;color: #fff;}
-
-#ddx {background: #00cc00; text-align: center;border-radius: 5px;width: 50%;height: 100%; color: white;}
-#ddx:hover {background: red;color: #fff;}
-
-.per{background: #00cc00; text-align: right;border-radius: 5px;width: 10%;height: 60%; color: white;}
-
-
-#a {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 2 / 3;}
-#b {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 3 / 4;}
-#c {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 4 / 5;}
-#d {background: salmon;text-align: right;  border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 5 / 6;}
-
-
-#ax {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 6 / 7;}
-#bx {background: salmon;text-align: right; border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 7 / 8;}
-
-#g {background: salmon;text-align: center;border-radius: 5px;padding: 8px;grid-column: 2  / 7;  grid-row: 8 / 9;}
 </style>
 
 <div class="sheader1l"><p id="lregister"><?php echo "";echo $this->msg; echo "";?></p></div><div class="sheader1r"><p id="lregister"><?php html::NAV();?></p></div>
