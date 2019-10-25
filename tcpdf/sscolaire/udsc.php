@@ -21,35 +21,39 @@ require('sscolaire.php');
 $pdf = new sscolaire( 'P', 'mm', 'A4',true,'UTF-8',false );$pdf->setPrintHeader(false);$pdf->SetAutoPageBreak(TRUE, 0);$pdf->setPrintFooter(false);
 $pdf->SetFont('Times','B',7);
 $pdf->mysqlconnect();
-$query = "select * from uds order by ids";
+$query = 'select * from com where IDWIL= "17000" and yes="1" order by COMMUNE';
 $resultat=mysql_query($query);
 $xx=0;
 $pdf->AddPage('P','A4');$pdf->setRTL(FALSE);$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFillColor(250);$pdf->cell(10,5,"N",1,0,'C',1,0);$pdf->cell(60,5,"UDS : ",1,0,'C',1,0);$pdf->cell(60,5,"UDS : ",1,0,'C',1,0);$pdf->cell(10,5,"PRI",1,0,'C',1,0);$pdf->cell(10,5,"MOY",1,0,'C',1,0);$pdf->cell(10,5,"SEC",1,0,'C',1,0);$pdf->cell(20,5,"TOT",1,0,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFillColor(250);$pdf->cell(10,5,"N",1,0,'C',1,0);$pdf->cell(60,5,"UDS : ",1,0,'C',1,0);$pdf->cell(60,5,"UDS : ",1,0,'C',1,0);
+$pdf->cell(10,5,"PRI",1,0,'C',1,0);
+$pdf->cell(10,5,"MOY",1,0,'C',1,0); 
+$pdf->cell(10,5,"SEC",1,0,'C',1,0); 
+$pdf->cell(20,5,"TOT",1,0,'C',1,0);
 while($result=mysql_fetch_object($resultat))
 {
-$pdf->SetXY(15,$pdf->GetY()+5);
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFillColor(250);
 $pdf->cell(10,5,($xx=$xx+1),1,0,'C',0,0);
-$pdf->cell(60,5,strtoupper($result->uds),1,0,'L',0,0);$pdf->SetFont('DejaVuSans','',10);
-$pdf->cell(60,5,strtoupper($result->udsar),1,0,'R',0,0);$pdf->SetFont('Times','B',7);
-$pdf->cell(10,5,$pdf->ecol_uds("=".$result->id,"= 1"),1,0,'C',0,0);
-$pdf->cell(10,5,$pdf->ecol_uds("=".$result->id,"= 2"),1,0,'C',0,0); 
-$pdf->cell(10,5,$pdf->ecol_uds("=".$result->id,"= 3"),1,0,'C',0,0); 
-$pdf->cell(20,5,$pdf->ecol_uds("=".$result->id,NULL),1,0,'C',0,0);  
+$pdf->cell(60,5,strtoupper($result->COMMUNE),1,0,'L',0,0);$pdf->SetFont('DejaVuSans','',10);
+$pdf->cell(60,5,strtoupper($result->communear),1,0,'R',0,0);$pdf->SetFont('Times','B',7);
+$pdf->cell(10,5,$pdf->ecol_commune("=".$result->IDCOM,"= 1"),1,0,'C',0,0);
+$pdf->cell(10,5,$pdf->ecol_commune("=".$result->IDCOM,"= 2"),1,0,'C',0,0); 
+$pdf->cell(10,5,$pdf->ecol_commune("=".$result->IDCOM,"= 3"),1,0,'C',0,0); 
+$pdf->cell(20,5,$pdf->ecol_commune("=".$result->IDCOM,NULL),1,0,'C',0,0);   
 $pdf->SetXY(15,$pdf->GetY());
 }
-$pdf->SetXY(15,$pdf->GetY()+5);$pdf->cell(130,5,"Total ",1,0,'L',1,0);$pdf->cell(10,5,$pdf->ecol_uds(NULL,"= 1"),1,0,'C',1,0);$pdf->cell(10,5,$pdf->ecol_uds(NULL,"= 2"),1,0,'C',1,0);$pdf->cell(10,5,$pdf->ecol_uds(NULL,"= 3"),1,0,'C',1,0);$pdf->cell(20,5,$pdf->ecol_uds(NULL,NULL),1,0,'C',1,0);
+$pdf->SetXY(15,$pdf->GetY()+5);$pdf->cell(130,5,"Total ",1,0,'L',1,0);$pdf->cell(10,5,$pdf->ecol_commune(NULL,"= 1"),1,0,'C',1,0);$pdf->cell(10,5,$pdf->ecol_commune(NULL,"= 2"),1,0,'C',1,0);$pdf->cell(10,5,$pdf->ecol_commune(NULL,"= 3"),1,0,'C',1,0);$pdf->cell(20,5,$pdf->ecol_commune(NULL,NULL),1,0,'C',1,0);
 $pdf->mysqlconnect();
-$query = "select * from uds order by ids";
+$query = 'select * from com where IDWIL= "17000" and yes="1" order by COMMUNE';
 $resultat=mysql_query($query);
 $xx=0;
 while($result=mysql_fetch_object($resultat))
 {
 $pdf->AddPage('P','A4');$pdf->setRTL(FALSE);$pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
 $pdf->SetXY(15,$pdf->GetY()+5);$pdf->SetFillColor(250);
-$pdf->cell(10,5,($xx=$xx+1),1,0,'C',1,0);$pdf->cell(80,5,"UDS : ".strtoupper($result->uds),1,0,'L',1,0);$pdf->cell(90,5,"EPSP : ".$pdf->nbrtostring("structure","id",$result->ids,"structure"),1,0,'L',1,0);
+$pdf->cell(10,5,($xx=$xx+1),1,0,'C',1,0);$pdf->cell(80,5,"Commune : ".strtoupper($result->COMMUNE),1,0,'L',1,0);$pdf->cell(90,5,"Wilaya de djelfa : ",1,0,'L',1,0);
     //***********************************************************************************************************//
-	$querye = "SELECT * from ecole where iduds = $result->id  order by typeecole,ecole";$resultate=mysql_query($querye);$totalmbre=mysql_num_rows($resultate);
+	$querye = "SELECT * from ecole where idcom = $result->IDCOM  order by typeecole,ecole";$resultate=mysql_query($querye);$totalmbre=mysql_num_rows($resultate);
     $pdf->SetXY(15,$pdf->GetY()+10);$pdf->cell(10,5,"N°",1,0,'C',1,0);$pdf->cell(60,5,"Nom école(FR)",1,0,'C',1,0);$pdf->cell(60,5,"Nom école(AR)",1,0,'C',1,0);$pdf->Cell(25,5,"Commune",1,0,'C',1,0);$pdf->cell(25,5,"Type école",1,1,'C',1,0);
 	$pdf->SetXY(15,$pdf->GetY());$pdf->SetFont('Times','B',7);$x=0;
 	while($rowe=mysql_fetch_object($resultate))
@@ -67,5 +71,5 @@ $pdf->cell(10,5,($xx=$xx+1),1,0,'C',1,0);$pdf->cell(80,5,"UDS : ".strtoupper($re
 	//***********************************************************************************************************//
 $pdf->SetXY(15,$pdf->GetY()+5);
 }
-$pdf->Output("Etablissement_uds.pdf","I");
+$pdf->Output("Etablissement_commune.pdf","I");
 ?>

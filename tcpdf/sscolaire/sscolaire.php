@@ -28,6 +28,38 @@ class sscolaire extends TCPDF
 	return $db;
 	}
 	
+	function ecol_uds($iduds,$typeecole) 
+	{
+	$this->mysqlconnect();
+	$sql = " select * from ecole where iduds $iduds and typeecole $typeecole";
+	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	$OP=mysql_num_rows($requete);
+	mysql_free_result($requete);
+	return $OP;
+	}
+	
+	
+	function ecol_commune($idcom,$typeecole) 
+	{
+	$this->mysqlconnect();
+	$sql = " select * from ecole where idcom $idcom and typeecole $typeecole";
+	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	$OP=mysql_num_rows($requete);
+	mysql_free_result($requete);
+	return $OP;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	function dateFR2US($date)//01/01/2013
 	{
 	$J      = substr($date,0,2);
@@ -145,19 +177,18 @@ class sscolaire extends TCPDF
 
 function vaccin($id,$vaccin) 
 {
-$this->mysqlconnect();
-$querysbd = "select * from vaccination1 WHERE IDELEVE= '$id' and vaccin=$vaccin";
-$resultatvac=mysql_query($querysbd);
-while($resultvac=mysql_fetch_object($resultatvac))
-{ 
-return $this->dateUS2FR($resultvac->datevac);
-
-}
+	$this->mysqlconnect();
+	$querysbd = "select * from vaccination1 WHERE IDELEVE= '$id' and vaccin=$vaccin";
+	$resultatvac=mysql_query($querysbd);
+	while($resultvac=mysql_fetch_object($resultatvac))
+	{ 
+		return $this->dateUS2FR($resultvac->datevac);
+	}
 }	
 	
 function verif($id,$val) 
 {
-if ($id == $val){return 'X';}else{return 'O';} 
+	if ($id == $val){return 'X';}else{return 'O';} 
 }
 
 function BUCCO($data,$c,$x,$y,$v) 

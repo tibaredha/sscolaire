@@ -30,7 +30,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 echo '<div class="contentl">';
 if (isset($this->userListview))
 {
-$colspan=12;
+$colspan=6;
 $urlx = explode('/',$_GET['url']);
 $order   = !empty($_GET["ad"])   ? $_GET["ad"]   : "asc";
 $ad = "asc";
@@ -39,7 +39,9 @@ echo '<br>';
 echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="center">';
 	echo'<tr bgcolor="#00CED1"   >';
 	echo'<th colspan="'.$colspan.'" >';
-	echo '<a target="_blank" title="Fiche technique uds"  href="'.URL.'tcpdf/sscolaire/uds.php?uc='.Session::get('uds').'" >Liste des établissements scolaires UDS : '.HTML::nbrtostring('uds','id',Session::get('uds'),'uds'); echo '&nbsp;';		
+	echo '<a target="_blank" title="Établissements scolaires /UDS"  href="'.URL.'tcpdf/sscolaire/uds.php?uc='.Session::get('uds').'" >Établissements scolaires /UDS :</a>&nbsp;'; echo '&nbsp;';		
+	echo 'Liste des établissements scolaires  : '; echo '&nbsp;&nbsp;';		
+	echo '<a target="_blank" title="Établissements scolaires /commune"  href="'.URL.'tcpdf/sscolaire/udsc.php?uc='.Session::get('uds').'" >Établissements scolaires /commune :</a>&nbsp;'; echo '&nbsp;';		
 	echo'</th>';
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
