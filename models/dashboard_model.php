@@ -66,7 +66,10 @@ class Dashboard_Model extends Model {
 			'ETDEAR'   => $data['ETDEAR'],
 			'ADRESSEAR'=> $data['ADRESSEAR'],
 			'code_patient'=> $data['code_patient'],
-			'aprouve'  => "0"	
+			'PROFESSION'  => $data['PROFESSION'],
+			'TELPERE'     => $data['TELPERE'],
+			'EMAILPERE'   => $data['EMAILPERE'],
+			'aprouve'     => "0"	
         ));
         echo '<pre>';print_r ($data);echo '<pre>';
 		// return $last_id = $this->db->lastInsertId();
@@ -112,6 +115,9 @@ class Dashboard_Model extends Model {
 			'ETDEAR'   => $data['ETDEAR'],
 			'ADRESSEAR'=> $data['ADRESSEAR'],
 			'code_patient'=> $data['code_patient'],
+			'PROFESSION'  => $data['PROFESSION'],
+			'TELPERE'     => $data['TELPERE'],
+			'EMAILPERE'   => $data['EMAILPERE'],
 			'aprouve'  => "0"	
         );
        //echo '<pre>';print_r ($postData);echo '<pre>'; 

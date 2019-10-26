@@ -110,11 +110,9 @@ class Dashboard extends Controller {
 		$data['ETDEAR']        = $_POST['ETDEAR'];
 		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
 		$data['code_patient']  = $_POST['code_patient'];
-		
-		$data['PROFESSION']  = $_POST['PROFESSION'];
-		$data['TELPERE']  = $_POST['TELPERE'];
-		$data['EMAILPERE']  = $_POST['EMAILPERE'];
-		
+		$data['PROFESSION']    = $_POST['PROFESSION'];
+		$data['TELPERE']       = $_POST['TELPERE'];
+		$data['EMAILPERE']     = $_POST['EMAILPERE'];
 		// echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createeleve($data);
 		header('location: '.URL.$this->controleur.'/nouveau/');
@@ -157,7 +155,10 @@ class Dashboard extends Controller {
 		$data['FILSDEAR']      = $_POST['FILSDEAR'];
 		$data['ETDEAR']        = $_POST['ETDEAR'];
 		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
-		$data['code_patient']     = $_POST['code_patient'];
+		$data['code_patient']  = $_POST['code_patient'];
+		$data['PROFESSION']    = $_POST['PROFESSION'];
+		$data['TELPERE']       = $_POST['TELPERE'];
+		$data['EMAILPERE']     = $_POST['EMAILPERE'];
 		$data['id']            = $id;
 		//echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->editSave($data);

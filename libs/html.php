@@ -702,7 +702,7 @@ class HTML  {
 	echo '<label class="deces" id="lCOMMUNER">Commune Res :</label> ';         HTML::COMMUNE('COMMUNER','COMMUNER','COMMUNER',$data['COMMUNER1'],$data['COMMUNER2']);
 	echo '<label class="deces" id="lADRESSE">Adresse Res :</label>';           echo '<input id="ADRESSE" type="text" name="ADRESSE" value="'.$data['ADRESSE'].'" placeholder="xxxxxxxxxxxxxxx" onkeyup="javascript:this.value=this.value.toUpperCase();"/>';
 	echo '<label class="deces" id="lLD7">Établissement : </label>';            HTML::ECOLE('ECOLE','ECOLE','ECOLE','ecole',$data['ECOLE1'],$data['ECOLE2'],Session::get('uds'));                    
-    echo '<label class="deces" id="lLD7a">Palier : </label>';                  HTML::PALIERX('PALIER','PALIER','PALIER',$data['PALIER1'],$data['PALIER2']);//HTML::PALIER('PALIER','PALIER','PALIER','palier',$data['PALIER1'],$data['PALIER2']);
+    echo '<label class="deces" id="lLD7a">Palier : </label>';                  HTML::PALIERX('PALIER','PALIER','PALIER',$data['PALIER1'],$data['PALIER2']);
 	echo '<label class="deces" id="show_codeP">Code_élève :</label>';          echo'<input id="code_patient"  type="text" name="code_patient" value="'.$data['code_patient'].'" readonly  >';
 	echo '<label class="deces" id="lNOMAR">: اللقب </label>';                  echo'<input id="NOMAR"       type="txt" name="NOMAR"       value="'.$data['NOMAR'].'"     placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lPRENOMAR">: الإسم</label>';                 echo'<input id="PRENOMAR"    type="txt" name="PRENOMAR"    value="'.$data['PRENOMAR'].'"  placeholder="xxxxxxx"/>';
@@ -710,7 +710,7 @@ class HTML  {
 	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>';          echo'<input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label> ';            echo'<input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
 	
-	echo '<label  class="deces"  id="lProfessionp">Profession du père :</label>';  HTML::Profession(44,44,'Profession','Professionp','Profession',Session::get('structure'),$data['PROFESSION1'],$data['PROFESSION2']) ;
+	echo '<label  class="deces"  id="lProfessionp">Profession du père :</label>';  HTML::Profession(44,44,'PROFESSION','Professionp','Profession',Session::get('structure'),$data['PROFESSION1'],$data['PROFESSION2']) ;
 	echo '<label  class="deces"  id="lTELPERE">TEL du père:</label>';              echo '<input id="TELPERE"    type="txt"  name="TELPERE"    value="'.$data['TELPERE'].'" />';
 	echo '<label  class="deces"  id="LEMAILPERE">E-MAIL :</label>';                echo '<input id="EMAILPERE"  type="txt"  name="EMAILPERE"  value="'.$data['EMAILPERE'].'" />';
 	
