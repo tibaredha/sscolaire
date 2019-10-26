@@ -709,6 +709,13 @@ class HTML  {
 	echo '<label class="deces" id="lFILSDEAR">: إسم الأب</label>';              echo'<input id="FILSDEAR"    type="txt" name="FILSDEAR"    value="'.$data['FILSDEAR'].'"  placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>';          echo'<input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label> ';            echo'<input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
+	
+	
+	
+	
+	
+	
+	
 	echo '<input type="hidden" name="WILAYA"     value="'.Session::get('wilaya').'"/>';
 	echo '<input type="hidden" name="STRUCTURE"  value="'.Session::get('structure').'"/>';
 	echo '<input type="hidden" name="UDS"        value="'.Session::get('uds').'"/>';
