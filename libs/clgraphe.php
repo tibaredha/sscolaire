@@ -25,7 +25,7 @@ class clgraphe  {
 	function valeurmultigraphe($TBL,$COLONE1,$DATEJOUR1,$DATEJOUR2,$COLONE2,$VALEUR2,$structure) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select $COLONE1,$COLONE2 from $TBL where STRUCTURE $structure	and	$COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2'  AND $COLONE2='$VALEUR2' ";
+	$sql = " select $COLONE1,$COLONE2 from $TBL where uds $structure and ($COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2') AND $COLONE2='$VALEUR2' ";//	  
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -81,7 +81,7 @@ class clgraphe  {
 	function valeur($SRS,$TBL,$COLONE1,$COLONE2,$DATEJOUR1,$DATEJOUR2,$VALEUR2,$STR) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and  STRUCTURE $STR  ";
+	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and  uds $STR  ";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -117,7 +117,7 @@ class clgraphe  {
 	function SEXEDECES($TBL,$COLONE1,$DATEJOUR1,$DATEJOUR2,$VALEUR,$STR) 
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and SEX='$VALEUR' and  STRUCTURE $STR  ";
+	$sql = " select * from $TBL  where $COLONE1 BETWEEN '$DATEJOUR1' AND '$DATEJOUR2' and SEX='$VALEUR' and  uds $STR  ";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$OP=mysql_num_rows($requete);
 	mysql_free_result($requete);
@@ -146,7 +146,7 @@ class clgraphe  {
 	function AGEDECES($colone2,$colone3,$datejour1,$datejour2,$structure)
 	{
 	$this->mysqlconnectx();
-	$sql = " select * from eleve where Years >=$colone2 and Years <=$colone3  and DINS >='$datejour1'and DINS <='$datejour2'  and STRUCTURE $structure";
+	$sql = " select * from eleve where Years >=$colone2 and Years <=$colone3  and DINS >='$datejour1'and DINS <='$datejour2'  and uds $structure";
 	$requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
 	$resultat=mysql_num_rows($requete);
 	mysql_free_result($requete);

@@ -1,4 +1,4 @@
-<div class="sheader1l"><p id="dashboard"><?php echo "Gérer les certificats de décès";?></p></div><div class="sheader1r"><p id="dashboard"><?php html::NAV();?></p></div>
+<div class="sheader1l"><p id="dashboard"><?php echo "Gérer les élèves scolarisés";?></p></div><div class="sheader1r"><p id="dashboard"><?php html::NAV();?></p></div>
 <div class="sheader2l">
 <?php
 $ctrl='dashboard';$mdl='search';
@@ -23,7 +23,9 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 ?>
 </div>
 <?php
-echo '<div class="contentl">';$this->clgraphe->GRAPHEAGEDECES(30,340,'élèves scolarisés par tranche d\'age  arreté au :',date("Y-01-01"),date("Y-12-31"),'='.Session::get('structure'));echo "</div>";
+$uds = Session::get('uds');
+// echo $uds =27;
+echo '<div class="contentl">';$this->clgraphe->GRAPHEAGEDECES(30,340,'élèves scolarisés par tranche d\'age  arreté au : ',date("Y-01-01"),date("Y-12-31"),'='.$uds);echo "</div>";
 echo'<div class="content"><img id="image" src="'.URL.'public/images/dashbord.jpg" ></div>';
 echo'<div class="contentr"><img id="image" src="'.URL.'public/images/'.logo.'"></div>';
 ?>	

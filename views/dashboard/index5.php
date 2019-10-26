@@ -1,4 +1,4 @@
-<div class="sheader1l"><p id="dashboard"><?php echo "Gérer les certificats de décès";?></p></div><div class="sheader1r"><p id="dashboard"><?php html::NAV();?></p></div>
+<div class="sheader1l"><p id="dashboard"><?php echo "Gérer les élèves scolarisés";?></p></div><div class="sheader1r"><p id="dashboard"><?php html::NAV();?></p></div>
 <div class="sheader2l">
 <?php
 $ctrl='dashboard';$mdl='search';
