@@ -110,6 +110,11 @@ class Dashboard extends Controller {
 		$data['ETDEAR']        = $_POST['ETDEAR'];
 		$data['ADRESSEAR']     = $_POST['ADRESSEAR'];
 		$data['code_patient']  = $_POST['code_patient'];
+		
+		$data['PROFESSION']  = $_POST['PROFESSION'];
+		$data['TELPERE']  = $_POST['TELPERE'];
+		$data['EMAILPERE']  = $_POST['EMAILPERE'];
+		
 		// echo '<pre>';print_r ($data);echo '<pre>';  
 		$last_id=$this->model->createeleve($data);
 		header('location: '.URL.$this->controleur.'/nouveau/');

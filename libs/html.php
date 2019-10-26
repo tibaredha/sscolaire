@@ -710,7 +710,7 @@ class HTML  {
 	echo '<label class="deces" id="lETDEAR">: إسم و لقب الأم</label>';          echo'<input id="ETDEAR"      type="txt" name="ETDEAR"      value="'.$data['ETDEAR'].'"    placeholder="xxxxxxx"/>';
 	echo '<label class="deces" id="lADAR">: عنوان الإقامة</label> ';            echo'<input id="ADRESSEAR"   type="txt" name="ADRESSEAR"   value="'.$data['ADRESSEAR'].'" placeholder="xxxxxxx"/>';
 	
-	echo '<label  class="deces"  id="lProfessionp">Profession du père :</label>';  HTML::Profession(44,44,'Professionp','Professionp','Profession',Session::get('structure'),$data['PROFESSION1'],$data['PROFESSION2']) ;
+	echo '<label  class="deces"  id="lProfessionp">Profession du père :</label>';  HTML::Profession(44,44,'Profession','Professionp','Profession',Session::get('structure'),$data['PROFESSION1'],$data['PROFESSION2']) ;
 	echo '<label  class="deces"  id="lTELPERE">TEL du père:</label>';              echo '<input id="TELPERE"    type="txt"  name="TELPERE"    value="'.$data['TELPERE'].'" />';
 	echo '<label  class="deces"  id="LEMAILPERE">E-MAIL :</label>';                echo '<input id="EMAILPERE"  type="txt"  name="EMAILPERE"  value="'.$data['EMAILPERE'].'" />';
 	
