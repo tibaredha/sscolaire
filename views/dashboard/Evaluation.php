@@ -29,17 +29,20 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			
 			echo "<p>";
 			echo "<select id=\"type1\" name=\"SS\">";
-			echo '<option value="0">Liste nominative Médecin </option>';
-			echo '<option value="1">Liste nominative Dentiste </option>';
-			echo '<option value="2">Liste nominative psychologue </option>';
-			echo '<option value="3">Liste nominative Paramédicale </option>';
-			echo '<option value="4">Effectifs par établissement</option>';
+			echo '<option value="lnm">Liste Médecin Vierge </option>';
+			echo '<option value="lnd">Liste Dentiste Vierge</option>';
+			echo '<option value="lnps">Liste psychologue Vierge</option>';
+			echo '<option value="lnpr">Liste Paramédicale Vierge</option>';
 			
 			echo '<option value="5">Affections dépistées/Eleve</option>';
 			echo '<option value="6">Affections dépistées/Ecole</option>';
-			echo '<option value="7"></option>';
-			echo '<option value="8"></option>';
-			echo '<option value="9">BUCCO-DENTAIRE</option>';
+			
+			echo '<option value="eff">Effectifs par établissement</option>';
+			echo '<option value="vms">Visite Médicale Systematique</option>';
+			echo '<option value="amd">Affections Dépistees </option>';
+			echo '<option value="vac">Vaccination </option>';
+			echo '<option value="hsl">Hygiene et salubrite</option>';
+			echo '<option value="9">Bucco-Dentaire</option>';
 			echo "</select>";
 			echo "</p> ";
 				

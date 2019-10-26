@@ -13,7 +13,7 @@ if ($_POST['PALIER']==0){$palier=null;} else {$palier='='.$_POST['PALIER'];}
 
 
 
-if ($_POST['SS']=='0') //liste nominative par medecin uds
+if ($_POST['SS']=='lnm') //liste nominative par medecin uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (Médecin) ",$palier);
@@ -32,29 +32,16 @@ if ($_POST['SS']=='0') //liste nominative par medecin uds
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
-	
 	$pdf->SetXY(05,$pdf->GetY());$pdf->cell(285,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 
 }
 
-if ($_POST['SS']=='1') //liste nominative dentiste par uds
+if ($_POST['SS']=='lnd') //liste nominative dentiste par uds
 {
 
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (Dentiste) ",$palier);
-	$pdf->SetXY(05,$pdf->GetY()+10);
-	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
-	$pdf->cell(15,5,'HYNA',1,0,'C',1,0);
-	$pdf->cell(15,5,'GING',1,0,'C',1,0);
-	$pdf->cell(15,5,'AODF',1,0,'C',1,0);
-	$pdf->cell(26,5,'C',1,0,'C',1,0);
-	$pdf->cell(26,5,'A',1,0,'C',1,0);
-	$pdf->cell(26,5,'O',1,0,'C',1,0);
-	$pdf->cell(26,5,'c',1,0,'C',1,0);
-	$pdf->cell(26,5,'a',1,0,'C',1,0);
-	$pdf->cell(26,5,'o',1,0,'C',1,0);
-	$pdf->cell(21,5,'Date EXA',1,0,'C',1,0);
-	$pdf->cell(21,5,'Date RDV',1,0,'C',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);$pdf->cell(15,5,'HYNA',1,0,'C',1,0);$pdf->cell(15,5,'GING',1,0,'C',1,0);$pdf->cell(15,5,'AODF',1,0,'C',1,0);$pdf->cell(26,5,'C',1,0,'C',1,0);$pdf->cell(26,5,'A',1,0,'C',1,0);$pdf->cell(26,5,'O',1,0,'C',1,0);$pdf->cell(26,5,'c',1,0,'C',1,0);$pdf->cell(26,5,'a',1,0,'C',1,0);$pdf->cell(26,5,'o',1,0,'C',1,0);$pdf->cell(21,5,'Date EXA',1,0,'C',1,0);$pdf->cell(21,5,'Date RDV',1,0,'C',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+5);
 	$pdf->mysqlconnect();
 	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
@@ -63,37 +50,18 @@ if ($_POST['SS']=='1') //liste nominative dentiste par uds
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
-		$pdf->cell(15,5,'',1,0,'C',0,0);
-		$pdf->cell(15,5,'',1,0,'C',0,0);
-		$pdf->cell(15,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(26,5,'',1,0,'C',0,0);
-		$pdf->cell(21,5,'',1,0,'C',0,0);
-		$pdf->cell(21,5,'',1,0,'C',0,0);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);$pdf->cell(15,5,'',1,0,'C',0,0);$pdf->cell(15,5,'',1,0,'C',0,0);$pdf->cell(15,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(26,5,'',1,0,'C',0,0);$pdf->cell(21,5,'',1,0,'C',0,0);$pdf->cell(21,5,'',1,0,'C',0,0);
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
 $pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
 
-if ($_POST['SS']=='2') //liste nominative psychologue par uds
+if ($_POST['SS']=='lnps') //liste nominative psychologue par uds
 {
-
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (psychologue) ",$palier);
-	$pdf->SetXY(05,$pdf->GetY()+10);
-	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
-	$pdf->cell(45,5,'Difficultes scolaire',1,0,'C',1,0);
-	$pdf->cell(45,5,'Trouble du langage',1,0,'C',1,0);
-	$pdf->cell(45,5,'Trouble du comportement',1,0,'C',1,0);
-	$pdf->cell(45,5,'Autres',1,0,'C',1,0);
-	$pdf->cell(31.5,5,'Date EXA',1,0,'C',1,0);
-	$pdf->cell(31.5,5,'Date RDV',1,0,'C',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);$pdf->cell(45,5,'Difficultes scolaire',1,0,'C',1,0);$pdf->cell(45,5,'Trouble du langage',1,0,'C',1,0);$pdf->cell(45,5,'Trouble du comportement',1,0,'C',1,0);$pdf->cell(45,5,'Autres',1,0,'C',1,0);$pdf->cell(31.5,5,'Date EXA',1,0,'C',1,0);$pdf->cell(31.5,5,'Date RDV',1,0,'C',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+5);
 	$pdf->mysqlconnect();
 	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
@@ -102,33 +70,18 @@ if ($_POST['SS']=='2') //liste nominative psychologue par uds
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
-		$pdf->cell(45,5,'',1,0,'C',0,0);
-		$pdf->cell(45,5,'',1,0,'C',0,0);
-		$pdf->cell(45,5,'',1,0,'C',0,0);
-		$pdf->cell(45,5,'',1,0,'C',0,0);
-		$pdf->cell(31.5,5,'',1,0,'C',0,0);
-		$pdf->cell(31.5,5,'',1,0,'C',0,0);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);$pdf->cell(45,5,'',1,0,'C',0,0);$pdf->cell(45,5,'',1,0,'C',0,0);$pdf->cell(45,5,'',1,0,'C',0,0);$pdf->cell(45,5,'',1,0,'C',0,0);$pdf->cell(31.5,5,'',1,0,'C',0,0);$pdf->cell(31.5,5,'',1,0,'C',0,0);
 		$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
 $pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
-if ($_POST['SS']=='3') //liste nominative paramedicale par uds
+
+if ($_POST['SS']=='lnpr') //liste nominative paramedicale par uds
 {
 	$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Liste nominative des élèves (Para-médicale) ",$palier);
-	
-	$pdf->SetXY(05,$pdf->GetY()+10);
-	$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);
-	$pdf->cell(30,5,'Poids(kg)',1,0,'C',1,0);
-	$pdf->cell(30,5,'Taille(cm)',1,0,'C',1,0);
-	$pdf->cell(30,5,'L\'acuité visuelle',1,0,'C',1,0);
-	$pdf->cell(30,5,'BCG (fait=x)',1,0,'C',1,0);
-	$pdf->cell(30,5,'DTE/DTA (fait=x)',1,0,'C',1,0);
-	$pdf->cell(30,5,'POLIO (fait=x)',1,0,'C',1,0);
-	$pdf->cell(30,5,'ROR (fait=x)',1,0,'C',1,0);
-	$pdf->cell(33,5,'Date de l\'éxamen',1,0,'C',1,0);
+	$pdf->SetXY(05,$pdf->GetY()+10);$pdf->cell(45,5,'NOM_prénom (fils de)',1,0,'L',1,0);$pdf->cell(30,5,'Poids(kg)',1,0,'C',1,0);$pdf->cell(30,5,'Taille(cm)',1,0,'C',1,0);$pdf->cell(30,5,'L\'acuité visuelle',1,0,'C',1,0);$pdf->cell(30,5,'BCG (fait=x)',1,0,'C',1,0);$pdf->cell(30,5,'DTE/DTA (fait=x)',1,0,'C',1,0);$pdf->cell(30,5,'POLIO (fait=x)',1,0,'C',1,0);$pdf->cell(30,5,'ROR (fait=x)',1,0,'C',1,0);$pdf->cell(33,5,'Date de l\'éxamen',1,0,'C',1,0);
 	$pdf->SetXY(05,$pdf->GetY()+5);
 	$pdf->mysqlconnect();
 	$query = "SELECT * FROM eleve where UDS=$UDS and ECOLE $ecole and PALIER $palier order by NOM";
@@ -137,33 +90,18 @@ if ($_POST['SS']=='3') //liste nominative paramedicale par uds
 	while($row=mysql_fetch_object($resultat))
 	{
 		$pdf->SetFont('Times','',9);
-		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(30,5,'',1,0,'C',0,0);
-		$pdf->cell(33,5,'',1,0,'C',0,0);
-		$pdf->SetFont('Times','B',10);
+		$pdf->cell(45,5,$row->NOM.'_'.strtolower($row->PRENOM).'('.strtolower($row->FILSDE).')',1,0,'L',1,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(30,5,'',1,0,'C',0,0);$pdf->cell(33,5,'',1,0,'C',0,0);$pdf->SetFont('Times','B',10);
 		$pdf->SetXY(5,$pdf->GetY()+5); 
 	}
 $pdf->SetXY(05,$pdf->GetY());$pdf->cell(288,5,'Total : '.$totalmbr1.' élèves',1,0,'L',1,0);
 }
-
-
-
-
-if ($_POST['SS']=='4') //EFF not yet  verifed
+//effectif par etablissement 
+if ($_POST['SS']=='eff') 
 {
-//1-page effec
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Effectifs des élèves inscrits ",$palier);
-
 $pdf->SetXY(5,$pdf->GetY()+15); $pdf->cell(30,10,"Etablissements",1,0,1,'L',0);$pdf->cell(15,10,"Pré-Scol",1,0,1,'L',0);$pdf->cell(15*6,5,"Cycle Primaire",1,0,1,'L',0);$pdf->cell(15*5,5,"Cycle Moyen",1,0,1,'L',0);$pdf->cell(15*4,5,"Cycle Secondaire",1,0,1,'L',0);$pdf->cell(15,5,"total",1,0,1,'L',0);
 $pdf->SetXY(50,$pdf->GetY()+5);                                                                                         $pdf->cell(15,5,"1°AP",1,0,'C',1,0);$pdf->cell(15,5,"2°AP",1,0,'C',1,0);$pdf->cell(15,5,"3°AP",1,0,'C',1,0);$pdf->cell(15,5,"4°AP",1,0,'C',1,0);$pdf->cell(15,5,"5°AP",1,0,'C',1,0);$pdf->cell(15,5,"TAP",1,0,'C',1,0);$pdf->cell(15,5,"1°AM",1,0,'C',1,0);$pdf->cell(15,5,"2°AM",1,0,'C',1,0);$pdf->cell(15,5,"3°AM",1,0,'C',1,0);$pdf->cell(15,5,"4AM",1,0,'C',1,0);$pdf->cell(15,5,"TAM",1,0,'C',1,0);$pdf->cell(15,5,"1°AS",1,0,'C',1,0);$pdf->cell(15,5,"2°AS",1,0,'C',1,0);$pdf->cell(15,5,"3°AS",1,0,'C',1,0);$pdf->cell(15,5,"TAS",1,0,'C',1,0);$pdf->cell(15,5,"TOTAL",1,0,'C',1,0);
-
 $pdf->mysqlconnect();
 $query = "SELECT * from ecole where iduds = $UDS  order by typeecole,ecole";
 $resultat=mysql_query($query);
@@ -175,43 +113,42 @@ while($row=mysql_fetch_object($resultat))
 	$w=15;
 	if($row->typeecole==1)
 	{
-	$pdf->SetFillColor(250);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
-	for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	for($i=1; $i< 10; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	$pdf->SetFillColor(230);
+		$pdf->SetFillColor(250);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+		for($i=1; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		for($i=1; $i< 10; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		$pdf->SetFillColor(230);
 	}
 	
 	if($row->typeecole==2)
 	{
-	$pdf->SetFillColor(230);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
-	for($i=1; $i< 8; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
-	$pdf->SetXY(140,$pdf->GetY());
-	for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	for($i=1; $i< 5; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	$pdf->SetFillColor(230);
+		$pdf->SetFillColor(230);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+		for($i=1; $i< 8; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+		$pdf->SetXY(140,$pdf->GetY());
+		for($i=7; $i< 11; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		for($i=1; $i< 5; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		$pdf->SetFillColor(230);
 	}
 	
 	
 	if($row->typeecole==3)
 	{
-	$pdf->SetFillColor(200);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
-	for($i=1; $i< 13; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
-	$pdf->SetXY(140+75,$pdf->GetY());
-	for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
-	$pdf->SetFillColor(230);
+		$pdf->SetFillColor(200);$pdf->cell(30,5,strtoupper($row->ecole),1,0,'L',1,0);$pdf->SetFont('Times','B',10);
+		for($i=1; $i< 13; $i+=1){$pdf->cell($w,5,"",1,0,'C',1,0);}
+		$pdf->SetXY(140+75,$pdf->GetY());
+		for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->INSCRITSPE($i,$row->id,$datejour1,$datejour2,$UDS),1,0,'C',0,0);}
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		$pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
+		$pdf->SetFillColor(230);
 	}
  
 	// $pdf->cell($w,5,$pdf->TINSCRITSPE($row->id,$datejour1,$datejour2,$UDS),1,0,'C',1,0);
 }
 $pdf->SetXY(5,$pdf->GetY()+5);
 $pdf->cell(30,5,"Total",1,0,'C',1,0);
-
 $pdf->cell($w,5,$pdf->TNINSCRITSPE('1',$datejour1,$datejour2,$UDS),1,0,'C',1,0);
 for($i=2; $i< 7; $i+=1){$pdf->cell($w,5,$pdf->TNINSCRITSPE($i,$datejour1,$datejour2,$UDS),1,0,'C',1,0);}
 $pdf->cell($w,5,"",1,0,'C',1,0);
@@ -220,19 +157,10 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 for($i=11; $i< 14; $i+=1){$pdf->cell($w,5,$pdf->TNINSCRITSPE($i,$datejour1,$datejour2,$UDS),1,0,'C',1,0);}
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
-// $pdf->cell($w,5,"",1,0,'C',1,0);
+}
 //2-page vms
+if ($_POST['SS']=='vms') 
+{
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"VISITE MEDICALE SYSTEMATIQUE DE DEPISTAGE ",$palier);
 
@@ -336,8 +264,10 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
-
-//3-AFFECTION DEPISTE not verifed yet manque fc()  oriente + pris en charge 
+}
+//3-AFFECTION DEPISTE not verifed yet manque fc()  oriente + pris en charge
+if ($_POST['SS']=='amd') 
+{
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"AFFECTIONS DEPISTEES ",$palier);
 $elevedepiste=$pdf->depiste($UDS,$datejour1,$datejour2);
@@ -427,8 +357,11 @@ $pdf->cell(40,5,"12 -AUTRES",1,0,1,'L',0);       $pdf->cell(54,5,"",1,0,'L',0,0)
 $pdf->SetXY(5,$pdf->GetY()+5); 
 $pdf->cell(40,5,"TOTAL",1,0,1,'L',0); $pdf->cell(54,5,"",1,0,'L',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);          $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0); $pdf->cell(32,5,"",1,0,'C',0,0);$pdf->cell(32,5,"",1,0,'C',0,0);
 
+}
 
 //3-vaccination
+if ($_POST['SS']=='vac') 
+{
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2,"Vaccination en Milieu Scolaire ",$palier);$w= 23.2;
 $pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(($w*11)+30,5,"Tableau 1.couverture vaccinale",1,0,1,'L',0);
@@ -574,7 +507,11 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 
 //****************************//
+}
 
+if ($_POST['SS']=='hsl') 
+{
+ 
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel($UDS,$structure,$datejour1,$datejour2," Hygiene et salubrite ",$palier);$w= 23.2;
 $pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(($w*11)+30,5,"Hygiene et salubrite : 1 - contrôle",1,0,1,'L',0);
