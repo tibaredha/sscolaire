@@ -59,10 +59,10 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			"NEC"            => $this->user[0]['NEC'],
 			"code_patient"   => $this->user[0]['code_patient'],
 			
-			"PROFESSION1"    => '1',
-			"PROFESSION2"    => 'Sans Profession',
-			"TELPERE"        => '(00) 00-00-00-00',
-			"EMAILPERE"      => 'x@yahoo.com',
+			"PROFESSION1"    => $this->user[0]['NEC'],
+			"PROFESSION2"    => $this->user[0]['NEC'],
+			"TELPERE"        => $this->user[0]['NEC'],
+			"EMAILPERE"      => $this->user[0]['NEC'],
 			
 			"NOMAR"          => $this->user[0]['NOMAR'],                                                           //ok
 			"PRENOMAR"       => $this->user[0]['PRENOMAR'],                                                        //ok
