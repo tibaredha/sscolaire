@@ -58,12 +58,10 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			"PALIER2"        => HTML::nbrtostring('palier','id',$this->user[0]['PALIER'],'nompalier'), 
 			"NEC"            => $this->user[0]['NEC'],
 			"code_patient"   => $this->user[0]['code_patient'],
-			
-			"PROFESSION1"    => $this->user[0]['NEC'],
-			"PROFESSION2"    => $this->user[0]['NEC'],
-			"TELPERE"        => $this->user[0]['NEC'],
-			"EMAILPERE"      => $this->user[0]['NEC'],
-			
+			"PROFESSION1"    => $this->user[0]['PROFESSION'],
+			"PROFESSION2"    => HTML::nbrtostring('profession','id',$this->user[0]['PROFESSION'],'Profession'),
+			"TELPERE"        => $this->user[0]['TELPERE'],
+			"EMAILPERE"      => $this->user[0]['EMAILPERE'],
 			"NOMAR"          => $this->user[0]['NOMAR'],                                                           //ok
 			"PRENOMAR"       => $this->user[0]['PRENOMAR'],                                                        //ok
 			"FILSDEAR"       => $this->user[0]['FILSDEAR'],                                                        //ok

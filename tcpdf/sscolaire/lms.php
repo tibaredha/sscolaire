@@ -278,13 +278,17 @@ $data=array(
 );
 $pdf->EXAMENMEDICAL($data);
 }
-$pdf->EXAMENPSYCHO();
+
+
+
+$pdf->EXAMENPSYCHO(0);// reste a lier avec un data base table
 
 
 
 $pdf->mysqlconnect();
 $queryemg = "select * from  rdvsscolaire WHERE IDELEVE= '$id' ";
 $resultatemg=mysql_query($queryemg);
+$num_rows=mysql_num_rows($resultatemg);
 $pdf->AddPage('P','A4');
 $pdf->setRTL(FALSE); 
 $pdf->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
@@ -293,8 +297,8 @@ $pdf->SetXY(15,$pdf->GetY()+15);$pdf->SetFillColor(253, 253, 9 );$pdf->Cell(26,1
 while($resultsm=mysql_fetch_object($resultatemg))
 {
 $pdf->SetXY(15,$pdf->GetY());$pdf->SetFillColor(152, 235, 251 );$pdf->Cell(26,10,$pdf->dateUS2FR($resultsm->DATEEXAMEN),1,0,'C',1,0);$pdf->Cell(26,10,$pdf->nbrtostring("palier","id",$pdf->nbrtostring("eleve","id",$resultsm->IDELEVE,"PALIER"),"nompalier"),1,0,'C',1,0);      $pdf->Cell(26,10,$pdf->dateUS2FR($pdf->nbrtostring("eleve","id",$resultsm->IDELEVE,"DATENS")),1,0,'C',1,0); $pdf->Cell(66,10,"***",1,0,'C',1,0);$pdf->Cell(36,10,$resultsm->PRATICIEN,1,1,'C',1,0);
-// $pdf->SUIVIEMEDICAL();
 }
+$pdf->SUIVIEMEDICAL($num_rows);
 $pdf->Output();
 }
 
