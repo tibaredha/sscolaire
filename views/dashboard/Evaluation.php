@@ -34,14 +34,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			echo '<option value="lnps">Liste psychologue Vierge</option>';
 			echo '<option value="lnpr">Liste Paramédicale Vierge</option>';
 			
-			echo '<option value="5">Affections dépistées/Eleve</option>';
-			echo '<option value="6">Affections dépistées/Ecole</option>';
+			// echo '<option value="5">Affections dépistées/Eleve</option>';
+			// echo '<option value="6">Affections dépistées/Ecole</option>';
 			
-			echo '<option value="eff">Effectifs par établissement</option>';
-			echo '<option value="vms">Visite Médicale Systematique</option>';
-			echo '<option value="amd">Affections Dépistees </option>';
-			echo '<option value="vac">Vaccination </option>';
-			echo '<option value="hsl">Hygiene et salubrite</option>';
+			echo '<option value="eff">1-Effectifs par établissement</option>';
+			echo '<option value="vms">2-Visite Médicale Systematique</option>';
+			echo '<option value="amd">3-Affections Dépistees </option>';
+			echo '<option value="vac">6-Vaccination </option>';
+			echo '<option value="hsl">9-Hygiene et salubrite</option>';
 			echo '<option value="9">Bucco-Dentaire</option>';
 			echo "</select>";
 			echo "</p> ";

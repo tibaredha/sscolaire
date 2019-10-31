@@ -4,6 +4,17 @@ require('../fpdi.php');
 class sscolaire extends FPDI
 {
 	
+	//effective
+	 function EFFECTIVE($ECOLE,$NIVEAUS,$UDS){
+	 $this->mysqlconnect();
+	 $sql = " select PALIER,UDS from eleve where ECOLE $ECOLE and PALIER $NIVEAUS and UDS=$UDS";   
+	 $requete = @mysql_query($sql) or die($sql."<br>".mysql_error());
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
+	
+	
+	
 	//*******************************************examen medicale************************************************************************//
      function INSCRITS($NIVEAUS,$datejour1,$datejour2,$UDS){
 	 $this->mysqlconnect();
@@ -207,15 +218,15 @@ class sscolaire extends FPDI
     $this->SetFillColor(230);
 	}
 	
-	function entetel($UDS,$structure,$Datedebut,$Datefin,$titre,$palier)
+	function entetel($page,$UDS,$structure,$Datedebut,$Datefin,$titre,$palier)
 	{  
 	$this->SetFillColor(245);
 	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->repfr,1,0,'C',1,0);$this->cell(85,5,"EPSP : ".$this->nbrtostring('structure','id',$structure,'structure'),1,0,'L',1,0);
 	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->mspfr,1,0,'C',1,0);$this->cell(85,5,"UDS : ".$this->nbrtostring('uds','id',$UDS,'uds'),1,0,'L',1,0);
     $this->SetXY(5,$this->GetY()+5); $this->cell(200,5,$this->dspfr,1,0,'C',1,0);$this->cell(85,5,"ANNEE SCOLAIRE : ____-____",1,0,'L',1,0);
-	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,"PROGRAMME NATIONAL DE SANTE SCOLAIRE",1,0,'C',1,0);$this->cell(85,5,"TRIMESTRE : ".$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'L',1,0);
+	$this->SetXY(5,$this->GetY()+5); $this->cell(200,5,"Programme national de santé scolaire",1,0,'C',1,0);$this->cell(85,5,"TRIMESTRE : ".$this->dateUS2FR($Datedebut).' au '.$this->dateUS2FR($Datefin),1,0,'L',1,0);
 	//$this->SetXY(5,$this->GetY()+10); $this->cell(40,5,"PAGE ".$this->PageNo().'/{nb}',1,0,'C',1,0);$this->cell(215,5,$titre,1,0,'C',0,0);$this->cell(30,5,'Palier : '.$this->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
-    $this->SetXY(5,$this->GetY()+10); $this->cell(40,5,"PAGE : ",1,0,'C',1,0);$this->cell(215,5,$titre,1,0,'C',0,0);$this->cell(30,5,'Palier : '.$this->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
+    $this->SetXY(5,$this->GetY()+10); $this->cell(40,5,"PAGE : ".$page,1,0,'C',1,0);$this->cell(215,5,$titre,1,0,'C',0,0);$this->cell(30,5,'Palier : '.$this->nbrtostring('palier','id',substr($palier, 1, 2),'nompalier'),1,0,'L',1,0);
     
 	
 	}
