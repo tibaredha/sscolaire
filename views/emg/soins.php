@@ -28,29 +28,26 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">CAT  <?php echo $this->soins;?></div>
+<div class="sheader2l">CAT  <?php echo $this->soins;     ?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
-	<form action="<?php echo URL.'sbd/soinsx';?>" method="post">			
+	<form action="<?php echo URL.'emg/soinsx';?>" method="post">			
 		<div id="inner-grid">
 			<div id="a">CAT : 
 			<?php echo '<select id="aa" name="typetrt">';
-			echo '<option value="1">TRT médicale</option>';
-			echo '<option value="2">Soins</option>';
-			echo '<option value="3">Détartrage</option>';
-			echo '<option value="4">Extraction</option>';
+			echo '<option value="1">Traitement médicale</option>';
+			echo '<option value="2">Orientation spécialisé</option>';
 			echo "</select>";?> 
 			</div>
 			<div id="b">Date CAT :   <input id="DATECSBD"  type="text"  name="datetrt"  value="<?php echo date('d-m-Y');?>"   required=""   /></div>
-			
-			
-			
+	
 			<div id="c"></div>
 			<div id="d"><a class="x" href="<?php echo URL;?>register"></a>&nbsp;&nbsp;&nbsp;<a class="x" href="<?php echo URL;?>register/forget"></a> </div>
 			
 			<div id="e"><input type="checkbox" id="remember" name="remember" value="1"> </div>
-			<div ><input type="hidden" name="IDELEVE"   value="<?php echo $this->user[0]['id'];?>"/> </div>
+			<div ><input type="hidden" name="IDELEVE"  value="<?php echo $this->user[0]['id'];?>"/> </div>
 			<div ><input type="hidden" name="IDEXAMEN"  value="<?php echo $this->idexamen;?>"/> </div>
+			
 			<div id="f"><input id="dd" onclick="playSound()"  type="submit" value="Envoyer"/> </div>
 		</div>
 	</form>

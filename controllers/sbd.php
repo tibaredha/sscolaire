@@ -145,11 +145,78 @@ class sbd extends Controller {
 	    $url1 = explode('/',$_GET['url']);	
 		$this->view->title = 'soins';
 		$this->view->msg = 'soins';
-		$this->view->user = $this->model->userSingleList($id);
-		
+		$this->view->user = $this->model->userSingleListe($id);
+		$this->view->idexamen = $url1[4] ;
 		if($url1[3]==1){$this->view->soins = ' : [Hygiene BD NA]';} 
 		else if ($url1[3]==2){$this->view->soins = ' : [Gingivite]';}
 		else if ($url1[3]==3){$this->view->soins = ' : [ODF]';}
+		
+		else if ($url1[3]==11){$this->view->soins = ' : [D:11]';}
+		else if ($url1[3]==12){$this->view->soins = ' : [D:12]';}
+		else if ($url1[3]==13){$this->view->soins = ' : [D:13]';}
+		else if ($url1[3]==14){$this->view->soins = ' : [D:14]';}
+		else if ($url1[3]==15){$this->view->soins = ' : [D:15]';}
+		else if ($url1[3]==16){$this->view->soins = ' : [D:16]';}
+		else if ($url1[3]==17){$this->view->soins = ' : [D:17]';}
+		else if ($url1[3]==18){$this->view->soins = ' : [D:18]';}
+		
+		else if ($url1[3]==21){$this->view->soins = ' : [D:21]';}
+		else if ($url1[3]==22){$this->view->soins = ' : [D:22]';}
+		else if ($url1[3]==23){$this->view->soins = ' : [D:23]';}
+		else if ($url1[3]==24){$this->view->soins = ' : [D:24]';}
+		else if ($url1[3]==25){$this->view->soins = ' : [D:25]';}
+		else if ($url1[3]==26){$this->view->soins = ' : [D:26]';}
+		else if ($url1[3]==27){$this->view->soins = ' : [D:27]';}
+		else if ($url1[3]==28){$this->view->soins = ' : [D:28]';}
+		
+		
+		else if ($url1[3]==31){$this->view->soins = ' : [D:31]';}
+		else if ($url1[3]==32){$this->view->soins = ' : [D:32]';}
+		else if ($url1[3]==33){$this->view->soins = ' : [D:33]';}
+		else if ($url1[3]==34){$this->view->soins = ' : [D:34]';}
+		else if ($url1[3]==35){$this->view->soins = ' : [D:35]';}
+		else if ($url1[3]==36){$this->view->soins = ' : [D:36]';}
+		else if ($url1[3]==37){$this->view->soins = ' : [D:37]';}
+		else if ($url1[3]==38){$this->view->soins = ' : [D:38]';}
+		
+		
+		else if ($url1[3]==41){$this->view->soins = ' : [D:41]';}
+		else if ($url1[3]==42){$this->view->soins = ' : [D:42]';}
+		else if ($url1[3]==43){$this->view->soins = ' : [D:43]';}
+		else if ($url1[3]==44){$this->view->soins = ' : [D:44]';}
+		else if ($url1[3]==45){$this->view->soins = ' : [D:45]';}
+		else if ($url1[3]==46){$this->view->soins = ' : [D:46]';}
+		else if ($url1[3]==47){$this->view->soins = ' : [D:47]';}
+		else if ($url1[3]==48){$this->view->soins = ' : [D:48]';}
+		
+		
+		
+		else if ($url1[3]==51){$this->view->soins = ' : [D:51]';}
+		else if ($url1[3]==52){$this->view->soins = ' : [D:52]';}
+		else if ($url1[3]==53){$this->view->soins = ' : [D:53]';}
+		else if ($url1[3]==54){$this->view->soins = ' : [D:54]';}
+		else if ($url1[3]==55){$this->view->soins = ' : [D:55]';}
+		
+		else if ($url1[3]==61){$this->view->soins = ' : [D:61]';}
+		else if ($url1[3]==62){$this->view->soins = ' : [D:62]';}
+		else if ($url1[3]==63){$this->view->soins = ' : [D:63]';}
+		else if ($url1[3]==64){$this->view->soins = ' : [D:64]';}
+		else if ($url1[3]==65){$this->view->soins = ' : [D:65]';}
+		
+		
+		else if ($url1[3]==71){$this->view->soins = ' : [D:71]';}
+		else if ($url1[3]==72){$this->view->soins = ' : [D:72]';}
+		else if ($url1[3]==73){$this->view->soins = ' : [D:73]';}
+		else if ($url1[3]==74){$this->view->soins = ' : [D:74]';}
+		else if ($url1[3]==75){$this->view->soins = ' : [D:75]';}
+		
+		
+		else if ($url1[3]==81){$this->view->soins = ' : [D:81]';}
+		else if ($url1[3]==82){$this->view->soins = ' : [D:82]';}
+		else if ($url1[3]==83){$this->view->soins = ' : [D:83]';}
+		else if ($url1[3]==84){$this->view->soins = ' : [D:84]';}
+		else if ($url1[3]==85){$this->view->soins = ' : [D:85]';}
+		
 		else{$this->view->soins = ' : N°['.$url1[3].']';}
 		//echo '<pre>';print_r ($url1);echo '<pre>';  
 		$this->view->render($this->controleur.'/soins');
@@ -160,11 +227,10 @@ class sbd extends Controller {
 	$data['IDELEVE']          = $_POST['IDELEVE'];
 	$data['typetrt']          = $_POST['typetrt'];
 	$data['datetrt']          = $_POST['datetrt'];
-	// $data['']          = $_POST[''];
-	// $data['']          = $_POST[''];
-
+	$data['IDEXAMEN']         = $_POST['IDEXAMEN'];
+	
 	// echo '<pre>';print_r ($data);echo '<pre>';  
-	header('location: '.URL.$this->controleur.'/ebd/'.$_POST['IDELEVE']);	   
+	header('location: '.URL.$this->controleur.'/edit/'.$_POST['IDELEVE'].'/'.$_POST['IDEXAMEN']);	   
 	}
 			
 }

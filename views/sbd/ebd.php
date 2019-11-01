@@ -77,6 +77,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		$data = array(
 			"ctrl"=> $ctrl,
 			"mdl"=>"createexamen",
+			"IDEXAMEN"=>"",
 			"datee" => date('d-m-Y'),
 			"hygiene"  =>"",
 			"gingivite"=>"",

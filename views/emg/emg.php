@@ -101,6 +101,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 				$data = array(
 				"ctrl"  => $ctrl,
 				"mdl"   => "createexamen",
+				"IDEXAMEN"=>"0",
 				"datee" => date('d-m-Y'),
 				"okrdv" =>"",
 			    "datecsbd" => "",

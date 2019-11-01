@@ -13,6 +13,13 @@ class sscolaire extends FPDI
 	 return $collecte;
 	 }
 	
+	function EXAMINE($ECOLE,$NIVEAUS,$UDS,$datejour1,$datejour2){
+	 $this->mysqlconnect();
+	 $sql = " SELECT UDS,DATESBD FROM examenemg where (ETABLIS $ECOLE and NIVEAUS $NIVEAUS  and  UDS=$UDS) and (DATESBD BETWEEN '$datejour1' AND '$datejour2')"; 
+	 $requete = mysql_query(  $sql ) or die( "ERREUR MYSQL num?: ".mysql_errno()."<br>Type de cette erreur: ".mysql_error()."<br>\n" );
+	 $collecte = mysql_num_rows($requete);mysql_free_result($requete);
+	 return $collecte;
+	 }
 	
 	
 	//*******************************************examen medicale************************************************************************//
@@ -236,7 +243,15 @@ class sscolaire extends FPDI
 	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);     $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);       $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);
 	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,$login,1,0,'C',0,0);                           $this->cell(67,10,"",1,0,'C',0,0);                                 $this->cell(66,10,"",1,0,'C',0,0);
 	}
-	 
+	
+	function footm($login)
+	{  
+	$this->SetXY(5,$this->GetY()+10);$this->cell(67,10,"Coordinateur de la SBD à l'UDS",1,0,'C',0,0); $this->cell(67,10,"Coordinateur de la SBD à l'EPSP",1,0,'C',0,0);  $this->cell(66,10,"Coordinateur de la SBD à la DSP",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);     $this->cell(67,10,"(Nom, cachet et signature)",1,0,'C',0,0);       $this->cell(66,10,"(Nom, cachet et signature)",1,0,'C',0,0);
+	$this->SetXY(5,$this->GetY()+10); $this->cell(67,10,$login,1,0,'C',0,0);                           $this->cell(67,10,"",1,0,'C',0,0);                                 $this->cell(66,10,"",1,0,'C',0,0);
+	}
+
+	
 	 //*******************************************examen medicale************************************************************************//
 	 function sumafection($id){
 	 $this->mysqlconnect();

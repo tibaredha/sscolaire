@@ -29,19 +29,20 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb1']."/"
 			
 			echo "<p>";
 			echo "<select id=\"type1\" name=\"SS\">";
-			echo '<option value="lnm">Liste Médecin Vierge </option>';
-			echo '<option value="lnd">Liste Dentiste Vierge</option>';
-			echo '<option value="lnps">Liste psychologue Vierge</option>';
-			echo '<option value="lnpr">Liste Paramédicale Vierge</option>';
-			
+			echo '<option value="lnm">A-Liste Médecin Vierge </option>';
+			echo '<option value="lnd">B-Liste Dentiste Vierge</option>';
+			echo '<option value="lnps">C-Liste psychologue Vierge</option>';
+			echo '<option value="lnpr">D-Liste Paramédicale Vierge</option>';
 			// echo '<option value="5">Affections dépistées/Eleve</option>';
-			// echo '<option value="6">Affections dépistées/Ecole</option>';
-			
 			echo '<option value="eff">1-Effectifs par établissement</option>';
 			echo '<option value="vms">2-Visite Médicale Systematique</option>';
 			echo '<option value="amd">3-Affections Dépistees </option>';
+			echo '<option value="mlc">4-Maladies chroniques confirmees </option>';
+			echo '<option value="scol">5-Cas de scoliose </option>';
 			echo '<option value="vac">6-Vaccination </option>';
-			echo '<option value="hsl">9-Hygiene et salubrite</option>';
+			echo '<option value="rvac">7-Rattrapage vaccinal </option>';
+			echo '<option value="hsl">8-Hygiene et salubrite</option>';
+			echo '<option value="educ">9-Education pour la sante</option>';
 			echo '<option value="9">Bucco-Dentaire</option>';
 			echo "</select>";
 			echo "</p> ";

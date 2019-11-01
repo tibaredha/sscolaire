@@ -29,9 +29,9 @@ class HTML  {
 	echo "</select>&nbsp;";
 	}
 	
-	function caol($lcao,$name,$id)
+	function caol($lcao,$name,$id,$idexamen)
 	{
-	echo'<label class ="'.$lcao.'" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo'<label class ="'.$lcao.'" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'/'.$idexamen.'" title="'.$name.'">'.$name.'</a></label>&nbsp;';
 	// switch ($name) 
 	// {
     // case 18 : echo'<label class ="'.$lcao.'" ><a href="'.URL.'dashboard/soins/'.$name.'" title="'.$name.'"><img src="'.URL.'public/images/ss/molar.png" class="rotate" /></a></label>&nbsp;'; break;
@@ -85,9 +85,9 @@ class HTML  {
 	echo "</select>&nbsp;";
 	}
 	
-	function caol1($lcaol1,$name,$id)
+	function caol1($lcaol1,$name,$id,$idexamen)
 	{
-	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'">'.$name.'</a></label>&nbsp;';
+	echo '<label id ="'.$lcaol1.'" class="bx1" ><a href="'.URL.'sbd/soins/'.$id.'/'.$name.'/'.$idexamen.'">'.$name.'</a></label>&nbsp;';
 	}
 	
 	function fichesbd($data)
@@ -101,21 +101,21 @@ class HTML  {
 				echo '<div id="x2">Dents permanentes CAO (grand)</div><div id="y2">Dents temporaires cao (petit)</div>';
 				echo '<div id="a">';for ($i = 18; $i >= 11; $i-= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);} echo '</div>';
 				echo '<div id="b">';for ($i = 21; $i <= 28; $i+= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);} echo '</div>';
-				echo '<div id="c">';for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
-				echo '<div id="d">';for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>'; 
+				echo '<div id="c">';for ($i = 18; $i >= 11; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
+				echo '<div id="d">';for ($i = 21; $i <= 28; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>'; 
 				
-				echo '<div id="e">';for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
-				echo '<div id="f">';for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="e">';for ($i = 48; $i >= 41; $i-= 1){html::caol("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
+				echo '<div id="f">';for ($i = 31; $i <= 38; $i+= 1){html::caol("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
 				echo '<div id="g">';for ($i = 48; $i >= 41; $i-= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
 				echo '<div id="h">';for ($i = 31; $i <= 38; $i+= 1){html::cao("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
 				
 				echo '<div id="a1">';for ($i = 55; $i >= 51; $i-= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
 				echo '<div id="b1">';for ($i = 61; $i <= 65; $i+= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
-				echo '<div id="c1">';for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
-				echo '<div id="d1">';for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="c1">';for ($i = 55; $i >= 51; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
+				echo '<div id="d1">';for ($i = 61; $i <= 65; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
 				
-				echo '<div id="e1">';for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
-				echo '<div id="f1">';for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id']);}echo '</div>';
+				echo '<div id="e1">';for ($i = 85; $i >= 81; $i-= 1){html::caol1("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
+				echo '<div id="f1">';for ($i = 71; $i <= 75; $i+= 1){html::caol1("dl".$i,$i,$this->user[0]['id'],$data['IDEXAMEN']);}echo '</div>';
 				echo '<div id="g1">';for ($i = 85; $i >= 81; $i-= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
 				echo '<div id="h1">';for ($i = 71; $i <= 75; $i+= 1){html::cao1("d".$i,"d".$i,$data['v'.$i],$data['s'.$i]);}echo '</div>';
 				
@@ -128,6 +128,7 @@ class HTML  {
 				echo '<div ><input type="hidden" name="ETABLIS"  value="'.$this->user[0]['ECOLE'].'"/> </div>';
 				echo '<div ><input type="hidden" name="UDS"      value="'.$this->user[0]['UDS'].'"/> </div>';
 				echo '<div ><input type="hidden" name="STRUCTURE"value="'.$this->user[0]['STRUCTURE'].'"/> </div>';
+				
 			echo '</div>';	
 		echo '</form>';	
 	}
@@ -139,73 +140,73 @@ class HTML  {
 				echo '<form action="'.URL.'emg/'.$data['mdl'].'" method="post">	';
 				echo '<div id="content_1" class="contenttabs1"><div id="inner-grid">' ;
 				echo '<div id="s1">01-CARDIOLOGIE </div>' ;
-				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m1"   value="1" '.$data['m1'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/1'.'">HTA</a> </div>' ;
-				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m2"   value="1" '.$data['m2'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/2'.'">Souffle cardiaque</a> </div>' ;
-				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m3"   value="1" '.$data['m3'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/3'.'">Tr .du rythme</a> </div>' ;
-				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m4"   value="1" '.$data['m4'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/4'.'">RAA</a> </div>' ;
-				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m5"   value="1" '.$data['m5'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/5'.'">Cardiopathie</a> </div>' ;
-				echo '<div id="s1m6"><input type="checkbox"  class="remember"  name="m6"   value="1" '.$data['m6'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/6'.'">Autres</a> </div>' ;
+				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m1"   value="1" '.$data['m1'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/1/'.$data['IDEXAMEN'].'">HTA</a> </div>' ;
+				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m2"   value="1" '.$data['m2'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/2/'.$data['IDEXAMEN'].'">Souffle cardiaque</a> </div>' ;
+				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m3"   value="1" '.$data['m3'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/3/'.$data['IDEXAMEN'].'">Tr .du rythme</a> </div>' ;
+				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m4"   value="1" '.$data['m4'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/4/'.$data['IDEXAMEN'].'">RAA</a> </div>' ;
+				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m5"   value="1" '.$data['m5'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/5/'.$data['IDEXAMEN'].'">Cardiopathie</a> </div>' ;
+				echo '<div id="s1m6"><input type="checkbox"  class="remember"  name="m6"   value="1" '.$data['m6'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/6/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s2">02-DERMATOLOGIE </div>' ;
-				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m7"   value="1" '.$data['m7'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/7'.'">Dermatite atopique</a> </div>' ;
-				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m8"   value="1" '.$data['m8'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/8'.'">Gale</a> </div>' ;
-				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m9"   value="1" '.$data['m9'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/9'.'">Pédiculose</a> </div>' ;
-				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m10"   value="1" '.$data['m10'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/10'.'">Psoriasis</a> </div>' ;
-				echo '<div id="s2m5"><input type="checkbox"  class="remember"  name="m11"   value="1" '.$data['m11'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/11'.'">Teigne</a> </div>' ;
-				echo '<div id="s2m6"><input type="checkbox"  class="remember"  name="m12"   value="1" '.$data['m12'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/12'.'">Autres</a> </div>' ;
+				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m7"   value="1" '.$data['m7'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/7/'.$data['IDEXAMEN'].'">Dermatite atopique</a> </div>' ;
+				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m8"   value="1" '.$data['m8'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/8/'.$data['IDEXAMEN'].'">Gale</a> </div>' ;
+				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m9"   value="1" '.$data['m9'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/9/'.$data['IDEXAMEN'].'">Pédiculose</a> </div>' ;
+				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m10"   value="1" '.$data['m10'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/10/'.$data['IDEXAMEN'].'">Psoriasis</a> </div>' ;
+				echo '<div id="s2m5"><input type="checkbox"  class="remember"  name="m11"   value="1" '.$data['m11'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/11/'.$data['IDEXAMEN'].'">Teigne</a> </div>' ;
+				echo '<div id="s2m6"><input type="checkbox"  class="remember"  name="m12"   value="1" '.$data['m12'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/12/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s3">03-ENDOCRINOLOGIE </div>' ;
-				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m13"   value="1" '.$data['m13'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/13'.'">Obésité</a> </div>' ;
-				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m14"   value="1" '.$data['m14'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/14'.'">Retard stat. Pond</a> </div>' ;
-				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m15"   value="1" '.$data['m15'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/15'.'">Surpoid</a> </div>' ;
-				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m16"   value="1" '.$data['m16'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/16'.'">Diabète</a> </div>' ;
-				echo '<div id="s3m5"><input type="checkbox"  class="remember"  name="m17"   value="1" '.$data['m17'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/17'.'">Goitre</a> </div>' ;
-				echo '<div id="s3m6"><input type="checkbox"  class="remember"  name="m18"   value="1" '.$data['m18'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/18'.'">Autres</a> </div>' ;
+				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m13"   value="1" '.$data['m13'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/13/'.$data['IDEXAMEN'].'">Obésité</a> </div>' ;
+				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m14"   value="1" '.$data['m14'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/14/'.$data['IDEXAMEN'].'">Retard stat. Pond</a> </div>' ;
+				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m15"   value="1" '.$data['m15'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/15/'.$data['IDEXAMEN'].'">Surpoid</a> </div>' ;
+				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m16"   value="1" '.$data['m16'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/16/'.$data['IDEXAMEN'].'">Diabète</a> </div>' ;
+				echo '<div id="s3m5"><input type="checkbox"  class="remember"  name="m17"   value="1" '.$data['m17'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/17/'.$data['IDEXAMEN'].'">Goitre</a> </div>' ;
+				echo '<div id="s3m6"><input type="checkbox"  class="remember"  name="m18"   value="1" '.$data['m18'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/18/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s4">04-GASTROLOGIE </div>' ;
-				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m19"   value="1" '.$data['m19'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/19'.'">Oxyurose</a> </div>' ;
-				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m20"   value="1" '.$data['m20'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/20'.'">Les hernies </a> </div>' ;
-				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m21"   value="1" '.$data['m21'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/21'.'">Maladie coeliaque</a> </div>' ;
-				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m22"   value="1" '.$data['m22'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/22'.'">Autres</a> </div>' ;
+				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m19"   value="1" '.$data['m19'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/19/'.$data['IDEXAMEN'].'">Oxyurose</a> </div>' ;
+				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m20"   value="1" '.$data['m20'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/20/'.$data['IDEXAMEN'].'">Les hernies </a> </div>' ;
+				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m21"   value="1" '.$data['m21'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/21/'.$data['IDEXAMEN'].'">Maladie coeliaque</a> </div>' ;
+				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m22"   value="1" '.$data['m22'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/22/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s5">05-HEMATOLOGIE </div>' ;
-				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m23"   value="1" '.$data['m23'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/23'.'">Paleur cut. muque</a> </div>' ;
-				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m24"   value="1" '.$data['m24'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/24'.'">Anémie </a> </div>' ;
-				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m25"   value="1" '.$data['m25'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/25'.'">Hémophilie</a> </div>' ;
-				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m26"   value="1" '.$data['m26'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/26'.'">Autres</a> </div>' ;
+				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m23"   value="1" '.$data['m23'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/23/'.$data['IDEXAMEN'].'">Paleur cut. muque</a> </div>' ;
+				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m24"   value="1" '.$data['m24'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/24/'.$data['IDEXAMEN'].'">Anémie </a> </div>' ;
+				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m25"   value="1" '.$data['m25'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/25/'.$data['IDEXAMEN'].'">Hémophilie</a> </div>' ;
+				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m26"   value="1" '.$data['m26'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/26/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s6">06-OPHTALMOLOGIE </div>' ;
-				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m27"   value="1" '.$data['m27'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/27'.'">Baisse acuité vis.</a> </div>' ;
-				echo '<div id="s6m2"><input type="checkbox"  class="remember"  name="m28"   value="1" '.$data['m28'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/28'.'">Nystagmus</a> </div>' ;
-				echo '<div id="s6m3"><input type="checkbox"  class="remember"  name="m29"   value="1" '.$data['m29'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/29'.'">Ptosis</a> </div>' ;
-				echo '<div id="s6m4"><input type="checkbox"  class="remember"  name="m30"   value="1" '.$data['m30'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/30'.'">Strabisme</a> </div>' ;
-				echo '<div id="s6m5"><input type="checkbox"  class="remember"  name="m31"   value="1" '.$data['m31'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/31'.'">Trachome</a> </div>' ;
-				echo '<div id="s6m6"><input type="checkbox"  class="remember"  name="m32"   value="1" '.$data['m32'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/32'.'">Autres</a> </div>' ;
+				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m27"   value="1" '.$data['m27'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/27/'.$data['IDEXAMEN'].'">Baisse acuité vis.</a> </div>' ;
+				echo '<div id="s6m2"><input type="checkbox"  class="remember"  name="m28"   value="1" '.$data['m28'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/28/'.$data['IDEXAMEN'].'">Nystagmus</a> </div>' ;
+				echo '<div id="s6m3"><input type="checkbox"  class="remember"  name="m29"   value="1" '.$data['m29'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/29/'.$data['IDEXAMEN'].'">Ptosis</a> </div>' ;
+				echo '<div id="s6m4"><input type="checkbox"  class="remember"  name="m30"   value="1" '.$data['m30'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/30/'.$data['IDEXAMEN'].'">Strabisme</a> </div>' ;
+				echo '<div id="s6m5"><input type="checkbox"  class="remember"  name="m31"   value="1" '.$data['m31'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/31/'.$data['IDEXAMEN'].'">Trachome</a> </div>' ;
+				echo '<div id="s6m6"><input type="checkbox"  class="remember"  name="m32"   value="1" '.$data['m32'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/32/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '</div></div>';
 				echo '<div id="content_2" class="contenttabs2"><div id="inner-grid">';
 				echo '<div id="s1">07-ORL</div>' ;
-				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m33"   value="1" '.$data['m33'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/33'.'">Hypoacousie</a> </div>' ;
-				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m34"   value="1" '.$data['m34'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/34'.'">Rhinite allergique</a> </div>' ;
-				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m35"   value="1" '.$data['m35'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/35'.'">Surdité</a> </div>' ;
-				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m36"   value="1" '.$data['m36'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/36'.'">Otites chroniques</a> </div>' ;
-				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m37"   value="1" '.$data['m37'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/37'.'">Autres</a> </div>' ;
+				echo '<div id="s1m1"><input type="checkbox"  class="remember"  name="m33"   value="1" '.$data['m33'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/33/'.$data['IDEXAMEN'].'">Hypoacousie</a> </div>' ;
+				echo '<div id="s1m2"><input type="checkbox"  class="remember"  name="m34"   value="1" '.$data['m34'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/34/'.$data['IDEXAMEN'].'">Rhinite allergique</a> </div>' ;
+				echo '<div id="s1m3"><input type="checkbox"  class="remember"  name="m35"   value="1" '.$data['m35'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/35/'.$data['IDEXAMEN'].'">Surdité</a> </div>' ;
+				echo '<div id="s1m4"><input type="checkbox"  class="remember"  name="m36"   value="1" '.$data['m36'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/36/'.$data['IDEXAMEN'].'">Otites chroniques</a> </div>' ;
+				echo '<div id="s1m5"><input type="checkbox"  class="remember"  name="m37"   value="1" '.$data['m37'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/37/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s2">08-ORTHOPEDIE</div>' ;
-				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m38"   value="1" '.$data['m38'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/38'.'">Cypho-scoliose</a> </div>' ;
-				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m39"   value="1" '.$data['m39'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/39'.'">Déform.squel. </a> </div>' ;
-				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m40"   value="1" '.$data['m40'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/40'.'">Scoliose </a> </div>' ;
-				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m41"   value="1" '.$data['m41'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/41'.'">Autres</a> </div>' ;
+				echo '<div id="s2m1"><input type="checkbox"  class="remember"  name="m38"   value="1" '.$data['m38'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/38/'.$data['IDEXAMEN'].'">Cypho-scoliose</a> </div>' ;
+				echo '<div id="s2m2"><input type="checkbox"  class="remember"  name="m39"   value="1" '.$data['m39'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/39/'.$data['IDEXAMEN'].'">Déform.squel. </a> </div>' ;
+				echo '<div id="s2m3"><input type="checkbox"  class="remember"  name="m40"   value="1" '.$data['m40'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/40/'.$data['IDEXAMEN'].'">Scoliose </a> </div>' ;
+				echo '<div id="s2m4"><input type="checkbox"  class="remember"  name="m41"   value="1" '.$data['m41'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/41/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s3">09-PNEUMOLOGIE</div>' ;
-				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m42"   value="1" '.$data['m42'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/42'.'">Asthme</a> </div>' ;
-				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m43"   value="1" '.$data['m43'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/43'.'">Tuberculose pulm</a> </div>' ;
-				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m44"   value="1" '.$data['m44'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/44'.'">Tub.Extra-pulm.</a> </div>' ;
-				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m45"   value="1" '.$data['m45'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/45'.'">Autres</a> </div>' ;
+				echo '<div id="s3m1"><input type="checkbox"  class="remember"  name="m42"   value="1" '.$data['m42'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/42/'.$data['IDEXAMEN'].'">Asthme</a> </div>' ;
+				echo '<div id="s3m2"><input type="checkbox"  class="remember"  name="m43"   value="1" '.$data['m43'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/43/'.$data['IDEXAMEN'].'">Tuberculose pulm</a> </div>' ;
+				echo '<div id="s3m3"><input type="checkbox"  class="remember"  name="m44"   value="1" '.$data['m44'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/44/'.$data['IDEXAMEN'].'">Tub.Extra-pulm.</a> </div>' ;
+				echo '<div id="s3m4"><input type="checkbox"  class="remember"  name="m45"   value="1" '.$data['m45'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/45/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s4">10-NEURO-PSYCHYA </div>' ;
-				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m46"   value="1" '.$data['m46'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/46'.'">Diffucultés scolaires</a> </div>' ;
-				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m47"   value="1" '.$data['m47'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/47'.'">Tr.du comport.</a> </div>' ;
-				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m48"   value="1" '.$data['m48'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/48'.'">Tr. Du langage</a> </div>' ;
-				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m49"   value="1" '.$data['m49'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/49'.'">Autres</a> </div>' ;
+				echo '<div id="s4m1"><input type="checkbox"  class="remember"  name="m46"   value="1" '.$data['m46'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/46/'.$data['IDEXAMEN'].'">Diffucultés scolaires</a> </div>' ;
+				echo '<div id="s4m2"><input type="checkbox"  class="remember"  name="m47"   value="1" '.$data['m47'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/47/'.$data['IDEXAMEN'].'">Tr.du comport.</a> </div>' ;
+				echo '<div id="s4m3"><input type="checkbox"  class="remember"  name="m48"   value="1" '.$data['m48'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/48/'.$data['IDEXAMEN'].'">Tr. Du langage</a> </div>' ;
+				echo '<div id="s4m4"><input type="checkbox"  class="remember"  name="m49"   value="1" '.$data['m49'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/49/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s5">11-URO-NEPHRO</div>' ;
-				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m50"   value="1" '.$data['m50'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/50'.'">Cryptorchidie</a> </div>' ;
-				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m51"   value="1" '.$data['m51'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/51'.'">Enurésie</a> </div>' ;
-				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m52"   value="1" '.$data['m52'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/52'.'">Tr.urinaires</a> </div>' ;
-				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m53"   value="1" '.$data['m53'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/53'.'">Autres</a> </div>' ;
+				echo '<div id="s5m1"><input type="checkbox"  class="remember"  name="m50"   value="1" '.$data['m50'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/50/'.$data['IDEXAMEN'].'">Cryptorchidie</a> </div>' ;
+				echo '<div id="s5m2"><input type="checkbox"  class="remember"  name="m51"   value="1" '.$data['m51'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/51/'.$data['IDEXAMEN'].'">Enurésie</a> </div>' ;
+				echo '<div id="s5m3"><input type="checkbox"  class="remember"  name="m52"   value="1" '.$data['m52'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/52/'.$data['IDEXAMEN'].'">Tr.urinaires</a> </div>' ;
+				echo '<div id="s5m4"><input type="checkbox"  class="remember"  name="m53"   value="1" '.$data['m53'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/53/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="s6">12-AUTRES </div>' ;
-				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m54"   value="1" '.$data['m54'].'/>&nbsp;<a href="'.URL.'dashboard/trt/'.$this->user[0]['id'].'/54'.'">Autres</a> </div>' ;
+				echo '<div id="s6m1"><input type="checkbox"  class="remember"  name="m54"   value="1" '.$data['m54'].'/>&nbsp;<a href="'.URL.'emg/trt/'.$this->user[0]['id'].'/54/'.$data['IDEXAMEN'].'">Autres</a> </div>' ;
 				echo '<div id="x">Vue le  : <input class="DATESBD"   type="txt"  name="DATESBD"   value="'.date('d-m-Y').'"  /> </div>' ;
 				echo '<div id="x3"> <input type="checkbox"  title="Cocher pour activer le RDV" id="YOURBOX"  class="remember"  name="OKRDV"     value="1" '.$data['okrdv'].' />&nbsp;Convocation  </div>' ;
 				echo '<div id="y3">Le : <input type="txt"   title="Date rdv RDV"               id="DATECSBD" class="DATESBD"   name="DATECSBD"   value="'.$data['datecsbd'].'"  /> </div>' ;
