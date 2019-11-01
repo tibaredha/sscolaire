@@ -59,8 +59,8 @@ class emg extends Controller {
 	$data['UDS']              = $_POST['UDS'];
 	$data['ETABLIS']          = $_POST['ETABLIS'];
 	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	// echo '<pre>';print_r ($data);echo '<pre>'; 
-    $last_id=$this->model->createemg($data);
+	//echo '<pre>';print_r ($data);echo '<pre>'; 
+    $this->model->createemg($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
 	}
 	

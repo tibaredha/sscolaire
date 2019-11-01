@@ -28,8 +28,19 @@ class emg_Model extends Model {
 	
 	public function createemg($data) {
 	
-	$this->db->insert($this->tbleemg, array(
-	            
+			$IDELEVE=$data['IDELEVE'];
+			$NIVEAUS=$data['NIVEAUS'];
+	        $sth = $this->db->prepare("SELECT * FROM $this->tbleemg WHERE IDELEVE = $IDELEVE and NIVEAUS = $NIVEAUS ");
+			$sth->execute();
+			$data1 = $sth->fetch();	
+			$count = $sth->rowCount();
+			if ($count > 0) 
+			{		
+			header('location: '.URL.'emg/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
+			} 
+			else 
+			{
+	            $this->db->insert($this->tbleemg, array(
 				'DATESBD'=> $this->dateFR2US($data['DATESBD']),
 				'm1'     => $data['m1'],
 				'm2'     => $data['m2'],
@@ -92,22 +103,22 @@ class emg_Model extends Model {
 				'UDS'       => $data['UDS'],
 				'ETABLIS'   => $data['ETABLIS'],
 				'NIVEAUS'   => $data['NIVEAUS']
-        ));
+                ));
         
-		echo '<pre>';print_r ($data);echo '<pre>';
+		        //echo '<pre>';print_r ($data);echo '<pre>';
 		
-        if($data['OKRDV']=="1") {
-		$this->db->insert("rdvsscolaire", array(
-	            
-				'DATEEXAMEN'=> $this->dateFR2US($data['DATESBD']),
-				'DATERDV'   => $this->dateFR2US($data['DATECSBD']),
-				'IDELEVE'   => $data['IDELEVE'],
-				'PRATICIEN' => "Medecin",
-		        'RDVOK'     => "0"
-        ));
-		}
+				if($data['OKRDV']=="1") {
+				$this->db->insert("rdvsscolaire", array(
+						
+						'DATEEXAMEN'=> $this->dateFR2US($data['DATESBD']),
+						'DATERDV'   => $this->dateFR2US($data['DATECSBD']),
+						'IDELEVE'   => $data['IDELEVE'],
+						'PRATICIEN' => "Medecin",
+						'RDVOK'     => "0"
+				));
+				}
 
-		
+			}	
 		///return $last_id = $this->db->lastInsertId();
 	}
 	
