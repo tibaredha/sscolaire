@@ -358,12 +358,7 @@ $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 	$pdf->cell(40,5,"Total UDS ",1,0,'C',1,0);
 	for($i=1; $i< 55; $i+=1){$pdf->cell(4.45,5,$pdf->totafection('m'.$i),1,0,'C',1,0);}$pdf->cell(4.45,5,'',1,0,'C',1,0);	
 
-
-
-
-
-
-
+//****************************************************************************************************************************//
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
 $pdf->entetel("3/9",$UDS,$structure,$datejour1,$datejour2,"AFFECTIONS DEPISTEES ",$palier);
 $elevedepiste=$pdf->depiste($UDS,$datejour1,$datejour2);
@@ -455,11 +450,29 @@ $pdf->cell(40,5,"TOTAL",1,0,1,'L',0); $pdf->cell(54,5,"",1,0,'L',0,0);$pdf->cell
 
 }
 
+//mlc
+if ($_POST['SS']=='mlc') 
+{
+$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
+$pdf->entetel("4/9",$UDS,$structure,$datejour1,$datejour2,"MALADIES CHRONIQUES CONFIRMEES",$palier);
+$elevedepiste=$pdf->depiste($UDS,$datejour1,$datejour2);
+$pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(40,15,"1-Spécialités",1,0,1,'L',0);$pdf->cell(54,15,"2-Maladies",1,0,'C',1,0);                           $pdf->cell(64+32,5,"3-Anciens cas",1,0,'C',1,0);                                                                                                          $pdf->cell(64+32,5,"4-Nouveaux cas",1,0,'C',1,0);
+$pdf->SetXY(45+54,$pdf->GetY()+5);                                                                                                                 $pdf->cell(32,5,"Nbre total ",1,0,'C',1,0);$pdf->cell(32,5,"Nbre Pris en charge",1,0,'C',1,0);$pdf->cell(32,5,"% Pris en charge",1,0,'C',1,0);            $pdf->cell(32,5,"Nbre total",1,0,'C',1,0);    $pdf->cell(32,5,"Nbre Pris en charge",1,0,'C',1,0);$pdf->cell(32,5," % Pris en charge",1,0,'C',1,0);
+$pdf->SetXY(45+54,$pdf->GetY()+5);                                                                                                                 $pdf->cell(32,5,"E4",1,0,'C',1,0);         $pdf->cell(32,5,"F4",1,0,'C',1,0);$pdf->cell(32,5,"F4/E4",1,0,'C',1,0);                                        $pdf->cell(32,5,"G4",1,0,'C',1,0);          $pdf->cell(32,5,"H4",1,0,'C',1,0);                $pdf->cell(32,5,"H4/G4",1,0,'C',1,0);
+}
+
+//mlc
+if ($_POST['SS']=='scol') 
+{
+$pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
+$pdf->entetel("4/9",$UDS,$structure,$datejour1,$datejour2,"CAS DE SCOLIOSE",$palier);
+}
+
 //3-vaccination
 if ($_POST['SS']=='vac') 
 {
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-$pdf->entetel("1",$UDS,$structure,$datejour1,$datejour2,"Vaccination en Milieu Scolaire ",$palier);$w= 23.2;
+$pdf->entetel("6/9",$UDS,$structure,$datejour1,$datejour2,"Vaccination en Milieu Scolaire ",$palier);$w= 23.2;
 $pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(($w*11)+30,5,"Tableau 1.couverture vaccinale",1,0,1,'L',0);
 $pdf->SetXY(5,$pdf->GetY()+5);
 $pdf->cell(30,15,"1-Etablissements",1,0,1,'L',0);$pdf->cell($w,5,"2. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"3. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"4.Rapport",1,0,1,'L',0);          $pdf->cell($w,5,"5. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"6.Rapport",1,0,1,'L',0);           $pdf->cell($w,5,"7. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"8. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"9.Rapport",1,0,1,'L',0);          $pdf->cell($w,5,"10. Pop cible",1,0,1,'L',0);$pdf->cell($w,5,"11. Pop vaccinée",1,0,1,'L',0);$pdf->cell($w,5,"12.Rapport",1,0,1,'L',0); 
@@ -557,8 +570,16 @@ $pdf->cell(51.04,5,"0",1,0,'C',1,0);
 
 //****************************//
 
+
+
+//****************************//
+}
+
+//mlc
+if ($_POST['SS']=='rvac') 
+{
 $pdf->AddPage('L','A4');$pdf->SetFont('Times','B',10);$pdf->SetFillColor(230);
-$pdf->entetel("1",$UDS,$structure,$datejour1,$datejour2," Rattrapage vaccinal en milieu scolaire ",$palier);$w= 23.2;
+$pdf->entetel("7/9",$UDS,$structure,$datejour1,$datejour2," Rattrapage vaccinal en milieu scolaire ",$palier);$w= 23.2;
 $pdf->SetXY(5,$pdf->GetY()+15);$pdf->cell(($w*11)+30,5,"Tableau 1.Rattrapage vaccinal en milieu scolaire",1,0,1,'L',0);
 $pdf->SetXY(5,$pdf->GetY()+5);
 $w=21.27;
@@ -601,9 +622,9 @@ $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
 $pdf->cell($w,5,"",1,0,'C',1,0);
-
-//****************************//
 }
+
+
 
 if ($_POST['SS']=='hsl') 
 {
