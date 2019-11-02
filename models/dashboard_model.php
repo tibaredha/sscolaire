@@ -26,53 +26,56 @@ class Dashboard_Model extends Model {
 	
 	
 	public function createeleve($data) {
-		$Date1 = $this->dateFR2US($data['DATENS']);//echo '</br>';
-		$Date2 = $this->dateFR2US($data['DINS']);//echo '</br>';
-		$Timestamp1 = $this->CalculateTimestampFromCurrDatetime($Date1);//echo '</br>';
-		$Timestamp2 = $this->CalculateTimestampFromCurrDatetime($Date2);//echo '</br>';
-		$DateDiff = $this->CalculateDateDifference($Timestamp1, $Timestamp2);//echo '</br>';
-	    //echo '<pre>';print_r ($DateDiff);echo '<pre>';
-		$this->db->insert($this->tbl, array(
-			
-			'DINS'     => $this->dateFR2US($data['DINS']),
-            'HINS'     => $data['HINS'],
-            'NOM'      => $data['NOM'],
-            'PRENOM'   => $data['PRENOM'],
-            'FILSDE'   => $data['FILSDE'],
-			'ETDE'     => $data['ETDE'],
-			'SEX'      => $data['SEXE'],
-			'DATENS'   => $this->dateFR2US($data['DATENS']),
-			'Days'     => $DateDiff['days'],
-            'Weeks'    => $DateDiff['weeks'],
-            'Months'   => $DateDiff['months'],
-            'Years'    => $DateDiff['years'],
-			'WILAYAN'  => $data['WILAYAN'],
-            'COMMUNEN' => $data['COMMUNEN'],
-            'WILAYAR'  => $data['WILAYAR'],
-            'COMMUNER' => $data['COMMUNER'],
-            'ADRESSE'  => $data['ADRESSE'],
-			'GABO'     => $data['GABO'],
-			'NEC'      => $data['NEC'],
-			'WILAYA'   => $data['WILAYA'],
-			'STRUCTURE'=> $data['STRUCTURE'],
-            'UDS'      => $data['UDS'],
-			'ECOLE'    => $data['ECOLE'],
-			'PALIER'   => $data['PALIER'],
-			'classep'  => $data['classep'],
-			'LOGIN'    => $data['LOGIN'],
-			'NOMAR'    => $data['NOMAR'],
-			'PRENOMAR' => $data['PRENOMAR'],
-			'FILSDEAR' => $data['FILSDEAR'],
-			'ETDEAR'   => $data['ETDEAR'],
-			'ADRESSEAR'=> $data['ADRESSEAR'],
-			'code_patient'=> $data['code_patient'],
-			'PROFESSION'  => $data['PROFESSION'],
-			'TELPERE'     => $data['TELPERE'],
-			'EMAILPERE'   => $data['EMAILPERE'],
-			'aprouve'     => "0"	
-        ));
-        echo '<pre>';print_r ($data);echo '<pre>';
-		// return $last_id = $this->db->lastInsertId();
+		
+		
+			$Date1 = $this->dateFR2US($data['DATENS']);//echo '</br>';
+			$Date2 = $this->dateFR2US($data['DINS']);//echo '</br>';
+			$Timestamp1 = $this->CalculateTimestampFromCurrDatetime($Date1);//echo '</br>';
+			$Timestamp2 = $this->CalculateTimestampFromCurrDatetime($Date2);//echo '</br>';
+			$DateDiff = $this->CalculateDateDifference($Timestamp1, $Timestamp2);//echo '</br>';
+			//echo '<pre>';print_r ($DateDiff);echo '<pre>';
+			$this->db->insert($this->tbl, array(
+				
+				'DINS'     => $this->dateFR2US($data['DINS']),
+				'HINS'     => $data['HINS'],
+				'NOM'      => $data['NOM'],
+				'PRENOM'   => $data['PRENOM'],
+				'FILSDE'   => $data['FILSDE'],
+				'ETDE'     => $data['ETDE'],
+				'SEX'      => $data['SEXE'],
+				'DATENS'   => $this->dateFR2US($data['DATENS']),
+				'Days'     => $DateDiff['days'],
+				'Weeks'    => $DateDiff['weeks'],
+				'Months'   => $DateDiff['months'],
+				'Years'    => $DateDiff['years'],
+				'WILAYAN'  => $data['WILAYAN'],
+				'COMMUNEN' => $data['COMMUNEN'],
+				'WILAYAR'  => $data['WILAYAR'],
+				'COMMUNER' => $data['COMMUNER'],
+				'ADRESSE'  => $data['ADRESSE'],
+				'GABO'     => $data['GABO'],
+				'NEC'      => $data['NEC'],
+				'WILAYA'   => $data['WILAYA'],
+				'STRUCTURE'=> $data['STRUCTURE'],
+				'UDS'      => $data['UDS'],
+				'ECOLE'    => $data['ECOLE'],
+				'PALIER'   => $data['PALIER'],
+				'classep'  => $data['classep'],
+				'LOGIN'    => $data['LOGIN'],
+				'NOMAR'    => $data['NOMAR'],
+				'PRENOMAR' => $data['PRENOMAR'],
+				'FILSDEAR' => $data['FILSDEAR'],
+				'ETDEAR'   => $data['ETDEAR'],
+				'ADRESSEAR'=> $data['ADRESSEAR'],
+				'code_patient'=> $data['code_patient'],
+				'PROFESSION'  => $data['PROFESSION'],
+				'TELPERE'     => $data['TELPERE'],
+				'EMAILPERE'   => $data['EMAILPERE'],
+				'aprouve'     => "0"	
+			));
+			// echo '<pre>';print_r ($data);echo '<pre>';
+			// return $last_id = $this->db->lastInsertId();
+		
     }
 	public function editSave($data) {
 		$Date1 = $this->dateFR2US($data['DATENS']) ;//echo '</br>';
