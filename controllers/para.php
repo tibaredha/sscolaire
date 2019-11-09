@@ -61,7 +61,8 @@ class para extends Controller {
 	$data['UDS']              = $_POST['UDS'];
 	$data['ETABLIS']          = $_POST['ETABLIS'];
 	$data['NIVEAUS']          = $_POST['NIVEAUS'];
-	echo '<pre>';print_r ($data);echo '<pre>'; 
+	$data['DATENS']           = $_POST['DATENS'];
+	// echo '<pre>';print_r ($data);echo '<pre>'; 
     $last_id=$this->model->createpara($data);
     header('location: '.URL.$this->controleur.'/search/0/10?o=IDELEVE&q='.$data['IDELEVE']);	
 	}

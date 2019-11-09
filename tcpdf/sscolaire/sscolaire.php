@@ -416,37 +416,73 @@ $this->Cell(34,10,"",1,0,'C',1,0);
 
 }
 
-function EXAMENPARA($id,$SEX) {
-$this->AddPage('P','A4');
-$this->setRTL(FALSE); 
-$this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
-$this->SetXY(15,$this->GetY());  $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"Examens paramédicale",1,1,'C',1,0);$w=24.15;
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(35,10,"DATE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell($w,10,"PALIER",1,0,'C',1,0);$this->Cell($w,10,"POIDS",1,0,'C',1,0);$this->Cell($w,10,"TAILLE",1,0,'C',1,0);$this->Cell($w,10,"AV",1,0,'C',1,0);$this->Cell($w,10,"TA",1,0,'C',1,0);$this->Cell($w,10,"ACV",1,1,'C',1,0);
-$this->mysqlconnect();
-$querypara= "select * from para WHERE IDELEVE= '$id'  order by DATEEXAMEN desc limit 0,4";
-$resultatpara=mysql_query($querypara);
-$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);
-while($resultpara=mysql_fetch_object($resultatpara))
+function EXAMENPARA($id,$SEX) 
 {
+	$this->AddPage('P','A4');
+	$this->setRTL(FALSE); 
+	$this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+	$this->SetXY(15,$this->GetY());  $this->SetFillColor(152, 235, 251 );$this->Cell(180,10,"Examens paramédicale",1,1,'C',1,0);$w=24.15;
+	$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);$this->Cell(35,10,"DATE",1,0,'C',1,0);$this->SetFillColor(152, 245, 255 );$this->Cell($w,10,"PALIER",1,0,'C',1,0);$this->Cell($w,10,"POIDS",1,0,'C',1,0);$this->Cell($w,10,"TAILLE",1,0,'C',1,0);$this->Cell($w,10,"AV",1,0,'C',1,0);$this->Cell($w,10,"TA",1,0,'C',1,0);$this->Cell($w,10,"ACV",1,1,'C',1,0);
+	$this->mysqlconnect();
+	$querypara= "select * from para WHERE IDELEVE= '$id'  order by DATEEXAMEN desc limit 0,4";
+	$resultatpara=mysql_query($querypara);
+	$this->SetXY(15,$this->GetY());$this->SetFillColor(253, 253, 9);
+	while($resultpara=mysql_fetch_object($resultatpara))
+	{
+		$this->Cell(35,5,$this->dateUS2FR($resultpara->DATEEXAMEN),1,0,'C',1,0);
+		$this->SetFillColor(152, 245, 255 );
+		$this->Cell($w,5,$this->nbrtostring("palier","id",$resultpara->NIVEAUS,"nompalier"),1,0,'C',1,0);
+		$this->Cell($w,5,$resultpara->POIDS,1,0,'C',1,0);
+		$this->Cell($w,5,$resultpara->TAILLE,1,0,'C',1,0);
+		$this->Cell($w,5,$resultpara->AV,1,0,'C',1,0);
+		$this->Cell($w,5,$resultpara->TA,1,0,'C',1,0);
+		$this->Cell($w,5,verif($resultpara->ACV,"1"),1,0,'C',1,0);
+		$this->SetXY(15,$this->GetY()+5);
+		$this->SetFillColor(253, 253, 9);
+	}
+	if($SEX=="M")  
+	{
+		$this->Image("002.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+	} 
+	else 
+	{
+		$this->Image("001.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+	} 
+    
+	//****************************************************************************************//
+	$this->AddPage('P','A4');
+	$this->setRTL(FALSE); 
+	$this->RoundedRect($x=5, $y=5, $w=200, $h=285, $r=2, $round_corner='1111', $style='', $border_style=array(), $fill_color=array());
+	// $this->SetXY(27,$this->GetY()+5);$this->cell(7,5,"180",1,1,'C');
+	for ($x = 195; $x >= 90; $x-=5) {$this->SetXY(27,$this->GetY());$this->cell(7,10,$x,1,1,'C');} 
+	// $this->SetXY(5,30);$this->cell(21,5,"Rythme",1,1,'L');
+	// $this->SetXY(5,35);$this->cell(21,5,"Cardiaque",1,1,'L');
+	// $this->SetXY(5,40);$this->cell(21,5,"Foetal",1,1,'L');
+	//$this->SetXY(5,15);
+	//for($i=0; $i <20; $i++){for($ii=35; $ii<=199; $ii += 7){$data="";$this->SetXY($ii,$this->GetY()-5);$this->cell(7,5,$data,1,1,'C',1,0);}$this->SetXY(5,$this->GetY()+5);}
+	// $s=30;$this-> SetDrawColor(225,0,0);$this->SetLineWidth(1);$this->Line(35 ,$s,203,$s );$this->SetLineWidth(0);$this->SetDrawColor(0,0,0);
+	// $d=50;$this-> SetDrawColor(223,0,0);$this->SetLineWidth(1);$this->Line(35 ,$d,203,$d );$this->SetLineWidth(0);$this->SetDrawColor(0,0,0);
 
-$this->Cell(35,5,$this->dateUS2FR($resultpara->DATEEXAMEN),1,0,'C',1,0);
-$this->SetFillColor(152, 245, 255 );
-$this->Cell($w,5,$this->nbrtostring("palier","id",$resultpara->NIVEAUS,"nompalier"),1,0,'C',1,0);
-$this->Cell($w,5,$resultpara->POIDS,1,0,'C',1,0);
-$this->Cell($w,5,$resultpara->TAILLE,1,0,'C',1,0);
-$this->Cell($w,5,$resultpara->AV,1,0,'C',1,0);
-$this->Cell($w,5,$resultpara->TA,1,0,'C',1,0);
-$this->Cell($w,5,verif($resultpara->ACV,"1"),1,0,'C',1,0);
-$this->SetXY(15,$this->GetY()+5);
-$this->SetFillColor(253, 253, 9);
-}
-if($SEX=="M")  {
-$this->Image("002.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
-} else {
-$this->Image("001.jpg", $x=15, $y=$this->GetY()+5, $w=180, $h=230, $type='jpg', $link='', $align='C', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=1, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
-} 
-
-
+	$this->SetLineWidth(0.1);$this->setDrawColor(0,0,0);
+	for($i=10; $i <232; $i+=2){$this->Line(27+7,$i,178,$i);}//hor$this->setDrawColor(0,0,225);
+	for($i=27+7; $i <180; $i+=2){$this->Line($i,10,$i,230);}//ver
+	$this->SetLineWidth(0);$this->setDrawColor(0,0,0);
+	
+	$this->mysqlconnect();
+	$query = "select * from para WHERE  IDELEVE = '$id'  order by  TAILLE asc ";
+	$resultat=mysql_query($query);
+	$x=array(0=>5,184=>10,186=>15);
+	$y=array(127=>0,129=>1,130=>2,172=>3);
+	// $tiba = array();$redha = array();	
+	while($result=mysql_fetch_object($resultat))
+	{
+	// $this->SetFont('aefurat', '', 20);$this->SetTextColor(0,0,225);
+	// $this->Text($x[$result->Months],13+(5*$y[$result->TAILLE]),"x".$result->Months);
+	// $this->SetTextColor(0,0,0);$this->SetFont('aefurat', '', 10);
+	// array_push($tiba,$x[$result->DHE2]);array_push($redha,(13+(5*$y[$result->RCF])));
+	}
+	// $this->SetLineWidth(0.8);$this->setDrawColor(0,0,225);for($i=0;$i<(count($tiba)-1);$i++){$this->Line($tiba[$i]+3.5,$redha[$i]+4,$tiba[$i+1]+3.5,$redha[$i+1]+4);}$this->SetLineWidth(0);$this->setDrawColor(0,0,0);
+	//****************************************************************************************//	
 }
 
 

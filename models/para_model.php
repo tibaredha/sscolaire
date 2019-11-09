@@ -28,6 +28,12 @@ class para_Model extends Model {
 	
 	public function createpara($data) {
 	
+	$Date1 = $data['DATENS'];
+	$Date2 = $data['DATEEXAMEN'];
+	$Timestamp1 = $this->CalculateTimestampFromCurrDatetime($Date1);//echo '</br>';
+	$Timestamp2 = $this->CalculateTimestampFromCurrDatetime($Date2);//echo '</br>';
+	$DateDiff = $this->CalculateDateDifference($Timestamp1, $Timestamp2);//echo '</br>';
+
 	$this->db->insert($this->tbleemg, array(
 	            
 				'DATEEXAMEN'=> $data['DATEEXAMEN'],
@@ -40,10 +46,15 @@ class para_Model extends Model {
 				'STRUCTURE' => $data['STRUCTURE'],
 				'UDS'       => $data['UDS'],
 				'ETABLIS'   => $data['ETABLIS'],
-				'NIVEAUS'   => $data['NIVEAUS']
+				'NIVEAUS'   => $data['NIVEAUS'],
+				'BMI'       => round(($data['POIDS']/(($data['TAILLE']/100)*($data['TAILLE']/100))),2),
+				'Days'     => $DateDiff['days'],
+				'Weeks'    => $DateDiff['weeks'],
+				'Months'   => $DateDiff['months'],
+				'Years'    => $DateDiff['years']		
         ));
         
-		echo '<pre>';print_r ($data);echo '<pre>';
+		//echo '<pre>';print_r ($data);echo '<pre>';
 		 
 		return $last_id = $this->db->lastInsertId();
 	}

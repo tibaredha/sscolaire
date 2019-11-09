@@ -26,7 +26,7 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">Vaccination <?php //echo EDRSFR;?></div>
+<div class="sheader2l">Anthropométrie <?php //echo EDRSFR;?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'para/createpara/'.$this->user[0]['id'];?>" method="post">			
@@ -46,6 +46,10 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 			echo '<div ><input type="hidden" name="ETABLIS"  value="'.$this->user[0]['ECOLE'].'"/> </div>';
 			echo '<div ><input type="hidden" name="UDS"      value="'.$this->user[0]['UDS'].'"/> </div>';
 			echo '<div ><input type="hidden" name="STRUCTURE"value="'.$this->user[0]['STRUCTURE'].'"/> </div>';
+			
+			echo '<div ><input type="hidden" name="DATENS"value="'.$this->user[0]['DATENS'].'"/> </div>';
+			
+			
 			?>
 			<div id="g"><input class="dd" onclick="playSound()"  name="submit1"   type="submit" value="Envoyer"/> </div>
 		    

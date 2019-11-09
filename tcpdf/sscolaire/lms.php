@@ -126,6 +126,10 @@ $pdf->SetXY(15,33);$pdf->write1DBarcode($id, 'C39', '', '', '', 18, 0.4, $style,
 
 
 $pdf->EXAMENPARA($id,$result->SEX);
+
+
+
+
 $pdf->mysqlconnect();
 $querysbd = "select * from examensbd WHERE IDELEVE= '$id' ";
 $resultatsbd=mysql_query($querysbd);

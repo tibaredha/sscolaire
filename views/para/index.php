@@ -58,8 +58,10 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			echo'<tr bgcolor="#00CED1"><th colspan="'.$colspan.'" ><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?o=IDELEVE&q='.$this->userListviewq.'"> La liste des examens paramédicales </A> : <span>'.$total_count1.'/'.$total_count.' enregistrement(s) trouvé(s)</span></th></tr>';
 			echo'<tr bgcolor="#00CED1">';
 			echo'<th >Date d\'éxamen</th>';
+			echo'<th >AGE</th>';
 			echo'<th >POIDS</th>';
 	        echo'<th >TAILLE</th>';
+			echo'<th >BMI</th>';
 			echo'<th >TA</th>';
 			echo'<th >AV</th>';
 			echo'<th >ACV</th>';
@@ -72,8 +74,17 @@ function anomalie ($xx,$yy,$zz){if($xx==1) {return  $yy;}else{return  $zz;} }
 			$bgcolor_donate ='#EDF7FF';
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
 			echo '<td align="center"  >'.HTML::dateUS2FR($value['DATEEXAMEN']).'</td>';
+			echo '<td align="center"  >'.$value['Years'].'</td>';
 			echo '<td align="center"  >'.$value['POIDS'].'</td>';
 			echo '<td align="center"  >'.$value['TAILLE'].'</td>';
+			echo '<td align="center"  >'.$value['BMI'].'</td>';
+			
+			//BMI < 18,5	    poids insuffisant
+			//BMI 18,5 à 24,9	poids normal
+			//BMI 25,0 à 29,9	excès pondéral, surpoids
+			//BMI 30,0 à 39,9	obésité
+			//BMI 40 et +	    obésité morbide
+			
 			echo '<td align="center"  >'.$value['TA'].'</td>';
 			echo '<td align="center"  >'.$value['AV'].'</td>';
 			echo '<td align="center"  >'.anomalie ($value['ACV'],"Oui","Non").'</td>';
