@@ -75,6 +75,8 @@ git add .
 
 git commit -a -m "maj"
 
+git push
+
 start http://localhost/sscolaire/
 
 ::pause > nul
