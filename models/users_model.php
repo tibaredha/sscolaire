@@ -71,11 +71,11 @@ class users_Model extends Model {
 	        $postData = array(
 			'login'      => $data['login'],
             'password'   => $data['password'],
-			'Nom'       => $data['Nom'],
-            'Prenom'    => $data['Prenom'],
-            'Telephone' => $data['Telephone'],
-	        'Facebook'  => $data['Facebook'],
-		    'Email'     => $data['Email'],
+			'Nom'        => $data['Nom'],
+            'Prenom'     => $data['Prenom'],
+            'Telephone'  => $data['Telephone'],
+	        'Facebook'   => $data['Facebook'],
+		    'Email'      => $data['Email'],
 			'wilaya'     => $data['wilaya'],
 	        'structure'  => $data['structure'],
 		    'lang'       => $data['lang']

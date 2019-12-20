@@ -7,7 +7,7 @@ echo '<ul id="menu">';
 	}
 	else
 	{
-		if (Session::get('demgraphie') == 1){include('menu_deces.php');}	
+		if (Session::get('demgraphie') == 1){include('menu_ss.php');}	
 			
 		echo '<li class="parent"><a href="'.URL.'aide">'.TXT_HELP.' <img src="'.URL.'public/images/help.jpg" width="16" height="16" border="0" alt=""/></li>';	
 		echo '<li class="parent">';

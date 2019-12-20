@@ -98,14 +98,7 @@ class users extends Controller {
 	}
 	
 	public function mprofil($id) 
-	{
-        //mprofilheader =1
-		//mprofilmbrs=2
-		//mprofilmsg=3
-		
-		
-		
-		
+	{	
 		$data = array();
 		if($_POST['id']==$id){
 		$data['id']         = $id;
@@ -137,9 +130,32 @@ class users extends Controller {
 	}
 	
 	
+	public function editusers($id) 
+	{
+        $this->view->title = 'editusers';
+		$this->view->msg = 'editusers';
+		$this->view->user = $this->model->userSingleList($id);
+		$this->view->render($this->controleur.'/editusers');
+	}
 	
 	
-	
+	public function mprofil1($id) 
+	{
+		$data = array();
+		$data['id']         = $id;
+		$data['Nom']        = $_POST['Nom'];
+		$data['Prenom']     = $_POST['Prenom'];
+		$data['Telephone']  = $_POST['Telephone'];
+		$data['Facebook']   = $_POST['Facebook'];
+		$data['Email']      = $_POST['Email'];
+        $data['wilaya']     = $_POST['wilaya'];
+		$data['structure']  = $_POST['structure'];
+		$data['lang']       = $_POST['lang'];
+		$data['login']      = $_POST['login'];
+		$data['password']   = md5($_POST['password']);
+		$this->model->mprofiluser($data);
+		header('location: '.URL.$this->controleur.'/searchusers/0/10?o=id&q=');			
+	}
 	
 	
 }

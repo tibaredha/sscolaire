@@ -43,11 +43,12 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 	echo'</th>';
 	echo'</tr>';
 	echo'<tr bgcolor="#00CED1">';
+	echo'<th >Activation</th>';
 	echo'<th id="nomprenom" >Membres</th>';
 	
 	echo'<th id="nomprenom">Niveaux Membres</th>';
 	// echo'<th >Update</th>';
-	echo'<th >Activation</th>';
+	
 	echo'<th >Delete</th>';
 	echo'</tr>';
 		
@@ -55,19 +56,17 @@ echo'<table width="100%" border="1" cellpadding="5" cellspacing="1" align="cente
 		{ 
             $bgcolor_donate ='#EDF7FF';
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
-		    echo '<td align="left"><a  title="Visualiser le Profil"    href="'.URL.$ctrl.'/profil/'.$value['id'].'" > '.$value['login'].'</a></td>';
-		
-			echo '<td align="center"><a  title="Editer role"    href="'.URL.$ctrl.'/roleusers/'.$value['id'].'" > '.HTML::nbrtostring('niveau','id',$value['role'],'nom_niveau').'</a></td>';
-		
-			if ($value['activation']==1) {
-			echo '<td align="center"><a  title="Désactiver"    href="'.URL.$ctrl.'/Bannirusers/'.$value['id'].'/0" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			}
-			else
-			{
-			echo '<td align="center"><a  title="Activer"   href="'.URL.$ctrl.'/Bannirusers/'.$value['id'].'/1" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';
-			}
+		    
+			if ($value['activation']==1) 
+			{echo '<td align="center"><a  title="Désactiver"          href="'.URL.$ctrl.'/Bannirusers/'.$value['id'].'/0" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';}
+			 else
+			{echo '<td align="center"><a  title="Activer"             href="'.URL.$ctrl.'/Bannirusers/'.$value['id'].'/1" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';}
 			
-			echo '<td align="center"><a class="delete" title="Supprimer"  href="'.URL.$ctrl.'/Deleteusers/'.$value['id'].'/'.$value['role'].'" ><img src="'.URL.'public/images/delete.png"   width="16" height="16" border="0" alt=""   /></a></td>';
+			echo '<td align="left">   <a  title="Editer le Profil de l\'utilsateur"    href="'.URL.$ctrl.'/editusers/'.$value['id'].'" > '.$value['login'].'</a></td>';
+		    echo '<td align="center"> <a  title="Editer le role   de l\'utilsateur"    href="'.URL.$ctrl.'/roleusers/'.$value['id'].'" > '.HTML::nbrtostring('niveau','id',$value['role'],'nom_niveau').'</a></td>';
+		
+			
+			echo '<td align="center"><a class="delete" title="Supprimer l\'utilsateur "  href="'.URL.$ctrl.'/Deleteusers/'.$value['id'].'/'.$value['role'].'" ><img src="'.URL.'public/images/delete.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo'</tr>';	
 		}
 		$total_count=count($this->userListview1);

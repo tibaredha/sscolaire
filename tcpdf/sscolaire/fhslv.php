@@ -38,7 +38,7 @@ $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,$pdf->dspfr.'Djelfa',0,0,'C',0,1)
 
 $pdf->SetFont('DejaVuSans','',10);
 $pdf->SetXY(5,$pdf->GetY()+10);$pdf->Cell(200,6,'Fiche d\'hygiene et salubrité des locaux d\'un établissement scolaire ',1,0,'C',0,1);
-$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,"Nom de l'EPSP : ".$pdf->nbrtostring("structure","id",$result->ids,"structure"),1,0,'L');//.$pdf->nbrtostring("structure","id",$result->ids,"structure")
+$pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,"Nom de l'EPSP : ",1,0,'L');//.$pdf->nbrtostring("structure","id",$result->ids,"structure").$pdf->nbrtostring("structure","id",$result->ids,"structure")
 $pdf->SetXY(5,$pdf->GetY()+6);$pdf->Cell(200,6,"Nom de l'UDS : ".$pdf->nbrtostring("uds","id",$result->iduds,"uds"),1,0,'L');//.$pdf->nbrtostring("uds","id",$result->iduds,"uds")
 $pdf->SetXY(5,$pdf->GetY()+6); $pdf->Cell(200,6,"Nom de l'établissement : ".$result->ecole,1,0,'L');
 $pdf->SetXY(5,$pdf->GetY()+6); $pdf->Cell(200,6,"Date de la visite : ",1,0,'L');

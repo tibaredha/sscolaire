@@ -37,7 +37,7 @@
 <div class="sheader2l">Voir le profil de  : <?php echo HTML::nbrtostring('users','id',$this->user[0]['id'],'login')  ;?></div>
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
-	<form action="<?php echo URL.'users/mprofil/'.$this->user[0]['id'];?>" method="post">			
+	<form action="<?php echo URL.'users/mprofil1/'.$this->user[0]['id'];?>" method="post">			
 		<div id="inner-grid">
 			<div id="a">Nom :       <input id="aa"  type="text"     name="Nom"          value="<?php echo $this->user[0]['Nom'];?>" />     <input type="checkbox" title="visibiliter du Nom par les membres"       class="per" name="vNom"       value="1"></div>
 			<div id="b">Prénom :    <input id="aa"  type="text"     name="Prenom"       value="<?php echo $this->user[0]['Prenom'];?>" />  <input type="checkbox" title="visibiliter du Prenom par les membres"    class="per" name="vPrenom"    value="1"></div>
@@ -56,9 +56,9 @@
             </select>
 			<input type="checkbox" class="per" title="visibiliter de la langue par les membres"  name="vlang" value="1"></div>
 			<?php 
-			
+			if ($this->user[0]['login']=="admin"){$etat="admin";} else{$etat=$this->user[0]['login'];}
 			?>  
-			<div id="dx">Login :    <input id="ff" type="text"     name="login"    value="<?php echo Session::get('login');?>" /> <input type="checkbox" class="per" title="visibiliter du login par les membres" name="vlogin" value="1"></div>
+			<div id="dx">Login :    <input id="ff" type="text"     name="login"    value="<?php echo $etat;?>"  /> <input type="checkbox" class="per" title="visibiliter du login par les membres" name="vlogin" value="1"></div>
 			<div id="ex">Password : <input id="gg" type="password" name="password" required="" /> <input type="checkbox" class="per" title="visibiliter du password par les membres"name="vpassword" value="1"></div>
 			<?php 
 			echo '<input type="hidden" name="id"        value="'.Session::get('id').'"/>';
