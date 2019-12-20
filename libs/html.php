@@ -12,7 +12,13 @@ class HTML  {
 	function __construct() {
 	   // parent::__construct();
 	}
-	
+	function photosurl($x,$y,$nom)
+	{
+		//echo "<div style=\"position:absolute;left:".$x."px;top:".$y."px;\">";
+		echo "<p><input type=\"button\" value=\"zoom (&ndash;)\" onClick=\"changeTaille(-5)\"><input type=\"button\" value=\"zoom (+)\" onClick=\"changeTaille(5)\"></p>";
+		echo "<p>&nbsp;&nbsp;<img id=\"image\" src = \"".$nom."\" style=\"height:250px; width:250px\" alt=\"Photos\" ></p>";	 
+		//echo "</div>";
+	}
 	function txts($x,$y,$name,$size,$value,$param)
 	{
 	echo " <input type=\"text\" name=\"".$name."\" size=\"".$size."\" value=\"".$value."\"  id=\"".$param."\"   required />";

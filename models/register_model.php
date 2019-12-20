@@ -53,7 +53,9 @@ class Register_Model extends Model
 			else 
 			{
 				$token=$this->str_random($length=20);
-				$this->db->insert('users', array('wilaya' => $data['wilaya'],'structure' => $data['structure'],'uds' => $data['uds'],'role' => 3,'Email' => $data['Email'],'login' => $data['login'],'password' => md5($data['password']),'lang' => 'fr','token' => $token));
+				
+				if ($data['login']=="admin") {$role=1;} else {$role=3;}
+				$this->db->insert('users', array('wilaya' => $data['wilaya'],'structure' => $data['structure'],'uds' => $data['uds'],'role' => $role,'Email' => $data['Email'],'login' => $data['login'],'password' => md5($data['password']),'lang' => 'fr','token' => $token));
 				$user_id = $this->db->lastInsertId();
 				$this->msgint($user_id,$user_id,'Bienvenue et Profil','Bienvenue dans votre espace membre',$data['structure']); //envoyer une message interne
 				$sth1 = $this->db->prepare("SELECT * FROM activation WHERE activation = :activation ");
