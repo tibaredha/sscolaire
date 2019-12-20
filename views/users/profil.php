@@ -55,7 +55,10 @@
 			  <option value="ar">ar</option>
             </select>
 			<input type="checkbox" class="per" title="visibiliter de la langue par les membres"  name="vlang" value="1"></div>
-			<div id="dx">Login :    <input id="ff" type="text"     name="login"    value="<?php echo Session::get('login');?>"/> <input type="checkbox" class="per" title="visibiliter du login par les membres" name="vlogin" value="1"></div>
+			<?php 
+			if (Session::get('login')=="admin"){$etat="disabled";} else{$etat="";}
+			?>  
+			<div id="dx">Login :    <input id="ff" type="text"     name="login"    value="<?php echo Session::get('login');?>" <?php echo $etat;?> /> <input type="checkbox" class="per" title="visibiliter du login par les membres" name="vlogin" value="1"></div>
 			<div id="ex">Password : <input id="gg" type="password" name="password" required="" /> <input type="checkbox" class="per" title="visibiliter du password par les membres"name="vpassword" value="1"></div>
 			<?php 
 			echo '<input type="hidden" name="id"        value="'.Session::get('id').'"/>';
