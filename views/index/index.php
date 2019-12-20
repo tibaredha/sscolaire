@@ -8,6 +8,9 @@
 if (isset($_COOKIE['tibaredha'])) {
 	// echo 'Bonjour '.$_COOKIE['tibaredha'].' !';
 }
+
+
+// html::photosurl(1100,100,URL.'public/images/accueil.jpg');
 ?>
 
 
