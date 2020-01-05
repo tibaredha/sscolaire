@@ -2,7 +2,7 @@
 
 class Session
 {
-	const dateexpiration ='2020-01-01';
+	const dateexpiration ='2030-01-01';
 	const path = 'D:\framework\libs\sessions';
 	// const SESSION_STARTED = TRUE;
     // const SESSION_NOT_STARTED = FALSE;
