@@ -12,7 +12,13 @@ echo "<table  width='100%' border='1' cellpadding='5' cellspacing='1' align='cen
 	echo "<tr>" ;echo "<th>Nom_Prénom_(Fils de ) (".$totalmbr4.")</th>" ;echo "</tr>" ;
 	while($value=mysql_fetch_array($sql))
 	{
-	echo '<tr>';echo '<td align="left" >';echo $value['NOM'].'_'.$value['PRENOM'].'_'.$value['FILSDE'];echo '</td>';echo '</tr>';			
+	echo '<tr>';echo '<td align="left" >';
+	
+	echo '<a  title="visualiser"  href="dashboard/search/0/10?o=id&q='.$value['id'].'" >';
+	echo $value['NOM'].'_'.$value['PRENOM'].'_'.$value['FILSDE'];
+	echo'</a>';
+	
+	echo '</td>';echo '</tr>';			
 	}
 	echo "<tr>" ;echo "<th>Nom_Prénom_(Fils de )</th>" ;echo "</tr>" ;
 echo "</table>";
