@@ -16,6 +16,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/notification-demo-style.css?t=<?php echo time();?>">
 <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/tiba.css?t=<?php echo time();?>">
 
+<link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/jquery.autocomplete.css?t=<?php echo time();?>">
+
 <script src="<?php echo URL;?>public/js/jscode1.js?t=<?php echo time();?>"></script>
 <script src="<?php echo URL;?>public/js/jquery.js?t=<?php echo time();?>"></script>
 <script src="<?php echo URL;?>public/js/jquery.maskedinput.js?t=<?php echo time();?>"></script>
@@ -25,6 +27,9 @@
 <script src="<?php echo URL;?>public/js/bootstrap.bundle.min.js?t=<?php echo time();?>"></script>
 <script src="<?php echo URL;?>public/js/tiba.js?t=<?php echo time();?>"></script>
 <script src="<?php echo URL;?>public/js/alertify.min.js?t=<?php echo time();?>"></script>
+
+<script src="<?php echo URL;?>public/js/jquery.ui.autocomplete.js?t=<?php echo time();?>"></script>
+
 <?php if (isset($this->js)){foreach ($this->js as $js){echo '<script type="text/javascript" src="'.URL.'views/'.$js.'"></script>';}}?>
 <?php if (isset($this->css)){foreach ($this->css as $css){echo '<link rel="stylesheet" type="text/css" href="'.URL.'views/'.$css.'"></script>';}}?>
 </head>
