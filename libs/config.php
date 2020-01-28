@@ -31,6 +31,7 @@ define('path', 'D:\sscolaire\libs\sessions');
 define('EDRSFR', "Système électronique d'enregistrement des élèves scolarisés");
 define('EDRSUS', 'Electronic Student Health Registration System');
 
+define('urlphotos', 'd:wamp/www/sscolaire/public/images/photos/');
 
 function renemefille ($tiba,$amrane)
  {

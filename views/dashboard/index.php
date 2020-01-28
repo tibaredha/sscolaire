@@ -47,7 +47,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 		if (isset($this->userListview))
 		{
 		ob_start();
-		$colspan=20;
+		$colspan=21;
 		$commune2=HTML::nbrtostring('structure','id',Session::get('structure'),'com');
 		$wilayad2=HTML::nbrtostring('wil','IDWIL',Session::get('wilaya'),'WILAYAS');
 		$total_count=count($this->userListview1);
@@ -62,6 +62,7 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			echo'<tr bgcolor="#00CED1">';
 			echo'<th class="crtl"><img src="'.URL.'public/images/table/'.$down.'"   width="10" height="10" border="0" alt=""/>&nbsp;<A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=aprouve&ad='.$ad.'">Ok</A></th>';
 			echo'<th class="crtl">PHO</th>';
+			echo'<th class="crtl">webcam</th>';
 			echo'<th class="nomprenom"><img src="'.URL.'public/images/table/'.$down.'"   width="10" height="10" border="0" alt=""/>&nbsp;<A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=NOM&ad='.$ad.'">Nom_Prénom_( Fils de )</A></th>';
 			echo'<th class="crtl"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=SEX&ad='.$ad.'">Sexe</A></th>';
 			echo'<th class="crtldate"><A HREF="'.URL.$ctrl.'/'.$mdl.'/'.$urlx[2].'/'.$urlx[3].'?q=&o=DATENS&ad='.$ad.'">Date naissance</A></th>';
@@ -85,14 +86,14 @@ echo "<button id=\"Cleari\"  onclick=\"document.location='".URL.$data['cb2']."/"
 			foreach($this->userListview as $key => $value)
 			{ 
 			$dphotos='sscolaire';//dossier photos
-			$fichier1 = "d:/sscolaire/public/images/photos/".$dphotos."/".$value['id'].'.jpg' ;
+			$fichier1 = urlphotos.$dphotos."/".$value['id'].'.jpg' ;
 			if (file_exists($fichier1)){$fichier = URL."public/images/photos/".$dphotos."/".$value['id'].'.jpg?t='.time() ;}else {if ($value['SEX']=='M') {$fichier = URL."public/images/photos/".$dphotos."/m.jpg?t=".time() ;} else {$fichier = URL."public/images/photos/".$dphotos."/f.jpg?t=".time() ;}}
 			
 			$bgcolor_donate ='#EDF7FF';
 			echo "<tr bgcolor=\"".$bgcolor_donate."\"  onmouseover=\"this.style.backgroundColor='#9FF781';\"   onmouseout=\"this.style.backgroundColor='".$bgcolor_donate."';\"  >" ;
 			$url1 = explode('/',$_GET['url']);if ($value['aprouve']==1){echo '<td align="center"><a  title="Désaprouvé "  href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/0/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/ok.jpg"   width="16" height="16" border="0" alt=""   /></a></td>'; } else{echo '<td align="center"><a  title="Aprouvé"     href="'.URL.$ctrl.'/Aprouve/'.$value['id'].'/1/'.$url1[2].'/'.$url1[3].'" ><img src="'.URL.'public/images/non.jpg"   width="16" height="16" border="0" alt=""   /></a></td>';  }
 			echo "<td align=\"center\"><a title=\"Modifier Photos\" href=\"".URL.$ctrl."/upl/".$value['id'].'/'.$value['SEX']."\" ><img  src=\"".$fichier."\"  width='20' height='20' border='1' alt='photos'></td> " ; 
-			//echo '<td align="left" ><b><a  title="Visualiser la fiche "  href="'.URL.$ctrl.'/view/'.$value['id'].'" >'.strtoupper($value['NOM']).'_'.strtolower($value['PRENOM']).' ('.strtolower($value['FILSDE']).')'.'<b></a></td>';
+			echo '<td align="center" ><b><a  title="webcam"  href="'.URL.$ctrl.'/webcam/'.$value['id'].'" ><img src="'.URL.'public/images/webcam.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="left" ><b><a  title="Visualiser la fiche "  href="'.URL.'tcpdf/sscolaire/pfa.pdf?uc='.$value['id'].'" >'.strtoupper($value['NOM']).'_'.strtolower($value['PRENOM']).' ('.strtolower($value['FILSDE']).')'.'<b></a></td>';
             //echo '<td align="center" style="width:10px;"  ><a target="_blank" title="Dossier médicale scolaire"  href="'.URL.'tcpdf/sscolaire/pfa.pdf?uc='.$value['id'].'" ><img src="'.URL.'public/images/b_props.png"   width="16" height="16" border="0" alt=""   /></a></td>';
 			echo '<td align="center"  >'.$value['SEX'].'</td>';

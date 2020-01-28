@@ -32,6 +32,10 @@
 
 <?php if (isset($this->js)){foreach ($this->js as $js){echo '<script type="text/javascript" src="'.URL.'views/'.$js.'"></script>';}}?>
 <?php if (isset($this->css)){foreach ($this->css as $css){echo '<link rel="stylesheet" type="text/css" href="'.URL.'views/'.$css.'"></script>';}}?>
+
+
+
+<script src="<?php echo URL;?>public/images/photos/sscolaire/webcam.js?t=<?php echo time();?>"></script>
 </head>
 <body> 
 <!--<body onload="remplir1(); remplir2(); remplir3();" > -->

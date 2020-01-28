@@ -221,7 +221,7 @@ class Dashboard extends Controller {
 			if (isset($_FILES))
 			{
 			
-			$uploadLocation = "D:\\sscolaire/public/images/photos/sscolaire/"; 
+			$uploadLocation = urlphotos."sscolaire/"; 
 			$target_path = $uploadLocation.trim($id).".jpg";      
 				if(move_uploaded_file($_FILES['upfile']['tmp_name'], $target_path)) 
 				{	
@@ -237,7 +237,11 @@ class Dashboard extends Controller {
 	}	
 	
 	
-	
+	function webcam() 
+	{
+	$this->view->title = 'webcam';
+	$this->view->render($this->controleur.'/webcam');    
+	}
 	
 		
 }

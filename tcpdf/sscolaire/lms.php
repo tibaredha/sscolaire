@@ -41,7 +41,7 @@ $pdf->SetXY(5,$pdf->GetY());   $pdf->Cell(75,6,$pdf->nbrtostring("uds","id",$res
 $pdf->SetXY(5,$pdf->GetY()+5); $pdf->Cell(75,6,"المؤسسة التربوية",0,0,'C');                                       $pdf->Cell(75,6,"Etablissement scolaire",0,1,'C');
 $pdf->SetXY(5,$pdf->GetY());   $pdf->Cell(75,6,$pdf->nbrtostring("ecole","id",$result->ECOLE,"ecolear"),0,0,'C'); $pdf->Cell(75,6,$pdf->nbrtostring("ecole","id",$result->ECOLE,"ecole"),0,1,'C');
 $pdf->setRTL(false);
-$fichier1="D:/sscolaire/public/images/photos/sscolaire/".$result->id.".jpg";
+$fichier1="D:wamp/www/sscolaire/public/images/photos/sscolaire/".$result->id.".jpg";
 if (file_exists($fichier1))
 {
 	$pdf->Image($fichier1, $x=10, $y=45, $w=40, $h=40, $type='jpg', $link='', $align='', $resize=false, $dpi=400, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
@@ -51,11 +51,11 @@ else
 {
 	if($result->SEX=="M") 
 	{
-	$pdf->Image("D:/sscolaire/public/images/photos/sscolaire/m.jpg", $x=10, $y=45, $w=40, $h=40, $type='png', $link='', $align='', $resize=false, $dpi=400, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+	$pdf->Image("D:wamp/www/sscolaire/public/images/photos/sscolaire/m.jpg", $x=10, $y=45, $w=40, $h=40, $type='png', $link='', $align='', $resize=false, $dpi=400, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 	} 
 	else 
 	{
-	$pdf->Image("D:/sscolaire/public/images/photos/sscolaire/f.jpg", $x=10, $y=45, $w=40, $h=40, $type='png', $link='', $align='', $resize=false, $dpi=400, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
+	$pdf->Image("D:wamp/www/sscolaire/public/images/photos/sscolaire/f.jpg", $x=10, $y=45, $w=40, $h=40, $type='png', $link='', $align='', $resize=false, $dpi=400, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false, $alt=false, $altimgs=array());
 	}
 }
 

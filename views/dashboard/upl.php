@@ -44,8 +44,8 @@ $url1 = explode('/',$_GET['url']);
 	</form>
 </div>
 <?php 
-$dphotos='sscolaire';//dossier photos
-$fichier1 = "d:/sscolaire/public/images/photos/".$dphotos."/".$url1[2].'.jpg' ;
+$dphotos='sscolaire';
+$fichier1 = urlphotos.$dphotos."/".$url1[2].'.jpg' ;
 if (file_exists($fichier1)){
 //{$fichier = URL."public/images/photos/".$dphotos."/".$value['id'].'.jpg?t='.time() ;}else {if ($value['SEX']=='M') {$fichier = URL."public/images/photos/".$dphotos."/m.jpg?t=".time() ;} else {$fichier = URL."public/images/photos/".$dphotos."/f.jpg?t=".time() ;}}			
 ?>
