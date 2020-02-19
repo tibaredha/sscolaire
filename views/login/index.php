@@ -28,7 +28,8 @@ if (isset($_SESSION['errorlogin'])){echo '<p id="errorlogin">'.$_SESSION['errorl
 ?>
 </div>
 <div class="sheader1r"><p id="llogin"><?php html::NAV();?></p></div>
-<div class="sheader2l">Se Connecter <?php //echo EDRSFR;?></div>
+<div class="sheader2l"><?php if (isset($_SESSION['error'])){echo $_SESSION['error'];}else{echo 'Se Connecter';}//error connection databases classe Model ?></div>
+
 <div class="sheader2r">MSPRH</div>
 <div class="contentl formaut">
 	<form action="<?php echo URL.'login/run';?>" method="post">			

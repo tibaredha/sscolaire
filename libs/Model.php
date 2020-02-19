@@ -5,9 +5,18 @@ class Model {
     public $key = "tiba";  // Clé de 8 caractères max
 	
 	function __construct() {
+		
+		try {
 		$this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
 		$this->db->exec("SET CHARACTER SET utf8");
 		$this->db->exec("RESET MASTER");//pour suprimer les bin logs 	
+		} 
+		catch (PDOException $e) 
+		{
+		Session::init();	
+		Session::set('error','Echec de connexion : '. $e->getMessage());
+		}	
+		
 	}
 	
 	public function check_empty($data, $fields)
