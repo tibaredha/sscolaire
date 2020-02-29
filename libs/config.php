@@ -1,5 +1,6 @@
 <?php
 include 'cfg.php'; //  fichier creer  lors de la 1ere instatlation instalation procesuce en cour de realisation   
+define('DOCUMENT_ROOT', 'sscolaire/');
 //base de donnes 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', $PARAM_hote);//origine cfg.php
@@ -31,7 +32,7 @@ define('path', 'D:\sscolaire\libs\sessions');
 define('EDRSFR', "Système électronique d'enregistrement des élèves scolarisés");
 define('EDRSUS', 'Electronic Student Health Registration System');
 
-define('urlphotos', 'd:wamp/www/sscolaire/public/images/photos/');
+define('urlphotos', $_SERVER["DOCUMENT_ROOT"].DOCUMENT_ROOT.'public/images/photos/');
 
 function renemefille ($tiba,$amrane)
  {
