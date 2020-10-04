@@ -1,6 +1,16 @@
 <?php
 include 'cfg.php'; //  fichier creer  lors de la 1ere instatlation instalation procesuce en cour de realisation   
 define('DOCUMENT_ROOT', 'sscolaire/');
+
+if($_SERVER['HTTP_HOST'] == 'localhost') 
+{
+	define('URL', 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');		
+}
+else
+{	
+	define('URL', 'http://'.$_SERVER['SERVER_NAME'].":8080".dirname($_SERVER['PHP_SELF']).'/');	
+}
+
 //base de donnes 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', $PARAM_hote);//origine cfg.php
@@ -14,7 +24,7 @@ define('version', 'v2.0.1-beta1');
 define('logod', 'ecole.jpg?t='.time());
 define('logo', 'ecole.jpg?t='.time());
 define('logon', 'ecole.jpg?t='.time());
-define('URL', 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
+// define('URL', 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
 //define('URL', 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
 define('logolab', 'd:\\sscolaire/public/images/logolab/logolab');
 define('LIBS', 'libs/');

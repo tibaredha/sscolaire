@@ -30,8 +30,13 @@ document.getElementById('image').style.width  = Math.max(parseInt(document.getEl
 document.getElementById('image').style.height = Math.max(parseInt(document.getElementById('image').style.height)+dl,20)+'px';
 }
 
+var loc = window.location.pathname;
+var dir = loc.substring(1, loc.lastIndexOf('/'));
+var res = dir.split("/");
 
-var ROOT ="sscolaire";
+// alert('rrrr');
+
+var ROOTX =res[0];
 
 //*****SCORE D apgar///
 var apgar1 = 0; 
@@ -221,7 +226,7 @@ $(document).ready(function()
 {
 		$("#SERVI").change(function()
 		{
-			var id=$(this).val();var ST=$("#STR").val();var dataString = 'id='+ id + '&id1='+ST; var urlx = "/"+ROOT+"/public/js/ajaxlit.PHP";
+			var id=$(this).val();var ST=$("#STR").val();var dataString = 'id='+ id + '&id1='+ST; var urlx = "/"+ROOTX+"/public/js/ajaxlit.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$("#NLIT").html(html);}});	
 		});
 });
@@ -230,7 +235,7 @@ $(document).ready(function()
 {
 		$(".WILAYALF").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNELF").html(html);}});	
 		});
 });
@@ -242,26 +247,26 @@ $(document).ready(function()
 {
 		$(".WILAYAD").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNED").html(html);}});
 		});
 
 		$(".WILAYAN").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNEN").html(html);}});
 			
 		});
 		
 	    $(".WILAYAR").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNER").html(html);}});
 		});
 
        $(".cim1").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxcim.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxcim.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".cim2").html(html);}});
 		});
 		
@@ -272,25 +277,25 @@ $(document).ready(function()
 {
 		$(".WILAYA1").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNE1").html(html);}});
 		});
 
 		$(".WILAYA2").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNE2").html(html);}});
 		});
 		
 		$(".WILAYA3").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNE3").html(html);}});
 		});
 		
 		$(".WILAYA4").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNE4").html(html);}});
 		});
 		
@@ -300,22 +305,22 @@ $(document).ready(function()
 {
 		$(".wilaya").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxws.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxws.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".structure").html(html);}});
-		    var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxwc.PHP";
+		    var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxwc.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".COMMUNENCLS").html(html);}});
 		});
 		
 		$(".structure").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaxsu.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaxsu.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".uds").html(html);}});
 		});
 		
 		
 		$(".ECOLE").change(function()
 		{
-			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOT+"/public/js/ajaecolpal.PHP";
+			var id=$(this).val();var dataString = 'id='+ id;var urlx = "/"+ROOTX+"/public/js/ajaecolpal.PHP";
 			$.ajax({type: "POST",url: urlx ,data: dataString,cache: false,success: function(html){$(".PALIER").html(html);}});
 		});
 		

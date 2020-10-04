@@ -1,6 +1,6 @@
 <?php 
 $PARAM_hote        = 'localhost'; 
-$PARAM_nom_bd      = 'tibaredhaxx'; 
+$PARAM_nom_bd      = 'tibaredha'; 
 $PARAM_utilisateur = 'root'; 
 $PARAM_mot_passe   = ''; 
 $PARAM_nom_site    = 'framework'; 
