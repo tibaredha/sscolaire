@@ -109,13 +109,13 @@
 echo '<div class="listl">';
 echo'<form  action="'.URL.$ctrl.'/ajouterArticle/" method="post">';
 echo '<div id="inner-grid">';
-echo '<div id="a">DCI Produit  </div>';         echo '<div id="a1">';html::medicamentx("libelleProduit","","Choisir un produit");echo '</div>';                     
-echo '<div id="b">Dose et présentation</div>'; echo '<div id="b1">';echo '<input  class ="med" type="text" name="doseparprise"       value="1"/></div>';
+echo '<div id="a">DCI Produit  </div>';           echo '<div id="a1">';html::medicamentx("libelleProduit","","Choisir un produit");echo '</div>';                     
+echo '<div id="b">Dose et présentation</div>';    echo '<div id="b1">';echo '<input  class ="med" type="text" name="doseparprise"       value="1"/></div>';
 echo '<div id="c">Nbr par jours</div>';           echo '<div id="c1">';echo '<input  class ="med" type="text" name="nbrdrfoisparjours"  value="1"/></div>';
-echo '<div id="d">Durée en Jours</div>';      echo '<div id="d1">';echo '<input  class ="med" type="text" name="nbrdejours"         value="10"/></div>';
-echo '<div id="e">Nbr de boites</div>';       echo '<div id="e1">';echo '<input  class ="med" type="text" name="qteProduit"         value="1"/></div>';
-echo '<div id="f">Prix par boite (Da)</div>';          echo '<div id="f1">';echo '<input  class ="med" type="text" name="prixProduit"        value="1"/></div>';
-echo '<div id="g">Date préscription</div>';   echo '<div id="g1">';echo '<input  class ="med"  id="date"  type="text" name="DATE"   value="'.date('d-m-Y').'"/></div>';
+echo '<div id="d">Durée en Jours</div>';          echo '<div id="d1">';echo '<input  class ="med" type="text" name="nbrdejours"         value="10"/></div>';
+echo '<div id="e">Nbr de boites</div>';           echo '<div id="e1">';echo '<input  class ="med" type="text" name="qteProduit"         value="1"/></div>';
+echo '<div id="f">Prix par boite (Da)</div>';     echo '<div id="f1">';echo '<input  class ="med" type="text" name="prixProduit"        value="1"/></div>';
+echo '<div id="g">Date préscription</div>';       echo '<div id="g1">';echo '<input  class ="med"  id="date"  type="text" name="DATE"   value="'.date('d-m-Y').'"/></div>';
 echo '<input  type="hidden" name="id"  value="'.$this->user[0]['id'].'"/>';
 echo '<input  type="hidden" name="STR" value="'.Session::get('structure').'"/>';
 
